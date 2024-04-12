@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request: ~
+
+  workflow_dispatch: ~
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: poetry
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Install project
+        run: make install
+
+      - name: Run QA
+        run: make check
+
+      - name: Test docs generation
+        run: make docs
+
+  test:
+    name: ${{ matrix.os }} / ${{ matrix.python_version }}
+    needs: [qa]
+    runs-on: ${{ matrix.os }}-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu] #[ubuntu, windows, macos]
+        python_version: ['3.12']
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python_version }}
+          cache: poetry
+
+      - name: Install Poetry
+        run: pipx install poetry
+
+      - name: Install project
+        run: make install
+
+      - name: Run tests
+        run: make test
