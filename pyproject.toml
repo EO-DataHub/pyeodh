@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "pyeodh"
+version = "0.0.1"
+description = "A lightweight Python client for EODH APIs."
+authors = ["Dusan Figala <dusan@oxidian.com>"]
+license = "BSD-2-Clause"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests-oauthlib = "^2.0.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.3.0"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+pyright = "^1.1.358"
+ipykernel = "^6.29.4"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.1.1"
+
+[tool.poetry.group.docs.dependencies]
+sphinx = "^7.2.6"
+sphinx-rtd-theme = "^2.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.pyright]
+include = ["pyeodh", "tests"]
+# typeCheckingMode = "strict"
