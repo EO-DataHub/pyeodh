@@ -3,6 +3,8 @@ from __future__ import annotations
 from typing import Literal
 import requests
 
+from pyeodh.resource_catalog import ResourceCatalog
+
 
 class Client:
 
@@ -33,3 +35,7 @@ class Client:
         )
         # TODO handle errors...
         return response.headers, response.json()
+
+    def get_resource_catalog(self) -> None:
+        _, data = self._request_json("GET", "/")
+        return ResourceCatalog(self, data)
