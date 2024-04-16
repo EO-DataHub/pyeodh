@@ -1,5 +1,3 @@
-from __future__ import annotations
-
 import urllib.parse
 from typing import Literal
 
@@ -44,5 +42,5 @@ class Client:
         return response.headers, response.json()
 
     def get_resource_catalog(self) -> ResourceCatalog:
-        _, data = self._request_json("GET", "/")
-        return ResourceCatalog(self, data)
+        headers, data = self._request_json("GET", "/")
+        return ResourceCatalog(self, headers, data)
