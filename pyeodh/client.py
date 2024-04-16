@@ -43,6 +43,6 @@ class Client:
         # TODO handle errors...
         return response.headers, response.json()
 
-    def get_resource_catalog(self) -> None:
+    def get_resource_catalog(self) -> ResourceCatalog:
         _, data = self._request_json("GET", "/")
         return ResourceCatalog(self, data)
