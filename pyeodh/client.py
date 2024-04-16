@@ -1,14 +1,21 @@
 from __future__ import annotations
 
+import urllib.parse
 from typing import Literal
+
 import requests
 
+from pyeodh import consts
 from pyeodh.resource_catalog import ResourceCatalog
+from pyeodh.utils import is_absolute_url
 
 
 class Client:
+    def __init__(self, base_url: str = consts.API_BASE_URL) -> None:
+        if not is_absolute_url(base_url):
+            raise ValueError("base_url must be an absolute URL")
 
-    def __init__(self) -> None:
+        self.url_base = base_url
         self._build_session()
 
     def _build_session(
@@ -16,7 +23,6 @@ class Client:
     ) -> None:
         # TODO Add retry count, setting auth headers etc. here
         self._session = requests.Session()
-        self.url_base = "https://api.stac.ceda.ac.uk/"  # TODO create a const module
 
     def _request_json(
         self,
@@ -25,8 +31,9 @@ class Client:
         params: dict | None = None,
         data: dict | None = None,
     ):
-        if not url.startswith("http"):
-            url = self.url_base + url
+
+        if not is_absolute_url(url):
+            url = urllib.parse.urljoin(self.url_base, url)
         # TODO construct headers
         headers = {}
         headers["Content-Type"] = "application/json"
