@@ -26,14 +26,14 @@ class Client:
         self,
         method: Literal["GET", "POST", "DELETE", "PUT"],
         url: str,
+        headers: dict | None = {},
         params: dict | None = None,
         data: dict | None = None,
     ):
 
         if not is_absolute_url(url):
             url = urllib.parse.urljoin(self.url_base, url)
-        # TODO construct headers
-        headers = {}
+
         headers["Content-Type"] = "application/json"
         response = self._session.request(
             method, url, headers=headers, params=params, data=data
