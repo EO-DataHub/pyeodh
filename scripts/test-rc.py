@@ -8,4 +8,5 @@ rc = c.get_resource_catalog()
 # for col in rc.get_collections():
 #     print(col.description)
 
-print(rc.get_collection("cmip6").description)
+# print(rc.get_collection("cmip6").description)
+pprint(rc.get_collection("cmip6").get_items())
