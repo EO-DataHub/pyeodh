@@ -1,11 +1,19 @@
 from functools import cached_property
 
+from pyeodh import consts
 from pyeodh.base_object import BaseObject
+from pyeodh.pagination import PaginatedList
 from pyeodh.utils import get_href_by_rel, join_url
 
 
 class Item(BaseObject):
-    pass
+
+    @property
+    def id(self) -> str:
+        return self._id
+
+    def _set_properties(self) -> None:
+        self._id = self._raw_data.get("id")
 
 
 class Collection(BaseObject):
@@ -24,18 +32,17 @@ class Collection(BaseObject):
         return self._description
 
     def _set_properties(self) -> None:
-        self._links = self._raw_data.get("links", None)
-        self._description = self._raw_data.get("description", None)
+        self._links = self._raw_data.get("links")
+        self._description = self._raw_data.get("description")
 
     def get_items(self) -> list[Item]:
-        headers, response = self._client._request_json("GET", self.items_url)
-        items = []
-        return response
-        # TODO Paginated list
-        for item in response.get("features"):
-            items.append(Item(self._client, headers, item))
-
-        return items
+        return PaginatedList(
+            Item,
+            self._client,
+            self.items_url,
+            "features",
+            params={"limit": consts.PAGINATION_LIMIT},
+        )
 
 
 class ResourceCatalog(BaseObject):
@@ -49,7 +56,7 @@ class ResourceCatalog(BaseObject):
         return get_href_by_rel(self._links, "data")
 
     def _set_properties(self) -> None:
-        self._links = self._raw_data.get("links", None)
+        self._links = self._raw_data.get("links")
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
