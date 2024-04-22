@@ -48,15 +48,47 @@ class Collection(BaseObject):
 class ResourceCatalog(BaseObject):
 
     @property
+    def type(self) -> str:
+        return self._type
+
+    @property
+    def id(self) -> str:
+        return self._id
+
+    @property
+    def title(self) -> str:
+        return self._title
+
+    @property
+    def description(self) -> str:
+        return self._description
+
+    @property
+    def stac_version(self):
+        return self._stac_version
+
+    @property
+    def conforms_to(self):
+        return self._conforms_to
+
+    @property
     def links(self) -> list[dict]:
         return self._links
+
+    def _set_properties(self) -> None:
+        self._type = self._make_str_prop(self._raw_data.get("type"))
+        self._id = self._make_str_prop(self._raw_data.get("id"))
+        self._title = self._make_str_prop(self._raw_data.get("title"))
+        self._description = self._make_str_prop(self._raw_data.get("description"))
+        self._stac_version = self._make_str_prop(self._raw_data.get("stac_version"))
+        self._conforms_to = self._make_list_of_strs_prop(
+            self._raw_data.get("conformsTo", [])
+        )
+        self._links = self._make_list_of_dicts_prop(self._raw_data.get("links", []))
 
     @cached_property
     def collections_url(self) -> str:
         return get_href_by_rel(self._links, "data")
-
-    def _set_properties(self) -> None:
-        self._links = self._raw_data.get("links")
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
