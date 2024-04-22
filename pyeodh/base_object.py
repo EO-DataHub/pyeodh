@@ -63,6 +63,10 @@ class BaseObject:
         return BaseObject._make_prop(value, int)
 
     @staticmethod
+    def _make_float_prop(value: float | None) -> float | None:
+        return BaseObject._make_prop(value, float)
+
+    @staticmethod
     def _make_dict_prop(value: dict[str, Any]) -> dict[str, Any]:
         return BaseObject._make_prop(value, dict)
 
@@ -73,3 +77,7 @@ class BaseObject:
     @staticmethod
     def _make_list_of_strs_prop(value: list[str]) -> list[str]:
         return BaseObject._make_list_of_type_prop(value, str)
+
+    @staticmethod
+    def _make_list_of_floats_prop(value: list[float]) -> list[float]:
+        return BaseObject._make_list_of_type_prop(value, float)
