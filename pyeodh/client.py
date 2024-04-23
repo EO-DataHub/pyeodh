@@ -1,11 +1,10 @@
-from typing import Literal
 import urllib.parse
 
 import requests
 
 from pyeodh import consts
 from pyeodh.resource_catalog import ResourceCatalog
-from pyeodh.types import Headers, Params
+from pyeodh.types import Headers, Params, RequestMethod
 from pyeodh.utils import is_absolute_url
 
 
@@ -25,7 +24,7 @@ class Client:
 
     def _request_json(
         self,
-        method: Literal["GET", "POST", "DELETE", "PUT"],
+        method: RequestMethod,
         url: str,
         headers: Headers | None = None,
         params: Params | None = None,
@@ -41,7 +40,8 @@ class Client:
         response = self._session.request(
             method, url, headers=headers, params=params, data=data
         )
-        # TODO handle errors...
+        response.raise_for_status()
+
         return response.headers, response.json()
 
     def get_resource_catalog(self) -> ResourceCatalog:

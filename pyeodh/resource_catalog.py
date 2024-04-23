@@ -113,6 +113,7 @@ class Collection(BaseObject):
         return PaginatedList(
             Item,
             self._client,
+            "GET",
             self.items_url,
             "features",
             params={"limit": consts.PAGINATION_LIMIT},
@@ -212,3 +213,10 @@ class ResourceCatalog(BaseObject):
         url = join_url(get_href_by_rel(self._links, "self"), "conformance")
         headers, response = self._client._request_json("GET", url)
         return response.get("conformsTo", [])
+
+    def search(self, limit: int = consts.PAGINATION_LIMIT) -> PaginatedList[Item]:
+        data = {"limit": limit}  # TODO build request body
+        url = join_url(get_href_by_rel(self._links, "self"), "search")
+        return PaginatedList(
+            Item, self._client, "POST", url, "features", first_data=data
+        )
