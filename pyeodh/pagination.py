@@ -60,8 +60,8 @@ class PaginatedList(Generic[T]):
             data=self._data,
         )
         next_link = get_link_by_rel(data.get("links"), "next")
-        self._next_url = next_link.get("href")
-        self._data = next_link.get("body")
+        self._next_url = next_link.href
+        self._data = next_link.body
         self._total_count = data.get("context", {}).get("matched")
         if self._list_key in data:
             data = data[self._list_key]

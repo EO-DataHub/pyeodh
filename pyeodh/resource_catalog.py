@@ -3,7 +3,8 @@ from functools import cached_property
 from pyeodh import consts
 from pyeodh.base_object import BaseObject
 from pyeodh.pagination import PaginatedList
-from pyeodh.utils import get_href_by_rel, join_url
+from pyeodh.types import Link
+from pyeodh.utils import get_link_by_rel, join_url
 
 
 class Item(BaseObject):
@@ -52,7 +53,7 @@ class Item(BaseObject):
         self._geometry = self._make_dict_prop(self._raw_data.get("geometry", {}))
         self._bbox = self._make_list_of_floats_prop(self._raw_data.get("bbox", []))
         self._properties = self._make_dict_prop(self._raw_data.get("properties", {}))
-        self._links = self._make_list_of_dicts_prop(self._raw_data.get("links", []))
+        self._links = self._make_list_of_classes_prop(Link, self._raw_data.get("links"))
         self._assets = self._make_dict_prop(self._raw_data.get("assets", {}))
 
 
@@ -95,7 +96,7 @@ class Collection(BaseObject):
 
     @cached_property
     def items_url(self) -> str:
-        self_url = get_href_by_rel(self._links, "self")
+        self_url = get_link_by_rel(self._links, "self").href
         return join_url(self_url, "items")
 
     def _set_properties(self) -> None:
@@ -107,7 +108,7 @@ class Collection(BaseObject):
         self._license = self._make_str_prop(self._raw_data.get("license"))
         self._summaries = self._make_dict_prop(self._raw_data.get("summaries", {}))
         self._extent = self._make_dict_prop(self._raw_data.get("extent", {}))
-        self._links = self._make_list_of_dicts_prop(self._raw_data.get("links", []))
+        self._links = self._make_list_of_classes_prop(Link, self._raw_data.get("links"))
 
     def get_items(self) -> list[Item]:
         return PaginatedList(
@@ -174,11 +175,11 @@ class ResourceCatalog(BaseObject):
         self._conforms_to = self._make_list_of_strs_prop(
             self._raw_data.get("conformsTo", [])
         )
-        self._links = self._make_list_of_dicts_prop(self._raw_data.get("links", []))
+        self._links = self._make_list_of_classes_prop(Link, self._raw_data.get("links"))
 
     @cached_property
     def collections_url(self) -> str:
-        return get_href_by_rel(self._links, "data")
+        return get_link_by_rel(self._links, "data").href
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
@@ -210,13 +211,13 @@ class ResourceCatalog(BaseObject):
         return Collection(self._client, headers, response)
 
     def get_conformance(self) -> list[str]:
-        url = join_url(get_href_by_rel(self._links, "self"), "conformance")
-        headers, response = self._client._request_json("GET", url)
+        url = join_url(get_link_by_rel(self._links, "self").href, "conformance")
+        _, response = self._client._request_json("GET", url)
         return response.get("conformsTo", [])
 
     def search(self, limit: int = consts.PAGINATION_LIMIT) -> PaginatedList[Item]:
         data = {"limit": limit}  # TODO build request body
-        url = join_url(get_href_by_rel(self._links, "self"), "search")
+        url = join_url(get_link_by_rel(self._links, "self").href, "search")
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data
         )

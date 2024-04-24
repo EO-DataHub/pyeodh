@@ -1,16 +1,17 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Type
 import typing
-
-from pyeodh.types import Headers
+from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
 
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
     from pyeodh.client import Client
+    from pyeodh.types import Headers
 
 
-T = typing.TypeVar("T")
+T = TypeVar("T")
+
+T_base = TypeVar("T_base", bound="BaseObject")
 
 
 class BaseObject:
@@ -35,7 +36,11 @@ class BaseObject:
 
     @staticmethod
     def _make_prop(value: T, t: Type[T]) -> T:
-        if value is None or isinstance(value, t):
+        if value is None:
+            return value
+        if typing.get_origin(t) is Literal and value in typing.get_args(t):
+            return value
+        if isinstance(value, t):
             return value
         else:
             raise TypeError(f"Expected {t}, received {value.__class__}.")
@@ -81,3 +86,26 @@ class BaseObject:
     @staticmethod
     def _make_list_of_floats_prop(value: list[float]) -> list[float]:
         return BaseObject._make_list_of_type_prop(value, float)
+
+    def _make_class_prop(self, cls: Type[T_base], data: dict) -> T_base:
+        if data is None:
+            return None
+        if isinstance(data, dict):
+            return cls(self._client, self._headers, data)
+        else:
+            raise TypeError(f"Expected {type({})}, received {data.__class__}.")
+
+    def _make_list_of_classes_prop(
+        self, cls: Type[T_base], value: list[dict]
+    ) -> list[T_base]:
+        if not isinstance(value, list):
+            raise TypeError(f"Expected list of dicts, received {value.__class__}.")
+        if not all(isinstance(x, dict) for x in value):
+            raise TypeError(
+                (
+                    f"Expected list of dicts, received list of "
+                    f"{next(iter(value), None).__class__}."
+                )
+            )
+        else:
+            return [cls(self._client, self._headers, item) for item in value]
