@@ -221,3 +221,15 @@ class ResourceCatalog(BaseObject):
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data
         )
+
+    def create_collection(self, id: str, title: str, description: str) -> Collection:
+        assert isinstance(id, str), id
+        assert isinstance(title, str), title
+        assert isinstance(description, str), description
+
+        data = {"id": id, "title": title, "description": description}
+
+        headers, response = self._client._request_json(
+            "POST", self.collections_url, data=data
+        )
+        return Collection(self._client, headers, response)
