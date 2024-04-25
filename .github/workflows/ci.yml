@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - 'main'
+      - "main"
   pull_request: ~
 
   workflow_dispatch: ~
@@ -15,14 +15,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Install Poetry
+        run: pipx install poetry
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: "3.x"
           cache: poetry
-
-      - name: Install Poetry
-        run: pipx install poetry
 
       - name: Install project
         run: make install
@@ -31,7 +31,7 @@ jobs:
         run: make check
 
       - name: Test docs generation
-        run: make docs
+        run: make html
 
   test:
     name: ${{ matrix.os }} / ${{ matrix.python_version }}
@@ -41,20 +41,20 @@ jobs:
       fail-fast: false
       matrix:
         os: [ubuntu] #[ubuntu, windows, macos]
-        python_version: ['3.12']
+        python_version: ["3.12"]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install Poetry
+        run: pipx install poetry
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python_version }}
           cache: poetry
-
-      - name: Install Poetry
-        run: pipx install poetry
 
       - name: Install project
         run: make install
