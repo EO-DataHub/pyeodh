@@ -13,4 +13,4 @@ def join_url(*args: str) -> str:
 
 
 def get_link_by_rel(links: list[Link], rel: str) -> Link:
-    return next(filter(lambda ln: ln.rel == rel, links))
+    return next(filter(lambda ln: ln.rel == rel, links), None)

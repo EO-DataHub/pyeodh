@@ -4,7 +4,6 @@ from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
 
 from pyeodh.base_object import BaseObject
 from pyeodh.types import Headers, Params, RequestMethod
-from pyeodh.utils import get_link_by_rel
 
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
@@ -59,9 +58,18 @@ class PaginatedList(Generic[T]):
             params=self._params,
             data=self._data,
         )
-        next_link = get_link_by_rel(data.get("links"), "next")
-        self._next_url = next_link.href
-        self._data = next_link.body
+        next_link = next(
+            filter(lambda ln: ln.get("rel") == "next", data.get("links", {})), {}
+        )
+        self._next_url: str = next_link.get("href")
+
+        # NOTE: temp fix for broken next link given by the API
+        if self._has_next():
+            self._next_url = self._next_url.replace(
+                "org.uk/collections", "org.uk/stac-fastapi/collections"
+            )
+
+        self._data = next_link.get("body")
         self._total_count = data.get("context", {}).get("matched")
         if self._list_key in data:
             data = data[self._list_key]
