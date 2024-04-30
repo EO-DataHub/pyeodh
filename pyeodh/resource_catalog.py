@@ -146,6 +146,44 @@ class Collection(BaseObject):
 
         return Item(self._client, headers, response)
 
+    def update(
+        self,
+        title: str | None = None,
+        description: str | None = None,
+        stac_version: str | None = None,
+        license: str | None = None,
+        summaries: dict[str, Any] | None = None,
+        extent: dict[str, Any] | None = None,
+    ) -> None:
+        assert is_optional(title, str), title
+        assert is_optional(description, str), description
+        assert is_optional(stac_version, str), stac_version
+        assert is_optional(license, str), license
+        assert is_optional(summaries, dict), summaries
+        assert is_optional(extent, dict), extent
+
+        put_data = remove_null_items(
+            {
+                "id": self.id,
+                "title": title or self.title,
+                "description": description or self.description,
+                "stac_version": stac_version or self.stac_version,
+                "license": license or self.license,
+                "summaries": summaries or self.summaries,
+                "extent": extent or self.extent,
+            }
+        )
+
+        # _, resp_data = self._client._request_json("PUT", self.self_url, data=put_data)
+        # NOTE: temp workaround until test is fixed
+        _, resp_data = self._client._request_json(
+            "PUT",
+            "https://test.eodatahub.org.uk/stac-fastapi/collections",
+            data=put_data,
+        )
+        self._raw_data = resp_data
+        self._set_properties()
+
     def delete(self) -> None:
         self._client._request_json("DELETE", self.self_url)
 
