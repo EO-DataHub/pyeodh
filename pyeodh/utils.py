@@ -13,7 +13,7 @@ def join_url(*args: str) -> str:
     return posixpath.join(*args)
 
 
-def get_link_by_rel(links: list[Link], rel: str) -> Link:
+def get_link_by_rel(links: list[Link], rel: str) -> Link | None:
     return next(filter(lambda ln: ln.rel == rel, links), None)
 
 

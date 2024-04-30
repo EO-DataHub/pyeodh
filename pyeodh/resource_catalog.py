@@ -59,10 +59,51 @@ class Item(BaseObject):
 
     @cached_property
     def self_url(self) -> str:
-        return get_link_by_rel(self.links, "self").href
+        self_link = get_link_by_rel(self.links, "self")
+        if not self_link:
+            # NOTE: workaround for api not returning links for item creation
+            return join_url(
+                consts.API_BASE_URL,
+                "stac-fastapi/collections",
+                self.collection,
+                "items",
+                self.id,
+            )
+        return self_link.href
 
     def delete(self) -> None:
         self._client._request_json("DELETE", self.self_url)
+
+    def update(
+        self,
+        item_type: Literal["Feature"] | None = None,
+        properties: dict[str, Any] | None = None,
+        geometry: dict[str, Any] | None = None,
+        bbox: list[float] | None = None,
+        assets: dict[str, Any] | None = None,
+    ) -> None:
+        assert item_type in ["Feature", None], item_type
+        assert is_optional(properties, dict), properties
+        assert is_optional(geometry, dict), geometry
+        assert is_optional(bbox, list), bbox
+        assert is_optional(assets, dict), assets
+
+        put_data = remove_null_items(
+            {
+                "id": self.id,
+                "type": item_type or self.type,
+                "collection": self.collection,
+                # "geometry": geometry or self.geometry, # NOTE: getting 500 when sending this
+                "bbox": bbox or self.bbox,
+                "properties": properties or self.properties,
+                "assets": assets or self.assets,
+            }
+        )
+
+        _, resp_data = self._client._request_json("PUT", self.self_url, data=put_data)
+
+        self._raw_data = resp_data
+        self._set_properties()
 
 
 class Collection(BaseObject):
