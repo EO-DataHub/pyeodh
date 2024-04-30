@@ -231,7 +231,7 @@ class Collection(BaseObject):
     def create_item(
         self,
         id: str,
-        item_type: Literal["Feature"],
+        item_type: Literal["Feature"] = "Feature",
         properties: dict[str, Any] = {},
         geometry: dict[str, Any] | None = None,
         bbox: list[float] | None = None,
