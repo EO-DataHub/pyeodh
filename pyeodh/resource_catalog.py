@@ -93,7 +93,7 @@ class Item(BaseObject):
                 "id": self.id,
                 "type": item_type or self.type,
                 "collection": self.collection,
-                # "geometry": geometry or self.geometry, # NOTE: getting 500 when sending this
+                # "geometry": geometry or self.geometry, # NOTE: getting 500 with this
                 "bbox": bbox or self.bbox,
                 "properties": properties or self.properties,
                 "assets": assets or self.assets,
