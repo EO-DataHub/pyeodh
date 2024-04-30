@@ -1,10 +1,11 @@
 from functools import cached_property
+from typing import Any
 
 from pyeodh import consts
-from pyeodh.base_object import BaseObject
+from pyeodh.base_object import BaseObject, is_optional
 from pyeodh.pagination import PaginatedList
 from pyeodh.types import Link
-from pyeodh.utils import get_link_by_rel, join_url
+from pyeodh.utils import get_link_by_rel, join_url, remove_null_items
 
 
 class Item(BaseObject):
@@ -239,12 +240,35 @@ class ResourceCatalog(BaseObject):
             Item, self._client, "POST", url, "features", first_data=data
         )
 
-    def create_collection(self, id: str, title: str, description: str) -> Collection:
+    def create_collection(
+        self,
+        id: str,
+        title: str | None = None,
+        description: str | None = None,
+        stac_version: str | None = None,
+        license: str | None = None,
+        summaries: dict[str, Any] | None = None,
+        extent: dict[str, Any] | None = None,
+    ) -> Collection:
         assert isinstance(id, str), id
-        assert isinstance(title, str), title
-        assert isinstance(description, str), description
+        assert is_optional(title, str), title
+        assert is_optional(description, str), description
+        assert is_optional(stac_version, str), stac_version
+        assert is_optional(license, str), license
+        assert is_optional(summaries, dict), summaries
+        assert is_optional(extent, dict), extent
 
-        data = {"id": id, "title": title, "description": description}
+        data = remove_null_items(
+            {
+                "id": id,
+                "title": title,
+                "description": description,
+                "stac_version": stac_version,
+                "license": license,
+                "summaries": summaries,
+                "extent": extent,
+            }
+        )
 
         headers, response = self._client._request_json(
             "POST", self.collections_url, data=data

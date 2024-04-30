@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import typing
+from types import NoneType
 from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
 
 # Avoid circular imports only for type checking
@@ -12,6 +13,10 @@ if TYPE_CHECKING:
 T = TypeVar("T")
 
 T_base = TypeVar("T_base", bound="BaseObject")
+
+
+def is_optional(value: Any, type: Type) -> bool:
+    return isinstance(value, (type, NoneType))
 
 
 class BaseObject:
