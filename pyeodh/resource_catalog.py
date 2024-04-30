@@ -1,5 +1,5 @@
 from functools import cached_property
-from typing import Any
+from typing import Any, Literal
 
 from pyeodh import consts
 from pyeodh.base_object import BaseObject, is_optional
@@ -186,6 +186,39 @@ class Collection(BaseObject):
 
     def delete(self) -> None:
         self._client._request_json("DELETE", self.self_url)
+
+    def create_item(
+        self,
+        id: str,
+        item_type: Literal["Feature"],
+        properties: dict[str, Any] = {},
+        geometry: dict[str, Any] | None = None,
+        bbox: list[float] | None = None,
+        assets: dict[str, Any] | None = None,
+    ) -> Item:
+        assert isinstance(id, str), id
+        assert item_type in ["Feature"], item_type
+        assert isinstance(properties, dict), properties
+        assert is_optional(geometry, dict), geometry
+        assert is_optional(bbox, list), bbox
+        assert is_optional(assets, dict), assets
+
+        data = remove_null_items(
+            {
+                "id": id,
+                "type": item_type,
+                "collection": self.id,
+                "geometry": geometry,
+                "bbox": bbox,
+                "properties": properties,
+                "assets": assets,
+            }
+        )
+
+        headers, response = self._client._request_json(
+            "POST", self.items_url, data=data
+        )
+        return Item(self._client, headers, response)
 
 
 class ResourceCatalog(BaseObject):
