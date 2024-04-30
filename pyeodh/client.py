@@ -1,3 +1,4 @@
+import json
 import urllib.parse
 
 import requests
@@ -36,9 +37,13 @@ class Client:
 
         headers = {} if headers is None else headers
         headers["Content-Type"] = "application/json"
-
+        encoded_data = json.dumps(data) if data else None
         response = self._session.request(
-            method, url, headers=headers, params=params, data=data
+            method,
+            url,
+            headers=headers,
+            params=params,
+            data=encoded_data,
         )
         response.raise_for_status()
 
