@@ -1,4 +1,4 @@
-from typing import Literal
+from typing import Literal, TypedDict
 
 from pyeodh.base_object import BaseObject
 
@@ -39,3 +39,13 @@ class Link(BaseObject):
         self._title = self._make_str_prop(self._raw_data.get("title"))
         self._body = self._make_dict_prop(self._raw_data.get("body"))
         self._method = self._make_prop(self._raw_data.get("method"), RequestMethod)
+
+
+class SearchSortField(TypedDict):
+    field: str
+    direction: Literal["asc", "desc"]
+
+
+class SearchFields(TypedDict):
+    include: list[str]
+    exclude: list[str]

@@ -4,7 +4,7 @@ from typing import Any, Literal
 from pyeodh import consts
 from pyeodh.base_object import BaseObject, is_optional
 from pyeodh.pagination import PaginatedList
-from pyeodh.types import Link
+from pyeodh.types import Link, SearchFields, SearchSortField
 from pyeodh.utils import get_link_by_rel, join_url, remove_null_items
 
 
@@ -345,8 +345,50 @@ class ResourceCatalog(BaseObject):
         _, response = self._client._request_json("GET", url)
         return response.get("conformsTo", [])
 
-    def search(self, limit: int = consts.PAGINATION_LIMIT) -> PaginatedList[Item]:
-        data = {"limit": limit}  # TODO build request body
+    def search(
+        self,
+        limit: int = consts.PAGINATION_LIMIT,
+        collections: list[str] | None = None,
+        ids: list[str] | None = None,
+        bbox: list[Any] | None = None,
+        intersects: dict | None = None,
+        datetime: str | None = None,
+        fields: SearchFields | None = None,
+        query: dict | None = None,
+        sort_by: list[SearchSortField] | None = None,
+        filter: dict | None = None,
+        filter_crs: str | None = None,
+        filter_lang: Literal["cql-json", "cql2-json", "cql2-text"] | None = None,
+    ) -> PaginatedList[Item]:
+        assert isinstance(limit, int), limit
+        assert is_optional(collections, list), collections
+        assert is_optional(ids, list), ids
+        assert is_optional(bbox, list), bbox
+        assert is_optional(intersects, dict), intersects
+        assert is_optional(datetime, str), datetime
+        assert is_optional(fields, dict), fields
+        assert is_optional(query, dict), query
+        assert is_optional(sort_by, list), sort_by
+        assert is_optional(filter, dict), filter
+        assert is_optional(filter_crs, str), filter_crs
+        assert filter_lang in ["cql-json", "cql2-json", "cql2-text", None]
+
+        data = remove_null_items(
+            {
+                "limit": limit,
+                "collections": collections,
+                "ids": ids,
+                "bbox": bbox,
+                "intersects": intersects,
+                "datetime": datetime,
+                "fields": fields,
+                "query": query,
+                "sortby": sort_by,
+                "filter": filter,
+                "filter_crs": filter_crs,
+                "filter_lang": filter_lang,
+            }
+        )
         url = join_url(self.self_url, "search")
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data
@@ -386,3 +428,9 @@ class ResourceCatalog(BaseObject):
             "POST", self.collections_url, data=data
         )
         return Collection(self._client, headers, response)
+
+    def ping(self) -> str | None:
+        headers, response = self._client._request_json(
+            "GET", join_url(self.self_url, "_mgmt/ping")
+        )
+        return response.get("message")

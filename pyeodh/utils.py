@@ -10,6 +10,13 @@ def is_absolute_url(url: str) -> bool:
 
 
 def join_url(*args: str) -> str:
+    for a in args[1:]:
+        if a.startswith("/"):
+            raise ValueError(
+                f"Argument {a} is an absolute path! "
+                "Only the first argument can start with '/'. "
+                "See posixpath.join() documentation."
+            )
     return posixpath.join(*args)
 
 
