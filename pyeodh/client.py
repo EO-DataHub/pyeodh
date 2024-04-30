@@ -45,9 +45,15 @@ class Client:
             params=params,
             data=encoded_data,
         )
+
         response.raise_for_status()
 
-        return response.headers, response.json()
+        if response.status_code == 204 or not len(response.content):
+            resp_data = None
+        else:
+            resp_data = response.json()
+
+        return response.headers, resp_data
 
     def get_resource_catalog(self) -> ResourceCatalog:
         headers, data = self._request_json("GET", "/stac-fastapi")
