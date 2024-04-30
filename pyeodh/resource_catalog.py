@@ -60,6 +60,9 @@ class Item(BaseObject):
     def self_url(self) -> str:
         return get_link_by_rel(self.links, "self").href
 
+    def delete(self) -> None:
+        self._client._request_json("DELETE", self.self_url)
+
 
 class Collection(BaseObject):
     @property
@@ -141,6 +144,9 @@ class Collection(BaseObject):
         headers, response = self._client._request_json("GET", url)
 
         return Item(self._client, headers, response)
+
+    def delete(self) -> None:
+        self._client._request_json("DELETE", self.self_url)
 
 
 class ResourceCatalog(BaseObject):
