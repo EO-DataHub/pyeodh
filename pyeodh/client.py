@@ -1,4 +1,5 @@
 import json
+import logging
 import urllib.parse
 from typing import Any
 
@@ -8,6 +9,8 @@ from pyeodh import consts
 from pyeodh.resource_catalog import ResourceCatalog
 from pyeodh.types import Headers, Params, RequestMethod
 from pyeodh.utils import is_absolute_url
+
+logger = logging.getLogger(__name__)
 
 
 class Client:
@@ -32,13 +35,21 @@ class Client:
         params: Params | None = None,
         data: dict | None = None,
     ) -> tuple[int, Headers, str]:
-
+        logger.debug(
+            f"_request_json_raw received {locals()}",
+        )
         if not is_absolute_url(url):
+            logger.debug(f"Received not absolute url: {url}")
             url = urllib.parse.urljoin(self.url_base, url)
+            logger.debug(f"Created url from base: {url}")
 
         headers = Headers() if headers is None else headers
         headers["Content-Type"] = "application/json"
         encoded_data = json.dumps(data) if data else None
+        logger.debug(
+            f"Making request: {method} {url}\nheaders: {headers}\nparams: {params}"
+            f"\nbody: {encoded_data}"
+        )
         response = self._session.request(
             method,
             url,
@@ -46,7 +57,10 @@ class Client:
             params=params,
             data=encoded_data,
         )
-
+        logger.debug(
+            f"Received response {response.status_code}\nheaders: {response.headers}"
+            f"\ncontent: {response.text}"
+        )
         response.raise_for_status()
 
         return response.status_code, response.headers, response.text
