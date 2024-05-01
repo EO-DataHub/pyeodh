@@ -1,9 +1,11 @@
 from typing import Literal, TypedDict
 
+from requests.structures import CaseInsensitiveDict
+
 from pyeodh.base_object import BaseObject
 
-Headers = dict[str, str]
-Params = dict[str, str]
+Headers = CaseInsensitiveDict
+Params = dict[str, str | int]
 RequestMethod = Literal["GET", "POST", "DELETE", "PUT"]
 
 

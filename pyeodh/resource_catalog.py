@@ -47,6 +47,7 @@ class Item(BaseObject):
         return self._assets
 
     def _set_properties(self) -> None:
+        assert isinstance(self._raw_data, dict)
         self._type = self._make_str_prop(self._raw_data.get("type"))
         self._stac_version = self._make_str_prop(self._raw_data.get("stac_version"))
         self._id = self._make_str_prop(self._raw_data.get("id"))
@@ -54,7 +55,9 @@ class Item(BaseObject):
         self._geometry = self._make_dict_prop(self._raw_data.get("geometry", {}))
         self._bbox = self._make_list_of_floats_prop(self._raw_data.get("bbox", []))
         self._properties = self._make_dict_prop(self._raw_data.get("properties", {}))
-        self._links = self._make_list_of_classes_prop(Link, self._raw_data.get("links"))
+        self._links = self._make_list_of_classes_prop(
+            Link, self._raw_data.get("links", [])
+        )
         self._assets = self._make_dict_prop(self._raw_data.get("assets", {}))
 
     @cached_property
@@ -65,14 +68,16 @@ class Item(BaseObject):
             return join_url(
                 consts.API_BASE_URL,
                 "stac-fastapi/collections",
-                self.collection,
+                self.collection or "",
                 "items",
-                self.id,
+                self.id or "",
             )
+        if not self_link.href:
+            raise RuntimeError("Object does not contain URL pointing to self.")
         return self_link.href
 
     def delete(self) -> None:
-        self._client._request_json("DELETE", self.self_url)
+        self._client._request_json_raw("DELETE", self.self_url)
 
     def update(
         self,
@@ -102,8 +107,9 @@ class Item(BaseObject):
 
         _, resp_data = self._client._request_json("PUT", self.self_url, data=put_data)
 
-        self._raw_data = resp_data
-        self._set_properties()
+        if resp_data:
+            self._raw_data = resp_data
+            self._set_properties()
 
 
 class Collection(BaseObject):
@@ -144,6 +150,7 @@ class Collection(BaseObject):
         return self._links
 
     def _set_properties(self) -> None:
+        assert isinstance(self._raw_data, dict)
         self._type = self._make_str_prop(self._raw_data.get("type"))
         self._id = self._make_str_prop(self._raw_data.get("id"))
         self._title = self._make_str_prop(self._raw_data.get("title"))
@@ -152,7 +159,9 @@ class Collection(BaseObject):
         self._license = self._make_str_prop(self._raw_data.get("license"))
         self._summaries = self._make_dict_prop(self._raw_data.get("summaries", {}))
         self._extent = self._make_dict_prop(self._raw_data.get("extent", {}))
-        self._links = self._make_list_of_classes_prop(Link, self._raw_data.get("links"))
+        self._links = self._make_list_of_classes_prop(
+            Link, self._raw_data.get("links", [])
+        )
 
     @cached_property
     def items_url(self) -> str:
@@ -160,7 +169,10 @@ class Collection(BaseObject):
 
     @cached_property
     def self_url(self) -> str:
-        return get_link_by_rel(self.links, "self").href
+        self_link = get_link_by_rel(self.links, "self")
+        if not self_link or not self_link.href:
+            raise RuntimeError("Object does not contain URL pointing to self.")
+        return self_link.href
 
     def get_items(self) -> PaginatedList[Item]:
         return PaginatedList(
@@ -222,11 +234,12 @@ class Collection(BaseObject):
             "https://test.eodatahub.org.uk/stac-fastapi/collections",
             data=put_data,
         )
-        self._raw_data = resp_data
-        self._set_properties()
+        if resp_data:
+            self._raw_data = resp_data
+            self._set_properties()
 
     def delete(self) -> None:
-        self._client._request_json("DELETE", self.self_url)
+        self._client._request_json_raw("DELETE", self.self_url)
 
     def create_item(
         self,
@@ -293,6 +306,7 @@ class ResourceCatalog(BaseObject):
         return self._links
 
     def _set_properties(self) -> None:
+        assert isinstance(self._raw_data, dict)
         self._type = self._make_str_prop(self._raw_data.get("type"))
         self._id = self._make_str_prop(self._raw_data.get("id"))
         self._title = self._make_str_prop(self._raw_data.get("title"))
@@ -301,15 +315,23 @@ class ResourceCatalog(BaseObject):
         self._conforms_to = self._make_list_of_strs_prop(
             self._raw_data.get("conformsTo", [])
         )
-        self._links = self._make_list_of_classes_prop(Link, self._raw_data.get("links"))
+        self._links = self._make_list_of_classes_prop(
+            Link, self._raw_data.get("links", [])
+        )
 
     @cached_property
     def self_url(self) -> str:
-        return get_link_by_rel(self.links, "self").href
+        self_link = get_link_by_rel(self.links, "self")
+        if not self_link or not self_link.href:
+            raise RuntimeError("Object does not contain URL pointing to self.")
+        return self_link.href
 
     @cached_property
     def collections_url(self) -> str:
-        return get_link_by_rel(self.links, "data").href
+        data_link = get_link_by_rel(self.links, "data")
+        if not data_link or not data_link.href:
+            raise RuntimeError("Object does not contain URL pointing to collections.")
+        return data_link.href
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
@@ -320,9 +342,11 @@ class ResourceCatalog(BaseObject):
         """
 
         headers, response = self._client._request_json("GET", self.collections_url)
+        if not response:
+            return []
         return [
             Collection(self._client, headers, item)
-            for item in response.get("collections")
+            for item in response.get("collections", [])
         ]
 
     def get_collection(self, collection_id: str) -> Collection:

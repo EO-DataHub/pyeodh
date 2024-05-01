@@ -1,6 +1,6 @@
 import posixpath
-from typing import Any
 import urllib.parse
+from typing import Any
 
 from pyeodh.types import Link
 

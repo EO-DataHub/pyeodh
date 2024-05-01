@@ -1,5 +1,6 @@
 import json
 import urllib.parse
+from typing import Any
 
 import requests
 
@@ -23,19 +24,19 @@ class Client:
         # TODO Add retry count, setting auth headers etc. here
         self._session = requests.Session()
 
-    def _request_json(
+    def _request_json_raw(
         self,
         method: RequestMethod,
         url: str,
         headers: Headers | None = None,
         params: Params | None = None,
         data: dict | None = None,
-    ) -> tuple[Headers, dict]:
+    ) -> tuple[int, Headers, str]:
 
         if not is_absolute_url(url):
             url = urllib.parse.urljoin(self.url_base, url)
 
-        headers = {} if headers is None else headers
+        headers = Headers() if headers is None else headers
         headers["Content-Type"] = "application/json"
         encoded_data = json.dumps(data) if data else None
         response = self._session.request(
@@ -48,12 +49,24 @@ class Client:
 
         response.raise_for_status()
 
-        if response.status_code == 204 or not len(response.content):
-            resp_data = None
-        else:
-            resp_data = response.json()
+        return response.status_code, response.headers, response.text
 
-        return response.headers, resp_data
+    def _request_json(
+        self,
+        method: RequestMethod,
+        url: str,
+        headers: Headers | None = None,
+        params: Params | None = None,
+        data: dict | None = None,
+    ) -> tuple[Headers, Any]:
+        status, resp_headers, resp_data = self._request_json_raw(
+            method, url, headers, params, data
+        )
+
+        if not len(resp_data):
+            return resp_headers, None
+
+        return resp_headers, json.loads(resp_data)
 
     def get_resource_catalog(self) -> ResourceCatalog:
         headers, data = self._request_json("GET", "/stac-fastapi")

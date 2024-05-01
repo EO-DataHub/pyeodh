@@ -92,7 +92,7 @@ class BaseObject:
     def _make_list_of_floats_prop(value: list[float]) -> list[float]:
         return BaseObject._make_list_of_type_prop(value, float)
 
-    def _make_class_prop(self, cls: Type[T_base], data: dict) -> T_base:
+    def _make_class_prop(self, cls: Type[T_base], data: dict) -> T_base | None:
         if data is None:
             return None
         if isinstance(data, dict):

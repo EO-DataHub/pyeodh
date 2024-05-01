@@ -28,7 +28,7 @@ class PaginatedList(Generic[T]):
         self._elements: list[T] = []
         self._cls = cls
         self._client = client
-        self._method = method
+        self._method: RequestMethod = method
         self._next_url: str | None = first_url
         self._headers = headers
         self._params = params
@@ -37,7 +37,7 @@ class PaginatedList(Generic[T]):
         self._data = first_data
 
     @property
-    def total_count(self) -> int:
+    def total_count(self):
         return self._total_count
 
     def __iter__(self) -> Iterator[T]:
@@ -51,7 +51,9 @@ class PaginatedList(Generic[T]):
         return self._next_url is not None
 
     def _fetch_next(self) -> list[T]:
-        headers, data = self._client._request_json(
+        if not self._next_url:
+            raise RuntimeError("Next url not specified!")
+        headers, resp_data = self._client._request_json(
             self._method,
             self._next_url,
             headers=self._headers,
@@ -59,9 +61,9 @@ class PaginatedList(Generic[T]):
             data=self._data,
         )
         next_link = next(
-            filter(lambda ln: ln.get("rel") == "next", data.get("links", {})), {}
+            filter(lambda ln: ln.get("rel") == "next", resp_data.get("links", {})), {}
         )
-        self._next_url: str = next_link.get("href")
+        self._next_url = next_link.get("href")
 
         # NOTE: temp fix for broken next links given by the API
         if self._has_next():
@@ -73,9 +75,11 @@ class PaginatedList(Generic[T]):
             )
 
         self._data = next_link.get("body")
-        self._total_count = data.get("context", {}).get("matched")
-        if self._list_key in data:
-            data = data[self._list_key]
+        self._total_count = resp_data.get("context", {}).get("matched")
+        if not resp_data:
+            return []
+        if self._list_key in resp_data:
+            resp_data = resp_data[self._list_key]
 
         return [
             self._cls(
@@ -83,6 +87,6 @@ class PaginatedList(Generic[T]):
                 headers,
                 element,
             )
-            for element in data
+            for element in resp_data
             if element is not None
         ]
