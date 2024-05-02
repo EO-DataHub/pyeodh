@@ -1,9 +1,9 @@
 import logging
 
-import pyeodh.logging
+import pyeodh.logger
 from pyeodh.client import Client
 
-pyeodh.logging.setup(logging.DEBUG)
+pyeodh.logger.setup(logging.DEBUG)
 
 __version__ = "0.0.1"
 __all__ = ["Client"]
