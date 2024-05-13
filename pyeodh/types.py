@@ -2,14 +2,14 @@ from typing import Literal, TypedDict
 
 from requests.structures import CaseInsensitiveDict
 
-from pyeodh.base_object import BaseObject
+from pyeodh.api_mixin import ApiMixin
 
 Headers = CaseInsensitiveDict
 Params = dict[str, str | int]
 RequestMethod = Literal["GET", "POST", "DELETE", "PUT"]
 
 
-class Link(BaseObject):
+class Link(ApiMixin):
     @property
     def href(self):
         return self._href

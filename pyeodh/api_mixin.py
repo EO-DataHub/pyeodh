@@ -12,32 +12,20 @@ if TYPE_CHECKING:
 
 T = TypeVar("T")
 
-T_base = TypeVar("T_base", bound="BaseObject")
+T_base = TypeVar("T_base", bound="ApiMixin")
 
 
 def is_optional(value: Any, type: Type) -> bool:
     return isinstance(value, (type, NoneType))
 
 
-class BaseObject:
+class ApiMixin:
     """Base class for other classes representing objects returned by EODH APIs."""
 
-    def __init__(
-        self,
-        client: Client,
-        headers: Headers,
-        data: Any,
-    ):
+    def __init__(self, client: Client, headers: Headers, data: Any):
         self._client = client
         self._headers = headers
         self._raw_data = data
-
-        self._set_properties()
-
-    def _set_properties(self) -> None:
-        raise NotImplementedError(
-            f"Method _set_properties not implemented in {self.__class__.__name__}."
-        )
 
     @staticmethod
     def _make_prop(value: T, t: Type[T]) -> T:
@@ -66,31 +54,31 @@ class BaseObject:
 
     @staticmethod
     def _make_str_prop(value: str | None) -> str | None:
-        return BaseObject._make_prop(value, str)
+        return ApiMixin._make_prop(value, str)
 
     @staticmethod
     def _make_int_prop(value: int | None) -> int | None:
-        return BaseObject._make_prop(value, int)
+        return ApiMixin._make_prop(value, int)
 
     @staticmethod
     def _make_float_prop(value: float | None) -> float | None:
-        return BaseObject._make_prop(value, float)
+        return ApiMixin._make_prop(value, float)
 
     @staticmethod
     def _make_dict_prop(value: dict[str, Any]) -> dict[str, Any]:
-        return BaseObject._make_prop(value, dict)
+        return ApiMixin._make_prop(value, dict)
 
     @staticmethod
     def _make_list_of_dicts_prop(value: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        return BaseObject._make_list_of_type_prop(value, dict)
+        return ApiMixin._make_list_of_type_prop(value, dict)
 
     @staticmethod
     def _make_list_of_strs_prop(value: list[str]) -> list[str]:
-        return BaseObject._make_list_of_type_prop(value, str)
+        return ApiMixin._make_list_of_type_prop(value, str)
 
     @staticmethod
     def _make_list_of_floats_prop(value: list[float]) -> list[float]:
-        return BaseObject._make_list_of_type_prop(value, float)
+        return ApiMixin._make_list_of_type_prop(value, float)
 
     def _make_class_prop(self, cls: Type[T_base], data: dict) -> T_base | None:
         if data is None:

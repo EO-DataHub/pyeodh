@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
 
-from pyeodh.base_object import BaseObject
+from pyeodh.api_mixin import ApiMixin
 from pyeodh.types import Headers, Params, RequestMethod
 
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
     from pyeodh.client import Client
 
-T = TypeVar("T", bound=BaseObject)
+T = TypeVar("T", bound=ApiMixin)
 
 
 class PaginatedList(Generic[T]):
