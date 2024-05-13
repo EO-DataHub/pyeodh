@@ -1,9 +1,10 @@
-from functools import cached_property
-from typing import Any, Literal, Type, TypeVar
+from __future__ import annotations
 
-from pystac import CatalogType, Collection, Extent, Summaries
+from functools import cached_property
+from typing import Any, Literal, Type, TypeVar, TYPE_CHECKING
+
+from pystac import Collection, Extent, Item, Summaries
 from pystac.asset import Asset
-from pystac.layout import HrefLayoutStrategy
 from pystac.provider import Provider
 
 from pyeodh import consts
@@ -13,61 +14,27 @@ from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, Link, SearchFields, SearchSortField
 from pyeodh.utils import get_link_by_rel, join_url, remove_null_items
 
+if TYPE_CHECKING:
+    # avoids conflicts since there are also kwargs and attrs called `datetime`
+    from datetime import datetime as Datetime
 
 C = TypeVar("C", bound="EodhCollection")
 
 
-class Item(ApiMixin):
+class EodhItem(Item, ApiMixin):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-    @property
-    def type(self):
-        return self._type
+    @classmethod
+    def from_dict(
+        cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
+    ) -> C:
+        item = super().from_dict(raw_data)
+        ApiMixin.__init__(item, client=client, headers=headers, data=raw_data)
+        return item
 
-    @property
-    def stac_version(self):
-        return self._stac_version
-
-    @property
-    def id(self):
-        return self._id
-
-    @property
-    def collection(self):
-        return self._collection
-
-    @property
-    def geometry(self):
-        return self._geometry
-
-    @property
-    def bbox(self):
-        return self._bbox
-
-    @property
-    def properties(self):
-        return self._properties
-
-    @property
-    def links(self):
-        return self._links
-
-    @property
-    def assets(self):
-        return self._assets
-
-    def _set_properties(self) -> None:
-        assert isinstance(self._raw_data, dict)
-        self._type = self._make_str_prop(self._raw_data.get("type"))
-        self._stac_version = self._make_str_prop(self._raw_data.get("stac_version"))
-        self._id = self._make_str_prop(self._raw_data.get("id"))
-        self._collection = self._make_str_prop(self._raw_data.get("collection"))
-        self._geometry = self._make_dict_prop(self._raw_data.get("geometry", {}))
-        self._bbox = self._make_list_of_floats_prop(self._raw_data.get("bbox", []))
-        self._properties = self._make_dict_prop(self._raw_data.get("properties", {}))
-        self._links = self._make_list_of_classes_prop(
-            Link, self._raw_data.get("links", [])
-        )
-        self._assets = self._make_dict_prop(self._raw_data.get("assets", {}))
+    def _update_properties(self, obj: Item) -> None:
+        self.__dict__.update(obj.__dict__)
 
     @cached_property
     def self_url(self) -> str:
@@ -90,26 +57,22 @@ class Item(ApiMixin):
 
     def update(
         self,
-        item_type: Literal["Feature"] | None = None,
-        properties: dict[str, Any] | None = None,
         geometry: dict[str, Any] | None = None,
         bbox: list[float] | None = None,
+        datetime: Datetime | None = None,
+        properties: dict[str, Any] | None = None,
+        collection: str | Collection | None = None,
         assets: dict[str, Any] | None = None,
     ) -> None:
-        assert item_type in ["Feature", None], item_type
-        assert is_optional(properties, dict), properties
-        assert is_optional(geometry, dict), geometry
-        assert is_optional(bbox, list), bbox
-        assert is_optional(assets, dict), assets
 
         put_data = remove_null_items(
             {
                 "id": self.id,
-                "type": item_type or self.type,
-                "collection": self.collection,
-                # "geometry": geometry or self.geometry, # NOTE: getting 500 with this
+                "geometry": geometry or self.geometry,  # NOTE: getting 500 with this
                 "bbox": bbox or self.bbox,
+                "datetime": datetime or self.datetime,
                 "properties": properties or self.properties,
+                "collection": collection or self.collection,
                 "assets": assets or self.assets,
             }
         )
@@ -117,8 +80,9 @@ class Item(ApiMixin):
         _, resp_data = self._client._request_json("PUT", self.self_url, data=put_data)
 
         if resp_data:
-            self._raw_data = resp_data
-            self._set_properties()
+            self._update_properties(
+                self.from_dict(self._client, self._headers, resp_data)
+            )
 
 
 class EodhCollection(Collection, ApiMixin):
@@ -147,9 +111,9 @@ class EodhCollection(Collection, ApiMixin):
             raise RuntimeError("Object does not contain URL pointing to self.")
         return self_link.href
 
-    def get_items(self) -> PaginatedList[Item]:
+    def get_items(self) -> PaginatedList[EodhItem]:
         return PaginatedList(
-            Item,
+            EodhItem,
             self._client,
             "GET",
             self.items_url,
@@ -157,7 +121,7 @@ class EodhCollection(Collection, ApiMixin):
             params={"limit": consts.PAGINATION_LIMIT},
         )
 
-    def get_item(self, item_id: str) -> Item:
+    def get_item(self, item_id: str) -> EodhItem:
         """Fetches a collection item.
         Calls: GET /collections/{collection_id}/items/{item_id}
 
@@ -170,7 +134,7 @@ class EodhCollection(Collection, ApiMixin):
         url = join_url(self.items_url, item_id)
         headers, response = self._client._request_json("GET", url)
 
-        return Item(self._client, headers, response)
+        return EodhItem.from_dict(self._client, headers, response)
 
     def update(
         self,
@@ -215,7 +179,7 @@ class EodhCollection(Collection, ApiMixin):
         )
         if resp_data:
             self._update_properties(
-                EodhCollection.from_dict(self._client, self._headers, resp_data)
+                self.from_dict(self._client, self._headers, resp_data)
             )
 
     def delete(self) -> None:
@@ -224,35 +188,30 @@ class EodhCollection(Collection, ApiMixin):
     def create_item(
         self,
         id: str,
-        item_type: Literal["Feature"] = "Feature",
-        properties: dict[str, Any] = {},
-        geometry: dict[str, Any] | None = None,
-        bbox: list[float] | None = None,
+        geometry: dict[str, Any] | None,
+        bbox: list[float] | None,
+        datetime: Datetime | None,
+        properties: dict[str, Any] | None,
+        collection: str | Collection | None = None,
         assets: dict[str, Any] | None = None,
-    ) -> Item:
-        assert isinstance(id, str), id
-        assert item_type in ["Feature"], item_type
-        assert isinstance(properties, dict), properties
-        assert is_optional(geometry, dict), geometry
-        assert is_optional(bbox, list), bbox
-        assert is_optional(assets, dict), assets
+    ) -> EodhItem:
 
-        data = remove_null_items(
+        post_data = remove_null_items(
             {
-                "id": id,
-                "type": item_type,
-                "collection": self.id,
+                "id": self.id,
                 "geometry": geometry,
                 "bbox": bbox,
+                "datetime": datetime,
                 "properties": properties,
+                "collection": collection,
                 "assets": assets,
             }
         )
 
         headers, response = self._client._request_json(
-            "POST", self.items_url, data=data
+            "POST", self.items_url, data=post_data
         )
-        return Item(self._client, headers, response)
+        return EodhItem.from_dict(self._client, headers, response)
 
 
 class ResourceCatalog(ApiMixin):

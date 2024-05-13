@@ -2,14 +2,15 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
 
-from pyeodh.api_mixin import ApiMixin
+import pystac
+
 from pyeodh.types import Headers, Params, RequestMethod
 
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
     from pyeodh.client import Client
 
-T = TypeVar("T", bound=ApiMixin)
+T = TypeVar("T", bound=pystac.STACObject)
 
 
 class PaginatedList(Generic[T]):
@@ -82,7 +83,7 @@ class PaginatedList(Generic[T]):
             resp_data = resp_data[self._list_key]
 
         return [
-            self._cls(
+            self._cls.from_dict(
                 self._client,
                 headers,
                 element,
