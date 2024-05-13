@@ -9,6 +9,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 requests-oauthlib = "^2.0.0"
+pystac = "^1.10.0"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"
