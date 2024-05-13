@@ -1,14 +1,23 @@
 from functools import cached_property
-from typing import Any, Literal
+from typing import Any, Literal, Type, TypeVar
+
+from pystac import CatalogType, Collection, Extent, Summaries
+from pystac.asset import Asset
+from pystac.layout import HrefLayoutStrategy
+from pystac.provider import Provider
 
 from pyeodh import consts
-from pyeodh.base_object import BaseObject, is_optional
+from pyeodh.api_mixin import ApiMixin, is_optional
+from pyeodh.client import Client
 from pyeodh.pagination import PaginatedList
-from pyeodh.types import Link, SearchFields, SearchSortField
+from pyeodh.types import Headers, Link, SearchFields, SearchSortField
 from pyeodh.utils import get_link_by_rel, join_url, remove_null_items
 
 
-class Item(BaseObject):
+C = TypeVar("C", bound="EodhCollection")
+
+
+class Item(ApiMixin):
 
     @property
     def type(self):
@@ -112,56 +121,20 @@ class Item(BaseObject):
             self._set_properties()
 
 
-class Collection(BaseObject):
-    @property
-    def type(self):
-        return self._type
+class EodhCollection(Collection, ApiMixin):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-    @property
-    def id(self):
-        return self._id
+    @classmethod
+    def from_dict(
+        cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
+    ) -> C:
+        col = super().from_dict(raw_data)
+        ApiMixin.__init__(col, client=client, headers=headers, data=raw_data)
+        return col
 
-    @property
-    def title(self):
-        return self._title
-
-    @property
-    def description(self):
-        return self._description
-
-    @property
-    def stac_version(self):
-        return self._stac_version
-
-    @property
-    def license(self):
-        return self._license
-
-    @property
-    def summaries(self):
-        return self._summaries
-
-    @property
-    def extent(self):
-        return self._extent
-
-    @property
-    def links(self):
-        return self._links
-
-    def _set_properties(self) -> None:
-        assert isinstance(self._raw_data, dict)
-        self._type = self._make_str_prop(self._raw_data.get("type"))
-        self._id = self._make_str_prop(self._raw_data.get("id"))
-        self._title = self._make_str_prop(self._raw_data.get("title"))
-        self._description = self._make_str_prop(self._raw_data.get("description"))
-        self._stac_version = self._make_str_prop(self._raw_data.get("stac_version"))
-        self._license = self._make_str_prop(self._raw_data.get("license"))
-        self._summaries = self._make_dict_prop(self._raw_data.get("summaries", {}))
-        self._extent = self._make_dict_prop(self._raw_data.get("extent", {}))
-        self._links = self._make_list_of_classes_prop(
-            Link, self._raw_data.get("links", [])
-        )
+    def _update_properties(self, obj: Collection) -> None:
+        self.__dict__.update(obj.__dict__)
 
     @cached_property
     def items_url(self) -> str:
@@ -201,29 +174,35 @@ class Collection(BaseObject):
 
     def update(
         self,
-        title: str | None = None,
         description: str | None = None,
-        stac_version: str | None = None,
+        extent: Extent | None = None,
+        title: str | None = None,
         license: str | None = None,
-        summaries: dict[str, Any] | None = None,
-        extent: dict[str, Any] | None = None,
+        keywords: list[str] | None = None,
+        providers: list[Provider] | None = None,
+        summaries: Summaries | None = None,
+        assets: dict[str, Asset] | None = None,
     ) -> None:
-        assert is_optional(title, str), title
         assert is_optional(description, str), description
-        assert is_optional(stac_version, str), stac_version
+        assert is_optional(extent, Extent), extent
+        assert is_optional(title, str), title
         assert is_optional(license, str), license
-        assert is_optional(summaries, dict), summaries
-        assert is_optional(extent, dict), extent
+        assert is_optional(keywords, list), keywords
+        assert is_optional(providers, list), providers
+        assert is_optional(summaries, Summaries), summaries
+        assert is_optional(assets, dict), assets
 
         put_data = remove_null_items(
             {
                 "id": self.id,
-                "title": title or self.title,
                 "description": description or self.description,
-                "stac_version": stac_version or self.stac_version,
-                "license": license or self.license,
-                "summaries": summaries or self.summaries,
                 "extent": extent or self.extent,
+                "title": title or self.title,
+                "license": license or self.license,
+                "keywords": keywords or self.keywords,
+                "providers": providers or self.providers,
+                "summaries": summaries or self.summaries,
+                "assets": assets or self.assets,
             }
         )
 
@@ -235,8 +214,9 @@ class Collection(BaseObject):
             data=put_data,
         )
         if resp_data:
-            self._raw_data = resp_data
-            self._set_properties()
+            self._update_properties(
+                EodhCollection.from_dict(self._client, self._headers, resp_data)
+            )
 
     def delete(self) -> None:
         self._client._request_json_raw("DELETE", self.self_url)
@@ -275,7 +255,7 @@ class Collection(BaseObject):
         return Item(self._client, headers, response)
 
 
-class ResourceCatalog(BaseObject):
+class ResourceCatalog(ApiMixin):
 
     @property
     def type(self):
@@ -333,7 +313,7 @@ class ResourceCatalog(BaseObject):
             raise RuntimeError("Object does not contain URL pointing to collections.")
         return data_link.href
 
-    def get_collections(self) -> list[Collection]:
+    def get_collections(self) -> list[EodhCollection]:
         """Fetches all resource catalog collections.
         Calls: GET /collections
 
@@ -345,11 +325,11 @@ class ResourceCatalog(BaseObject):
         if not response:
             return []
         return [
-            Collection(self._client, headers, item)
+            EodhCollection.from_dict(self._client, headers, item)
             for item in response.get("collections", [])
         ]
 
-    def get_collection(self, collection_id: str) -> Collection:
+    def get_collection(self, collection_id: str) -> EodhCollection:
         """Fetches a resource catalog collection.
         Calls: GET /collections/{collection_id}
 
@@ -362,7 +342,7 @@ class ResourceCatalog(BaseObject):
         url = join_url(self.collections_url, collection_id)
         headers, response = self._client._request_json("GET", url)
 
-        return Collection(self._client, headers, response)
+        return EodhCollection.from_dict(self._client, headers, response)
 
     def get_conformance(self) -> list[str]:
         url = join_url(self.self_url, "conformance")
@@ -421,37 +401,42 @@ class ResourceCatalog(BaseObject):
     def create_collection(
         self,
         id: str,
+        description: str,
+        extent: Extent,
         title: str | None = None,
-        description: str | None = None,
-        stac_version: str | None = None,
         license: str | None = None,
-        summaries: dict[str, Any] | None = None,
-        extent: dict[str, Any] | None = None,
-    ) -> Collection:
+        keywords: list[str] | None = None,
+        providers: list[Provider] | None = None,
+        summaries: Summaries | None = None,
+        assets: dict[str, Asset] | None = None,
+    ) -> EodhCollection:
         assert isinstance(id, str), id
+        assert isinstance(description, str), description
+        assert isinstance(extent, Extent), extent
         assert is_optional(title, str), title
-        assert is_optional(description, str), description
-        assert is_optional(stac_version, str), stac_version
         assert is_optional(license, str), license
-        assert is_optional(summaries, dict), summaries
-        assert is_optional(extent, dict), extent
+        assert is_optional(keywords, list), keywords
+        assert is_optional(providers, list), providers
+        assert is_optional(summaries, Summaries), summaries
+        assert is_optional(assets, dict), assets
 
-        data = remove_null_items(
+        post_data = remove_null_items(
             {
                 "id": id,
-                "title": title,
                 "description": description,
-                "stac_version": stac_version,
-                "license": license,
-                "summaries": summaries,
                 "extent": extent,
+                "title": title,
+                "license": license,
+                "keywords": keywords,
+                "providers": providers,
+                "summaries": summaries,
+                "assets": assets,
             }
         )
-
         headers, response = self._client._request_json(
-            "POST", self.collections_url, data=data
+            "POST", self.collections_url, data=post_data
         )
-        return Collection(self._client, headers, response)
+        return EodhCollection.from_dict(self._client, headers, response)
 
     def ping(self) -> str | None:
         headers, response = self._client._request_json(
