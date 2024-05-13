@@ -6,7 +6,7 @@ from typing import Any
 import requests
 
 from pyeodh import consts
-from pyeodh.resource_catalog import ResourceCatalog
+from pyeodh.resource_catalog import EodhCatalog
 from pyeodh.types import Headers, Params, RequestMethod
 from pyeodh.utils import is_absolute_url
 
@@ -61,6 +61,9 @@ class Client:
             f"Received response {response.status_code}\nheaders: {response.headers}"
             f"\ncontent: {response.text}"
         )
+        # TODO consider moving this to _requst_json() and raise own exceptions
+        # so that we can user _raw in e.g. delete methods where we expect a 409 and
+        # want to recover
         response.raise_for_status()
 
         return response.status_code, response.headers, response.text
@@ -82,6 +85,6 @@ class Client:
 
         return resp_headers, json.loads(resp_data)
 
-    def get_resource_catalog(self) -> ResourceCatalog:
+    def get_resource_catalog(self) -> EodhCatalog:
         headers, data = self._request_json("GET", "/stac-fastapi")
-        return ResourceCatalog(self, headers, data)
+        return EodhCatalog.from_dict(self, headers, data)

@@ -3,7 +3,7 @@ from __future__ import annotations
 from functools import cached_property
 from typing import Any, Literal, Type, TypeVar, TYPE_CHECKING
 
-from pystac import Collection, Extent, Item, Summaries
+from pystac import Catalog, Collection, Extent, Item, Summaries, STACObject
 from pystac.asset import Asset
 from pystac.provider import Provider
 
@@ -11,14 +11,14 @@ from pyeodh import consts
 from pyeodh.api_mixin import ApiMixin, is_optional
 from pyeodh.client import Client
 from pyeodh.pagination import PaginatedList
-from pyeodh.types import Headers, Link, SearchFields, SearchSortField
+from pyeodh.types import Headers, SearchFields, SearchSortField
 from pyeodh.utils import get_link_by_rel, join_url, remove_null_items
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
     from datetime import datetime as Datetime
 
-C = TypeVar("C", bound="EodhCollection")
+C = TypeVar("C", bound="STACObject")
 
 
 class EodhItem(Item, ApiMixin):
@@ -214,49 +214,17 @@ class EodhCollection(Collection, ApiMixin):
         return EodhItem.from_dict(self._client, headers, response)
 
 
-class ResourceCatalog(ApiMixin):
+class EodhCatalog(Catalog, ApiMixin):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
 
-    @property
-    def type(self):
-        return self._type
-
-    @property
-    def id(self):
-        return self._id
-
-    @property
-    def title(self):
-        return self._title
-
-    @property
-    def description(self):
-        return self._description
-
-    @property
-    def stac_version(self):
-        return self._stac_version
-
-    @property
-    def conforms_to(self):
-        return self._conforms_to
-
-    @property
-    def links(self):
-        return self._links
-
-    def _set_properties(self) -> None:
-        assert isinstance(self._raw_data, dict)
-        self._type = self._make_str_prop(self._raw_data.get("type"))
-        self._id = self._make_str_prop(self._raw_data.get("id"))
-        self._title = self._make_str_prop(self._raw_data.get("title"))
-        self._description = self._make_str_prop(self._raw_data.get("description"))
-        self._stac_version = self._make_str_prop(self._raw_data.get("stac_version"))
-        self._conforms_to = self._make_list_of_strs_prop(
-            self._raw_data.get("conformsTo", [])
-        )
-        self._links = self._make_list_of_classes_prop(
-            Link, self._raw_data.get("links", [])
-        )
+    @classmethod
+    def from_dict(
+        cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
+    ) -> C:
+        cat = super().from_dict(raw_data)
+        ApiMixin.__init__(cat, client=client, headers=headers, data=raw_data)
+        return cat
 
     @cached_property
     def self_url(self) -> str:
