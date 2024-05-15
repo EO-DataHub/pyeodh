@@ -87,4 +87,4 @@ class Client:
 
     def get_resource_catalog(self) -> EodhCatalog:
         headers, data = self._request_json("GET", "/stac-fastapi")
-        return EodhCatalog.from_dict(self, headers, data)
+        return EodhCatalog._from_dict(self, headers, data)

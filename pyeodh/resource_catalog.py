@@ -37,13 +37,6 @@ class EodhItem(Item, ApiMixin):
     def _update_properties(self, obj: Item) -> None:
         self.__dict__.update(obj.__dict__)
 
-    @cached_property
-    def self_href(self) -> str:
-        href = self.get_self_href()
-        if not href:
-            raise RuntimeError("Object does not have self link!")
-        return href
-
     def delete(self) -> None:
         self._client._request_json_raw("DELETE", self.self_href)
 
@@ -93,16 +86,8 @@ class EodhCollection(Collection, ApiMixin):
         self.__dict__.update(obj.__dict__)
 
     @cached_property
-    def self_href(self) -> str:
-        href = self.get_self_href()
-        if not href:
-            raise RuntimeError("Object does not have self link!")
-        return href
-
-    @cached_property
     def items_href(self) -> str:
         link = self.get_single_link(RelType.ITEMS)
-
         if not link:
             raise RuntimeError("Object does not have items link!")
         return link.href
@@ -218,18 +203,11 @@ class EodhCatalog(Catalog, ApiMixin):
         return cat
 
     @cached_property
-    def self_href(self) -> str:
-        href = self.get_self_href()
-        if not href:
-            raise RuntimeError("Object does not have self link!")
-        return href
-
-    @cached_property
     def collections_href(self) -> str:
-        href = self.get_single_link("data")
-        if not href:
+        link = self.get_single_link("data")
+        if not link:
             raise RuntimeError("Object does not have collections link!")
-        return href
+        return link.href
 
     def get_collections(self) -> list[EodhCollection]:
         """Fetches all resource catalog collections.

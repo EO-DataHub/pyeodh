@@ -2,15 +2,14 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
 
-import pystac
-
 from pyeodh.types import Headers, Params, RequestMethod
 
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
     from pyeodh.client import Client
+    from pyeodh.resource_catalog import EodhCatalog, EodhCollection, EodhItem
 
-T = TypeVar("T", bound=pystac.STACObject)
+T = TypeVar("T", "EodhCatalog", "EodhCollection", "EodhItem")
 
 
 class PaginatedList(Generic[T]):
@@ -83,7 +82,7 @@ class PaginatedList(Generic[T]):
             resp_data = resp_data[self._list_key]
 
         return [
-            self._cls.from_dict(
+            self._cls._from_dict(
                 self._client,
                 headers,
                 element,
