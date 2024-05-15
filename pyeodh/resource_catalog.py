@@ -1,22 +1,23 @@
 from __future__ import annotations
 
 from functools import cached_property
-from typing import Any, Literal, Type, TypeVar, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
 
-from pystac import Catalog, Collection, Extent, Item, Summaries, STACObject
+from pystac import Catalog, Collection, Extent, Item, RelType, STACObject, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
 
 from pyeodh import consts
 from pyeodh.api_mixin import ApiMixin, is_optional
-from pyeodh.client import Client
 from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
-from pyeodh.utils import get_link_by_rel, join_url, remove_null_items
+from pyeodh.utils import join_url, remove_null_items
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
     from datetime import datetime as Datetime
+
+    from pyeodh.client import Client
 
 C = TypeVar("C", bound="STACObject")
 
@@ -26,7 +27,7 @@ class EodhItem(Item, ApiMixin):
         super().__init__(*args, **kwargs)
 
     @classmethod
-    def from_dict(
+    def _from_dict(
         cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
     ) -> C:
         item = super().from_dict(raw_data)
@@ -37,23 +38,14 @@ class EodhItem(Item, ApiMixin):
         self.__dict__.update(obj.__dict__)
 
     @cached_property
-    def self_url(self) -> str:
-        self_link = get_link_by_rel(self.links, "self")
-        if not self_link:
-            # NOTE: workaround for api not returning links for item creation
-            return join_url(
-                consts.API_BASE_URL,
-                "stac-fastapi/collections",
-                self.collection or "",
-                "items",
-                self.id or "",
-            )
-        if not self_link.href:
-            raise RuntimeError("Object does not contain URL pointing to self.")
-        return self_link.href
+    def self_href(self) -> str:
+        href = self.get_self_href()
+        if not href:
+            raise RuntimeError("Object does not have self link!")
+        return href
 
     def delete(self) -> None:
-        self._client._request_json_raw("DELETE", self.self_url)
+        self._client._request_json_raw("DELETE", self.self_href)
 
     def update(
         self,
@@ -77,11 +69,11 @@ class EodhItem(Item, ApiMixin):
             }
         )
 
-        _, resp_data = self._client._request_json("PUT", self.self_url, data=put_data)
+        _, resp_data = self._client._request_json("PUT", self.self_href, data=put_data)
 
         if resp_data:
             self._update_properties(
-                self.from_dict(self._client, self._headers, resp_data)
+                self._from_dict(self._client, self._headers, resp_data)
             )
 
 
@@ -90,7 +82,7 @@ class EodhCollection(Collection, ApiMixin):
         super().__init__(*args, **kwargs)
 
     @classmethod
-    def from_dict(
+    def _from_dict(
         cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
     ) -> C:
         col = super().from_dict(raw_data)
@@ -101,22 +93,26 @@ class EodhCollection(Collection, ApiMixin):
         self.__dict__.update(obj.__dict__)
 
     @cached_property
-    def items_url(self) -> str:
-        return join_url(self.self_url, "items")
+    def self_href(self) -> str:
+        href = self.get_self_href()
+        if not href:
+            raise RuntimeError("Object does not have self link!")
+        return href
 
     @cached_property
-    def self_url(self) -> str:
-        self_link = get_link_by_rel(self.links, "self")
-        if not self_link or not self_link.href:
-            raise RuntimeError("Object does not contain URL pointing to self.")
-        return self_link.href
+    def items_href(self) -> str:
+        link = self.get_single_link(RelType.ITEMS)
+
+        if not link:
+            raise RuntimeError("Object does not have items link!")
+        return link.href
 
     def get_items(self) -> PaginatedList[EodhItem]:
         return PaginatedList(
             EodhItem,
             self._client,
             "GET",
-            self.items_url,
+            self.items_href,
             "features",
             params={"limit": consts.PAGINATION_LIMIT},
         )
@@ -131,10 +127,10 @@ class EodhCollection(Collection, ApiMixin):
         Returns:
             Item: Item for given ID
         """
-        url = join_url(self.items_url, item_id)
+        url = join_url(self.items_href, item_id)
         headers, response = self._client._request_json("GET", url)
 
-        return EodhItem.from_dict(self._client, headers, response)
+        return EodhItem._from_dict(self._client, headers, response)
 
     def update(
         self,
@@ -170,20 +166,15 @@ class EodhCollection(Collection, ApiMixin):
             }
         )
 
-        # _, resp_data = self._client._request_json("PUT", self.self_url, data=put_data)
-        # NOTE: temp workaround until test is fixed
-        _, resp_data = self._client._request_json(
-            "PUT",
-            "https://test.eodatahub.org.uk/stac-fastapi/collections",
-            data=put_data,
-        )
+        _, resp_data = self._client._request_json("PUT", self.self_href, data=put_data)
+
         if resp_data:
             self._update_properties(
-                self.from_dict(self._client, self._headers, resp_data)
+                self._from_dict(self._client, self._headers, resp_data)
             )
 
     def delete(self) -> None:
-        self._client._request_json_raw("DELETE", self.self_url)
+        self._client._request_json_raw("DELETE", self.self_href)
 
     def create_item(
         self,
@@ -209,9 +200,9 @@ class EodhCollection(Collection, ApiMixin):
         )
 
         headers, response = self._client._request_json(
-            "POST", self.items_url, data=post_data
+            "POST", self.items_href, data=post_data
         )
-        return EodhItem.from_dict(self._client, headers, response)
+        return EodhItem._from_dict(self._client, headers, response)
 
 
 class EodhCatalog(Catalog, ApiMixin):
@@ -219,7 +210,7 @@ class EodhCatalog(Catalog, ApiMixin):
         super().__init__(*args, **kwargs)
 
     @classmethod
-    def from_dict(
+    def _from_dict(
         cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
     ) -> C:
         cat = super().from_dict(raw_data)
@@ -227,18 +218,18 @@ class EodhCatalog(Catalog, ApiMixin):
         return cat
 
     @cached_property
-    def self_url(self) -> str:
-        self_link = get_link_by_rel(self.links, "self")
-        if not self_link or not self_link.href:
-            raise RuntimeError("Object does not contain URL pointing to self.")
-        return self_link.href
+    def self_href(self) -> str:
+        href = self.get_self_href()
+        if not href:
+            raise RuntimeError("Object does not have self link!")
+        return href
 
     @cached_property
-    def collections_url(self) -> str:
-        data_link = get_link_by_rel(self.links, "data")
-        if not data_link or not data_link.href:
-            raise RuntimeError("Object does not contain URL pointing to collections.")
-        return data_link.href
+    def collections_href(self) -> str:
+        href = self.get_single_link("data")
+        if not href:
+            raise RuntimeError("Object does not have collections link!")
+        return href
 
     def get_collections(self) -> list[EodhCollection]:
         """Fetches all resource catalog collections.
@@ -248,11 +239,11 @@ class EodhCatalog(Catalog, ApiMixin):
             list[Collection]: List of available collections
         """
 
-        headers, response = self._client._request_json("GET", self.collections_url)
+        headers, response = self._client._request_json("GET", self.collections_href)
         if not response:
             return []
         return [
-            EodhCollection.from_dict(self._client, headers, item)
+            EodhCollection._from_dict(self._client, headers, item)
             for item in response.get("collections", [])
         ]
 
@@ -266,13 +257,13 @@ class EodhCatalog(Catalog, ApiMixin):
         Returns:
             Collection: Collection for given ID
         """
-        url = join_url(self.collections_url, collection_id)
+        url = join_url(self.collections_href, collection_id)
         headers, response = self._client._request_json("GET", url)
 
-        return EodhCollection.from_dict(self._client, headers, response)
+        return EodhCollection._from_dict(self._client, headers, response)
 
     def get_conformance(self) -> list[str]:
-        url = join_url(self.self_url, "conformance")
+        url = join_url(self.self_href, "conformance")
         _, response = self._client._request_json("GET", url)
         return response.get("conformsTo", [])
 
@@ -320,7 +311,7 @@ class EodhCatalog(Catalog, ApiMixin):
                 "filter_lang": filter_lang,
             }
         )
-        url = join_url(self.self_url, "search")
+        url = join_url(self.self_href, "search")
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data
         )
@@ -361,12 +352,12 @@ class EodhCatalog(Catalog, ApiMixin):
             }
         )
         headers, response = self._client._request_json(
-            "POST", self.collections_url, data=post_data
+            "POST", self.collections_href, data=post_data
         )
-        return EodhCollection.from_dict(self._client, headers, response)
+        return EodhCollection._from_dict(self._client, headers, response)
 
     def ping(self) -> str | None:
         headers, response = self._client._request_json(
-            "GET", join_url(self.self_url, "_mgmt/ping")
+            "GET", join_url(self.self_href, "_mgmt/ping")
         )
         return response.get("message")
