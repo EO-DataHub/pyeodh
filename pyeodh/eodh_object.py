@@ -4,6 +4,8 @@ import typing
 from types import NoneType
 from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
 
+from pystac import STACObject
+
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
     from pyeodh.client import Client
@@ -12,20 +14,34 @@ if TYPE_CHECKING:
 
 T = TypeVar("T")
 
-T_base = TypeVar("T_base", bound="ApiMixin")
+T_base = TypeVar("T_base", bound="EodhObject")
 
 
 def is_optional(value: Any, type: Type) -> bool:
     return isinstance(value, (type, NoneType))
 
 
-class ApiMixin:
+class EodhObject:
     """Base class for other classes representing objects returned by EODH APIs."""
 
-    def __init__(self, client: Client, headers: Headers, data: Any):
+    def __init__(
+        self,
+        client: Client,
+        headers: Headers,
+        data: Any,
+        pystac_cls: Type[STACObject] | None = None,
+    ):
         self._client = client
         self._headers = headers
         self._raw_data = data
+        if pystac_cls is not None:
+            self._pystac_object = pystac_cls.from_dict(data)
+            self._set_props(self._pystac_object)
+
+    def _set_props(self, obj) -> None:
+        raise NotImplementedError(
+            f"Method _set_props not implemented in {self.__class__.__name__}."
+        )
 
     @staticmethod
     def _make_prop(value: T, t: Type[T]) -> T:
@@ -54,31 +70,31 @@ class ApiMixin:
 
     @staticmethod
     def _make_str_prop(value: str | None) -> str | None:
-        return ApiMixin._make_prop(value, str)
+        return EodhObject._make_prop(value, str)
 
     @staticmethod
     def _make_int_prop(value: int | None) -> int | None:
-        return ApiMixin._make_prop(value, int)
+        return EodhObject._make_prop(value, int)
 
     @staticmethod
     def _make_float_prop(value: float | None) -> float | None:
-        return ApiMixin._make_prop(value, float)
+        return EodhObject._make_prop(value, float)
 
     @staticmethod
     def _make_dict_prop(value: dict[str, Any]) -> dict[str, Any]:
-        return ApiMixin._make_prop(value, dict)
+        return EodhObject._make_prop(value, dict)
 
     @staticmethod
     def _make_list_of_dicts_prop(value: list[dict[str, Any]]) -> list[dict[str, Any]]:
-        return ApiMixin._make_list_of_type_prop(value, dict)
+        return EodhObject._make_list_of_type_prop(value, dict)
 
     @staticmethod
     def _make_list_of_strs_prop(value: list[str]) -> list[str]:
-        return ApiMixin._make_list_of_type_prop(value, str)
+        return EodhObject._make_list_of_type_prop(value, str)
 
     @staticmethod
     def _make_list_of_floats_prop(value: list[float]) -> list[float]:
-        return ApiMixin._make_list_of_type_prop(value, float)
+        return EodhObject._make_list_of_type_prop(value, float)
 
     def _make_class_prop(self, cls: Type[T_base], data: dict) -> T_base | None:
         if data is None:

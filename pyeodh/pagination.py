@@ -2,14 +2,14 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
 
+from pyeodh.eodh_object import EodhObject
 from pyeodh.types import Headers, Params, RequestMethod
 
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
     from pyeodh.client import Client
-    from pyeodh.resource_catalog import EodhCatalog, EodhCollection, EodhItem
 
-T = TypeVar("T", "EodhCatalog", "EodhCollection", "EodhItem")
+T = TypeVar("T", bound=EodhObject)
 
 
 class PaginatedList(Generic[T]):
@@ -82,7 +82,7 @@ class PaginatedList(Generic[T]):
             resp_data = resp_data[self._list_key]
 
         return [
-            self._cls._from_dict(
+            self._cls(
                 self._client,
                 headers,
                 element,

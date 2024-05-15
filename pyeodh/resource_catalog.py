@@ -1,14 +1,16 @@
 from __future__ import annotations
 
 from functools import cached_property
-from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
-from pystac import Catalog, Collection, Extent, Item, RelType, STACObject, Summaries
+import pystac
+import pystac.catalog
+from pystac import Extent, RelType, STACObject, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
 
 from pyeodh import consts
-from pyeodh.api_mixin import ApiMixin, is_optional
+from pyeodh.eodh_object import EodhObject, is_optional
 from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
 from pyeodh.utils import join_url, remove_null_items
@@ -22,23 +24,23 @@ if TYPE_CHECKING:
 C = TypeVar("C", bound="STACObject")
 
 
-class EodhItem(Item, ApiMixin):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+class Item(EodhObject):
+    _pystac_object: pystac.Item
 
-    @classmethod
-    def _from_dict(
-        cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
-    ) -> C:
-        item = super().from_dict(raw_data)
-        ApiMixin.__init__(item, client=client, headers=headers, data=raw_data)
-        return item
+    def __init__(self, client: Client, headers: Headers, data: Any):
+        super().__init__(client, headers, data, pystac.Item)
 
-    def _update_properties(self, obj: Item) -> None:
-        self.__dict__.update(obj.__dict__)
+    def _set_props(self, obj: pystac.Item) -> None:
+        self.id = obj.id
+        self.geometry = obj.geometry
+        self.bbox = obj.bbox
+        self.datetime = obj.datetime
+        self.properties = obj.properties
+        self.collection = obj.collection_id
+        self.assets = obj.assets
 
     def delete(self) -> None:
-        self._client._request_json_raw("DELETE", self.self_href)
+        self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
     def update(
         self,
@@ -46,7 +48,7 @@ class EodhItem(Item, ApiMixin):
         bbox: list[float] | None = None,
         datetime: Datetime | None = None,
         properties: dict[str, Any] | None = None,
-        collection: str | Collection | None = None,
+        collection: str | pystac.Collection | None = None,
         assets: dict[str, Any] | None = None,
     ) -> None:
 
@@ -62,39 +64,41 @@ class EodhItem(Item, ApiMixin):
             }
         )
 
-        _, resp_data = self._client._request_json("PUT", self.self_href, data=put_data)
+        _, resp_data = self._client._request_json(
+            "PUT", self._pystac_object.self_href, data=put_data
+        )
 
         if resp_data:
-            self._update_properties(
-                self._from_dict(self._client, self._headers, resp_data)
-            )
+            self._set_props(self._pystac_object.from_dict(resp_data))
 
 
-class EodhCollection(Collection, ApiMixin):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+class Collection(EodhObject):
+    _pystac_object: pystac.Collection
 
-    @classmethod
-    def _from_dict(
-        cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
-    ) -> C:
-        col = super().from_dict(raw_data)
-        ApiMixin.__init__(col, client=client, headers=headers, data=raw_data)
-        return col
+    def __init__(self, client: Client, headers: Headers, data: Any):
+        super().__init__(client, headers, data, pystac.Collection)
 
-    def _update_properties(self, obj: Collection) -> None:
-        self.__dict__.update(obj.__dict__)
+    def _set_props(self, obj: pystac.Collection) -> None:
+        self.id = obj.id
+        self.description = obj.description
+        self.extent = obj.extent
+        self.title = obj.title
+        self.license = obj.license
+        self.keywords = obj.keywords
+        self.providers = obj.providers
+        self.summaries = obj.summaries
+        self.assets = obj.assets
 
     @cached_property
     def items_href(self) -> str:
-        link = self.get_single_link(RelType.ITEMS)
+        link = self._pystac_object.get_single_link(RelType.ITEMS)
         if not link:
             raise RuntimeError("Object does not have items link!")
         return link.href
 
-    def get_items(self) -> PaginatedList[EodhItem]:
+    def get_items(self) -> PaginatedList[Item]:
         return PaginatedList(
-            EodhItem,
+            Item,
             self._client,
             "GET",
             self.items_href,
@@ -102,7 +106,7 @@ class EodhCollection(Collection, ApiMixin):
             params={"limit": consts.PAGINATION_LIMIT},
         )
 
-    def get_item(self, item_id: str) -> EodhItem:
+    def get_item(self, item_id: str) -> Item:
         """Fetches a collection item.
         Calls: GET /collections/{collection_id}/items/{item_id}
 
@@ -115,7 +119,7 @@ class EodhCollection(Collection, ApiMixin):
         url = join_url(self.items_href, item_id)
         headers, response = self._client._request_json("GET", url)
 
-        return EodhItem._from_dict(self._client, headers, response)
+        return Item(self._client, headers, response)
 
     def update(
         self,
@@ -151,15 +155,15 @@ class EodhCollection(Collection, ApiMixin):
             }
         )
 
-        _, resp_data = self._client._request_json("PUT", self.self_href, data=put_data)
+        _, resp_data = self._client._request_json(
+            "PUT", self._pystac_object.self_href, data=put_data
+        )
 
         if resp_data:
-            self._update_properties(
-                self._from_dict(self._client, self._headers, resp_data)
-            )
+            self._set_props(self._pystac_object.from_dict(resp_data))
 
     def delete(self) -> None:
-        self._client._request_json_raw("DELETE", self.self_href)
+        self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
     def create_item(
         self,
@@ -168,13 +172,13 @@ class EodhCollection(Collection, ApiMixin):
         bbox: list[float] | None,
         datetime: Datetime | None,
         properties: dict[str, Any] | None,
-        collection: str | Collection | None = None,
+        collection: str | pystac.Collection | None = None,
         assets: dict[str, Any] | None = None,
-    ) -> EodhItem:
+    ) -> Item:
 
         post_data = remove_null_items(
             {
-                "id": self.id,
+                "id": id,
                 "geometry": geometry,
                 "bbox": bbox,
                 "datetime": datetime,
@@ -187,29 +191,28 @@ class EodhCollection(Collection, ApiMixin):
         headers, response = self._client._request_json(
             "POST", self.items_href, data=post_data
         )
-        return EodhItem._from_dict(self._client, headers, response)
+        return Item(self._client, headers, response)
 
 
-class EodhCatalog(Catalog, ApiMixin):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+class Catalog(EodhObject):
+    _pystac_object: pystac.Catalog
 
-    @classmethod
-    def _from_dict(
-        cls: Type[C], client: Client, headers: Headers, raw_data: dict[str, Any]
-    ) -> C:
-        cat = super().from_dict(raw_data)
-        ApiMixin.__init__(cat, client=client, headers=headers, data=raw_data)
-        return cat
+    def __init__(self, client: Client, headers: Headers, data: Any):
+        super().__init__(client, headers, data, pystac.Catalog)
+
+    def _set_props(self, obj: pystac.Catalog) -> None:
+        self.id = obj.id
+        self.description = obj.description
+        self.title = obj.title
 
     @cached_property
     def collections_href(self) -> str:
-        link = self.get_single_link("data")
+        link = self._pystac_object.get_single_link("data")
         if not link:
             raise RuntimeError("Object does not have collections link!")
         return link.href
 
-    def get_collections(self) -> list[EodhCollection]:
+    def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
         Calls: GET /collections
 
@@ -221,11 +224,11 @@ class EodhCatalog(Catalog, ApiMixin):
         if not response:
             return []
         return [
-            EodhCollection._from_dict(self._client, headers, item)
+            Collection(self._client, headers, item)
             for item in response.get("collections", [])
         ]
 
-    def get_collection(self, collection_id: str) -> EodhCollection:
+    def get_collection(self, collection_id: str) -> Collection:
         """Fetches a resource catalog collection.
         Calls: GET /collections/{collection_id}
 
@@ -238,10 +241,10 @@ class EodhCatalog(Catalog, ApiMixin):
         url = join_url(self.collections_href, collection_id)
         headers, response = self._client._request_json("GET", url)
 
-        return EodhCollection._from_dict(self._client, headers, response)
+        return Collection(self._client, headers, response)
 
     def get_conformance(self) -> list[str]:
-        url = join_url(self.self_href, "conformance")
+        url = join_url(self._pystac_object.self_href, "conformance")
         _, response = self._client._request_json("GET", url)
         return response.get("conformsTo", [])
 
@@ -289,7 +292,7 @@ class EodhCatalog(Catalog, ApiMixin):
                 "filter_lang": filter_lang,
             }
         )
-        url = join_url(self.self_href, "search")
+        url = join_url(self._pystac_object.self_href, "search")
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data
         )
@@ -305,7 +308,7 @@ class EodhCatalog(Catalog, ApiMixin):
         providers: list[Provider] | None = None,
         summaries: Summaries | None = None,
         assets: dict[str, Asset] | None = None,
-    ) -> EodhCollection:
+    ) -> Collection:
         assert isinstance(id, str), id
         assert isinstance(description, str), description
         assert isinstance(extent, Extent), extent
@@ -332,10 +335,10 @@ class EodhCatalog(Catalog, ApiMixin):
         headers, response = self._client._request_json(
             "POST", self.collections_href, data=post_data
         )
-        return EodhCollection._from_dict(self._client, headers, response)
+        return Collection(self._client, headers, response)
 
     def ping(self) -> str | None:
         headers, response = self._client._request_json(
-            "GET", join_url(self.self_href, "_mgmt/ping")
+            "GET", join_url(self._pystac_object.self_href, "_mgmt/ping")
         )
         return response.get("message")

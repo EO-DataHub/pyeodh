@@ -6,7 +6,7 @@ from typing import Any
 import requests
 
 from pyeodh import consts
-from pyeodh.resource_catalog import EodhCatalog
+from pyeodh.resource_catalog import Catalog
 from pyeodh.types import Headers, Params, RequestMethod
 from pyeodh.utils import is_absolute_url
 
@@ -85,6 +85,6 @@ class Client:
 
         return resp_headers, json.loads(resp_data)
 
-    def get_resource_catalog(self) -> EodhCatalog:
+    def get_resource_catalog(self) -> Catalog:
         headers, data = self._request_json("GET", "/stac-fastapi")
-        return EodhCatalog._from_dict(self, headers, data)
+        return Catalog(self, headers, data)
