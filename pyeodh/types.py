@@ -39,4 +39,4 @@ class Link:
 
     @staticmethod
     def get_link(links: list[L], rel: str) -> L | None:
-        return next([ln for ln in links if rel == ln.rel], None)
+        return next((ln for ln in links if rel == ln.rel), None)

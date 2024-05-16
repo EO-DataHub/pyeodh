@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Any
 
 from pyeodh.eodh_object import EodhObject
 from pyeodh.types import Headers, Link
+from pyeodh.utils import join_url
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
@@ -121,3 +122,17 @@ class Ades(EodhObject):
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to jobs")
         return ln.href
+
+    def get_processes(self) -> list[Process]:
+        headers, response = self._client._request_json("GET", self.processes_href)
+        if not response:
+            return []
+        return [
+            Process(self._client, headers, item)
+            for item in response.get("processes", [])
+        ]
+
+    def get_process(self, process_id) -> Process:
+        url = join_url(self.processes_href, process_id)
+        headers, response = self._client._request_json("GET", url)
+        return Process(self._client, headers, response)
