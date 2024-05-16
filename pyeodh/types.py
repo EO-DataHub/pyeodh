@@ -31,8 +31,12 @@ class Link:
     @classmethod
     def from_dict(cls: Type[L], data: dict[str, str]) -> L:
         return cls(
-            rel=data.get("rel"),
-            href=data.get("href"),
+            rel=data["rel"],
+            href=data["href"],
             title=data.get("title", None),
             media_type=data.get("type", None),
         )
+
+    @staticmethod
+    def get_link(links: list[L], rel: str) -> L | None:
+        return next([ln for ln in links if rel == ln.rel], None)

@@ -6,6 +6,7 @@ from typing import Any
 import requests
 
 from pyeodh import consts
+from pyeodh.ades import Ades
 from pyeodh.resource_catalog import Catalog
 from pyeodh.types import Headers, Params, RequestMethod
 from pyeodh.utils import is_absolute_url
@@ -14,12 +15,18 @@ logger = logging.getLogger(__name__)
 
 
 class Client:
-    def __init__(self, base_url: str = consts.API_BASE_URL) -> None:
+    def __init__(
+        self, base_url: str = consts.API_BASE_URL, auth: tuple[str, str] | None = None
+    ) -> None:
         if not is_absolute_url(base_url):
             raise ValueError("base_url must be an absolute URL")
 
         self.url_base = base_url
         self._build_session()
+
+        # TEMP:
+        if auth:
+            self._session.auth = auth
 
     def _build_session(
         self,
@@ -88,3 +95,7 @@ class Client:
     def get_resource_catalog(self) -> Catalog:
         headers, data = self._request_json("GET", "/stac-fastapi")
         return Catalog(self, headers, data)
+
+    def get_ades(self) -> Ades:
+        headers, data = self._request_json("get", "/ades/test_cluster_3/ogc-api/")
+        return Ades(self, headers, data)

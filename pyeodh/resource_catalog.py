@@ -207,10 +207,7 @@ class Catalog(EodhObject):
 
     @cached_property
     def collections_href(self) -> str:
-        link = self._pystac_object.get_single_link("data")
-        if not link:
-            raise RuntimeError("Object does not have collections link!")
-        return link.href
+        return join_url(self._pystac_object.self_href, "collections")
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.

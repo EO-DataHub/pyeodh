@@ -34,9 +34,12 @@ class EodhObject:
         self._client = client
         self._headers = headers
         self._raw_data = data
+
         if pystac_cls is not None:
             self._pystac_object = pystac_cls.from_dict(data)
             self._set_props(self._pystac_object)
+        else:
+            self._set_props(data)
 
     def _set_props(self, obj) -> None:
         raise NotImplementedError(
