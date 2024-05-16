@@ -1,4 +1,5 @@
-from typing import Literal, TypedDict
+from dataclasses import dataclass
+from typing import Literal, Type, TypedDict, TypeVar
 
 from requests.structures import CaseInsensitiveDict
 
@@ -15,3 +16,23 @@ class SearchSortField(TypedDict):
 class SearchFields(TypedDict):
     include: list[str]
     exclude: list[str]
+
+
+L = TypeVar("L", bound="Link")
+
+
+@dataclass
+class Link:
+    rel: str
+    href: str
+    title: str | None = None
+    media_type: str | None = None
+
+    @classmethod
+    def from_dict(cls: Type[L], data: dict[str, str]) -> L:
+        return cls(
+            rel=data.get("rel"),
+            href=data.get("href"),
+            title=data.get("title", None),
+            media_type=data.get("type", None),
+        )
