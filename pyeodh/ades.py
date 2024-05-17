@@ -16,6 +16,12 @@ if TYPE_CHECKING:
     from pyeodh.client import Client
 
 
+class AdesRelType(StrEnum):
+    SELF = "self"
+    PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
+    JOBS = "http://www.opengis.net/def/rel/ogc/1.0/job-list"
+
+
 class Job(EodhObject):
 
     def __init__(self, client: Client, headers: Headers, data: Any):
@@ -38,11 +44,10 @@ class Job(EodhObject):
         if "updated" in obj:
             self.updated = Datetime.fromisoformat(obj.get("updated"))
 
-
-class AdesRelType(StrEnum):
-    SELF = "self"
-    PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
-    JOBS = "http://www.opengis.net/def/rel/ogc/1.0/job-list"
+    def refresh(self) -> None:
+        headers, response = self._client._request_json("GET", self.self_href)
+        if response:
+            self._set_props(response)
 
 
 @dataclass
@@ -110,6 +115,21 @@ class Process(EodhObject):
         self.additional_parameters: AdditionalParameters = (
             AdditionalParameters.from_dict(obj.get("additionalParameters", {}))
         )
+        self.inputs_schema = self._make_dict_prop(obj.get("inputs"), {})
+        self.outputs_schema = self._make_dict_prop(obj.get("outputs", {}))
+
+    @cached_property
+    def self_href(self) -> str:
+        ln = Link.get_link(self.links, AdesRelType.SELF)
+        if ln is None:
+            raise ValueError(f"{self} does not have a link pointing to self")
+        return ln.href
+
+    def execute(self, inputs: dict) -> Job:
+        headers, response = self._client._request_json(
+            "POST", self.self_href, data=inputs
+        )
+        return Job(self._client, headers, response)
 
 
 class Ades(EodhObject):
