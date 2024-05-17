@@ -1,14 +1,13 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime as Datetime
 from enum import StrEnum
 from functools import cached_property
 from typing import TYPE_CHECKING, Any
 
 from pyeodh.eodh_object import EodhObject
 from pyeodh.types import Headers, Link
-from datetime import datetime as Datetime
-
 from pyeodh.utils import join_url
 
 if TYPE_CHECKING:
@@ -182,6 +181,52 @@ class Ades(EodhObject):
         headers, response = self._client._request_json("GET", url)
         return Process(self._client, headers, response)
 
+    def deploy_process(
+        self,
+        cwl_url: str | None = None,
+        cwl_yaml: str | None = None,
+    ) -> Process:
+        """Deploy a process.
+
+        Args:
+            cwl_url (str | None, optional): Location of the cwl workflow file. Mutually
+                exclusive with `cwl_yaml` arg. Defaults to None.
+            cwl_yaml (str | None, optional): CWL workflow in yaml format. Mutually
+                exclusive with cwl_url. Defaults to None.
+
+        Returns:
+            Process: The newly created process as returned by the API.
+        """
+
+        def encode(data: str) -> tuple[str, str]:
+            return "application/cwl+yaml", data
+
+        if cwl_yaml is not None and cwl_url is not None:
+            raise ValueError("cwl_url and cwl_yaml arguments are mutually exclusive.")
+        if cwl_yaml is None and cwl_url is None:
+            raise ValueError("Provide either cwl_yaml or cwl_url argument.")
+
+        if cwl_yaml is not None:
+            headers, response = self._client._request_json(
+                "POST", self.processes_href, data=cwl_yaml, encode=encode
+            )
+
+        if cwl_url is not None:
+            data = {
+                "executionUnit": {
+                    "href": cwl_url,
+                    "type": "application/cwl",
+                }
+            }
+            headers, response = self._client._request_json(
+                "POST", self.processes_href, data=data
+            )
+        location = headers.get("Location")
+        if not location:
+            raise RuntimeError("Did not receive location of deployed process.")
+
+        headers, response = self._client._request_json("GET", location)
+        return Process(self._client, headers, response)
 
     def get_jobs(self) -> list[Job]:
         headers, response = self._client._request_json("GET", self.jobs_href)
