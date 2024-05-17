@@ -1,7 +1,7 @@
 import json
 import logging
 import urllib.parse
-from typing import Any
+from typing import Any, Callable
 
 import requests
 
@@ -12,6 +12,10 @@ from pyeodh.types import Headers, Params, RequestMethod
 from pyeodh.utils import is_absolute_url
 
 logger = logging.getLogger(__name__)
+
+
+def _encode_json(data: dict) -> tuple[str, str]:
+    return "application/json", json.dumps(data)
 
 
 class Client:
@@ -41,6 +45,7 @@ class Client:
         headers: Headers | None = None,
         params: Params | None = None,
         data: dict | None = None,
+        encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[int, Headers, str]:
         logger.debug(
             f"_request_json_raw received {locals()}",
@@ -51,8 +56,9 @@ class Client:
             logger.debug(f"Created url from base: {url}")
 
         headers = Headers() if headers is None else headers
-        headers["Content-Type"] = "application/json"
-        encoded_data = json.dumps(data) if data else None
+        encoded_data = None
+        if data is not None:
+            headers["Content-Type"], encoded_data = encode(data)
         logger.debug(
             f"Making request: {method} {url}\nheaders: {headers}\nparams: {params}"
             f"\nbody: {encoded_data}"
@@ -82,9 +88,10 @@ class Client:
         headers: Headers | None = None,
         params: Params | None = None,
         data: dict | None = None,
+        encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[Headers, Any]:
         status, resp_headers, resp_data = self._request_json_raw(
-            method, url, headers, params, data
+            method, url, headers, params, data, encode
         )
 
         if not len(resp_data):
