@@ -130,6 +130,8 @@ class Process(EodhObject):
         )
         return Job(self._client, headers, response)
 
+    def delete(self) -> None:
+        self._client._request_json_raw("DELETE", self.self_href)
 
 class Ades(EodhObject):
 
