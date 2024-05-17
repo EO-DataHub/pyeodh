@@ -48,6 +48,9 @@ class Job(EodhObject):
         if response:
             self._set_props(response)
 
+    def delete(self) -> None:
+        self._client._request_json_raw("DELETE", self.self_href)
+
 
 @dataclass
 class Metadata:
