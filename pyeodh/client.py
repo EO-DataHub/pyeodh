@@ -104,5 +104,5 @@ class Client:
         return Catalog(self, headers, data)
 
     def get_ades(self) -> Ades:
-        headers, data = self._request_json("get", "/ades/test_cluster_3/ogc-api/")
+        headers, data = self._request_json("GET", "/ades/test_cluster_3/ogc-api/")
         return Ades(self, headers, data)

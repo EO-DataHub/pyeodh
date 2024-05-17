@@ -4,5 +4,7 @@ __pycache__/
 
 .vscode/
 
+.env
+
 docs/_build
 playground/

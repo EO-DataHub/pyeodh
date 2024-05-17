@@ -17,8 +17,17 @@ if TYPE_CHECKING:
 
 class AdesRelType(StrEnum):
     SELF = "self"
+    STATUS = "status"
     PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
     JOBS = "http://www.opengis.net/def/rel/ogc/1.0/job-list"
+
+
+class AdesJobStatus(StrEnum):
+    ACCEPTED = "accepted"
+    RUNNING = "running"
+    SUCCESSFUL = "successful"
+    FAILED = "failed"
+    DISMISSED = "dismissed"
 
 
 class Job(EodhObject):
@@ -42,6 +51,13 @@ class Job(EodhObject):
             self.finished = Datetime.fromisoformat(obj.get("finished"))
         if "updated" in obj:
             self.updated = Datetime.fromisoformat(obj.get("updated"))
+
+    @cached_property
+    def self_href(self) -> str:
+        ln = Link.get_link(self.links, AdesRelType.STATUS)
+        if ln is None:
+            raise ValueError(f"{self} does not have a link pointing to self")
+        return ln.href
 
     def refresh(self) -> None:
         headers, response = self._client._request_json("GET", self.self_href)
@@ -94,8 +110,9 @@ class AdditionalParameters:
 
 class Process(EodhObject):
 
-    def __init__(self, client: Client, headers: Headers, data: Any):
+    def __init__(self, client: Client, headers: Headers, data: Any, parent_url: str):
         super().__init__(client, headers, data)
+        self.self_href = join_url(parent_url, self.id)
 
     def _set_props(self, obj: dict) -> None:
         self.id = self._make_str_prop(obj.get("id"))
@@ -117,24 +134,55 @@ class Process(EodhObject):
         self.additional_parameters: AdditionalParameters = (
             AdditionalParameters.from_dict(obj.get("additionalParameters", {}))
         )
-        self.inputs_schema = self._make_dict_prop(obj.get("inputs"), {})
+        self.inputs_schema = self._make_dict_prop(obj.get("inputs", {}))
         self.outputs_schema = self._make_dict_prop(obj.get("outputs", {}))
 
-    @cached_property
-    def self_href(self) -> str:
-        ln = Link.get_link(self.links, AdesRelType.SELF)
-        if ln is None:
-            raise ValueError(f"{self} does not have a link pointing to self")
-        return ln.href
-
     def execute(self, inputs: dict) -> Job:
+        # TODO: handle inputs, validate against the schema
+        post_headers = Headers()
+        post_headers["Prefer"] = "respond-async"
         headers, response = self._client._request_json(
-            "POST", self.self_href, data=inputs
+            "POST", self.self_href, headers=post_headers, data=inputs
         )
         return Job(self._client, headers, response)
 
+    def update(
+        self,
+        cwl_url: str | None = None,
+        cwl_yaml: str | None = None,
+    ) -> None:
+
+        def encode(data: str) -> tuple[str, str]:
+            return "application/cwl+yaml", data
+
+        if cwl_yaml is not None and cwl_url is not None:
+            raise ValueError("cwl_url and cwl_yaml arguments are mutually exclusive.")
+        if cwl_yaml is None and cwl_url is None:
+            raise ValueError("Provide either cwl_yaml or cwl_url argument.")
+
+        if cwl_yaml is not None:
+            headers, response = self._client._request_json(
+                "PUT", self.self_href, data=cwl_yaml, encode=encode
+            )
+
+        if cwl_url is not None:
+            data = {
+                "executionUnit": {
+                    "href": cwl_url,
+                    "type": "application/cwl",
+                }
+            }
+            headers, response = self._client._request_json(
+                "PUT", self.self_href, data=data
+            )
+
+        headers, response = self._client._request_json("GET", self.self_href)
+        if response:
+            self._set_props(response)
+
     def delete(self) -> None:
         self._client._request_json_raw("DELETE", self.self_href)
+
 
 class Ades(EodhObject):
 
@@ -177,14 +225,14 @@ class Ades(EodhObject):
         if not response:
             return []
         return [
-            Process(self._client, headers, item)
+            Process(self._client, headers, item, self.processes_href)
             for item in response.get("processes", [])
         ]
 
     def get_process(self, process_id) -> Process:
         url = join_url(self.processes_href, process_id)
         headers, response = self._client._request_json("GET", url)
-        return Process(self._client, headers, response)
+        return Process(self._client, headers, response, self.processes_href)
 
     def deploy_process(
         self,
@@ -231,7 +279,7 @@ class Ades(EodhObject):
             raise RuntimeError("Did not receive location of deployed process.")
 
         headers, response = self._client._request_json("GET", location)
-        return Process(self._client, headers, response)
+        return Process(self._client, headers, response, self.processes_href)
 
     def get_jobs(self) -> list[Job]:
         headers, response = self._client._request_json("GET", self.jobs_href)
