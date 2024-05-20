@@ -7,9 +7,9 @@ import requests
 
 from pyeodh import consts
 from pyeodh.ades import Ades
-from pyeodh.resource_catalog import Catalog
+from pyeodh.resource_catalog import CatalogService
 from pyeodh.types import Headers, Params, RequestMethod
-from pyeodh.utils import is_absolute_url, join_url
+from pyeodh.utils import is_absolute_url
 
 logger = logging.getLogger(__name__)
 
@@ -99,15 +99,10 @@ class Client:
 
         return resp_headers, json.loads(resp_data)
 
-    def get_resource_catalog(self, catalog_id) -> Catalog:
-        url = join_url("/stac-fastapi/catalogs", catalog_id)
-        headers, data = self._request_json("GET", url)
-        return Catalog(self, headers, data)
-
-    def get_resource_catalogs(self) -> list[Catalog]:
-        headers, data = self._request_json("GET", "/stac-fastapi/catalogs")
-        return [Catalog(self, headers, cat) for cat in data.get("catalogs")]
+    def get_catalog_service(self) -> CatalogService:
+        headers, data = self._request_json("GET", "/stac-fastapi/")
+        return CatalogService(self, headers, data)
 
     def get_ades(self) -> Ades:
-        headers, data = self._request_json("GET", "/ades/test_cluster_3/ogc-api/")
+        headers, data = self._request_json("GET", "/ades/test_oxidian/ogc-api/")
         return Ades(self, headers, data)

@@ -211,7 +211,7 @@ class Catalog(EodhObject):
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
-        Calls: GET /collections
+        Calls: GET /catalogs/{catalog_id}/collections
 
         Returns:
             list[Collection]: List of available collections
@@ -227,7 +227,7 @@ class Catalog(EodhObject):
 
     def get_collection(self, collection_id: str) -> Collection:
         """Fetches a resource catalog collection.
-        Calls: GET /collections/{collection_id}
+        Calls: GET /catalogs/{catalog_id}/collections/{collection_id}
 
         Args:
             collection_id (str): ID of a collection
@@ -240,10 +240,87 @@ class Catalog(EodhObject):
 
         return Collection(self._client, headers, response)
 
-    def get_conformance(self) -> list[str]:
-        url = join_url(self._pystac_object.self_href, "conformance")
-        _, response = self._client._request_json("GET", url)
-        return response.get("conformsTo", [])
+    def create_collection(
+        self,
+        id: str,
+        description: str,
+        extent: Extent,
+        title: str | None = None,
+        license: str | None = None,
+        keywords: list[str] | None = None,
+        providers: list[Provider] | None = None,
+        summaries: Summaries | None = None,
+        assets: dict[str, Asset] | None = None,
+    ) -> Collection:
+        assert isinstance(id, str), id
+        assert isinstance(description, str), description
+        assert isinstance(extent, Extent), extent
+        assert is_optional(title, str), title
+        assert is_optional(license, str), license
+        assert is_optional(keywords, list), keywords
+        assert is_optional(providers, list), providers
+        assert is_optional(summaries, Summaries), summaries
+        assert is_optional(assets, dict), assets
+
+        post_data = remove_null_items(
+            {
+                "id": id,
+                "description": description,
+                "extent": extent,
+                "title": title,
+                "license": license,
+                "keywords": keywords,
+                "providers": providers,
+                "summaries": summaries,
+                "assets": assets,
+            }
+        )
+        headers, response = self._client._request_json(
+            "POST", self.collections_href, data=post_data
+        )
+        return Collection(self._client, headers, response)
+
+
+class CatalogService(EodhObject):
+    _pystac_object: pystac.Catalog
+
+    def __init__(self, client: Client, headers: Headers, data: Any):
+        super().__init__(client, headers, data, pystac.Catalog)
+
+    def _set_props(self, obj: pystac.Catalog) -> None:
+        self.id = obj.id
+        self.description = obj.description
+        self.title = obj.title
+
+    @cached_property
+    def collections_href(self) -> str:
+        return join_url(self._pystac_object.self_href, "collections")
+
+    def get_collections(self) -> list[Collection]:
+        """Fetches all resource catalog collections.
+        Calls: GET /collections
+
+        Returns:
+            list[Collection]: List of available collections
+        """
+
+        headers, response = self._client._request_json("GET", self.collections_href)
+        if not response:
+            return []
+        return [
+            Collection(self._client, headers, item)
+            for item in response.get("collections", [])
+        ]
+
+    def get_catalog(self, catalog_id) -> Catalog:
+        url = join_url(self._pystac_object.self_href, "catalogs", catalog_id)
+        headers, data = self._request_json("GET", url)
+        return Catalog(self, headers, data)
+
+    def get_catalogs(self) -> list[Catalog]:
+        url = join_url(self._pystac_object.self_href, "catalogs")
+        headers, data = self._request_json("GET", url)
+        return [Catalog(self, headers, cat) for cat in data.get("catalogs")]
 
     def search(
         self,
@@ -294,45 +371,10 @@ class Catalog(EodhObject):
             Item, self._client, "POST", url, "features", first_data=data
         )
 
-    def create_collection(
-        self,
-        id: str,
-        description: str,
-        extent: Extent,
-        title: str | None = None,
-        license: str | None = None,
-        keywords: list[str] | None = None,
-        providers: list[Provider] | None = None,
-        summaries: Summaries | None = None,
-        assets: dict[str, Asset] | None = None,
-    ) -> Collection:
-        assert isinstance(id, str), id
-        assert isinstance(description, str), description
-        assert isinstance(extent, Extent), extent
-        assert is_optional(title, str), title
-        assert is_optional(license, str), license
-        assert is_optional(keywords, list), keywords
-        assert is_optional(providers, list), providers
-        assert is_optional(summaries, Summaries), summaries
-        assert is_optional(assets, dict), assets
-
-        post_data = remove_null_items(
-            {
-                "id": id,
-                "description": description,
-                "extent": extent,
-                "title": title,
-                "license": license,
-                "keywords": keywords,
-                "providers": providers,
-                "summaries": summaries,
-                "assets": assets,
-            }
-        )
-        headers, response = self._client._request_json(
-            "POST", self.collections_href, data=post_data
-        )
-        return Collection(self._client, headers, response)
+    def get_conformance(self) -> list[str]:
+        url = join_url(self._pystac_object.self_href, "conformance")
+        _, response = self._client._request_json("GET", url)
+        return response.get("conformsTo", [])
 
     def ping(self) -> str | None:
         headers, response = self._client._request_json(
