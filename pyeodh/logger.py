@@ -1,4 +1,5 @@
 import logging
+import os
 import textwrap
 
 
@@ -15,6 +16,14 @@ class MultiLineFormatter(logging.Formatter):
 def setup(level: int = logging.WARNING):
     logger = logging.getLogger("pyeodh")
     logger.setLevel(level)
+    env_level = os.getenv("PYEODH_DEBUG")
+    if env_level is not None and env_level.lower() in ["yes", "true", "on", "1"]:
+        logger.setLevel(logging.DEBUG)
+
     stream_handler = logging.StreamHandler()
     stream_handler.setFormatter(MultiLineFormatter("%(levelname)s: %(message)s"))
     logger.addHandler(stream_handler)
+
+
+def set_log_level(level: int):
+    logging.getLogger("pyeodh").setLevel(level)
