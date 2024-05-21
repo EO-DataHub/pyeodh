@@ -44,7 +44,7 @@ class Client:
         url: str,
         headers: Headers | None = None,
         params: Params | None = None,
-        data: dict | None = None,
+        data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[int, Headers, str]:
         logger.debug(
@@ -87,7 +87,7 @@ class Client:
         url: str,
         headers: Headers | None = None,
         params: Params | None = None,
-        data: dict | None = None,
+        data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[Headers, Any]:
         status, resp_headers, resp_data = self._request_json_raw(

@@ -44,13 +44,17 @@ class Job(EodhObject):
         self.progress = self._make_int_prop(obj.get("progress"))
         self.links = [Link.from_dict(d) for d in obj.get("links", [])]
         if "created" in obj:
-            self.created = Datetime.fromisoformat(obj.get("created"))
+            created: str = obj.get("created", "")
+            self.created = Datetime.fromisoformat(created)
         if "started" in obj:
-            self.started = Datetime.fromisoformat(obj.get("started"))
+            started: str = obj.get("started", "'")
+            self.started = Datetime.fromisoformat(started)
         if "finished" in obj:
-            self.finished = Datetime.fromisoformat(obj.get("finished"))
+            finished: str = obj.get("finished", "")
+            self.finished = Datetime.fromisoformat(finished)
         if "updated" in obj:
-            self.updated = Datetime.fromisoformat(obj.get("updated"))
+            updated: str = obj.get("updated", "")
+            self.updated = Datetime.fromisoformat(updated)
 
     @cached_property
     def self_href(self) -> str:
@@ -112,7 +116,7 @@ class Process(EodhObject):
 
     def __init__(self, client: Client, headers: Headers, data: Any, parent_url: str):
         super().__init__(client, headers, data)
-        self.self_href = join_url(parent_url, self.id)
+        self.self_href = join_url(parent_url, self.id or "")
 
     def _set_props(self, obj: dict) -> None:
         self.id = self._make_str_prop(obj.get("id"))
@@ -258,7 +262,7 @@ class Ades(EodhObject):
             raise ValueError("cwl_url and cwl_yaml arguments are mutually exclusive.")
         if cwl_yaml is None and cwl_url is None:
             raise ValueError("Provide either cwl_yaml or cwl_url argument.")
-
+        headers = None
         if cwl_yaml is not None:
             headers, response = self._client._request_json(
                 "POST", self.processes_href, data=cwl_yaml, encode=encode
@@ -274,7 +278,8 @@ class Ades(EodhObject):
             headers, response = self._client._request_json(
                 "POST", self.processes_href, data=data
             )
-        location = headers.get("Location")
+
+        location = headers.get("Location") if headers else None
         if not location:
             raise RuntimeError("Did not receive location of deployed process.")
 

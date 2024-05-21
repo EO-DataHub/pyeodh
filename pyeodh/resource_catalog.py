@@ -314,13 +314,13 @@ class CatalogService(EodhObject):
 
     def get_catalog(self, catalog_id) -> Catalog:
         url = join_url(self._pystac_object.self_href, "catalogs", catalog_id)
-        headers, data = self._request_json("GET", url)
-        return Catalog(self, headers, data)
+        headers, data = self._client._request_json("GET", url)
+        return Catalog(self._client, headers, data)
 
     def get_catalogs(self) -> list[Catalog]:
         url = join_url(self._pystac_object.self_href, "catalogs")
-        headers, data = self._request_json("GET", url)
-        return [Catalog(self, headers, cat) for cat in data.get("catalogs")]
+        headers, data = self._client._request_json("GET", url)
+        return [Catalog(self._client, headers, cat) for cat in data.get("catalogs")]
 
     def search(
         self,
