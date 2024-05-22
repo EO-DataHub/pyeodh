@@ -26,4 +26,10 @@ def setup(level: int = logging.WARNING):
 
 
 def set_log_level(level: int):
+    """Set message level for logging.
+
+    Args:
+        level (int): Message level, recommended to use constants provided by logging
+            module.
+    """
     logging.getLogger("pyeodh").setLevel(level)

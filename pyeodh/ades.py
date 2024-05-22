@@ -142,6 +142,18 @@ class Process(EodhObject):
         self.outputs_schema = self._make_dict_prop(obj.get("outputs", {}))
 
     def execute(self, inputs: dict) -> Job:
+        """Trigger process workflow execution.
+
+        Calls: POST /processes/{process_id}/execute
+
+        Args:
+            inputs (dict): A dictionary containing inputs structured according to
+                schema defined by the process.
+
+        Returns:
+            Job: Object representing the triggered job.
+        """
+
         # TODO: handle inputs, validate against the schema
         post_headers = Headers()
         post_headers["Prefer"] = "respond-async"
@@ -155,6 +167,17 @@ class Process(EodhObject):
         cwl_url: str | None = None,
         cwl_yaml: str | None = None,
     ) -> None:
+        """Update the process workflow. `cwl_url` and `cwl_yaml` parameters are
+        mutually exclusive.
+
+        Calls: PUT /processes/{process_id}
+
+        Args:
+            cwl_url (str | None, optional): URL pointing to the workflow CWL file.
+                Defaults to None.
+            cwl_yaml (str | None, optional): Content of the CWL file in yaml format.
+                Defaults to None.
+        """
 
         def encode(data: str) -> tuple[str, str]:
             return "application/cwl+yaml", data
@@ -225,6 +248,14 @@ class Ades(EodhObject):
         return ln.href
 
     def get_processes(self) -> list[Process]:
+        """Fetches available processes
+
+        Calls: GET /processes
+
+        Returns:
+            list[Process]: List of available processes.
+        """
+
         headers, response = self._client._request_json("GET", self.processes_href)
         if not response:
             return []
@@ -233,7 +264,18 @@ class Ades(EodhObject):
             for item in response.get("processes", [])
         ]
 
-    def get_process(self, process_id) -> Process:
+    def get_process(self, process_id: str) -> Process:
+        """Fetch an individual process
+
+        Calls: GET /processes/{process_id}
+
+        Args:
+            process_id (str): Process ID
+
+        Returns:
+            Process: Initialized process object.
+        """
+
         url = join_url(self.processes_href, process_id)
         headers, response = self._client._request_json("GET", url)
         return Process(self._client, headers, response, self.processes_href)
@@ -244,6 +286,8 @@ class Ades(EodhObject):
         cwl_yaml: str | None = None,
     ) -> Process:
         """Deploy a process.
+
+        Calls: POST /processes
 
         Args:
             cwl_url (str | None, optional): Location of the cwl workflow file. Mutually
@@ -287,12 +331,28 @@ class Ades(EodhObject):
         return Process(self._client, headers, response, self.processes_href)
 
     def get_jobs(self) -> list[Job]:
+        """Fetches a list of jobs triggered by the user.
+
+        Calls: GET /jobs
+
+        Returns:
+            list[Job]: List of user's jobs.
+        """
+
         headers, response = self._client._request_json("GET", self.jobs_href)
         if not response:
             return []
         return [Job(self._client, headers, item) for item in response.get("jobs", [])]
 
     def get_job(self, job_id) -> Job:
+        """Fetches an individual job.
+
+        Args:
+            job_id (_type_): Job ID.
+
+        Returns:
+            Job: Initialized job object.
+        """
         url = join_url(self.processes_href, job_id)
         headers, response = self._client._request_json("GET", url)
         return Job(self._client, headers, response)

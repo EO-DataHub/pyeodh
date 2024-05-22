@@ -40,6 +40,11 @@ class Item(EodhObject):
         self.assets = obj.assets
 
     def delete(self) -> None:
+        """Delete this item.
+
+
+        Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}/items/{item_id}
+        """
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
     def update(
@@ -51,6 +56,21 @@ class Item(EodhObject):
         collection: str | pystac.Collection | None = None,
         assets: dict[str, Any] | None = None,
     ) -> None:
+        """Update this item's attributes with new values. Only provide the values you
+        want to update.
+
+        Calls: PUT /catalogs/{catalog_id}/collections/{collection_id}/items/{item_id}
+
+
+        Args:
+            geometry (dict[str, Any] | None, optional): Geometry. Defaults to None.
+            bbox (list[float] | None, optional): Bounding box. Defaults to None.
+            datetime (Datetime | None, optional): Datetime. Defaults to None.
+            properties (dict[str, Any] | None, optional): Properties. Defaults to None.
+            collection (str | pystac.Collection | None, optional): Collection. Defaults
+                to None.
+            assets (dict[str, Any] | None, optional): Assets. Defaults to None.
+        """
 
         put_data = remove_null_items(
             {
@@ -97,6 +117,14 @@ class Collection(EodhObject):
         return link.href
 
     def get_items(self) -> PaginatedList[Item]:
+        """Fetches all items within a collection.
+
+        Calls: GET /catalogs/{catalog_id}/collections/{collection_id}/items
+
+        Returns:
+            PaginatedList[Item]: Iterable list of items. Automatically handles
+                paginated results.
+        """
         return PaginatedList(
             Item,
             self._client,
@@ -108,13 +136,14 @@ class Collection(EodhObject):
 
     def get_item(self, item_id: str) -> Item:
         """Fetches a collection item.
-        Calls: GET /collections/{collection_id}/items/{item_id}
+
+        Calls: GET /catalogs/{catalog_id}/collections/{collection_id}/items/{item_id}
 
         Args:
-            item_id (str): ID of a collection item
+            item_id (str): ID of a collection item.
 
         Returns:
-            Item: Item for given ID
+            Item: Initialized item object.
         """
         url = join_url(self.items_href, item_id)
         headers, response = self._client._request_json("GET", url)
@@ -132,6 +161,22 @@ class Collection(EodhObject):
         summaries: Summaries | None = None,
         assets: dict[str, Asset] | None = None,
     ) -> None:
+        """Update collection attributes with new values. Provide only the values you
+        want to update.
+
+        Calls: PUT /catalogs/{catalog_id}/collections/{collection_id}
+
+
+        Args:
+            description (str | None, optional): Description. Defaults to None.
+            extent (Extent | None, optional): Extent. Defaults to None.
+            title (str | None, optional): Title. Defaults to None.
+            license (str | None, optional): License. Defaults to None.
+            keywords (list[str] | None, optional): Keywords. Defaults to None.
+            providers (list[Provider] | None, optional): Providers. Defaults to None.
+            summaries (Summaries | None, optional): Summaries. Defaults to None.
+            assets (dict[str, Asset] | None, optional): Assets. Defaults to None.
+        """
         assert is_optional(description, str), description
         assert is_optional(extent, Extent), extent
         assert is_optional(title, str), title
@@ -163,6 +208,10 @@ class Collection(EodhObject):
             self._set_props(self._pystac_object.from_dict(resp_data))
 
     def delete(self) -> None:
+        """Delete this collection.
+
+        Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}
+        """
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
     def create_item(
@@ -175,6 +224,23 @@ class Collection(EodhObject):
         collection: str | pystac.Collection | None = None,
         assets: dict[str, Any] | None = None,
     ) -> Item:
+        """Create an item as part of this collection.
+
+        Calls: POST /catalogs/{catalog_id}/collections/{collection_id}/items/{item_id}
+
+        Args:
+            id (str): A unique ID.
+            geometry (dict[str, Any] | None): Geometry
+            bbox (list[float] | None): Bounding box
+            datetime (Datetime | None): Datetime
+            properties (dict[str, Any] | None): Properties
+            collection (str | pystac.Collection | None, optional): ID of a parent
+                collection. Defaults to None.
+            assets (dict[str, Any] | None, optional): Assets. Defaults to None.
+
+        Returns:
+            Item: _description_
+        """
 
         post_data = remove_null_items(
             {
@@ -211,6 +277,7 @@ class Catalog(EodhObject):
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
+
         Calls: GET /catalogs/{catalog_id}/collections
 
         Returns:
@@ -227,6 +294,7 @@ class Catalog(EodhObject):
 
     def get_collection(self, collection_id: str) -> Collection:
         """Fetches a resource catalog collection.
+
         Calls: GET /catalogs/{catalog_id}/collections/{collection_id}
 
         Args:
@@ -252,6 +320,24 @@ class Catalog(EodhObject):
         summaries: Summaries | None = None,
         assets: dict[str, Asset] | None = None,
     ) -> Collection:
+        """Create a new collection inside a catalog.
+
+        Calls: POST /catalogs/{catalog_id}/collections
+
+        Args:
+            id (str)
+            description (str)
+            extent (Extent)
+            title (str | None, optional): Defaults to None.
+            license (str | None, optional): Defaults to None.
+            keywords (list[str] | None, optional): Defaults to None.
+            providers (list[Provider] | None, optional): Defaults to None.
+            summaries (Summaries | None, optional): Defaults to None.
+            assets (dict[str, Asset] | None, optional): Defaults to None.
+
+        Returns:
+            Collection: An initialized collection object.
+        """
         assert isinstance(id, str), id
         assert isinstance(description, str), description
         assert isinstance(extent, Extent), extent
@@ -285,6 +371,14 @@ class Catalog(EodhObject):
         description: str | None = None,
         title: str | None = None,
     ) -> None:
+        """Updates catalog.
+
+        Calls: PUT /catalogs/{catalog_id}
+
+        Args:
+            description (str | None, optional): New description.  Defaults to None.
+            title (str | None, optional): New title. Defaults to None.
+        """
         assert is_optional(description, str), description
         assert is_optional(title, str), title
 
@@ -303,6 +397,10 @@ class Catalog(EodhObject):
             self._set_props(self._pystac_object.from_dict(resp_data))
 
     def delete(self) -> None:
+        """Delete this catalog.
+
+        Calls: DELETE /catalogs/{catalog_id}
+        """
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
 
@@ -323,6 +421,7 @@ class CatalogService(EodhObject):
 
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
+
         Calls: GET /collections
 
         Returns:
@@ -337,12 +436,30 @@ class CatalogService(EodhObject):
             for item in response.get("collections", [])
         ]
 
-    def get_catalog(self, catalog_id) -> Catalog:
+    def get_catalog(self, catalog_id: str) -> Catalog:
+        """Fetches a catalog.
+
+        Calls: GET /catalogs/{catalog_id}
+
+        Args:
+            catalog_id (str): Catalog ID
+
+        Returns:
+            Catalog: An initialized resource catalog object.
+        """
+
         url = join_url(self._pystac_object.self_href, "catalogs", catalog_id)
         headers, data = self._client._request_json("GET", url)
         return Catalog(self._client, headers, data)
 
     def get_catalogs(self) -> list[Catalog]:
+        """Fetches all catalogs.
+
+        Calls: GET /catalogs
+
+        Returns:
+            list[Catalog]: List of all catalogs available.
+        """
         url = join_url(self._pystac_object.self_href, "catalogs")
         headers, data = self._client._request_json("GET", url)
         return [Catalog(self._client, headers, cat) for cat in data.get("catalogs")]
@@ -353,6 +470,18 @@ class CatalogService(EodhObject):
         description: str,
         title: str | None = None,
     ) -> Catalog:
+        """Creates a new catalog
+
+        Calls: POST /catalogs
+
+        Args:
+            id (str): New catalog ID
+            description (str): Catalog description
+            title (str | None, optional): Catalog title. Defaults to None.
+
+        Returns:
+            Catalog: An initialized catalog object.
+        """
         assert isinstance(id, str), id
         assert isinstance(description, str), description
         assert is_optional(title, str), title
@@ -419,11 +548,25 @@ class CatalogService(EodhObject):
         )
 
     def get_conformance(self) -> list[str]:
+        """Fetches list of standards the API conforms to.
+
+        Calls: GET /conformance
+
+        Returns:
+            list[str]: Standards.
+        """
         url = join_url(self._pystac_object.self_href, "conformance")
         _, response = self._client._request_json("GET", url)
         return response.get("conformsTo", [])
 
     def ping(self) -> str | None:
+        """Pings API.
+
+        Calls: GET /_mgmt/ping
+
+        Returns:
+            str | None: Pong.
+        """
         headers, response = self._client._request_json(
             "GET", join_url(self._pystac_object.self_href, "_mgmt/ping")
         )

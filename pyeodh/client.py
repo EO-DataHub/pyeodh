@@ -100,9 +100,23 @@ class Client:
         return resp_headers, json.loads(resp_data)
 
     def get_catalog_service(self) -> CatalogService:
+        """Initializes the resource catalog API client.
+
+        Calls: GET /stac-fastapi
+
+        Returns:
+            CatalogService: Object representing the Resource catalog service.
+        """
         headers, data = self._request_json("GET", "/stac-fastapi/")
         return CatalogService(self, headers, data)
 
     def get_ades(self) -> Ades:
+        """Initializes the workflow execution service (ADES) client.
+
+        Calls: GET /ades/ogc-api
+
+        Returns:
+            Ades: Object representing the ADES.
+        """
         headers, data = self._request_json("GET", "/ades/test_oxidian/ogc-api/")
         return Ades(self, headers, data)
