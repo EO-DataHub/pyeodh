@@ -55,7 +55,7 @@ class Item(EodhObject):
         put_data = remove_null_items(
             {
                 "id": self.id,
-                "geometry": geometry or self.geometry,  # NOTE: getting 500 with this
+                "geometry": geometry or self.geometry,  # ! getting 500 with this
                 "bbox": bbox or self.bbox,
                 "datetime": datetime or self.datetime,
                 "properties": properties or self.properties,
@@ -280,6 +280,31 @@ class Catalog(EodhObject):
         )
         return Collection(self._client, headers, response)
 
+    def update(
+        self,
+        description: str | None = None,
+        title: str | None = None,
+    ) -> None:
+        assert is_optional(description, str), description
+        assert is_optional(title, str), title
+
+        put_data = remove_null_items(
+            {
+                "id": self.id,
+                "description": description or self.description,
+                "title": title or self.title,
+            }
+        )
+        _, resp_data = self._client._request_json(
+            "PUT", self._pystac_object.self_href, data=put_data
+        )
+
+        if resp_data:
+            self._set_props(self._pystac_object.from_dict(resp_data))
+
+    def delete(self) -> None:
+        self._client._request_json_raw("DELETE", self._pystac_object.self_href)
+
 
 class CatalogService(EodhObject):
     _pystac_object: pystac.Catalog
@@ -321,6 +346,28 @@ class CatalogService(EodhObject):
         url = join_url(self._pystac_object.self_href, "catalogs")
         headers, data = self._client._request_json("GET", url)
         return [Catalog(self._client, headers, cat) for cat in data.get("catalogs")]
+
+    def create_catalog(
+        self,
+        id: str,
+        description: str,
+        title: str | None = None,
+    ) -> Catalog:
+        assert isinstance(id, str), id
+        assert isinstance(description, str), description
+        assert is_optional(title, str), title
+
+        post_data = remove_null_items(
+            {
+                "id": id,
+                "description": description,
+                "title": title,
+            }
+        )
+        headers, response = self._client._request_json(
+            "POST", self.collections_href, data=post_data
+        )
+        return Catalog(self._client, headers, response)
 
     def search(
         self,
