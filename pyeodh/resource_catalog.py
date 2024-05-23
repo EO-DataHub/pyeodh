@@ -502,6 +502,7 @@ class CatalogService(EodhObject):
         self,
         limit: int = consts.PAGINATION_LIMIT,
         collections: list[str] | None = None,
+        catalogs: list[str] | None = None,
         ids: list[str] | None = None,
         bbox: list[Any] | None = None,
         intersects: dict | None = None,
@@ -515,6 +516,7 @@ class CatalogService(EodhObject):
     ) -> PaginatedList[Item]:
         assert isinstance(limit, int), limit
         assert is_optional(collections, list), collections
+        assert is_optional(catalogs, list), catalogs
         assert is_optional(ids, list), ids
         assert is_optional(bbox, list), bbox
         assert is_optional(intersects, dict), intersects
@@ -529,6 +531,7 @@ class CatalogService(EodhObject):
         data = remove_null_items(
             {
                 "limit": limit,
+                "catalogs": catalogs,
                 "collections": collections,
                 "ids": ids,
                 "bbox": bbox,
@@ -545,6 +548,80 @@ class CatalogService(EodhObject):
         url = join_url(self._pystac_object.self_href, "search")
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data
+        )
+
+    def collection_search(
+        self,
+        limit: int = consts.PAGINATION_LIMIT,
+        bbox: list[Any] | None = None,
+        datetime: str | None = None,
+        query: str | None = None,
+    ) -> PaginatedList[Collection]:
+        """Searches the catalog for collections.
+
+        Args:
+            limit (int, optional): Number of results per page. Defaults to
+                consts.PAGINATION_LIMIT.
+            bbox (list[Any] | None, optional): Bounding box. Defaults to None.
+            datetime (str | None, optional): Datetime. Defaults to None.
+            query (str | None, optional): Query string. Defaults to None.
+
+        Returns:
+            PaginatedList[Collection]: Iterable list of collections.
+        """
+
+        assert isinstance(limit, int), limit
+        assert is_optional(bbox, list), bbox
+        assert is_optional(datetime, str), datetime
+        assert is_optional(query, str), query
+
+        data = remove_null_items(
+            {
+                "limit": limit,
+                "bbox": bbox,
+                "datetime": datetime,
+                "q": query,
+            }
+        )
+        url = join_url(self._pystac_object.self_href, "collection-search")
+        return PaginatedList(
+            Collection, self._client, "POST", url, "collections", first_data=data
+        )
+
+    def discovery_search(
+        self,
+        query: str,
+        limit: int = consts.PAGINATION_LIMIT,
+    ) -> PaginatedList[Catalog]:
+        """Searches the catalog for catalogs and collections.
+
+        Args:
+            limit (int, optional): Number of results per page. Defaults to
+                consts.PAGINATION_LIMIT.
+            query (str | None, optional): Query string. Defaults to None.
+
+        Returns:
+            PaginatedList[Collection]: Iterable list of collections.
+        """
+
+        assert isinstance(query, str), query
+        assert isinstance(limit, int), limit
+
+        data = remove_null_items(
+            {
+                "limit": limit,
+                "q": query,
+            }
+        )
+        url = join_url(self._pystac_object.self_href, "discovery-search")
+
+        return PaginatedList(
+            Catalog,
+            self._client,
+            "POST",
+            url,
+            "catalogs_and_collections",
+            first_data=data,
         )
 
     def get_conformance(self) -> list[str]:
