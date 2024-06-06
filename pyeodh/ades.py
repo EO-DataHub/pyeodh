@@ -4,15 +4,19 @@ from dataclasses import dataclass
 from datetime import datetime as Datetime
 from enum import StrEnum
 from functools import cached_property
+import logging
 from typing import TYPE_CHECKING, Any
 
 from pyeodh.eodh_object import EodhObject
 from pyeodh.types import Headers, Link
 from pyeodh.utils import join_url
+from pyeodh.resource_catalog import Collection
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
     from pyeodh.client import Client
+
+logger = logging.getLogger(__name__)
 
 
 class AdesRelType(StrEnum):
@@ -20,6 +24,9 @@ class AdesRelType(StrEnum):
     STATUS = "status"
     PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
     JOBS = "http://www.opengis.net/def/rel/ogc/1.0/job-list"
+    RESULTS_NOT_READY = (
+        "http://www.opengis.net/def/rel/ogc/1.0/exception/result-not-ready"
+    )
 
 
 class AdesJobStatus(StrEnum):
@@ -70,6 +77,17 @@ class Job(EodhObject):
 
     def delete(self) -> None:
         self._client._request_json_raw("DELETE", self.self_href)
+
+    def _get_results_collection(self) -> Collection:
+        url = join_url(self.self_href, "results")
+        headers, response = self._client._request_json("GET", url)
+        if (
+            response.get("type", AdesRelType.RESULTS_NOT_READY)
+            == AdesRelType.RESULTS_NOT_READY
+        ):
+            logger.info(f"Job {self.id} results not ready.")
+
+        return Collection(self._client, headers, response)
 
 
 @dataclass
