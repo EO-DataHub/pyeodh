@@ -24,6 +24,7 @@ class PaginatedList(Generic[T]):
         headers: Headers | None = None,
         params: Params | None = None,
         first_data: dict | None = None,
+        parent: T | None = None,
     ) -> None:
         self._elements: list[T] = []
         self._cls = cls
@@ -35,6 +36,7 @@ class PaginatedList(Generic[T]):
         self._total_count: int | None = None
         self._list_key = list_key
         self._data = first_data
+        self._parent = parent
 
     @property
     def total_count(self):
@@ -86,6 +88,7 @@ class PaginatedList(Generic[T]):
                 self._client,
                 headers,
                 element,
+                parent=self._parent,
             )
             for element in resp_data
             if element is not None

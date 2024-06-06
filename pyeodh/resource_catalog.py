@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from enum import StrEnum
 from functools import cached_property
 import logging
 from typing import TYPE_CHECKING, Any, Literal, TypeVar
@@ -14,7 +15,7 @@ from pyeodh import consts
 from pyeodh.eodh_object import EodhObject, is_optional
 from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
-from pyeodh.utils import join_url, remove_null_items
+from pyeodh.utils import ConformanceError, join_url, remove_null_items
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
@@ -28,11 +29,17 @@ logger = logging.getLogger(__name__)
 C = TypeVar("C", bound="STACObject")
 
 
+class Conformance(StrEnum):
+    TRANSACTION_EXTENSION = (
+        "https://api.stacspec.org/v1.0.0/ogcapi-features/extensions/transaction"
+    )
+
+
 class Item(EodhObject):
     _pystac_object: pystac.Item
 
-    def __init__(self, client: Client, headers: Headers, data: Any):
-        super().__init__(client, headers, data, pystac.Item)
+    def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
+        super().__init__(client, headers, data, pystac.Item, **kwargs)
 
     def _set_props(self, obj: pystac.Item) -> None:
         self.id = obj.id
@@ -49,6 +56,10 @@ class Item(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}/items/{item_id}
         """
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
     def update(
@@ -75,6 +86,10 @@ class Item(EodhObject):
                 to None.
             assets (dict[str, Any] | None, optional): Assets. Defaults to None.
         """
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
 
         put_data = remove_null_items(
             {
@@ -99,8 +114,8 @@ class Item(EodhObject):
 class Collection(EodhObject):
     _pystac_object: pystac.Collection
 
-    def __init__(self, client: Client, headers: Headers, data: Any):
-        super().__init__(client, headers, data, pystac.Collection)
+    def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
+        super().__init__(client, headers, data, pystac.Collection, **kwargs)
 
     def _set_props(self, obj: pystac.Collection) -> None:
         self.id = obj.id
@@ -136,6 +151,7 @@ class Collection(EodhObject):
             self.items_href,
             "features",
             params={"limit": consts.PAGINATION_LIMIT},
+            parent=self,
         )
 
     def get_item(self, item_id: str) -> Item:
@@ -152,7 +168,7 @@ class Collection(EodhObject):
         url = join_url(self.items_href, item_id)
         headers, response = self._client._request_json("GET", url)
 
-        return Item(self._client, headers, response)
+        return Item(self._client, headers, response, parent=self)
 
     def update(
         self,
@@ -181,6 +197,10 @@ class Collection(EodhObject):
             summaries (Summaries | None, optional): Summaries. Defaults to None.
             assets (dict[str, Asset] | None, optional): Assets. Defaults to None.
         """
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         assert is_optional(description, str), description
         assert is_optional(extent, Extent), extent
         assert is_optional(title, str), title
@@ -216,6 +236,10 @@ class Collection(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}
         """
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
     def create_item(
@@ -245,7 +269,10 @@ class Collection(EodhObject):
         Returns:
             Item: _description_
         """
-
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         post_data = remove_null_items(
             {
                 "id": id,
@@ -261,14 +288,14 @@ class Collection(EodhObject):
         headers, response = self._client._request_json(
             "POST", self.items_href, data=post_data
         )
-        return Item(self._client, headers, response)
+        return Item(self._client, headers, response, parent=self)
 
 
 class Catalog(EodhObject):
     _pystac_object: pystac.Catalog
 
-    def __init__(self, client: Client, headers: Headers, data: Any):
-        super().__init__(client, headers, data, pystac.Catalog)
+    def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
+        super().__init__(client, headers, data, pystac.Catalog, **kwargs)
 
     def _set_props(self, obj: pystac.Catalog) -> None:
         self.id = obj.id
@@ -292,7 +319,7 @@ class Catalog(EodhObject):
         if not response:
             return []
         return [
-            Collection(self._client, headers, item)
+            Collection(self._client, headers, item, parent=self)
             for item in response.get("collections", [])
         ]
 
@@ -310,7 +337,7 @@ class Catalog(EodhObject):
         url = join_url(self.collections_href, collection_id)
         headers, response = self._client._request_json("GET", url)
 
-        return Collection(self._client, headers, response)
+        return Collection(self._client, headers, response, parent=self)
 
     def create_collection(
         self,
@@ -342,6 +369,10 @@ class Catalog(EodhObject):
         Returns:
             Collection: An initialized collection object.
         """
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         assert isinstance(id, str), id
         assert isinstance(description, str), description
         assert isinstance(extent, Extent), extent
@@ -368,7 +399,7 @@ class Catalog(EodhObject):
         headers, response = self._client._request_json(
             "POST", self.collections_href, data=post_data
         )
-        return Collection(self._client, headers, response)
+        return Collection(self._client, headers, response, parent=self)
 
     def update(
         self,
@@ -383,6 +414,10 @@ class Catalog(EodhObject):
             description (str | None, optional): New description.  Defaults to None.
             title (str | None, optional): New title. Defaults to None.
         """
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         assert is_optional(description, str), description
         assert is_optional(title, str), title
 
@@ -405,6 +440,10 @@ class Catalog(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}
         """
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
 
@@ -436,7 +475,7 @@ class CatalogService(EodhObject):
         if not response:
             return []
         return [
-            Collection(self._client, headers, item)
+            Collection(self._client, headers, item, parent=self)
             for item in response.get("collections", [])
         ]
 
@@ -454,7 +493,7 @@ class CatalogService(EodhObject):
 
         url = join_url(self._pystac_object.self_href, "catalogs", catalog_id)
         headers, data = self._client._request_json("GET", url)
-        return Catalog(self._client, headers, data)
+        return Catalog(self._client, headers, data, parent=self)
 
     def get_catalogs(self) -> list[Catalog]:
         """Fetches all catalogs.
@@ -470,7 +509,7 @@ class CatalogService(EodhObject):
 
         for cat in data.get("catalogs"):
             try:
-                catalogs.append(Catalog(self._client, headers, cat))
+                catalogs.append(Catalog(self._client, headers, cat, parent=self))
             except STACTypeError as e:
                 logger.warning(f"{e} => Skipping")
         return catalogs
@@ -493,6 +532,10 @@ class CatalogService(EodhObject):
         Returns:
             Catalog: An initialized catalog object.
         """
+        if not self.conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
         assert isinstance(id, str), id
         assert isinstance(description, str), description
         assert is_optional(title, str), title
@@ -507,7 +550,7 @@ class CatalogService(EodhObject):
         headers, response = self._client._request_json(
             "POST", self.collections_href, data=post_data
         )
-        return Catalog(self._client, headers, response)
+        return Catalog(self._client, headers, response, parent=self)
 
     def search(
         self,
@@ -558,7 +601,7 @@ class CatalogService(EodhObject):
         )
         url = join_url(self._pystac_object.self_href, "search")
         return PaginatedList(
-            Item, self._client, "POST", url, "features", first_data=data
+            Item, self._client, "POST", url, "features", first_data=data, parent=self
         )
 
     def collection_search(
@@ -596,7 +639,13 @@ class CatalogService(EodhObject):
         )
         url = join_url(self._pystac_object.self_href, "collection-search")
         return PaginatedList(
-            Collection, self._client, "POST", url, "collections", first_data=data
+            Collection,
+            self._client,
+            "POST",
+            url,
+            "collections",
+            first_data=data,
+            parent=self,
         )
 
     def discovery_search(
@@ -633,6 +682,7 @@ class CatalogService(EodhObject):
             url,
             "catalogs_and_collections",
             first_data=data,
+            parent=self,
         )
 
     def get_conformance(self) -> list[str]:
@@ -659,3 +709,6 @@ class CatalogService(EodhObject):
             "GET", join_url(self._pystac_object.self_href, "_mgmt/ping")
         )
         return response.get("message")
+
+    def conforms_to(self, conformance_uri: str | Conformance) -> bool:
+        return conformance_uri in self.get_conformance()

@@ -20,3 +20,10 @@ def join_url(*args: str) -> str:
 
 def remove_null_items(d: dict[str, Any]) -> dict[str, Any]:
     return {k: v for k, v in d.items() if v is not None}
+
+
+class ConformanceError(Exception):
+    """Raise when the API does not coform to requested functionality."""
+
+    def __str__(self):
+        return f"API does not conform to {', '.join(self.args)}"

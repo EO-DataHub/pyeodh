@@ -30,10 +30,12 @@ class EodhObject:
         headers: Headers,
         data: Any,
         pystac_cls: Type[STACObject] | None = None,
+        **kwargs,
     ):
         self._client = client
         self._headers = headers
         self._raw_data = data
+        self._parent: T_base | None = kwargs.get("parent")
 
         if pystac_cls is not None:
             self._pystac_object = pystac_cls.from_dict(data)
@@ -45,6 +47,12 @@ class EodhObject:
         raise NotImplementedError(
             f"Method _set_props not implemented in {self.__class__.__name__}."
         )
+
+    def get_root(self) -> T_base:
+        current = self
+        while current._parent is not None:
+            current = current._parent
+        return current
 
     @staticmethod
     def _make_prop(value: T, t: Type[T]) -> T:
