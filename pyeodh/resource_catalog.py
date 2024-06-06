@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 from functools import cached_property
+import logging
 from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
-from pystac import Extent, RelType, STACObject, Summaries
+from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
 
@@ -20,6 +21,9 @@ if TYPE_CHECKING:
     from datetime import datetime as Datetime
 
     from pyeodh.client import Client
+
+logger = logging.getLogger(__name__)
+
 
 C = TypeVar("C", bound="STACObject")
 
@@ -462,7 +466,14 @@ class CatalogService(EodhObject):
         """
         url = join_url(self._pystac_object.self_href, "catalogs")
         headers, data = self._client._request_json("GET", url)
-        return [Catalog(self._client, headers, cat) for cat in data.get("catalogs")]
+        catalogs = []
+
+        for cat in data.get("catalogs"):
+            try:
+                catalogs.append(Catalog(self._client, headers, cat))
+            except STACTypeError as e:
+                logger.warning(f"{e} => Skipping")
+        return catalogs
 
     def create_catalog(
         self,
