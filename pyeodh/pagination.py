@@ -24,7 +24,7 @@ class PaginatedList(Generic[T]):
         headers: Headers | None = None,
         params: Params | None = None,
         first_data: dict | None = None,
-        parent: T | None = None,
+        parent: EodhObject | None = None,
     ) -> None:
         self._elements: list[T] = []
         self._cls = cls

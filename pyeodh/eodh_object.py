@@ -35,7 +35,7 @@ class EodhObject:
         self._client = client
         self._headers = headers
         self._raw_data = data
-        self._parent: T_base | None = kwargs.get("parent")
+        self._parent: EodhObject | None = kwargs.get("parent")
 
         if pystac_cls is not None:
             self._pystac_object = pystac_cls.from_dict(data)
@@ -48,7 +48,12 @@ class EodhObject:
             f"Method _set_props not implemented in {self.__class__.__name__}."
         )
 
-    def get_root(self) -> T_base:
+    def conforms_to(self, conformance_uri):
+        raise NotImplementedError(
+            f"Method conforms_to not implemented in {self.__class__.__name__}."
+        )
+
+    def get_root(self) -> EodhObject:
         current = self
         while current._parent is not None:
             current = current._parent
