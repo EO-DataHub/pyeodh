@@ -306,6 +306,25 @@ class Catalog(EodhObject):
     def collections_href(self) -> str:
         return join_url(self._pystac_object.self_href, "collections")
 
+    def get_catalogs(self) -> list[Catalog]:
+        """Fetches children catalogs of this parent catalog.
+
+        Calls: GET /catalogs/{catalog_path}/catalogs
+
+        Returns:
+            list[Catalog]: List of children catalogs.
+        """
+        url = join_url(self._pystac_object.self_href, "catalogs")
+        headers, data = self._client._request_json("GET", url)
+        catalogs = []
+
+        for cat in data.get("catalogs"):
+            try:
+                catalogs.append(Catalog(self._client, headers, cat, parent=self))
+            except STACTypeError as e:
+                logger.warning(f"{e} => Skipping")
+        return catalogs
+
     def get_collections(self) -> list[Collection]:
         """Fetches all resource catalog collections.
 
