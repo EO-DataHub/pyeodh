@@ -102,12 +102,12 @@ class Client:
     def get_catalog_service(self) -> CatalogService:
         """Initializes the resource catalog API client.
 
-        Calls: GET /stac-fastapi
+        Calls: GET /api/catalogue/stac
 
         Returns:
             CatalogService: Object representing the Resource catalog service.
         """
-        headers, data = self._request_json("GET", "/stac-fastapi/")
+        headers, data = self._request_json("GET", "/api/catalogue/stac")
         return CatalogService(self, headers, data)
 
     def get_ades(self) -> Ades:

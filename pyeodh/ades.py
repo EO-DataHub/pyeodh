@@ -1,16 +1,16 @@
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass
 from datetime import datetime as Datetime
 from enum import StrEnum
 from functools import cached_property
-import logging
 from typing import TYPE_CHECKING, Any
 
 from pyeodh.eodh_object import EodhObject
+from pyeodh.resource_catalog import Collection
 from pyeodh.types import Headers, Link
 from pyeodh.utils import join_url
-from pyeodh.resource_catalog import Collection
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`

@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+import logging
 from enum import StrEnum
 from functools import cached_property
-import logging
 from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
