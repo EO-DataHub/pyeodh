@@ -67,15 +67,6 @@ class PaginatedList(Generic[T]):
         )
         self._next_url = next_link.get("href")
 
-        # * temp fix for broken next links given by the API
-        if self._has_next():
-            self._next_url = self._next_url.replace(
-                "org.uk/collections", "org.uk/stac-fastapi/collections"
-            )
-            self._next_url = self._next_url.replace(
-                "org.uk/search", "org.uk/stac-fastapi/search"
-            )
-
         self._data = next_link.get("body")
         self._total_count = resp_data.get("context", {}).get("matched")
         if not resp_data:
