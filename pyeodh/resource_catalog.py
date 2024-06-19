@@ -465,112 +465,6 @@ class Catalog(EodhObject):
             )
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
-
-class CatalogService(EodhObject):
-    _pystac_object: pystac.Catalog
-
-    def __init__(self, client: Client, headers: Headers, data: Any):
-        super().__init__(client, headers, data, pystac.Catalog)
-
-    def _set_props(self, obj: pystac.Catalog) -> None:
-        self.id = obj.id
-        self.description = obj.description
-        self.title = obj.title
-
-    @cached_property
-    def collections_href(self) -> str:
-        return join_url(self._pystac_object.self_href, "collections")
-
-    def get_collections(self) -> list[Collection]:
-        """Fetches all resource catalog collections.
-
-        Calls: GET /collections
-
-        Returns:
-            list[Collection]: List of available collections
-        """
-
-        headers, response = self._client._request_json("GET", self.collections_href)
-        if not response:
-            return []
-        return [
-            Collection(self._client, headers, item, parent=self)
-            for item in response.get("collections", [])
-        ]
-
-    def get_catalog(self, catalog_id: str) -> Catalog:
-        """Fetches a catalog.
-
-        Calls: GET /catalogs/{catalog_id}
-
-        Args:
-            catalog_id (str): Catalog ID
-
-        Returns:
-            Catalog: An initialized resource catalog object.
-        """
-
-        url = join_url(self._pystac_object.self_href, "catalogs", catalog_id)
-        headers, data = self._client._request_json("GET", url)
-        return Catalog(self._client, headers, data, parent=self)
-
-    def get_catalogs(self) -> list[Catalog]:
-        """Fetches all catalogs.
-
-        Calls: GET /catalogs
-
-        Returns:
-            list[Catalog]: List of all catalogs available.
-        """
-        url = join_url(self._pystac_object.self_href, "catalogs")
-        headers, data = self._client._request_json("GET", url)
-        catalogs = []
-
-        for cat in data.get("catalogs"):
-            try:
-                catalogs.append(Catalog(self._client, headers, cat, parent=self))
-            except STACTypeError as e:
-                logger.warning(f"{e} => Skipping")
-        return catalogs
-
-    def create_catalog(
-        self,
-        id: str,
-        description: str,
-        title: str | None = None,
-    ) -> Catalog:
-        """Creates a new catalog
-
-        Calls: POST /catalogs
-
-        Args:
-            id (str): New catalog ID
-            description (str): Catalog description
-            title (str | None, optional): Catalog title. Defaults to None.
-
-        Returns:
-            Catalog: An initialized catalog object.
-        """
-        if not self.conforms_to(Conformance.TRANSACTION_EXTENSION):
-            raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
-            )
-        assert isinstance(id, str), id
-        assert isinstance(description, str), description
-        assert is_optional(title, str), title
-
-        post_data = remove_null_items(
-            {
-                "id": id,
-                "description": description,
-                "title": title,
-            }
-        )
-        headers, response = self._client._request_json(
-            "POST", self.collections_href, data=post_data
-        )
-        return Catalog(self._client, headers, response, parent=self)
-
     def search(
         self,
         limit: int = consts.PAGINATION_LIMIT,
@@ -622,6 +516,83 @@ class CatalogService(EodhObject):
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data, parent=self
         )
+
+
+class CatalogService(Catalog):
+
+    def get_collections(self) -> list[Collection]:
+        """Fetches all resource catalog collections.
+
+        Calls: GET /collections
+
+        Returns:
+            list[Collection]: List of available collections
+        """
+        return super().get_collections()
+
+    def get_catalog(self, catalog_id: str) -> Catalog:
+        """Fetches a catalog.
+
+        Calls: GET /catalogs/{catalog_id}
+
+        Args:
+            catalog_id (str): Catalog ID
+
+        Returns:
+            Catalog: An initialized resource catalog object.
+        """
+
+        url = join_url(self._pystac_object.self_href, "catalogs", catalog_id)
+        headers, data = self._client._request_json("GET", url)
+        return Catalog(self._client, headers, data, parent=self)
+
+    def get_catalogs(self) -> list[Catalog]:
+        """Fetches all catalogs.
+
+        Calls: GET /catalogs
+
+        Returns:
+            list[Catalog]: List of all catalogs available.
+        """
+        return super().get_catalogs()
+
+    def create_catalog(
+        self,
+        id: str,
+        description: str,
+        title: str | None = None,
+    ) -> Catalog:
+        """Creates a new catalog
+
+        Calls: POST /catalogs
+
+        Args:
+            id (str): New catalog ID
+            description (str): Catalog description
+            title (str | None, optional): Catalog title. Defaults to None.
+
+        Returns:
+            Catalog: An initialized catalog object.
+        """
+        if not self.conforms_to(Conformance.TRANSACTION_EXTENSION):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION}",
+            )
+        assert isinstance(id, str), id
+        assert isinstance(description, str), description
+        assert is_optional(title, str), title
+
+        post_data = remove_null_items(
+            {
+                "id": id,
+                "description": description,
+                "title": title,
+            }
+        )
+        headers, response = self._client._request_json(
+            "POST", self.collections_href, data=post_data
+        )
+        return Catalog(self._client, headers, response, parent=self)
 
     def collection_search(
         self,
