@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
 
+from pyeodh import consts
 from pyeodh.eodh_object import EodhObject
 from pyeodh.types import Headers, Params, RequestMethod
 
@@ -111,3 +112,18 @@ class PaginatedList(Generic[T]):
             for element in resp_data
             if element is not None
         ]
+
+    def get_limited(self) -> list[T]:
+        """Returns the first page of the results, up to pagination limit
+
+        Returns:
+            list[T]: List of objects
+        """
+
+        limit = consts.PAGINATION_LIMIT
+        if self._data:
+            limit: int = self._data.get("per_page", limit)
+
+        if len(self._elements) < limit:
+            self._fetch_to_index(limit)
+        return self._elements[:limit]
