@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
 
 from pyeodh.eodh_object import EodhObject
@@ -10,6 +11,8 @@ if TYPE_CHECKING:
     from pyeodh.client import Client
 
 T = TypeVar("T", bound=EodhObject)
+
+logger = logging.getLogger(__name__)
 
 
 class PaginatedList(Generic[T]):
@@ -40,6 +43,20 @@ class PaginatedList(Generic[T]):
 
     @property
     def total_count(self):
+        if not self._total_count:
+            data = {} if self._data is None else self._data.copy()
+            data["per_page"] = 1
+            _, resp_data = self._client._request_json(
+                self._method,
+                self._next_url,
+                headers=self._headers,
+                params=self._params,
+                data=data,
+            )
+            self._total_count = resp_data.get("context", {}).get("matched")
+            if self._total_count is None:
+                logger.warning("`context.matched` number is not in the response.")
+
         return self._total_count
 
     def __iter__(self) -> Iterator[T]:
