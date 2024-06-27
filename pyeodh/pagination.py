@@ -45,13 +45,17 @@ class PaginatedList(Generic[T]):
     @property
     def total_count(self):
         if not self._total_count:
-            data = {} if self._data is None else self._data.copy()
-            data["per_page"] = 1
+            data: dict = self._data.copy() if self._data is not None else None
+            params: Params = self._params.copy() if self._params is not None else None
+            if data and "limit" in data:
+                data["limit"] = 1
+            else:
+                params["limit"] = 1
             _, resp_data = self._client._request_json(
                 self._method,
                 self._next_url,
                 headers=self._headers,
-                params=self._params,
+                params=params,
                 data=data,
             )
             self._total_count = resp_data.get("context", {}).get("matched")

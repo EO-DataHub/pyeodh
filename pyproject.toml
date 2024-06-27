@@ -32,6 +32,7 @@ matplotlib = "^3.9.0"
 pillow = "^10.3.0"
 rioxarray = "^0.15.7"
 fsspec = "^2024.6.1"
+folium = "^0.17.0"
 
 [build-system]
 requires = ["poetry-core"]
