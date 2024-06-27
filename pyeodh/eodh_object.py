@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import typing
 from types import NoneType
 from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
@@ -17,8 +18,13 @@ T = TypeVar("T")
 T_base = TypeVar("T_base", bound="EodhObject")
 
 
-def is_optional(value: Any, type: Type) -> bool:
-    return isinstance(value, (type, NoneType))
+def is_optional(value: Any, type: Type | tuple[Type, ...]) -> bool:
+    types = ()
+    if isinstance(type, tuple):
+        types = (*type, NoneType)
+    else:
+        types = (type, NoneType)
+    return isinstance(value, types)
 
 
 class EodhObject:
@@ -58,6 +64,12 @@ class EodhObject:
         while current._parent is not None:
             current = current._parent
         return current
+
+    def to_dict(self) -> dict[str, Any]:
+        if self._pystac_object:
+            return self._pystac_object.to_dict()
+        else:
+            return self.__dict__
 
     @staticmethod
     def _make_prop(value: T, t: Type[T]) -> T:
@@ -134,3 +146,48 @@ class EodhObject:
             )
         else:
             return [cls(self._client, self._headers, item) for item in value]
+
+    @staticmethod
+    def _make_query_dict(
+        value: dict[str, Any] | list[str] | None
+    ) -> dict[str, Any] | None:
+        operators = {
+            ">=": "gte",
+            "<=": "lte",
+            "=": "eq",
+            "<>": "neq",
+            ">": "gt",
+            "<": "lt",
+        }
+
+        if value is None:
+            return None
+
+        if isinstance(value, dict):
+            return value
+
+        if not isinstance(value, list):
+            raise Exception("Query must be a dict or list[str]")
+
+        query = {}
+        for item in value:
+            if not isinstance(item, str):
+                raise Exception("Query must be a dict or list[str]")
+
+            try:
+                query = query | json.loads(item)
+            except json.JSONDecodeError:
+                for op, op_text in operators.items():
+                    parts = item.split(op)
+                    if len(parts) == 2:
+                        key = parts[0]
+                        val = parts[1]
+                        query = query | {key: {op_text: val}}
+                        break
+        return query
+
+    @staticmethod
+    def _format_intersects(value):
+        if hasattr(value, "__geo_interface__"):
+            return getattr(value, "__geo_interface__")
+        return value

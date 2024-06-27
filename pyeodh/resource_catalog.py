@@ -469,13 +469,13 @@ class Catalog(EodhObject):
         self,
         limit: int = consts.PAGINATION_LIMIT,
         collections: list[str] | None = None,
-        catalogs: list[str] | None = None,
+        catalog_paths: list[str] | None = None,
         ids: list[str] | None = None,
         bbox: list[Any] | None = None,
         intersects: dict | None = None,
         datetime: str | None = None,
         fields: SearchFields | None = None,
-        query: dict | None = None,
+        query: dict[str, Any] | list[str] | None = None,
         sort_by: list[SearchSortField] | None = None,
         filter: dict | None = None,
         filter_crs: str | None = None,
@@ -483,13 +483,13 @@ class Catalog(EodhObject):
     ) -> PaginatedList[Item]:
         assert isinstance(limit, int), limit
         assert is_optional(collections, list), collections
-        assert is_optional(catalogs, list), catalogs
+        assert is_optional(catalog_paths, list), catalog_paths
         assert is_optional(ids, list), ids
         assert is_optional(bbox, list), bbox
-        assert is_optional(intersects, dict), intersects
+        # assert is_optional(intersects, dict), intersects
         assert is_optional(datetime, str), datetime
         assert is_optional(fields, dict), fields
-        assert is_optional(query, dict), query
+        assert is_optional(query, (dict, list)), query
         assert is_optional(sort_by, list), sort_by
         assert is_optional(filter, dict), filter
         assert is_optional(filter_crs, str), filter_crs
@@ -498,14 +498,14 @@ class Catalog(EodhObject):
         data = remove_null_items(
             {
                 "limit": limit,
-                "catalogs": catalogs,
+                "catalog_paths": catalog_paths,
                 "collections": collections,
                 "ids": ids,
                 "bbox": bbox,
-                "intersects": intersects,
+                "intersects": self._format_intersects(intersects),
                 "datetime": datetime,
                 "fields": fields,
-                "query": query,
+                "query": self._make_query_dict(query),
                 "sortby": sort_by,
                 "filter": filter,
                 "filter_crs": filter_crs,
