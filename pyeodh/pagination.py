@@ -66,6 +66,16 @@ class PaginatedList(Generic[T]):
             self._elements += new_elements
             yield from new_elements
 
+    def __getitem__(self, index: int) -> T:
+        assert isinstance(index, int)
+        self._fetch_to_index(index)
+        return self._elements[index]
+
+    def _fetch_to_index(self, index: int) -> None:
+        while len(self._elements) <= index and self._has_next():
+            new_elements = self._fetch_next()
+            self._elements += new_elements
+
     def _has_next(self) -> bool:
         return self._next_url is not None
 
