@@ -55,6 +55,9 @@ class Client:
             url = urllib.parse.urljoin(self.url_base, url)
             logger.debug(f"Created url from base: {url}")
 
+        if ".org.uk/search" in url:
+            url = url.replace(".org.uk/search", ".org.uk/api/catalogue/stac/search")
+
         headers = Headers() if headers is None else headers
         encoded_data = None
         if data is not None:
