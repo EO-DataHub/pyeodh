@@ -25,6 +25,14 @@ pytest = "^8.1.1"
 sphinx = "^7.2.6"
 sphinx-rtd-theme = "^2.0.0"
 
+
+[tool.poetry.group.notebooks.dependencies]
+shapely = "^2.0.4"
+matplotlib = "^3.9.0"
+pillow = "^10.3.0"
+rioxarray = "^0.15.7"
+fsspec = "^2024.6.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
