@@ -371,6 +371,6 @@ class Ades(EodhObject):
         Returns:
             Job: Initialized job object.
         """
-        url = join_url(self.processes_href, job_id)
+        url = join_url(self.jobs_href, job_id)
         headers, response = self._client._request_json("GET", url)
         return Job(self._client, headers, response)
