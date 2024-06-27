@@ -149,7 +149,7 @@ class EodhObject:
 
     @staticmethod
     def _make_query_dict(
-        value: dict[str, Any] | list[str] | None
+        value: dict[str, Any] | list[str] | None,
     ) -> dict[str, Any] | None:
         operators = {
             ">=": "gte",

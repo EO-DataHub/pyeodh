@@ -45,12 +45,18 @@ class PaginatedList(Generic[T]):
     @property
     def total_count(self):
         if not self._total_count:
-            data: dict = self._data.copy() if self._data is not None else None
-            params: Params = self._params.copy() if self._params is not None else None
+            data: dict | None = self._data.copy() if self._data is not None else None
+            params: Params | None = (
+                self._params.copy() if self._params is not None else None
+            )
             if data and "limit" in data:
                 data["limit"] = 1
             else:
+                if params is None:
+                    params = {}
                 params["limit"] = 1
+            if not self._next_url:
+                raise RuntimeError("Next url not specified!")
             _, resp_data = self._client._request_json(
                 self._method,
                 self._next_url,
