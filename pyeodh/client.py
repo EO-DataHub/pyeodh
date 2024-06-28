@@ -3,9 +3,10 @@ import logging
 import urllib.parse
 from typing import Any, Callable
 
+import requests
+from owslib.map import wms111, wms130
 from owslib.wms import WebMapService
 from owslib.wmts import WebMapTileService
-import requests
 
 from pyeodh import consts
 from pyeodh.ades import Ades
@@ -143,7 +144,7 @@ class Client:
 
         return wmts
 
-    def get_wms(self) -> WebMapService:
+    def get_wms(self) -> wms111.WebMapService_1_1_1 | wms130.WebMapService_1_3_0:
         """Initialized the OWSLib WebMapService
 
         Returns:
