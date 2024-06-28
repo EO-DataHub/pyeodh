@@ -133,7 +133,7 @@ class Client:
         Returns:
             WebMapTileService: Initialized WMTS
         """
-        url = join_url(self.url_base, "/vs/cache/ows/wmts/")
+        url = join_url(self.url_base, "vs/cache/ows/wmts/")
         wmts = WebMapTileService(url)
 
         # Patch wmts object attribute error
@@ -150,6 +150,6 @@ class Client:
         Returns:
             WebMapService: Initialized WMS
         """
-        url = join_url(self.url_base, "/vs/cache/ows")
+        url = join_url(self.url_base, "vs/cache/ows")
         wms = WebMapService(url, version="1.1.1")
         return wms
