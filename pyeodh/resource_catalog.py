@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from enum import StrEnum
+from enum import Enum
 from functools import cached_property
 from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 C = TypeVar("C", bound="STACObject")
 
 
-class Conformance(StrEnum):
+class Conformance(Enum):
     TRANSACTION_EXTENSION = (
         "https://api.stacspec.org/v1.0.0/ogcapi-features/extensions/transaction"
     )
@@ -56,9 +56,9 @@ class Item(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}/items/{item_id}
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
@@ -86,9 +86,9 @@ class Item(EodhObject):
                 to None.
             assets (dict[str, Any] | None, optional): Assets. Defaults to None.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
 
         put_data = remove_null_items(
@@ -197,9 +197,9 @@ class Collection(EodhObject):
             summaries (Summaries | None, optional): Summaries. Defaults to None.
             assets (dict[str, Asset] | None, optional): Assets. Defaults to None.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         assert is_optional(description, str), description
         assert is_optional(extent, Extent), extent
@@ -236,9 +236,9 @@ class Collection(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
@@ -269,9 +269,9 @@ class Collection(EodhObject):
         Returns:
             Item: _description_
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         post_data = remove_null_items(
             {
@@ -388,9 +388,9 @@ class Catalog(EodhObject):
         Returns:
             Collection: An initialized collection object.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         assert isinstance(id, str), id
         assert isinstance(description, str), description
@@ -433,9 +433,9 @@ class Catalog(EodhObject):
             description (str | None, optional): New description.  Defaults to None.
             title (str | None, optional): New title. Defaults to None.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         assert is_optional(description, str), description
         assert is_optional(title, str), title
@@ -459,9 +459,9 @@ class Catalog(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         self._client._request_json_raw("DELETE", self._pystac_object.self_href)
 
@@ -574,9 +574,9 @@ class CatalogService(Catalog):
         Returns:
             Catalog: An initialized catalog object.
         """
-        if not self.conforms_to(Conformance.TRANSACTION_EXTENSION):
+        if not self.conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
-                f"{Conformance.TRANSACTION_EXTENSION}",
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
         assert isinstance(id, str), id
         assert isinstance(description, str), description

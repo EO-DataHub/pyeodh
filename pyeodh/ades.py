@@ -3,7 +3,7 @@ from __future__ import annotations
 import logging
 from dataclasses import dataclass
 from datetime import datetime as Datetime
-from enum import StrEnum
+from enum import Enum
 from functools import cached_property
 from typing import TYPE_CHECKING, Any
 
@@ -19,7 +19,7 @@ if TYPE_CHECKING:
 logger = logging.getLogger(__name__)
 
 
-class AdesRelType(StrEnum):
+class AdesRelType(Enum):
     SELF = "self"
     STATUS = "status"
     PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
@@ -29,7 +29,7 @@ class AdesRelType(StrEnum):
     )
 
 
-class AdesJobStatus(StrEnum):
+class AdesJobStatus(Enum):
     ACCEPTED = "accepted"
     RUNNING = "running"
     SUCCESSFUL = "successful"
@@ -52,20 +52,20 @@ class Job(EodhObject):
         self.links = [Link.from_dict(d) for d in obj.get("links", [])]
         if "created" in obj:
             created: str = obj.get("created", "")
-            self.created = Datetime.fromisoformat(created)
+            self.created = Datetime.fromisoformat(created.replace("Z", "+00:00"))
         if "started" in obj:
             started: str = obj.get("started", "'")
-            self.started = Datetime.fromisoformat(started)
+            self.started = Datetime.fromisoformat(started.replace("Z", "+00:00"))
         if "finished" in obj:
             finished: str = obj.get("finished", "")
-            self.finished = Datetime.fromisoformat(finished)
+            self.finished = Datetime.fromisoformat(finished.replace("Z", "+00:00"))
         if "updated" in obj:
             updated: str = obj.get("updated", "")
-            self.updated = Datetime.fromisoformat(updated)
+            self.updated = Datetime.fromisoformat(updated.replace("Z", "+00:00"))
 
     @cached_property
     def self_href(self) -> str:
-        ln = Link.get_link(self.links, AdesRelType.STATUS)
+        ln = Link.get_link(self.links, AdesRelType.STATUS.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to self")
         return ln.href
@@ -82,8 +82,8 @@ class Job(EodhObject):
         url = join_url(self.self_href, "results")
         headers, response = self._client._request_json("GET", url)
         if (
-            response.get("type", AdesRelType.RESULTS_NOT_READY)
-            == AdesRelType.RESULTS_NOT_READY
+            response.get("type", AdesRelType.RESULTS_NOT_READY.value)
+            == AdesRelType.RESULTS_NOT_READY.value
         ):
             logger.info(f"Job {self.id} results not ready.")
 
@@ -246,21 +246,21 @@ class Ades(EodhObject):
 
     @cached_property
     def self_href(self) -> str:
-        ln = Link.get_link(self.links, AdesRelType.SELF)
+        ln = Link.get_link(self.links, AdesRelType.SELF.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to self")
         return ln.href
 
     @cached_property
     def processes_href(self) -> str:
-        ln = Link.get_link(self.links, AdesRelType.PROCESSES)
+        ln = Link.get_link(self.links, AdesRelType.PROCESSES.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to processes")
         return ln.href
 
     @cached_property
     def jobs_href(self) -> str:
-        ln = Link.get_link(self.links, AdesRelType.JOBS)
+        ln = Link.get_link(self.links, AdesRelType.JOBS.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to jobs")
         return ln.href
