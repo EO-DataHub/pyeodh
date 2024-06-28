@@ -3,13 +3,15 @@ import logging
 import urllib.parse
 from typing import Any, Callable
 
+from owslib.wms import WebMapService
+from owslib.wmts import WebMapTileService
 import requests
 
 from pyeodh import consts
 from pyeodh.ades import Ades
 from pyeodh.resource_catalog import CatalogService
 from pyeodh.types import Headers, Params, RequestMethod
-from pyeodh.utils import is_absolute_url
+from pyeodh.utils import is_absolute_url, join_url
 
 logger = logging.getLogger(__name__)
 
@@ -123,3 +125,30 @@ class Client:
         """
         headers, data = self._request_json("GET", "/ades/test_oxidian/ogc-api/")
         return Ades(self, headers, data)
+
+    def get_wmts(self) -> WebMapTileService:
+        """Initializes the OWSLib WebMapTileService
+
+        Returns:
+            WebMapTileService: Initialized WMTS
+        """
+        url = join_url(self.url_base, "/vs/cache/ows/wmts/")
+        wmts = WebMapTileService(url)
+
+        # Patch wmts object attribute error
+        # see https://github.com/geopython/OWSLib/issues/572
+        for i, op in enumerate(wmts.operations):
+            if not hasattr(op, "name"):
+                wmts.operations[i].name = ""
+
+        return wmts
+
+    def get_wms(self) -> WebMapService:
+        """Initialized the OWSLib WebMapService
+
+        Returns:
+            WebMapService: Initialized WMS
+        """
+        url = join_url(self.url_base, "/vs/cache/ows")
+        wms = WebMapService(url, version="1.1.1")
+        return wms
