@@ -1,0 +1,471 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/api/catalogue/stac
+  response:
+    body:
+      string: !!binary |
+        H4sIAP40nmYC/81WTU/bQBD9Kyv3WOwl5Jaqh4hC1RNIoeoBoWqznsTbrL1mZ500Qvz3zjhx4tAU
+        nABST+DNvDdvdj52HqKwLCEaROcqKOum0UlkUvrEoHQ8UfSnNHQWTLDw5DgGS/8YjaC8zsgoBdTe
+        lMG4gkyHYnQzPBeXZDO8/iYWJmRCFeKiDRJjpWdQpARm5p9z8LhC95LT5JSOtSsmzud446LBbZSF
+        UOJASvKeMABL0InzUzmv7WOvkzNpAuTxiv/DxNgAnnheQO6A7ivwy8Mwa2syXiwWiSuhmBpMCgiS
+        QdJNNV/YBFSoPGDcl8QgOTa5OduR+gKRdnnuivhsS4MmLy3Eben/4tD3tgXkrzjA79AhYO2sBc35
+        xQMD7m0dTsH9Qsrx8TfWMadcDT2CeOgQ2hN/h1/hETG1LqWbyr/rm8Ct3HWTq9K5KjSkXEWl8oaE
+        xwTxKjj/irw6hX3uWKlXk6Ta3GLXvkPnD4tkrNDomM86FW+nQtidHmBT7F5pTXds8B6g6S2ZGtSO
+        Btxyd2QcThvdnUTWFDOkifgQebA8l8FOeEyvZrkqS2soDYSRTV16mNAvjccAGBJwKaUqq8bsM6lm
+        rGObPcmKZPR40vjwzoX39sHG7+Jj/YktX+unhXvhWZfN28fPmfxxOeqLFlJoes8QUNTzNwdqx1SM
+        lyJkBgWCn68m1bGqWxK3wjf1s0czTdePe3SLbc0dKWVDkEPIHK8IXy9u/j9R11ejtiqdGZt2yu53
+        Spb4QvQIAd+g0GRFhHHaEB4jaVSVJY1EKqi31IUN6z5xXLFGQ8yr3H6N8yJNnDL1aCY3dV4/rfe2
+        z/16Z2v0X5EJr35rUtHeD48PhBfSPYJdSy+PXJmF3D4nxumK21W9Xk5Su3q8Wy+x5BwKrJekwe3d
+        4x9RoMmKYgsAAA==
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '694'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Jul 2024 10:31:26 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - GmTq7yuhFXDj5xP1ZnGYBS6TIgMuAgUm8wtpoLMjC8rOp4_MqmoFWw==
+      X-Amz-Cf-Pop:
+      - MAD56-P1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi
+  response:
+    body:
+      string: !!binary |
+        H4sIAP40nmYC/9VXS0/cMBD+K1F67CZmWakHqh4QfagnkEDqoULIOLMbFyc2HmdhhfjvncluHgtb
+        moWKLqco8Ty+bzz+PLmLw8JBfBAfySCNncWjGINUF3PwqG1JC+N0L91rPsNtgJIXMD74eT6KdUYW
+        CjKZ8HIylfRwmqyDDobDnlbOWR8giz5TAoSAtJgBKq9dWCZYZa4gUrYMUpe6nEXY+mWdn9HlFSe+
+        iz0Y8kQwU861ZCCdM1pJjip+IYUexbmHKa3kITg8ECIAhhQsR8yry9T6WVpdCQIsVINBMI/mFUUL
+        I2lgiMds70cNICc9lOG1IfUAeGvDTlWEtnRqfSFLBU/iavvl7PBI/Ph6Ool6npEyEhEw0oUzUFCJ
+        qS8uF1HINUYInpr1JdR6EDvgCNKrfDPmGdj3G3BHrc+rVFm06QoIueWT+O3L2VuncHJ8us7Bz7WC
+        hCVjM5N5maVW6tQ6KClkzerjSr4+TWrpahgek8nhyfdoFTTq69BAxi3bmlVHkkuR1gXdgN32oAeS
+        UJGHwjyFy6qKu1z+M2Sc8CE8Nvv/WkHHzxhQob5Tdg/cyrqvaLk22W7VTahCuw+7jtH6DG53HCTS
+        qdMlmPEbwbl/IX2241irK+XiexoWVxctnlma4VoELE/siw4U5xfzeuJMvEr3hQ5QJMtL4t1Um7C8
+        6J/2XHO6rsAvtvNZWZPxzc1Nfa3MNKYlBMFOws4UBUmmIEPlAZOJoAj1ECHab2tQ/xJI2aKwZbLf
+        hcF6zEn60P8UQ12bniO/JXzBDCDcl93tCI+7hDRFNG31zIoN3FPuhjFLCAyg9iDf9iV8BqdeUYah
+        fNzf/PfT7d0wuDKb89yacRfRz4cm4Am5eBmsf8G+WokTHpw6EcAtzx2SRGzF5FKiVgl/G9S8gxph
+        XT3AZDi805rT0fp7gOZsiUyjsjRjLtYlY/uw8fn9b5E9U1mCDwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '723'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Jul 2024 10:31:26 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - w2Af9aoWASQEfYSQIbPxdSM7xgHCu6yTfSOHxmvhRDDU9-o4d6LUIA==
+      X-Amz-Cf-Pop:
+      - MAD56-P1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6
+  response:
+    body:
+      string: !!binary |
+        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
+        AAA=
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3422'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Jul 2024 10:31:27 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - VCbNTYm83sbEyj9n_XTuZqS_igFF2OGw31G8STMLxelMkkKZqmcQ5w==
+      X-Amz-Cf-Pop:
+      - MAD56-P1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Connection:
+      - close
+      Host:
+      - test.eodatahub.org.uk
+      User-Agent:
+      - Python-urllib/3.12
+    method: GET
+    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi
+  response:
+    body:
+      string: '{"type":"Catalog","stac_version":"1.0.0","stac_extensions":[],"id":"ceda-stac-fastapi","title":"Supported
+        Datasets","description":"Catalogue containing supported datasets","links":[{"rel":"self","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://test.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/search","method":"GET"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/search","method":"POST"},{"rel":"service-desc","type":"application/vnd.oai.openapi+json;version=3.0","title":"OpenAPI
+        service description","href":"https://test.eodatahub.org.uk/catalogue-data/supported/api.json"},{"rel":"service-doc","type":"text/html","title":"OpenAPI
+        service documentation","href":"https://test.eodatahub.org.uk/catalogue-data/supported/api.html.json"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/catalogs"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cordex"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/sentinel1"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/sentinel2_ard"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/ukcp"}],"conformsTo":["https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/core","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.2/item-search#context","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","/catalogues","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","/discovery-search","https://api.stacspec.org/v1.0.0-rc.1/collection-search"]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - close
+      Content-Length:
+      - '3970'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 22 Jul 2024 10:31:27 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 f54074a9af172cf785448ba51dcad950.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - mlm108_m07I-qpYCxokO7c6CVU1VPLZaYQkXlpyMg7rGAxWR0q4OEw==
+      X-Amz-Cf-Pop:
+      - MAD56-P1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6/items?limit=10
+  response:
+    body:
+      string: !!binary |
+        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
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2728'
+      Content-Type:
+      - application/geo+json
+      Date:
+      - Mon, 22 Jul 2024 10:31:27 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 2_XQgRezWJl9J-YG4J7JeBBIExcGm8RILyXBwCRKQGUILWhxThZYaQ==
+      X-Amz-Cf-Pop:
+      - MAD56-P1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806
+  response:
+    body:
+      string: !!binary |
+        H4sIAP80nmYC/81WbW/iOBD+Kyhfj9hxKC3lW8W97H6orlpYrbRVZZlkAj6CnbMd6Iv47zuTEBp6
+        1WmlW+lWikD2PB7PyzPjeYnCUwXRNPodVKgdRMPIB5XJHTivrUGBYAlLum14DGBI4KPp/cMw0jki
+        Zrcf7y7ZPAOjnLa4YIsPn9ns42/zW+Z9NZ6MmRNaVKIQ7GZrDXO+9mzl2C5N0iSZJJeoPrNlCVlo
+        78y2uqLNFdgtBPcUTV86O+9s+bRCEJ2wLtdGBSBj7u9jMUFLh/E1/j4M78XVhF2N3y6PqyP2fNVC
+        Hx4Ow2i5tI+otC8YnmmIKmcrcEHT5S9RjlYEvSUDL5KrNE4EfoskmTbf1zZ8LsgzXHpNOHG5EOkr
+        Dkx+hhLiIhbpW5TKMvDkdvRhsbibg8N8RZQPk8OjNDbHs6Yuy2FUUnxCNA2uBrSaEtYKHFSlzlQ0
+        LVTpgdbBqSxAftrRBo02GcgfmGUdFOVY1q5EnesQqinPwKl4v9+zfOOeWQ78y6+zGcfEK95cyv/7
+        1ewv33BmhwrUsgRZWrOSRjUxnteuUBkMPld7KEttVoP52rqwVzsYfFK5bizuH66NDhj86MtgG6fk
+        VSEpUrlyeafTtzpl3emUvtMpi7J+lNpIpV2TyqB3Ojy1Ue45iTIkgpK+gsz3CjLBikxYek1keUQO
+        IlFMkEGHki6uK2LPwBaDT7O7CRsPlspDPrBmMJ/fjfFM4eDvGkyGRRVtG7+K2oU1ODSpsL3E+Cnn
+        RxFJGPg4txmzbnVMyD+SYKyBUyaofF3j08qLx24pS7UEumFFvhPDdKgbRjRQVInbWP0SOdGRjqrH
+        1u5ERLryde/YF27+/GN2ex6SBt2aRvB6Kd8KyWAUGbvFPlJKB96W9bEHiSQZbLYoDU3OG/zN9pwI
+        zSaRrdtExZ2DvTiUsIPSd4XXZohOIjsv4uQyFqOFuJiOrqajSyaS8ehKUI1nDs5waZwmizSZXgjC
+        XY/FKJl8jbBZIb021AtesIbpZg9lQXa3gVFVU+fkFcd++suxEtYOil6iqUkwsES4db2kJLN6w1Wl
+        OR5VpV3VwOkF6Jae+7qqkNGQx3TIQ/BYyLmKCRUXCv/o8Kmro5SaOtcBtv4HVDQ63vlbKYcZfd/j
+        /9fbnpG99+3nNtRZ+xPEMjrga6Y8Cel9xSsBk4zlXmhqcy9RtoZs4+ttV1Xd+tgP2s03puaqYnQT
+        UxnZuFR5dmQlPTZkDN+Ay9a12fBKV4CFBYL3WMqRpbxhKd84bMMtj2UPIREhG4RseSw7HkvisSQe
+        y5WTJx7LRlH3PjlbNtPMq8PHV4Aed6+fT569k55nH3JE41hi5LNyTm72yq3a8QQyHAkkzRS+HQUO
+        h1ZvkiSCEN8dqSZK7bP8fmBat3nnNie3ObnNV46f3G522pC8Hy2MEU1IOCDRCCRSZrJ+fLqYfBcN
+        3gmWgZDlTZc8n8Z6UxvvZq+RWKSj6fgaP3qvsS3/22h4OBy+AV7DFIJVCwAA
+    headers:
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - no-cache
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1128'
+      Content-Type:
+      - application/geo+json
+      Date:
+      - Mon, 22 Jul 2024 10:31:27 GMT
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Via:
+      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - htTzFCGnb4WgJFvey9p3RLLDtXtdTOifvK2i9aOCA8MqbGdlFz2Eaw==
+      X-Amz-Cf-Pop:
+      - MAD56-P1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+version: 1
