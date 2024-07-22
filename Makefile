@@ -6,7 +6,7 @@ check:
 	poetry run isort --check --diff pyeodh tests
 	poetry run pyright
 test:
-	poetry run pytest -v
+	poetry run pytest -v --cov=./ --cov-report=xml
 html:
 	cd docs && \
 	poetry run make html SPHINXOPTS="-W"
