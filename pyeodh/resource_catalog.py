@@ -56,7 +56,9 @@ class Item(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}/items/{item_id}
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -86,7 +88,9 @@ class Item(EodhObject):
                 to None.
             assets (dict[str, Any] | None, optional): Assets. Defaults to None.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -197,7 +201,9 @@ class Collection(EodhObject):
             summaries (Summaries | None, optional): Summaries. Defaults to None.
             assets (dict[str, Asset] | None, optional): Assets. Defaults to None.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -236,7 +242,9 @@ class Collection(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}/collections/{collection_id}
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -269,7 +277,9 @@ class Collection(EodhObject):
         Returns:
             Item: _description_
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -301,6 +311,7 @@ class Catalog(EodhObject):
         self.id = obj.id
         self.description = obj.description
         self.title = obj.title
+        self.conforms_to = obj.extra_fields.get("conformsTo", []).copy()
 
     @cached_property
     def collections_href(self) -> str:
@@ -388,7 +399,9 @@ class Catalog(EodhObject):
         Returns:
             Collection: An initialized collection object.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -433,7 +446,9 @@ class Catalog(EodhObject):
             description (str | None, optional): New description.  Defaults to None.
             title (str | None, optional): New title. Defaults to None.
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -459,7 +474,9 @@ class Catalog(EodhObject):
 
         Calls: DELETE /catalogs/{catalog_id}
         """
-        if not self.get_root().conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -574,7 +591,7 @@ class CatalogService(Catalog):
         Returns:
             Catalog: An initialized catalog object.
         """
-        if not self.conforms_to(Conformance.TRANSACTION_EXTENSION.value):
+        if not self.check_conforms_to(Conformance.TRANSACTION_EXTENSION.value):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
@@ -700,5 +717,5 @@ class CatalogService(Catalog):
         )
         return response.get("message")
 
-    def conforms_to(self, conformance_uri: str | Conformance) -> bool:
+    def check_conforms_to(self, conformance_uri: str | Conformance) -> bool:
         return conformance_uri in self.get_conformance()

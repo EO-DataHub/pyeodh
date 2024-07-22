@@ -54,7 +54,7 @@ class EodhObject:
             f"Method _set_props not implemented in {self.__class__.__name__}."
         )
 
-    def conforms_to(self, conformance_uri):
+    def check_conforms_to(self, conformance_uri):
         raise NotImplementedError(
             f"Method conforms_to not implemented in {self.__class__.__name__}."
         )
