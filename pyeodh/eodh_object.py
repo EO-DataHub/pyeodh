@@ -56,7 +56,7 @@ class EodhObject:
 
     def check_conforms_to(self, conformance_uri):
         raise NotImplementedError(
-            f"Method conforms_to not implemented in {self.__class__.__name__}."
+            f"Method check_conforms_to not implemented in {self.__class__.__name__}."
         )
 
     def get_root(self) -> EodhObject:

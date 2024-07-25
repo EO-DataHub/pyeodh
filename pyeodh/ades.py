@@ -38,6 +38,13 @@ class AdesJobStatus(Enum):
 
 
 class Job(EodhObject):
+    """Represents ADES Job record.
+
+    Args:
+        client (Client): Instance of pyeodh request client
+        headers (Headers): Response headers received when requesting this record
+        data (Any): Raw response data received when requesting this record
+    """
 
     def __init__(self, client: Client, headers: Headers, data: Any):
         super().__init__(client, headers, data)
@@ -65,17 +72,20 @@ class Job(EodhObject):
 
     @cached_property
     def self_href(self) -> str:
+        """URL of this object."""
         ln = Link.get_link(self.links, AdesRelType.STATUS.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to self")
         return ln.href
 
     def refresh(self) -> None:
+        """Refresh this object with the latest data from the API."""
         headers, response = self._client._request_json("GET", self.self_href)
         if response:
             self._set_props(response)
 
     def delete(self) -> None:
+        """Delete this record."""
         self._client._request_json_raw("DELETE", self.self_href)
 
     def _get_results_collection(self) -> Collection:
@@ -92,6 +102,8 @@ class Job(EodhObject):
 
 @dataclass
 class Metadata:
+    """Represents process metadata object."""
+
     title: str | None
     role: str | None
     href: str | None
@@ -107,12 +119,15 @@ class Metadata:
 
 @dataclass
 class Parameter:
+    """Represents a single process parameter."""
+
     name: str
     value: list[Any]
 
 
 @dataclass
 class AdditionalParameters:
+    """Represents additional parameters of the process."""
 
     title: str | None
     role: str | None
@@ -131,6 +146,14 @@ class AdditionalParameters:
 
 
 class Process(EodhObject):
+    """Represents ADES Process record.
+
+    Args:
+        client (Client): Instance of pyeodh request client
+        headers (Headers): Response headers received when requesting this record
+        data (Any): Raw response data received when requesting this record
+        parent_url (str): URL of the parent API endpoint, usually `/processes`
+    """
 
     def __init__(self, client: Client, headers: Headers, data: Any, parent_url: str):
         super().__init__(client, headers, data)
@@ -226,10 +249,18 @@ class Process(EodhObject):
             self._set_props(response)
 
     def delete(self) -> None:
+        """Delete this record."""
         self._client._request_json_raw("DELETE", self.self_href)
 
 
 class Ades(EodhObject):
+    """Represents ADES API service.
+
+    Args:
+        client (Client): Instance of pyeodh request client
+        headers (Headers): Response headers received when requesting this record
+        data (Any): Raw response data received when requesting this record
+    """
 
     def __init__(self, client: Client, headers: Headers, data: Any):
         super().__init__(client, headers, data)
@@ -246,6 +277,7 @@ class Ades(EodhObject):
 
     @cached_property
     def self_href(self) -> str:
+        """URL of this record."""
         ln = Link.get_link(self.links, AdesRelType.SELF.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to self")
@@ -253,6 +285,7 @@ class Ades(EodhObject):
 
     @cached_property
     def processes_href(self) -> str:
+        """URL pointing to processes endpoint."""
         ln = Link.get_link(self.links, AdesRelType.PROCESSES.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to processes")
@@ -260,6 +293,7 @@ class Ades(EodhObject):
 
     @cached_property
     def jobs_href(self) -> str:
+        """URL pointing to jobs endpoint."""
         ln = Link.get_link(self.links, AdesRelType.JOBS.value)
         if ln is None:
             raise ValueError(f"{self} does not have a link pointing to jobs")

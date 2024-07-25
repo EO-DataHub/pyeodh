@@ -134,6 +134,7 @@ class Collection(EodhObject):
 
     @cached_property
     def items_href(self) -> str:
+        """URL pointing to items endpoint."""
         link = self._pystac_object.get_single_link(RelType.ITEMS)
         if not link:
             raise RuntimeError("Object does not have items link!")
@@ -315,6 +316,7 @@ class Catalog(EodhObject):
 
     @cached_property
     def collections_href(self) -> str:
+        """URL pointing to collections endpoint."""
         return join_url(self._pystac_object.self_href, "collections")
 
     def get_catalogs(self) -> list[Catalog]:
@@ -718,4 +720,12 @@ class CatalogService(Catalog):
         return response.get("message")
 
     def check_conforms_to(self, conformance_uri: str | Conformance) -> bool:
+        """Test if API conforms to a specification.
+
+        Args:
+            conformance_uri (str | Conformance): URI of the specification
+
+        Returns:
+            bool
+        """
         return conformance_uri in self.get_conformance()
