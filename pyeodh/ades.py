@@ -24,6 +24,7 @@ class AdesRelType(Enum):
     STATUS = "monitor"
     PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
     JOBS = "http://www.opengis.net/def/rel/ogc/1.0/job-list"
+    RESULTS = "http://www.opengis.net/def/rel/ogc/1.0/results"
     RESULTS_NOT_READY = (
         "http://www.opengis.net/def/rel/ogc/1.0/exception/result-not-ready"
     )
@@ -88,14 +89,18 @@ class Job(EodhObject):
         """Delete this record."""
         self._client._request_json_raw("DELETE", self.self_href)
 
-    def _get_results_collection(self) -> Collection:
-        url = join_url(self.self_href, "results")
-        headers, response = self._client._request_json("GET", url)
+    def _get_results_collection(self) -> Collection | None:
+        ln = Link.get_link(self.links, AdesRelType.RESULTS.value)
+        if ln is None:
+            raise ValueError(f"{self} does not have a link to results.")
+        headers, response = self._client._request_json("GET", ln.href)
+        print(response)
         if (
             response.get("type", AdesRelType.RESULTS_NOT_READY.value)
             == AdesRelType.RESULTS_NOT_READY.value
         ):
             logger.info(f"Job {self.id} results not ready.")
+            return
 
         return Collection(self._client, headers, response)
 
