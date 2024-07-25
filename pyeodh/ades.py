@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 class AdesRelType(Enum):
     SELF = "self"
-    STATUS = "status"
+    STATUS = "monitor"
     PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
     JOBS = "http://www.opengis.net/def/rel/ogc/1.0/job-list"
     RESULTS_NOT_READY = (
