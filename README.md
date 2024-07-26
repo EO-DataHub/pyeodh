@@ -31,3 +31,11 @@ Run QA checks and tests:
 make check
 make test
 ```
+
+To recreate all VCR cassettes run:
+
+```
+make record=rewrite test
+```
+
+or only extend with new requests by using `record=new_episodes`

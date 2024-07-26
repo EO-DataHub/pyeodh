@@ -15,7 +15,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAP40nmYC/81WTU/bQBD9Kyv3WOwl5Jaqh4hC1RNIoeoBoWqznsTbrL1mZ500Qvz3zjhx4tAU
+        H4sIAMI/o2YC/81WTU/bQBD9Kyv3WOwl5Jaqh4hC1RNIoeoBoWqznsTbrL1mZ500Qvz3zjhx4tAU
         nABST+DNvDdvdj52HqKwLCEaROcqKOum0UlkUvrEoHQ8UfSnNHQWTLDw5DgGS/8YjaC8zsgoBdTe
         lMG4gkyHYnQzPBeXZDO8/iYWJmRCFeKiDRJjpWdQpARm5p9z8LhC95LT5JSOtSsmzud446LBbZSF
         UOJASvKeMABL0InzUzmv7WOvkzNpAuTxiv/DxNgAnnheQO6A7ivwy8Mwa2syXiwWiSuhmBpMCgiS
@@ -29,10 +29,12 @@ interactions:
         z/16Z2v0X5EJr35rUtHeD48PhBfSPYJdSy+PXJmF3D4nxumK21W9Xk5Su3q8Wy+x5BwKrJekwe3d
         4x9RoMmKYgsAAA==
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -46,15 +48,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Jul 2024 10:31:26 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:42 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      - 1.1 59778df72778f60e4701bb8768b14bcc.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - GmTq7yuhFXDj5xP1ZnGYBS6TIgMuAgUm8wtpoLMjC8rOp4_MqmoFWw==
+      - 4mE26k3U0QM4hCavNcQ4iz32U1hL5OxYR413Xu8Bgcvhgm4z6_zShQ==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:
@@ -80,7 +82,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAP40nmYC/9VXS0/cMBD+K1F67CZmWakHqh4QfagnkEDqoULIOLMbFyc2HmdhhfjvncluHgtb
+        H4sIAMI/o2YC/9VXS0/cMBD+K1F67CZmWakHqh4QfagnkEDqoULIOLMbFyc2HmdhhfjvncluHgtb
         moWKLqco8Ty+bzz+PLmLw8JBfBAfySCNncWjGINUF3PwqG1JC+N0L91rPsNtgJIXMD74eT6KdUYW
         CjKZ8HIylfRwmqyDDobDnlbOWR8giz5TAoSAtJgBKq9dWCZYZa4gUrYMUpe6nEXY+mWdn9HlFSe+
         iz0Y8kQwU861ZCCdM1pJjip+IYUexbmHKa3kITg8ECIAhhQsR8yry9T6WVpdCQIsVINBMI/mFUUL
@@ -94,10 +96,12 @@ interactions:
         fNzf/PfT7d0wuDKb89yacRfRz4cm4Am5eBmsf8G+WokTHpw6EcAtzx2SRGzF5FKiVgl/G9S8gxph
         XT3AZDi805rT0fp7gOZsiUyjsjRjLtYlY/uw8fn9b5E9U1mCDwAA
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -111,15 +115,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Jul 2024 10:31:26 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:42 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      - 1.1 59778df72778f60e4701bb8768b14bcc.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - w2Af9aoWASQEfYSQIbPxdSM7xgHCu6yTfSOHxmvhRDDU9-o4d6LUIA==
+      - LJ4N9d7k6aErs8JFABQUNivcMAWyO_y1Lu2lso9rprjfG2UVvMh4AA==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:
@@ -145,7 +149,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAP80nmYC/81b+2/bOBL+VwgDB7S4SJHkR+zsT141D6OWk7PT9tCgMGiLtrWr15FS4lzR//1m
+        H4sIAMI/o2YC/81b+2/bOBL+VwgDB7S4SJHkR+zsT141D6OWk7PT9tCgMGiLtrWr15FS4lzR//1m
         SMmS7CR1Iy32+pD4GH78OBwOxzb5vZU8xax13rIj32fLxIvC1klLJHQ5f2BcYPa8ZeqGbuTFbJuw
         ECtE6/z+20nLc0FiGXhxDyQSL/ERDZIuE0vuxYmCsJ3RLQr4XvgnNvze4syHcsH8FbZTJGgc+96S
         YpvTP4SksuFsBTWbJInF+elpwkSis8ilCd2kCz3iaz3985TG3ik0o360Ttkp0syz4lSkcRzxhLka
@@ -207,10 +211,12 @@ interactions:
         2CllpGZmQ8fQPk1QQRj5qV/u8SrIRwlvKI1mOalfvCGirlsV6/cHxCYCb5a2zr//+PE/ZLT9MDc9
         AAA=
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -224,15 +230,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Jul 2024 10:31:27 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:42 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      - 1.1 59778df72778f60e4701bb8768b14bcc.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - VCbNTYm83sbEyj9n_XTuZqS_igFF2OGw31G8STMLxelMkkKZqmcQ5w==
+      - rdGCRisKSUN5xqM3txll-PJZ7TC05N9cS68vo0wNx5cR5mM0n_pP-Q==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:
@@ -263,10 +269,12 @@ interactions:
         service description","href":"https://test.eodatahub.org.uk/catalogue-data/supported/api.json"},{"rel":"service-doc","type":"text/html","title":"OpenAPI
         service documentation","href":"https://test.eodatahub.org.uk/catalogue-data/supported/api.html.json"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/catalogs"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cordex"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/sentinel1"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/sentinel2_ard"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/ukcp"}],"conformsTo":["https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/core","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.2/item-search#context","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","/catalogues","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","/discovery-search","https://api.stacspec.org/v1.0.0-rc.1/collection-search"]}'
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -280,17 +288,17 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Jul 2024 10:31:27 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:42 GMT
+      Server:
+      - nginx/1.27.0
       Vary:
       - Accept-Encoding
       Via:
-      - 1.1 f54074a9af172cf785448ba51dcad950.cloudfront.net (CloudFront)
+      - 1.1 f7946a4607f30d9f711fcb97773ed57e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - mlm108_m07I-qpYCxokO7c6CVU1VPLZaYQkXlpyMg7rGAxWR0q4OEw==
+      - 6IsPRXrgA_hXbx6_dHqaCNddY5zn4fQWfFJ9wBvM13xPq0VFYakaKg==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
     status:
@@ -312,7 +320,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAP80nmYC/+2cC2/bOBKA/4ohYA97uFgiKcsvYHHw2X3t1WkaO9tti4JgJNpRLUtaSkqcFPnv
+        H4sIAMM/o2YC/+2cC2/bOBKA/4ohYA97uFgiKcsvYHHw2X3t1WkaO9tti4JgJNpRLUtaSkqcFPnv
         O5T8lux4E7tObGGzbcWXhsPh8BuG1A8lvPW5UldecxZGgjc9x+FmaHuucqL0krRAqX/9sVQOcoOQ
         mfSai0AWritYRSqaJPNRyF2ZIet+O1FsC0o02+/OymrH5C4TtgcPavfthdp896rTVoPAN6qGKrCN
         fdzDamPouaoIokDtC/WaIIJQFZWheXMmYF0xh7YvE/vcG/JQ3Cr1qZxnnnPbj3thep6wbJeFcUe+
@@ -359,12 +367,14 @@ interactions:
         GamZTb7EkMdle1P9IURn39KLqwsR2Fp/CL7jypOr9ptX3X2vs/917KEd/obRv0JvwN3fPrT65PTu
         o9Huvrtptxo37eao1b1wPp7aRvcz+SP6/Ofv/iXCv180jdYFcjrdW/y/i8Fp6wK3o48Xp63zP067
         7y9OT9u2cWfqjVH7++fI/P7ab//ZGH35/ir68ua18d49vzIJ9i9tw4X/Sft747bdbdy1u2bwGdLN
-        1udf9NbPWGHm3rEaiZ78DmnEnhtKs4hXJogPXEltGEnjAfXLf97f/w3WKW8bx38AAA==
+        1udf9NbPWGHm3rEaiZ78DmnEnhtKs4hXJogPXEltGEnjAfUn/xyyEGw7Tr+//xukpxAu1H8AAA==
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -374,19 +384,19 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '2728'
+      - '2734'
       Content-Type:
       - application/geo+json
       Date:
-      - Mon, 22 Jul 2024 10:31:27 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:43 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      - 1.1 59778df72778f60e4701bb8768b14bcc.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 2_XQgRezWJl9J-YG4J7JeBBIExcGm8RILyXBwCRKQGUILWhxThZYaQ==
+      - ZG9-iyrcWxT-wAMLEqCoqgfCWLWg06tZGi5XvMrzyw7pFpr0F4A1yg==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:
@@ -412,7 +422,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAP80nmYC/81WbW/iOBD+Kyhfj9hxKC3lW8W97H6orlpYrbRVZZlkAj6CnbMd6Iv47zuTEBp6
+        H4sIAMM/o2YC/81WbW/iOBD+Kyhfj9hxKC3lW8W97H6orlpYrbRVZZlkAj6CnbMd6Iv47zuTEBp6
         1WmlW+lWikD2PB7PyzPjeYnCUwXRNPodVKgdRMPIB5XJHTivrUGBYAlLum14DGBI4KPp/cMw0jki
         Zrcf7y7ZPAOjnLa4YIsPn9ns42/zW+Z9NZ6MmRNaVKIQ7GZrDXO+9mzl2C5N0iSZJJeoPrNlCVlo
         78y2uqLNFdgtBPcUTV86O+9s+bRCEJ2wLtdGBSBj7u9jMUFLh/E1/j4M78XVhF2N3y6PqyP2fNVC
@@ -433,10 +443,12 @@ interactions:
         h1ZvkiSCEN8dqSZK7bP8fmBat3nnNie3ObnNV46f3G522pC8Hy2MEU1IOCDRCCRSZrJ+fLqYfBcN
         3gmWgZDlTZc8n8Z6UxvvZq+RWKSj6fgaP3qvsS3/22h4OBy+AV7DFIJVCwAA
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -450,15 +462,15 @@ interactions:
       Content-Type:
       - application/geo+json
       Date:
-      - Mon, 22 Jul 2024 10:31:27 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:43 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 203fc4341c3c51bae1c0601084da9166.cloudfront.net (CloudFront)
+      - 1.1 59778df72778f60e4701bb8768b14bcc.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - htTzFCGnb4WgJFvey9p3RLLDtXtdTOifvK2i9aOCA8MqbGdlFz2Eaw==
+      - l3HRGMVhjqC9ZPbAfDDJaEVCahC-jHvilFO5TG21pLRQNE3NPUNGCg==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:

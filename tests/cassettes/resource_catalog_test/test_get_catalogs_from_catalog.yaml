@@ -15,7 +15,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAE8wnmYC/81WTU/bQBD9Kyv3WOwl5Jaqh4hC1RNIoeoBoWqznsTbrL1mZ500Qvz3zjhx4tAU
+        H4sIAMA/o2YC/81WTU/bQBD9Kyv3WOwl5Jaqh4hC1RNIoeoBoWqznsTbrL1mZ500Qvz3zjhx4tAU
         nABST+DNvDdvdj52HqKwLCEaROcqKOum0UlkUvrEoHQ8UfSnNHQWTLDw5DgGS/8YjaC8zsgoBdTe
         lMG4gkyHYnQzPBeXZDO8/iYWJmRCFeKiDRJjpWdQpARm5p9z8LhC95LT5JSOtSsmzud446LBbZSF
         UOJASvKeMABL0InzUzmv7WOvkzNpAuTxiv/DxNgAnnheQO6A7ivwy8Mwa2syXiwWiSuhmBpMCgiS
@@ -29,10 +29,12 @@ interactions:
         z/16Z2v0X5EJr35rUtHeD48PhBfSPYJdSy+PXJmF3D4nxumK21W9Xk5Su3q8Wy+x5BwKrJekwe3d
         4x9RoMmKYgsAAA==
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -46,15 +48,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Jul 2024 10:11:27 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:40 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 46ab54a5222184ab004a374462874b32.cloudfront.net (CloudFront)
+      - 1.1 38f98563ce0383d146e2eef6f867b714.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - n3EgZtRWuZbPDrgHDA77VpSpFCzDcuoNCIC_qdsp54a-ubMyekp00g==
+      - YOelIa5tGaoZAinVKcG_OOW8fFYA6noIHKjqt-dnPdHbs4O4ZuermQ==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:
@@ -80,7 +82,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAE8wnmYC/8VWTW/bMAz9K4F3XGQ17a23YS22Wwu0t6EYVJmOtcqWKtLJgqL/fWQTJ84+7Q5N
+        H4sIAMA/o2YC/8VWTW/bMAz9K4F3XGQ17a23YS22Wwu0t6EYVJmOtcqWKtLJgqL/fWQTJ84+7Q5N
         ToZE8r1HiaT1lNEqQnaefTRkfJhn0wzJ2K8LSOhCw4ZZfpKfdNvwnaARA2bnX+6mmSvYA9sYQyIo
         VMEgCITsTo684N50xsnFzlgA2uQirRk+TGzwHqwsJ6GcXF5dfL6e2LWgFiTAu+ZBKJ+yBF4owZdC
         stZuYvSO/Tlef0PGnGZVgpItFVHEc60JkHIIoq9q7/OQ5nn7oE10ekujJcFuifo3ST1PO/poEjT0
@@ -91,10 +93,12 @@ interactions:
         JBiQ2k9844/wFTn1DmWYyl/rm4N7dzdMrikWMrQLqSJ+HDgWrjgkGQrpP+41GDyTt5feewyN6Tvk
         gTAqk3uDzirZG1S8gwphf3qAL3B4pXXdsY1PAF1v6cKhDfxUXe2PjPGw2d3zD7CPVsYKCwAA
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -108,15 +112,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Jul 2024 10:11:27 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:41 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 46ab54a5222184ab004a374462874b32.cloudfront.net (CloudFront)
+      - 1.1 38f98563ce0383d146e2eef6f867b714.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 66PqYY-GHRptkpaKXM98Ckuvp0nGSUmyxGgtrZjN78LbPM0A_8xivg==
+      - xM4-jperxLogPYAYypIeZQRAnT3jsCWTJFjqo5CyV7P_ohEHaPx2cw==
       X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:
@@ -142,7 +146,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAFAwnmYC/+1ZS2/bOBD+K4L2mFCsnaJos+gh6GYXPbWAA/RQBAVNjSVuKJElKadBkf++Q8mS
+        H4sIAME/o2YC/+1ZS2/bOBD+K4L2mFCsnaJos+gh6GYXPbWAA/RQBAVNjSVuKJElKadBkf++Q8mS
         5efKievIqE+JSM7MN8PhvPwz5MwxqRIbXn79GboHDeFl+KFaC89D6xj/NgVjhcpxYxC9il7Vy/DD
         Qe43PO3teShiPMEhZsRvkwnDP1rgaSec9GxHhdbKOIiDv1CABWdxMwbLjdCuEjCTXEDAVe6YyEWe
         BLahi+d0UuR3FWgDEiktyImXVWnAtJYCVUOu9F+LrM/D1MAEd1LntL2k1IF1ESjPMS3GkTJJVNxR
@@ -162,10 +166,12 @@ interactions:
         vnTDOiR8gHfPjgauHPDjwertervhN9LT2Os09jqNvU5jr9PYqz32ul0dLv2yWcphBkYLbc4vHpNh
         tnn8D/Lb2ifIIwAA
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
       Access-Control-Allow-Methods:
-      - GET, POST
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
@@ -179,411 +185,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 22 Jul 2024 10:11:28 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
+      - Fri, 26 Jul 2024 06:18:41 GMT
+      Server:
+      - nginx/1.27.0
       Via:
-      - 1.1 46ab54a5222184ab004a374462874b32.cloudfront.net (CloudFront)
+      - 1.1 38f98563ce0383d146e2eef6f867b714.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 9_c0SBDH4gH_AxAMLR23eE1QdR3Rpjq-3uXMNNMyIveuFqa5FeZvqA==
+      - A8i0e66Us4MMAgYPkOlKYckiMKMoiiHU6H9inTgcBmYYhvwaoFkG1w==
       X-Amz-Cf-Pop:
-      - MAD56-P1
-      X-Cache:
-      - Miss from cloudfront
-      content-encoding:
-      - gzip
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://test.eodatahub.org.uk/api/catalogue/stac
-  response:
-    body:
-      string: !!binary |
-        H4sIAAA0nmYC/81WTU/bQBD9Kyv3WOwl5Jaqh4hC1RNIoeoBoWqznsTbrL1mZ500Qvz3zjhx4tAU
-        nABST+DNvDdvdj52HqKwLCEaROcqKOum0UlkUvrEoHQ8UfSnNHQWTLDw5DgGS/8YjaC8zsgoBdTe
-        lMG4gkyHYnQzPBeXZDO8/iYWJmRCFeKiDRJjpWdQpARm5p9z8LhC95LT5JSOtSsmzud446LBbZSF
-        UOJASvKeMABL0InzUzmv7WOvkzNpAuTxiv/DxNgAnnheQO6A7ivwy8Mwa2syXiwWiSuhmBpMCgiS
-        QdJNNV/YBFSoPGDcl8QgOTa5OduR+gKRdnnuivhsS4MmLy3Eben/4tD3tgXkrzjA79AhYO2sBc35
-        xQMD7m0dTsH9Qsrx8TfWMadcDT2CeOgQ2hN/h1/hETG1LqWbyr/rm8Ct3HWTq9K5KjSkXEWl8oaE
-        xwTxKjj/irw6hX3uWKlXk6Ta3GLXvkPnD4tkrNDomM86FW+nQtidHmBT7F5pTXds8B6g6S2ZGtSO
-        Btxyd2QcThvdnUTWFDOkifgQebA8l8FOeEyvZrkqS2soDYSRTV16mNAvjccAGBJwKaUqq8bsM6lm
-        rGObPcmKZPR40vjwzoX39sHG7+Jj/YktX+unhXvhWZfN28fPmfxxOeqLFlJoes8QUNTzNwdqx1SM
-        lyJkBgWCn68m1bGqWxK3wjf1s0czTdePe3SLbc0dKWVDkEPIHK8IXy9u/j9R11ejtiqdGZt2yu53
-        Spb4QvQIAd+g0GRFhHHaEB4jaVSVJY1EKqi31IUN6z5xXLFGQ8yr3H6N8yJNnDL1aCY3dV4/rfe2
-        z/16Z2v0X5EJr35rUtHeD48PhBfSPYJdSy+PXJmF3D4nxumK21W9Xk5Su3q8Wy+x5BwKrJekwe3d
-        4x9RoMmKYgsAAA==
-    headers:
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      Access-Control-Allow-Methods:
-      - GET, POST
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '694'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 22 Jul 2024 10:27:12 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 54f76f217a8a36f0c9efcfeb0048fe10.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - EBdJ5XhE1hdHlMjadaohrdLSiyi8PZB0-HlVKaciW48FlvXehA0sdQ==
-      X-Amz-Cf-Pop:
-      - MAD56-P1
-      X-Cache:
-      - Miss from cloudfront
-      content-encoding:
-      - gzip
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets
-  response:
-    body:
-      string: !!binary |
-        H4sIAAA0nmYC/8VWTW/bMAz9K4F3XGQ17a23YS22Wwu0t6EYVJmOtcqWKtLJgqL/fWQTJ84+7Q5N
-        ToZE8r1HiaT1lNEqQnaefTRkfJhn0wzJ2K8LSOhCw4ZZfpKfdNvwnaARA2bnX+6mmSvYA9sYQyIo
-        VMEgCITsTo684N50xsnFzlgA2uQirRk+TGzwHqwsJ6GcXF5dfL6e2LWgFiTAu+ZBKJ+yBF4owZdC
-        stZuYvSO/Tlef0PGnGZVgpItFVHEc60JkHIIoq9q7/OQ5nn7oE10ekujJcFuifo3ST1PO/poEjT0
-        JgJ6LCkEOmKSsnVoer2rhONL2dh6OmxoypBq01h4Gzk9/B0rgkm2Onj+W9oaqArS6NdXN7cDdc0h
-        vD+otk+XfWm2cr44fMVAYZR4qdLwJ7qjK+JjokqtT0uZJdcyD+1NleFt4Im65WPkXPAwghU2vXiZ
-        /CrZ/FQ7gnoD8650niCJ4L9H7gU9tpBW42I23uy8XC7zEKGZO8wbIC1BOswtg6gSDLUJUJ1pRnjp
-        IL3d25P6DyAb6jo06nQHg66OHlRf+p8w7KPvBcpKEf8rByTcH3jjEp7tCLnbuiJ65YkNvFOphhmH
-        JBiQ2k9844/wFTn1DmWYyl/rm4N7dzdMrikWMrQLqSJ+HDgWrjgkGQrpP+41GDyTt5feewyN6Tvk
-        gTAqk3uDzirZG1S8gwphf3qAL3B4pXXdsY1PAF1v6cKhDfxUXe2PjPGw2d3zD7CPVsYKCwAA
-    headers:
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      Access-Control-Allow-Methods:
-      - GET, POST
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '567'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 22 Jul 2024 10:27:12 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 54f76f217a8a36f0c9efcfeb0048fe10.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - 7dgriBXqb6uYqXqFJIAxmjVdKMGGiBB7vfbO49rHz3MjE6TBxBlzQA==
-      X-Amz-Cf-Pop:
-      - MAD56-P1
-      X-Cache:
-      - Miss from cloudfront
-      content-encoding:
-      - gzip
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/catalogs
-  response:
-    body:
-      string: !!binary |
-        H4sIAAA0nmYC/+1ZS2/bOBD+K4L2mFCsnaJos+gh6GYXPbWAA/RQBAVNjSVuKJElKadBkf++Q8mS
-        5efKievIqE+JSM7MN8PhvPwz5MwxqRIbXn79GboHDeFl+KFaC89D6xj/NgVjhcpxYxC9il7Vy/DD
-        Qe43PO3teShiPMEhZsRvkwnDP1rgaSec9GxHhdbKOIiDv1CABWdxMwbLjdCuEjCTXEDAVe6YyEWe
-        BLahi+d0UuR3FWgDEiktyImXVWnAtJYCVUOu9F+LrM/D1MAEd1LntL2k1IF1ESjPMS3GkTJJVNxR
-        BEx5jYF6PepPSxsYpIZBV7V9PK8BaWYgd4eG1AJglHK9sghe6USZjOUctuJq/OXm6gP98vfoImhR
-        Blwya8EGItMSMjQx+sX4IXCpsIEFg876HNVaEOfALTDD0/WYE1Bna3AHDc1BrEwbcRm4VPmX+M/1
-        zbGr8PnTaFEHMxUciA8Z6zWZ5nGkmIiUhhxZllr9OQtf7y/K0FVr+AmPXH3+GMyYBu041FHjRttS
-        q7mS3hRRadA12FULusMQSlOXyW24FC+8l7O9IfMCl+H5Yy8fK/D5SQnclTmlf+DqTNmKaKmQcb/s
-        Rnkm9Ju+Y1Qmhh89B2nx1Ykc5OBIcA6/MRP3HGtxx3X4iMXiLNHaG4U1XIPAhydPazVwL59Oy4qT
-        GB4NqXCQkSpJ/DER0lWJfjvlAtH3AszDbjSz03j4/v6+TCuJsFEOjnoiqhKOTMgEmCsMWHJBkUNZ
-        RNBmbQHq/zDiKstUToZzNrYsc0gb+iYe/LtsEfov4hNMB4XbYXc3hQdzgVhF1G71RIt1vFPvDQMf
-        QqCDakvydjfhE3RqGaUbylX/9t3P/O66wWXx1NetsfcibD4EAidIYphT5hn3qpi98IXTPAjYHd+d
-        xRCxkyZjZgUnfq2T83ZyhMXoATK23T2tfh0NvQGo3xaNheUKa8yHxZCxO9vw1sfuri142W0jnUtn
-        5ITd21Ydee23glG55fuj66pZCt6+Xmm6r4Ky3PdVp5oEuhhjnmha7UDlwdWXUV867hWNf/eGe4tB
-        uvbbL9IsH8IW++qKXwjrUvvLksRAwtweLnOpP4QqNrx9XX02gqIZzw3Wq8/N6oaDYPKyNvbWXecC
-        e4L0hC5/T2LXtfBVel3OrjFMKO77BF/m17KQZGMJG27M8hQydra/i5sLXGesst57qp3KLqPiQl96
-        XLDynHs0yljF1pdJxjar4f8an3RGEqkIVqBHg/Vdz7FKlseWOcKHBAvsXkPNmdD9RlgPX8iAJD2Y
-        vnTDOiR8gHfPjgauHPDjwertervhN9LT2Os09jqNvU5jr9PYqz32ul0dLv2yWcphBkYLbc4vHpNh
-        tnn8D/Lb2ifIIwAA
-    headers:
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      Access-Control-Allow-Methods:
-      - GET, POST
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1038'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 22 Jul 2024 10:27:12 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 54f76f217a8a36f0c9efcfeb0048fe10.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - YZ0PkPJlVuKzcoKU6I0Xdrdn8f0KVk7HuIyzolhzb_3EQvQ8JFafug==
-      X-Amz-Cf-Pop:
-      - MAD56-P1
-      X-Cache:
-      - Miss from cloudfront
-      content-encoding:
-      - gzip
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://test.eodatahub.org.uk/api/catalogue/stac
-  response:
-    body:
-      string: !!binary |
-        H4sIAAo0nmYC/81WTU/bQBD9Kyv3WOwl5Jaqh4hC1RNIoeoBoWqznsTbrL1mZ500Qvz3zjhx4tAU
-        nABST+DNvDdvdj52HqKwLCEaROcqKOum0UlkUvrEoHQ8UfSnNHQWTLDw5DgGS/8YjaC8zsgoBdTe
-        lMG4gkyHYnQzPBeXZDO8/iYWJmRCFeKiDRJjpWdQpARm5p9z8LhC95LT5JSOtSsmzud446LBbZSF
-        UOJASvKeMABL0InzUzmv7WOvkzNpAuTxiv/DxNgAnnheQO6A7ivwy8Mwa2syXiwWiSuhmBpMCgiS
-        QdJNNV/YBFSoPGDcl8QgOTa5OduR+gKRdnnuivhsS4MmLy3Eben/4tD3tgXkrzjA79AhYO2sBc35
-        xQMD7m0dTsH9Qsrx8TfWMadcDT2CeOgQ2hN/h1/hETG1LqWbyr/rm8Ct3HWTq9K5KjSkXEWl8oaE
-        xwTxKjj/irw6hX3uWKlXk6Ta3GLXvkPnD4tkrNDomM86FW+nQtidHmBT7F5pTXds8B6g6S2ZGtSO
-        Btxyd2QcThvdnUTWFDOkifgQebA8l8FOeEyvZrkqS2soDYSRTV16mNAvjccAGBJwKaUqq8bsM6lm
-        rGObPcmKZPR40vjwzoX39sHG7+Jj/YktX+unhXvhWZfN28fPmfxxOeqLFlJoes8QUNTzNwdqx1SM
-        lyJkBgWCn68m1bGqWxK3wjf1s0czTdePe3SLbc0dKWVDkEPIHK8IXy9u/j9R11ejtiqdGZt2yu53
-        Spb4QvQIAd+g0GRFhHHaEB4jaVSVJY1EKqi31IUN6z5xXLFGQ8yr3H6N8yJNnDL1aCY3dV4/rfe2
-        z/16Z2v0X5EJr35rUtHeD48PhBfSPYJdSy+PXJmF3D4nxumK21W9Xk5Su3q8Wy+x5BwKrJekwe3d
-        4x9RoMmKYgsAAA==
-    headers:
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      Access-Control-Allow-Methods:
-      - GET, POST
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '694'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 22 Jul 2024 10:27:22 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 faad6addbc9944fdec5df394277cd03e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - sbukxZPsnFD0pJEfTYZJUC-Psc8sUZCD63x7mQ4N5M2ZTp8l331HxQ==
-      X-Amz-Cf-Pop:
-      - MAD56-P1
-      X-Cache:
-      - Miss from cloudfront
-      content-encoding:
-      - gzip
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets
-  response:
-    body:
-      string: !!binary |
-        H4sIAAs0nmYC/8VWTW/bMAz9K4F3XGQ17a23YS22Wwu0t6EYVJmOtcqWKtLJgqL/fWQTJ84+7Q5N
-        ToZE8r1HiaT1lNEqQnaefTRkfJhn0wzJ2K8LSOhCw4ZZfpKfdNvwnaARA2bnX+6mmSvYA9sYQyIo
-        VMEgCITsTo684N50xsnFzlgA2uQirRk+TGzwHqwsJ6GcXF5dfL6e2LWgFiTAu+ZBKJ+yBF4owZdC
-        stZuYvSO/Tlef0PGnGZVgpItFVHEc60JkHIIoq9q7/OQ5nn7oE10ekujJcFuifo3ST1PO/poEjT0
-        JgJ6LCkEOmKSsnVoer2rhONL2dh6OmxoypBq01h4Gzk9/B0rgkm2Onj+W9oaqArS6NdXN7cDdc0h
-        vD+otk+XfWm2cr44fMVAYZR4qdLwJ7qjK+JjokqtT0uZJdcyD+1NleFt4Im65WPkXPAwghU2vXiZ
-        /CrZ/FQ7gnoD8650niCJ4L9H7gU9tpBW42I23uy8XC7zEKGZO8wbIC1BOswtg6gSDLUJUJ1pRnjp
-        IL3d25P6DyAb6jo06nQHg66OHlRf+p8w7KPvBcpKEf8rByTcH3jjEp7tCLnbuiJ65YkNvFOphhmH
-        JBiQ2k9844/wFTn1DmWYyl/rm4N7dzdMrikWMrQLqSJ+HDgWrjgkGQrpP+41GDyTt5feewyN6Tvk
-        gTAqk3uDzirZG1S8gwphf3qAL3B4pXXdsY1PAF1v6cKhDfxUXe2PjPGw2d3zD7CPVsYKCwAA
-    headers:
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      Access-Control-Allow-Methods:
-      - GET, POST
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '567'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 22 Jul 2024 10:27:23 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 faad6addbc9944fdec5df394277cd03e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - 4jvusz9-M4fyuBzbuuuPOqIpbua_udbLPt4qbhNMXZlcDAbJqs6YIw==
-      X-Amz-Cf-Pop:
-      - MAD56-P1
-      X-Cache:
-      - Miss from cloudfront
-      content-encoding:
-      - gzip
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/catalogs
-  response:
-    body:
-      string: !!binary |
-        H4sIAAs0nmYC/+1ZS2/bOBD+K4L2mFCsnaJos+gh6GYXPbWAA/RQBAVNjSVuKJElKadBkf++Q8mS
-        5efKievIqE+JSM7MN8PhvPwz5MwxqRIbXn79GboHDeFl+KFaC89D6xj/NgVjhcpxYxC9il7Vy/DD
-        Qe43PO3teShiPMEhZsRvkwnDP1rgaSec9GxHhdbKOIiDv1CABWdxMwbLjdCuEjCTXEDAVe6YyEWe
-        BLahi+d0UuR3FWgDEiktyImXVWnAtJYCVUOu9F+LrM/D1MAEd1LntL2k1IF1ESjPMS3GkTJJVNxR
-        BEx5jYF6PepPSxsYpIZBV7V9PK8BaWYgd4eG1AJglHK9sghe6USZjOUctuJq/OXm6gP98vfoImhR
-        Blwya8EGItMSMjQx+sX4IXCpsIEFg876HNVaEOfALTDD0/WYE1Bna3AHDc1BrEwbcRm4VPmX+M/1
-        zbGr8PnTaFEHMxUciA8Z6zWZ5nGkmIiUhhxZllr9OQtf7y/K0FVr+AmPXH3+GMyYBu041FHjRttS
-        q7mS3hRRadA12FULusMQSlOXyW24FC+8l7O9IfMCl+H5Yy8fK/D5SQnclTmlf+DqTNmKaKmQcb/s
-        Rnkm9Ju+Y1Qmhh89B2nx1Ykc5OBIcA6/MRP3HGtxx3X4iMXiLNHaG4U1XIPAhydPazVwL59Oy4qT
-        GB4NqXCQkSpJ/DER0lWJfjvlAtH3AszDbjSz03j4/v6+TCuJsFEOjnoiqhKOTMgEmCsMWHJBkUNZ
-        RNBmbQHq/zDiKstUToZzNrYsc0gb+iYe/LtsEfov4hNMB4XbYXc3hQdzgVhF1G71RIt1vFPvDQMf
-        QqCDakvydjfhE3RqGaUbylX/9t3P/O66wWXx1NetsfcibD4EAidIYphT5hn3qpi98IXTPAjYHd+d
-        xRCxkyZjZgUnfq2T83ZyhMXoATK23T2tfh0NvQGo3xaNheUKa8yHxZCxO9vw1sfuri142W0jnUtn
-        5ITd21Ydee23glG55fuj66pZCt6+Xmm6r4Ky3PdVp5oEuhhjnmha7UDlwdWXUV867hWNf/eGe4tB
-        uvbbL9IsH8IW++qKXwjrUvvLksRAwtweLnOpP4QqNrx9XX02gqIZzw3Wq8/N6oaDYPKyNvbWXecC
-        e4L0hC5/T2LXtfBVel3OrjFMKO77BF/m17KQZGMJG27M8hQydra/i5sLXGesst57qp3KLqPiQl96
-        XLDynHs0yljF1pdJxjar4f8an3RGEqkIVqBHg/Vdz7FKlseWOcKHBAvsXkPNmdD9RlgPX8iAJD2Y
-        vnTDOiR8gHfPjgauHPDjwertervhN9LT2Os09jqNvU5jr9PYqz32ul0dLv2yWcphBkYLbc4vHpNh
-        tnn8D/Lb2ifIIwAA
-    headers:
-      Access-Control-Allow-Headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      Access-Control-Allow-Methods:
-      - GET, POST
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '1038'
-      Content-Type:
-      - application/json
-      Date:
-      - Mon, 22 Jul 2024 10:27:23 GMT
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains
-      Via:
-      - 1.1 faad6addbc9944fdec5df394277cd03e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - JlvaCdoFX6pa9b9KYQXMK6xpocMZl8hnzBWygftH62FWGZnH9tJrGA==
-      X-Amz-Cf-Pop:
-      - MAD56-P1
+      - CDG50-C1
       X-Cache:
       - Miss from cloudfront
       content-encoding:
