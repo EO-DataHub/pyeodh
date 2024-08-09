@@ -23,23 +23,24 @@ def _encode_json(data: dict) -> tuple[str, str]:
 
 class Client:
     def __init__(
-        self, base_url: str = consts.API_BASE_URL, auth: tuple[str, str] | None = None
+        self,
+        base_url: str = consts.API_BASE_URL,
+        username: str | None = None,
+        token: str | None = None,
     ) -> None:
         if not is_absolute_url(base_url):
             raise ValueError("base_url must be an absolute URL")
 
         self.url_base = base_url
+        self.username = username
+        self.token = token
         self._build_session()
-
-        # TEMP:
-        if auth:
-            self._session.auth = auth
 
     def _build_session(
         self,
     ) -> None:
-        # TODO Add retry count, setting auth headers etc. here
         self._session = requests.Session()
+        self._session.headers = {"Authorization": f"Bearer {self.token}"}
 
     def _request_json_raw(
         self,
@@ -124,7 +125,12 @@ class Client:
         Returns:
             Ades: Object representing the ADES.
         """
-        headers, data = self._request_json("GET", "/ades/test_oxidian/ogc-api/")
+        if self.username is None or self.token is None:
+            raise ValueError(
+                "Valid username and token required for accessing protected API "
+                "endpoints."
+            )
+        headers, data = self._request_json("GET", f"/ades/{self.username}/ogc-api/")
         return Ades(self, headers, data)
 
     def get_wmts(self) -> WebMapTileService:
