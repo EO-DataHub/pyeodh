@@ -130,7 +130,35 @@ class Client:
                 "Valid username and token required for accessing protected API "
                 "endpoints."
             )
-        headers, data = self._request_json("GET", f"/ades/{self.username}/ogc-api/")
+        # headers, data = self._request_json("GET", f"/ades/{self.username}/ogc-api/")
+
+        # * TEMP
+        # * ADES root endpoint is not available ATM
+
+        headers = {}
+        data = {
+            "links": [
+                {
+                    "href": join_url(self.url_base, f"ades/{self.username}/ogc-api/"),
+                    "rel": "self",
+                },
+                {
+                    "href": join_url(
+                        self.url_base, f"ades/{self.username}/ogc-api/processes/"
+                    ),
+                    "rel": "http://www.opengis.net/def/rel/ogc/1.0/processes",
+                },
+                {
+                    "href": join_url(
+                        self.url_base, f"ades/{self.username}/ogc-api/jobs/"
+                    ),
+                    "rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list",
+                },
+            ],
+        }
+
+        # * ^^^^
+
         return Ades(self, headers, data)
 
     def get_wmts(self) -> WebMapTileService:
