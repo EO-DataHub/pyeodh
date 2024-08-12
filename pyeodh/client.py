@@ -135,7 +135,7 @@ class Client:
         # * TEMP
         # * ADES root endpoint is not available ATM
 
-        headers = {}
+        headers = Headers()
         data = {
             "links": [
                 {
