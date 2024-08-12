@@ -187,7 +187,7 @@ class Process(EodhObject):
         self.inputs_schema = self._make_dict_prop(obj.get("inputs", {}))
         self.outputs_schema = self._make_dict_prop(obj.get("outputs", {}))
 
-    def execute(self, inputs: dict) -> Job:
+    def execute(self, inputs: dict, workspace: str | None = None) -> Job:
         """Trigger process workflow execution.
 
         Calls: POST /processes/{process_id}/execute
@@ -201,10 +201,14 @@ class Process(EodhObject):
         """
 
         # TODO: handle inputs, validate against the schema
+        if inputs.get("workspace") is None:
+            inputs["workspace"] = workspace or self._client.username
+
         post_headers = Headers()
         post_headers["Prefer"] = "respond-async"
+        post_data = {"inputs": inputs}
         headers, response = self._client._request_json(
-            "POST", self.self_href, headers=post_headers, data=inputs
+            "POST", self.self_href, headers=post_headers, data=post_data
         )
         return Job(self._client, headers, response)
 
