@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyeodh"
-version = "0.0.4"
+version = "0.0.5"
 description = "A lightweight Python client for EODH APIs."
 authors = ["Dusan Figala <dusan@oxidian.com>"]
 license = "BSD-2-Clause"

@@ -9,7 +9,7 @@
 project = "pyeodh"
 copyright = "2024, Dusan Figala"
 author = "Dusan Figala"
-release = "0.0.4"
+release = "0.0.5"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
