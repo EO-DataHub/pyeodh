@@ -18,6 +18,7 @@ flake8 = "^7.0.0"
 isort = "^5.13.2"
 pyright = "^1.1.358"
 ipykernel = "^6.29.4"
+python-dotenv = "^1.0.1"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^8.1.1"
