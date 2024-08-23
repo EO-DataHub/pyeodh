@@ -29,6 +29,7 @@ class AdesRelType(Enum):
     RESULTS_NOT_READY = (
         "http://www.opengis.net/def/rel/ogc/1.0/exception/result-not-ready"
     )
+    EXECUTE = "http://www.opengis.net/def/rel/ogc/1.0/execute"
 
 
 class AdesJobStatus(Enum):
@@ -215,10 +216,20 @@ class Process(EodhObject):
         self.inputs_schema = self._make_dict_prop(obj.get("inputs", {}))
         self.outputs_schema = self._make_dict_prop(obj.get("outputs", {}))
 
+    @cached_property
+    def execute_href(self) -> str:
+        """URL pointing to processes execution endpoint."""
+        ln = Link.get_link(self.links, AdesRelType.EXECUTE.value)
+        if ln is None:
+            raise ValueError(
+                f"{self} does not have a link pointing to processes execution endpoint"
+            )
+        return ln.href
+
     def execute(self, inputs: dict, workspace: str | None = None) -> Job:
         """Trigger process workflow execution.
 
-        Calls: POST /processes/{process_id}/execute
+        Calls: POST /processes/{process_id}/execution
 
         Args:
             inputs (dict): A dictionary containing inputs structured according to
@@ -236,7 +247,7 @@ class Process(EodhObject):
         post_headers["Prefer"] = "respond-async"
         post_data = {"inputs": inputs}
         headers, response = self._client._request_json(
-            "POST", self.self_href, headers=post_headers, data=post_data
+            "POST", self.execute_href, headers=post_headers, data=post_data
         )
         return Job(self._client, headers, response)
 

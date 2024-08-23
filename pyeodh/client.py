@@ -146,13 +146,13 @@ class Client:
                 },
                 {
                     "href": join_url(
-                        self.url_base, f"ades/{self.username}/ogc-api/processes/"
+                        self.url_base, f"ades/{self.username}/ogc-api/processes"
                     ),
                     "rel": "http://www.opengis.net/def/rel/ogc/1.0/processes",
                 },
                 {
                     "href": join_url(
-                        self.url_base, f"ades/{self.username}/ogc-api/jobs/"
+                        self.url_base, f"ades/{self.username}/ogc-api/jobs"
                     ),
                     "rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list",
                 },
