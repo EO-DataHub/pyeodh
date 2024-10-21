@@ -27,7 +27,6 @@ class Client:
         base_url: str = consts.API_BASE_URL,
         username: str | None = None,
         token: str | None = None,
-        s3_token: str | None = None,
     ) -> None:
         if not is_absolute_url(base_url):
             raise ValueError("base_url must be an absolute URL")
@@ -35,7 +34,6 @@ class Client:
         self.url_base = base_url
         self.username = username
         self.token = token
-        self.s3_token = s3_token
         self._build_session()
 
     def _build_session(
