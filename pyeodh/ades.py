@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import logging
-import os
 from dataclasses import dataclass
 from datetime import datetime as Datetime
 from enum import Enum
@@ -117,18 +116,13 @@ class Job(EodhObject):
         links = collection._pystac_object.get_item_links()
         items = []
         for link in links:
-            s3_href = link._target_href
-            if not s3_href:
+            href = link._target_href
+            if not href:
                 continue
-            https_href = (
-                f"https://{self._client.username}.workspaces.test.eodhp.eco-ke-"
-                "staging.com/files/eodhp-test-workspaces1/processing-results/"
-                f"cat_{self.id}/col_{self.id}/{os.path.basename(s3_href)}"
-            )
             headers, response = self._client._request_json(
                 "GET",
-                https_href,
-                headers=Headers({"Authorization": f"Bearer {self._client.s3_token}"}),
+                href,
+                headers=Headers({"Authorization": f"Bearer {self._client.token}"}),
             )
             items.append(Item(self._client, headers, response))
         return items
