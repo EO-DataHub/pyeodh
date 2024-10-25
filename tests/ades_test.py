@@ -7,6 +7,11 @@ import pyeodh
 from pyeodh.ades import Ades, AdesJobStatus, Process, Job
 
 
+@pytest.fixture(scope="module")
+def vcr_config():
+    return {"filter_headers": ["Authorization"]}
+
+
 @pytest.fixture
 def svc() -> Ades:
     dotenv.load_dotenv()

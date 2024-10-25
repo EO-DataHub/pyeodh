@@ -1,0 +1,550 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+  response:
+    body:
+      string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
+        \ \"description\": \"Convert URL YAML\",\n  \"mutable\": true,\n  \"version\":
+        \"0.1.2\",\n  \"metadata\": [\n    {\n      \"role\": \"https://schema.org/softwareVersion\",\n
+        \     \"value\": \"0.1.2\"\n    }\n  ],\n  \"outputTransmission\": [\n    \"value\",\n
+        \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
+        \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
+        \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
+        \     \"href\": \"https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
+        to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"nullable\": true\n      }\n    },\n
+        \   \"size\": {\n      \"title\": \"the percentage for a resize operation\",\n
+        \     \"description\": \"the percentage for a resize operation\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"nullable\": true\n      }\n    },\n
+        \   \"url\": {\n      \"title\": \"the image to convert\",\n      \"description\":
+        \"the image to convert\",\n      \"schema\": {\n        \"type\": \"string\",\n
+        \       \"nullable\": true\n      }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\":
+        {\n      \"title\": \"converted_image\",\n      \"description\": \"None\",\n
+        \     \"extended-schema\": {\n        \"oneOf\": [\n          {\n            \"allOf\":
+        [\n              {\n                \"$ref\": \"http://zoo-project.org/dl/link.json\"\n
+        \             },\n              {\n                \"type\": \"object\",\n
+        \               \"properties\": {\n                  \"type\": {\n                    \"enum\":
+        [\n                      \"application/json\"\n                    ]\n                  }\n
+        \               }\n              }\n            ]\n          },\n          {\n
+        \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
+        \           ],\n            \"properties\": {\n              \"value\": {\n
+        \               \"oneOf\": [\n                  {\n                    \"type\":
+        \"object\"\n                  }\n                ]\n              }\n            }\n
+        \         }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
+        [\n          {\n            \"type\": \"object\"\n          }\n        ]\n
+        \     }\n    }\n  }\n}"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2253'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:39 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 8WNt8yZpJQDo6MNzAv-LwneEWlyXHv_nDh3HPVfX8UdihT7A8RZyvg==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Content-Length:
+      - '0'
+    method: DELETE
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Oct 2024 06:15:40 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 0GjjQhMrRRfcfAXJNIBPAindjXXkpnFpK1Z9dVTfgH139WpU841trA==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: '{"executionUnit": {"href": "https://raw.githubusercontent.com/EOEPCA/deployment-guide/main/deploy/samples/requests/processing/convert-url-app.cwl",
+      "type": "application/cwl"}}'
+    headers:
+      Content-Length:
+      - '175'
+      Content-Type:
+      - application/json
+    method: POST
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes
+  response:
+    body:
+      string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
+        \ \"description\": \"Convert URL\",\n  \"mutable\": true,\n  \"version\":
+        \"0.1.2\",\n  \"metadata\": [\n    {\n      \"role\": \"https://schema.org/softwareVersion\",\n
+        \     \"value\": \"0.1.2\"\n    }\n  ],\n  \"outputTransmission\": [\n    \"value\",\n
+        \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
+        \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
+        \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
+        \     \"href\": \"https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '622'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:43 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - WJ9h388xxk78mX3tjgoHZcRjH1oN1fUYH69tBAgdUr6glLGv86gJxQ==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+      location:
+      - https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+  response:
+    body:
+      string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
+        \ \"description\": \"Convert URL\",\n  \"mutable\": true,\n  \"version\":
+        \"0.1.2\",\n  \"metadata\": [\n    {\n      \"role\": \"https://schema.org/softwareVersion\",\n
+        \     \"value\": \"0.1.2\"\n    }\n  ],\n  \"outputTransmission\": [\n    \"value\",\n
+        \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
+        \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
+        \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
+        \     \"href\": \"https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
+        to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"default\": \"resize\",\n        \"nullable\":
+        true\n      }\n    },\n    \"size\": {\n      \"title\": \"the percentage
+        for a resize operation\",\n      \"description\": \"the percentage for a resize
+        operation\",\n      \"schema\": {\n        \"type\": \"string\",\n        \"default\":
+        \"50%\",\n        \"nullable\": true\n      }\n    },\n    \"url\": {\n      \"title\":
+        \"the image to convert\",\n      \"description\": \"the image to convert\",\n
+        \     \"schema\": {\n        \"type\": \"string\",\n        \"default\": \"https://eoepca.org/media_portal/images/logo6_med.original.png\",\n
+        \       \"nullable\": true\n      }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\":
+        {\n      \"title\": \"converted_image\",\n      \"description\": \"None\",\n
+        \     \"extended-schema\": {\n        \"oneOf\": [\n          {\n            \"allOf\":
+        [\n              {\n                \"$ref\": \"http://zoo-project.org/dl/link.json\"\n
+        \             },\n              {\n                \"type\": \"object\",\n
+        \               \"properties\": {\n                  \"type\": {\n                    \"enum\":
+        [\n                      \"application/json\"\n                    ]\n                  }\n
+        \               }\n              }\n            ]\n          },\n          {\n
+        \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
+        \           ],\n            \"properties\": {\n              \"value\": {\n
+        \               \"oneOf\": [\n                  {\n                    \"type\":
+        \"object\"\n                  }\n                ]\n              }\n            }\n
+        \         }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
+        [\n          {\n            \"type\": \"object\"\n          }\n        ]\n
+        \     }\n    }\n  }\n}"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2387'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:44 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 1M9FIrE7g3bMvEGETG4maRif8Y8rraqL4HmL3dIiJGGUDem0PdLLlg==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+  response:
+    body:
+      string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
+        \ \"description\": \"Convert URL\",\n  \"mutable\": true,\n  \"version\":
+        \"0.1.2\",\n  \"metadata\": [\n    {\n      \"role\": \"https://schema.org/softwareVersion\",\n
+        \     \"value\": \"0.1.2\"\n    }\n  ],\n  \"outputTransmission\": [\n    \"value\",\n
+        \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
+        \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
+        \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
+        \     \"href\": \"https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
+        to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"default\": \"resize\",\n        \"nullable\":
+        true\n      }\n    },\n    \"size\": {\n      \"title\": \"the percentage
+        for a resize operation\",\n      \"description\": \"the percentage for a resize
+        operation\",\n      \"schema\": {\n        \"type\": \"string\",\n        \"default\":
+        \"50%\",\n        \"nullable\": true\n      }\n    },\n    \"url\": {\n      \"title\":
+        \"the image to convert\",\n      \"description\": \"the image to convert\",\n
+        \     \"schema\": {\n        \"type\": \"string\",\n        \"default\": \"https://eoepca.org/media_portal/images/logo6_med.original.png\",\n
+        \       \"nullable\": true\n      }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\":
+        {\n      \"title\": \"converted_image\",\n      \"description\": \"None\",\n
+        \     \"extended-schema\": {\n        \"oneOf\": [\n          {\n            \"allOf\":
+        [\n              {\n                \"$ref\": \"http://zoo-project.org/dl/link.json\"\n
+        \             },\n              {\n                \"type\": \"object\",\n
+        \               \"properties\": {\n                  \"type\": {\n                    \"enum\":
+        [\n                      \"application/json\"\n                    ]\n                  }\n
+        \               }\n              }\n            ]\n          },\n          {\n
+        \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
+        \           ],\n            \"properties\": {\n              \"value\": {\n
+        \               \"oneOf\": [\n                  {\n                    \"type\":
+        \"object\"\n                  }\n                ]\n              }\n            }\n
+        \         }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
+        [\n          {\n            \"type\": \"object\"\n          }\n        ]\n
+        \     }\n    }\n  }\n}"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2387'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:45 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - moAz64mHFyTmQcwQQAkYAOjwLpuxD7BflFqvxKj1ADnLerUTAxuKlw==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: "cwlVersion: v1.0\n$namespaces:\n  s: https://schema.org/\ns:softwareVersion:
+      0.1.2\nschemas:\n  - http://schema.org/version/9.0/schemaorg-current-http.rdf\n$graph:\n
+      \ # Workflow entrypoint\n  - class: Workflow\n    id: convert-url\n    label:
+      convert url app\n    doc: Convert URL YAML\n    requirements:\n      ResourceRequirement:\n
+      \       coresMax: 1\n        ramMax: 1024\n    inputs:\n      fn:\n        label:
+      the operation to perform\n        doc: the operation to perform\n        type:
+      string\n      url:\n        label: the image to convert\n        doc: the image
+      to convert\n        type: string\n      size:\n        label: the percentage
+      for a resize operation\n        doc: the percentage for a resize operation\n
+      \       type: string\n    outputs:\n      - id: converted_image\n        type:
+      Directory\n        outputSource:\n          - convert/results\n    steps:\n
+      \     convert:\n        run: \"#convert\"\n        in:\n          fn: fn\n          url:
+      url\n          size: size\n        out:\n          - results\n  # convert.sh
+      - takes input args `--url`\n  - class: CommandLineTool\n    id: convert\n    requirements:\n
+      \     ResourceRequirement:\n        coresMax: 1\n        ramMax: 512\n    hints:\n
+      \     DockerRequirement:\n        dockerPull: eoepca/convert:latest\n    baseCommand:
+      convert.sh\n    inputs:\n      fn:\n        type: string\n        inputBinding:\n
+      \         position: 1\n      url:\n        type: string\n        inputBinding:\n
+      \         position: 2\n          prefix: --url\n      size:\n        type: string\n
+      \       inputBinding:\n          position: 3\n    outputs:\n      results:\n
+      \       type: Directory\n        outputBinding:\n          glob: .\n"
+    headers:
+      Content-Length:
+      - '1621'
+      Content-Type:
+      - application/cwl+yaml
+    method: PUT
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 25 Oct 2024 06:15:47 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - nfvOAcbsVqKvEIQtI0brZDWvIXLnuc6rXE3OTJuzhirEWASC73x95Q==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+      location:
+      - https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+  response:
+    body:
+      string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
+        \ \"description\": \"Convert URL YAML\",\n  \"mutable\": true,\n  \"version\":
+        \"0.1.2\",\n  \"metadata\": [\n    {\n      \"role\": \"https://schema.org/softwareVersion\",\n
+        \     \"value\": \"0.1.2\"\n    }\n  ],\n  \"outputTransmission\": [\n    \"value\",\n
+        \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
+        \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
+        \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
+        \     \"href\": \"https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
+        to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"nullable\": true\n      }\n    },\n
+        \   \"size\": {\n      \"title\": \"the percentage for a resize operation\",\n
+        \     \"description\": \"the percentage for a resize operation\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"nullable\": true\n      }\n    },\n
+        \   \"url\": {\n      \"title\": \"the image to convert\",\n      \"description\":
+        \"the image to convert\",\n      \"schema\": {\n        \"type\": \"string\",\n
+        \       \"nullable\": true\n      }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\":
+        {\n      \"title\": \"converted_image\",\n      \"description\": \"None\",\n
+        \     \"extended-schema\": {\n        \"oneOf\": [\n          {\n            \"allOf\":
+        [\n              {\n                \"$ref\": \"http://zoo-project.org/dl/link.json\"\n
+        \             },\n              {\n                \"type\": \"object\",\n
+        \               \"properties\": {\n                  \"type\": {\n                    \"enum\":
+        [\n                      \"application/json\"\n                    ]\n                  }\n
+        \               }\n              }\n            ]\n          },\n          {\n
+        \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
+        \           ],\n            \"properties\": {\n              \"value\": {\n
+        \               \"oneOf\": [\n                  {\n                    \"type\":
+        \"object\"\n                  }\n                ]\n              }\n            }\n
+        \         }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
+        [\n          {\n            \"type\": \"object\"\n          }\n        ]\n
+        \     }\n    }\n  }\n}"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '2253'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:48 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - MruBEeoRjXcMRqbAw5h5LfqVuE-dQo6VHUPj72VB4lEnY21hMeWuOg==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"inputs": {"fn": "resize", "url": "https://eoepca.org/media_portal/images/logo6_med.original.png",
+      "size": "50%", "workspace": "figi44"}}'
+    headers:
+      Content-Length:
+      - '138'
+      Content-Type:
+      - application/json
+      Prefer:
+      - respond-async
+    method: POST
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution
+  response:
+    body:
+      string: "{\n  \"jobID\": \"93c8d0fc-9298-11ef-aa4d-c20c1128b306\",\n  \"type\":
+        \"process\",\n  \"processID\": \"convert-url\",\n  \"created\": \"2024-10-25T06:15:48.820Z\",\n
+        \ \"started\": \"2024-10-25T06:15:48.820Z\",\n  \"updated\": \"2024-10-25T06:15:48.820Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"ZOO-Kernel accepted to run your
+        service!\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
+        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
+        \"https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/93c8d0fc-9298-11ef-aa4d-c20c1128b306\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:49 GMT
+      Server:
+      - nginx/1.27.0
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - tli23tYrQDtzJH7Xugb3CW0MBvFEgOEzCHOhMH_foVRKlDwPb4EiIQ==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+      location:
+      - https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/93c8d0fc-9298-11ef-aa4d-c20c1128b306
+      preference-applied:
+      - respond-async
+      x-also-also-also-powered-by:
+      - dru.securityOut
+      x-also-also-powered-by:
+      - dru.securityIn
+      x-also-powered-by:
+      - jwt.securityIn
+      x-powered-by:
+      - ZOO-Project-DRU
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/93c8d0fc-9298-11ef-aa4d-c20c1128b306
+  response:
+    body:
+      string: '{"jobID": "93c8d0fc-9298-11ef-aa4d-c20c1128b306", "type": "process",
+        "processID": "convert-url", "created": "2024-10-25T06:15:48.820Z", "started":
+        "2024-10-25T06:15:48.820Z", "finished": "2024-10-25T06:15:49.522Z", "updated":
+        "2024-10-25T06:15:49.087Z", "status": "failed", "message": "ZOO-Kernel accepted
+        to run your service!", "links": [{"title": "Status location", "rel": "monitor",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/93c8d0fc-9298-11ef-aa4d-c20c1128b306"}]}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '518'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:50 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 0b727ed0f0558ba8e12453bfc7ff4906.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - YFy0I71UPcM7GrXGJZnvCzoGADCEaP_J1JKZQG9RIcQuUJpw1NtCtQ==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+version: 1

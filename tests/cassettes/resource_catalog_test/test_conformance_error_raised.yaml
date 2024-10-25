@@ -37,13 +37,13 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Oct 2024 06:15:54 GMT
+      - Fri, 25 Oct 2024 06:15:55 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 47b3fa796fd76d32bef114d0b8ce8cac.cloudfront.net (CloudFront)
+      - 1.1 444dde5644fa29b8d8dfac109693e2a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - JjnpJZKwZvAS8X3qnFw0oyAfn0m1OhfO82NZ7DeeO-x_6a7ru5JkqA==
+      - 1GuNXPdMvchQgd1fZfCgtNJy3SQbCVvyzyBY75Uy6fyUEfiGSp-BYw==
       X-Amz-Cf-Pop:
       - VIE50-C2
       X-Cache:
@@ -87,13 +87,13 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Oct 2024 06:15:54 GMT
+      - Fri, 25 Oct 2024 06:15:55 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 47b3fa796fd76d32bef114d0b8ce8cac.cloudfront.net (CloudFront)
+      - 1.1 444dde5644fa29b8d8dfac109693e2a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - WA4616SCn0iCg5nmfAu6zuUiNRP0Uld4F2-mlbRNv_Ha3DzW3lDaUQ==
+      - g7sxhQ7soP-r-4RUZb8PUZDk1EzXVJ4ApZu8kh66HsEhO_eTwI4-tA==
       X-Amz-Cf-Pop:
       - VIE50-C2
       X-Cache:
@@ -190,13 +190,13 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Oct 2024 06:15:54 GMT
+      - Fri, 25 Oct 2024 06:15:55 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 47b3fa796fd76d32bef114d0b8ce8cac.cloudfront.net (CloudFront)
+      - 1.1 444dde5644fa29b8d8dfac109693e2a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - FlKM9dPMWQlPtqUxAiYWwHPFN-utWZ_BuivxRc-JTN0d_qqhNSvP-g==
+      - JjxWuZNhc5KJhTxljZa2tCxy6TnBm-pfPULHEv12JuolKVfEnGlUUA==
       X-Amz-Cf-Pop:
       - VIE50-C2
       X-Cache:
@@ -244,13 +244,13 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Oct 2024 06:15:54 GMT
+      - Fri, 25 Oct 2024 06:15:55 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 95c9d51ed7176777d7ac8ca8cb233696.cloudfront.net (CloudFront)
+      - 1.1 de9b04903710e9099bfc75aaf59c8eda.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - yd070yEUmw-XpcT6932U60FZASBbBF-S3Vyp1OJof_aWuO121Cc8vg==
+      - Eb1t7M_wcrEqBBZOL_UitrEwUxfZy0S77gIiJByxIWRMKBqoLNhc4g==
       X-Amz-Cf-Pop:
       - VIE50-C2
       X-Cache:
@@ -329,56 +329,9 @@ interactions:
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 47b3fa796fd76d32bef114d0b8ce8cac.cloudfront.net (CloudFront)
+      - 1.1 444dde5644fa29b8d8dfac109693e2a2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - ovO6g8njMzHz845LadUp5x0rmXmEYUAYhSQ7FVmUR68_C15efAutMQ==
-      X-Amz-Cf-Pop:
-      - VIE50-C2
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Authorization:
-      - Bearer None
-    method: GET
-    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806
-  response:
-    body:
-      string: '{"type":"Feature","stac_version":"1.0.0","stac_extensions":[],"id":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","collection":"cmip6","geometry":{"type":"Polygon","coordinates":[[[-180.0,-90.0],[178.75,-90.0],[178.75,90.0],[-180.0,90.0],[-180.0,-90.0]]]},"bbox":[-180.0,-90.0,178.75,90.0],"properties":{"datetime":"4072-01-01T00:00:00Z","start_datetime":"4029-01-16T12:00:00Z","end_datetime":"4114-12-16T12:00:00Z","access":["HTTPServer"],"index_node":null,"latest":true,"pid":null,"replica":false,"retracted":false,"instance_id":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","citation_url":"http:/cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806.json","variable_long_name":"Surface
-        Upwelling Shortwave Radiation","variable_units":"W m-2","cf_standard_name":"surface_upwelling_shortwave_flux_in_air","activity_id":"ScenarioMIP","data_specs_version":"01.00.29","experiment_title":"update
-        of RCP8.5 based on SSP5","frequency":"mon","further_info_url":"https://furtherinfo.es-doc.org/CMIP6.THU.CIESM.ssp585.none.r1i1p1f1","grid":"gs1x1","grid_label":"gr","institution_id":"THU","mip_era":"CMIP6","source_id":"CIESM","source_type":"AOGCM","experiment_id":"ssp585","sub_experiment_id":"none","nominal_resolution":"100
-        km","table_id":"Amon","variable_id":"rsus","variant_label":"r1i1p1f1","levels":null,"updated":"2024-08-08T14:32:55.886637Z","created":"2024-02-20T20:41:36.951308Z"},"links":[{"rel":"self","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6"},{"rel":"collection","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi/collections/cmip6"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi"}],"assets":{"reference_file":{"checksum":null,"checksum_type":null,"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/kerchunk/pipeline1/ScenarioMIP/THU/CIESM/kr1.0/CMIP6_ScenarioMIP_THU_CIESM_ssp585_r1i1p1f1_Amon_rsus_gr_v20200806_kr1.0.json","roles":["reference","data"],"size":null,"type":"application/zstd","open_zarr_kwargs":{"decode_times":true}},"data0001":{"href":"https://dap.ceda.ac.uk/badc/cmip6/data/CMIP6/ScenarioMIP/THU/CIESM/ssp585/r1i1p1f1/Amon/rsus/gr/v20200806/rsus_Amon_CIESM_ssp585_r1i1p1f1_gr_402901-411412.nc","roles":["data"],"checksum":null,"checksum_type":null,"type":"application/netcdf","time":"4029-01-01T00:00:00/4114-12-31T23:59:59","area":[-180.0,-90.0,178.75,90.0]}}}'
-    headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Headers:
-      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      Access-Control-Allow-Methods:
-      - GET, PUT, POST, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Cache-Control:
-      - no-cache
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '2901'
-      Content-Type:
-      - application/geo+json
-      Date:
-      - Fri, 25 Oct 2024 06:15:55 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 47b3fa796fd76d32bef114d0b8ce8cac.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - S7ThBHlcCEugdE-7YJH58YIM98eZ2iHWB8TQEpAegPsWInDNyHipmg==
+      - 2l8-O_dx475QQli85i5QWm1djMLPkUF3cAm0lQrYXvj7a2ID15ko8Q==
       X-Amz-Cf-Pop:
       - VIE50-C2
       X-Cache:

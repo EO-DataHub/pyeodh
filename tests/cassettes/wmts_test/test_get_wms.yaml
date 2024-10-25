@@ -1,0 +1,78 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/vs/cache/ows?service=WMS&request=GetCapabilities&version=1.1.1
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAA+2abW+bOhTH399P4fE++IHniDB1abpVSpoo0E7b1VXkgptyR4CBaZN9+msIpbA2
+        vZ20aYtEIgX4c3x8jvPzSezEfrvdROCOZXmYxCMJy0gCLPaTIIzXI+nSOxuYEsg5jQMaJTEbSXEi
+        gbeO/eZ0PvY+LSbg48xbzdzVmKb0OoxCHrIcuJ9cbzID0i3n6RDC3L9lG5rLScridZjLMePwfpND
+        LIvuoN9qucLiieSAB9LfwH4zmU5mkwsPXLE4SDI3ZX54E/qdriazhffJ+cf5y34ukFZe4ik5tsuy
+        u9Bnjn1BN8yZvx8PP85cG1ZXthfySBxgfZzHURizJcuTIvMZEOMU58Ot0L6MHjK7v7+X7xU5ydYQ
+        W5YFq7sSqA7D24zd7C1zYcpZzmWWBJTT2+K6bCIXX+BdLvIXwwOT+xy+FQHCbq9CaEJuMts59pJ9
+        LYRDx37PeDtjxz5Lsg3lDk3TKPQpF9nDuziQk7UvizFfiSxsWNvYp+OFt0uF6w+et6h8/TFZV7HA
+        fVywiRM+SVcIM5o2aYcbumYwjdePSXbu/Juy9ZHnX6UrjmeM8iJj5/FN0iTJ2ZbDNKJh/CT/54BY
+        Hz0MnUGAzayYbH2Wlqm+ODKwZXa4xJR1IWJuGYK7dJ3Jwn0/VBWii5kpLu13SRGXxfJdsgVCGEmN
+        gQQ2YbwdSQNsIhlVj0raCclqKXQrjDo2dCtsHk1EpK1eysmfJ1FRxp07SDaQgomGOg+AZEXDmv6d
+        LmRsaIb5nb2QkWmYFural7KqWKrW9V/KBFsG0Tv+Sxkjy9QV0vZfykhTLQXrast/JRND1TWTtOKv
+        ZKwYCrEweoy/kpFu6rqqaaiJfy8rqqIQYmjKQ/x7GRtY14Ur3arj38vI1ExFuDJVYx9/LauiR01R
+        VaKYZfwPMsGqZugGwdjCIv4HGSODmKaiI83SxPg/yEhTdFUVbyWxDFPDOiiRfHyv7I9hwG8dogl2
+        9qf2Bxaub/leqs+/L1jrTjWb0p34THNcMsXj1eri9OrchrVmu3wXlbzC5qQht0e4R/jPRHg8nV+e
+        9gz3DB87w6vFcv6uB7kH+YhBPjuZupPVeD6dL3uSe5KPkeSp65UATydj73x+sVqV11fn7uXJ9Pzz
+        SSn1YPdgHyPYdYn2lpc/UqHhSxsbVfsn+54N8oqpGTXyz02DRrMQsrBSq5VP4NPcpwELBOUS+Fqw
+        bEevIzaSSrKrzdbOAra9/eqymIcxiwYElDeFp8gvomrfqonw5DrnGfX5y8aNlYiJT5O4PW1/3jR9
+        4tuxT8MNi8t9ZxCLxEYSF9cSCNgNLSI+kogAFYoXSwJFHPJ8JJ27c1NHWHIIIsoA6QNkeRiLsR5q
+        +DOsRIwHBNeian22YdPJb6lHry+LJURNGETMXUNDpqyoRFSfJpanehXRc/LuqXwwuOcA7sAK6xnw
+        Y9DWS9YD1J4sT8E4Soogf5HXtllPak/qryO1Xpj+H65gkSXX9Q9MryO326KHuIf4l0DcWZQeoPiM
+        RjkD40RgmYGbJAPVV6mXK/DBNj3JPck/l+RXLErbYE9pHAC3yG6oz4DHNinLqp85wVWYFzQKvx34
+        Onys6Kolutj0sDIkZIiUCl0hGgMkRDJU0VA1enR/ZxFuLzsP1OApu2MRwGPgZcW+rr66FD+2OFaE
+        ++r7GxBuju2/RsFn/gjm/AcGCNp55yYAAA==
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '1279'
+      Content-Type:
+      - text/xml
+      Date:
+      - Fri, 25 Oct 2024 06:15:56 GMT
+      Server:
+      - nginx/1.27.0
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 f886f6227d3373aee9b545641306fb68.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ALJydIjfuCgVsNkiWd0-3yCnrHI0MpPzY8TCn6e_9OsEvNgYo7d6UA==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+version: 1

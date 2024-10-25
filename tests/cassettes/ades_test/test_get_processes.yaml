@@ -1,0 +1,58 @@
+interactions:
+- request:
+    body: null
+    headers: {}
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes
+  response:
+    body:
+      string: '{"processes": [{"id": "display", "title": "Print Cheetah templates
+        as HTML", "description": "Print Cheetah templates as HTML.", "mutable": false,
+        "version": "2.0.0", "jobControlOptions": ["sync-execute", "async-execute",
+        "dismiss"], "outputTransmission": ["value", "reference"], "links": [{"rel":
+        "self", "type": "application/json", "title": "Process Description", "href":
+        "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/display"}]},
+        {"id": "echo", "title": "Echo input", "description": "Simply echo the value
+        provided as input", "mutable": false, "version": "2.0.0", "metadata": [{"title":
+        "Demo"}], "jobControlOptions": ["sync-execute", "async-execute", "dismiss"],
+        "outputTransmission": ["value", "reference"], "links": [{"rel": "self", "type":
+        "application/json", "title": "Process Description", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/echo"}]},
+        {"id": "convert-url", "title": "convert url app", "description": "Convert
+        URL YAML", "mutable": true, "version": "0.1.2", "metadata": [{"role": "https://schema.org/softwareVersion",
+        "value": "0.1.2"}], "outputTransmission": ["value", "reference"], "jobControlOptions":
+        ["async-execute", "dismiss"], "links": [{"rel": "self", "type": "application/json",
+        "title": "Process Description", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url"}]}],
+        "links": [{"rel": "self", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes"}]}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1490'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 25 Oct 2024 06:15:33 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 3d4555926457517be3e728d2175d92a2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - a7TQNfPY74zgif8RCFsFm06KJID6pvU_uZUCDUVkOitLkC8eMmZeIw==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+version: 1
