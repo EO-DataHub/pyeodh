@@ -39,6 +39,12 @@ class AdesJobStatus(Enum):
     DISMISSED = "dismissed"
 
 
+class ResultsNotReadyError(Exception):
+    """Exception raised when job results are not ready."""
+
+    pass
+
+
 class Job(EodhObject):
     """Represents ADES Job record.
 
@@ -93,14 +99,15 @@ class Job(EodhObject):
     def _get_results_collection(self) -> Collection | None:
         ln = Link.get_link(self.links, AdesRelType.RESULTS.value)
         if ln is None:
-            raise ValueError(f"{self} does not have a link to results.")
+            raise ResultsNotReadyError(f"{self} does not yet have a link to results.")
         headers, response = self._client._request_json("GET", ln.href)
         if (
             response.get("type", AdesRelType.RESULTS_NOT_READY.value)
             == AdesRelType.RESULTS_NOT_READY.value
         ):
+
             logger.info(f"Job {self.id} results not ready.")
-            return
+            raise ResultsNotReadyError(f"Job {self.id} results not ready.")
 
         return Collection(self._client, headers, response)
 
