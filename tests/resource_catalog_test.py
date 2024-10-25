@@ -1,10 +1,12 @@
 from unittest.mock import patch
+
 import pytest
+from pystac import Extent
 
 import pyeodh
-from pyeodh import consts
 import pyeodh.pagination
 import pyeodh.resource_catalog
+from pyeodh import consts
 from pyeodh.resource_catalog import CatalogService
 from pyeodh.utils import ConformanceError
 
@@ -124,7 +126,25 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
     # Test Collection methods
     with pytest.raises(ConformanceError):
         cat.create_collection(
-            "test_id", "test_description", {"spatial": {}, "temporal": {}}
+            "test_id",
+            "test_description",
+            Extent.from_dict(
+                {
+                    "spatial": {
+                        "bbox": [
+                            [
+                                -9.00034454651177,
+                                49.48562028352171,
+                                3.1494256015866995,
+                                61.33444247301668,
+                            ]
+                        ]
+                    },
+                    "temporal": {
+                        "interval": [["2023-01-01T11:14:51Z", "2023-11-01T11:43:49Z"]]
+                    },
+                }
+            ),
         )
     with pytest.raises(ConformanceError):
         collection.update(description="new description")

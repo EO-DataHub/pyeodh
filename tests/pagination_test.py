@@ -1,7 +1,9 @@
-import pytest
 from unittest.mock import Mock
-from pyeodh.pagination import PaginatedList
+
+import pytest
+
 from pyeodh.eodh_object import EodhObject
+from pyeodh.pagination import PaginatedList
 
 
 class TestItem(EodhObject):

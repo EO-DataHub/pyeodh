@@ -1,5 +1,7 @@
 from typing import Any
+
 import pytest
+
 from pyeodh.utils import is_absolute_url, join_url, remove_null_items
 
 

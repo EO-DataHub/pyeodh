@@ -1,8 +1,8 @@
 import pytest
+from owslib.map import wms111
+from owslib.wmts import WebMapTileService
 
 import pyeodh
-from owslib.wmts import WebMapTileService
-from owslib.map import wms111
 
 
 @pytest.mark.vcr
