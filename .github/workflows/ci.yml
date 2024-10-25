@@ -61,3 +61,9 @@ jobs:
 
       - name: Run tests
         run: make test
+
+      - name: Codecov Upload
+        if: ${{ matrix.os == 'ubuntu' && matrix.python_version == '3.12' }}
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

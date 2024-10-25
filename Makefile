@@ -8,7 +8,7 @@ check:
 	poetry run isort --check --diff pyeodh tests
 	poetry run pyright
 test:
-	poetry run pytest -v --cov=./ --record-mode=$(record)
+	poetry run pytest -v --cov=./ --cov-report=xml --record-mode=$(record)
 html:
 	cd docs && \
 	poetry run make html SPHINXOPTS="-W"
