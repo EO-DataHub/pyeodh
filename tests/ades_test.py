@@ -17,8 +17,8 @@ def vcr_config():
 @pytest.fixture
 def svc() -> Ades:
     dotenv.load_dotenv()
-    username = os.getenv("ADES_USER")
-    token = os.getenv("ADES_TOKEN")
+    username = os.getenv("ADES_USER", "figi44")
+    token = os.getenv("ADES_TOKEN", "test_token")
     return pyeodh.Client(username=username, token=token).get_ades()
 
 
