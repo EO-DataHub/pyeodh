@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: test content
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '12'
+      Content-Type:
+      - application/octet-stream
+      User-Agent:
+      - python-requests/2.32.3
+    method: PUT
+    uri: https://figi44.workspaces.test.eodhp.eco-ke-staging.com/files/eodhp-test-workspaces1/test.txt
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Fri, 01 Nov 2024 11:43:05 GMT
+      ETag:
+      - '"9473fdd0d880a43c21b7778d34872157"'
+      Server:
+      - AmazonS3
+      Vary:
+      - Origin
+      Via:
+      - 1.1 b27f21f2e46f0db2d89ec3930dfac728.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ionpctH4xHvng0Xn65qb8RjTP6PwLfIf39GhfuFxpVdo1P5mu-KxIw==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-id-2:
+      - 5gYDwZ/FAYTTuMccw8zjtEMeM0stlfU3Xdh8mEalovP7opBbcG2F1yNFBagGh1VuGAHy2kjfGeI=
+      x-amz-request-id:
+      - 8QMFKYTV60BDA7NG
+      x-amz-server-side-encryption:
+      - AES256
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: 'lorem ipsum dolor sit amet
+
+      '
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '27'
+      Content-Type:
+      - application/octet-stream
+      User-Agent:
+      - python-requests/2.32.3
+    method: PUT
+    uri: https://figi44.workspaces.test.eodhp.eco-ke-staging.com/files/eodhp-test-workspaces1/test.txt
+  response:
+    body:
+      string: ''
+    headers:
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Date:
+      - Fri, 01 Nov 2024 11:43:06 GMT
+      ETag:
+      - '"3b36a281996b25ef96c756093668068c"'
+      Server:
+      - AmazonS3
+      Vary:
+      - Origin
+      Via:
+      - 1.1 8ddb96aad88e511bfa9397674ed822f6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - mARbp4IpBKCcivoWJDZwnDI92KPOUlLSYG_sLekBnGdMY0EZzkVBnw==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+      x-amz-id-2:
+      - 5ata4lcsWj2vaZOtO6XYPPi/1rjpHeQWFKLsoESv2qt64wGDDLMQHw1EgX4a8iM5zB2+dFehoJs=
+      x-amz-request-id:
+      - T2YD34GGYZWVT3B9
+      x-amz-server-side-encryption:
+      - AES256
+    status:
+      code: 200
+      message: OK
+version: 1

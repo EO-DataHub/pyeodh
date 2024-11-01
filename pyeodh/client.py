@@ -13,6 +13,7 @@ from pyeodh.ades import Ades
 from pyeodh.resource_catalog import CatalogService
 from pyeodh.types import Headers, Params, RequestMethod
 from pyeodh.utils import is_absolute_url, join_url
+from pyeodh.workspace import Workspace
 
 logger = logging.getLogger(__name__)
 
@@ -35,12 +36,14 @@ class Client:
         self.username = username
         self.token = token
         self._build_session()
+        self.workspace = Workspace(self)
 
     def _build_session(
         self,
     ) -> None:
         self._session = requests.Session()
-        self._session.headers = {"Authorization": f"Bearer {self.token}"}
+        if self.token is not None:
+            self._session.headers.update({"Authorization": f"Bearer {self.token}"})
 
     def _request_raw(
         self,
