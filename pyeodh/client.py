@@ -51,9 +51,25 @@ class Client:
         data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> requests.Response:
-        logger.debug(
-            f"_request_json_raw received {locals()}",
-        )
+        """Make a raw request.
+
+        Args:
+            method (RequestMethod): HTTP method to use
+            url (str): Target URL
+            headers (Headers | None, optional): Headers to send with the request.
+                Defaults to None.
+            params (Params | None, optional): Query parameters to send with the request.
+                Defaults to None.
+            data (Any | None, optional): Raw data to send with the request. Data is
+                encoded by the `encode` function before sending. Defaults to None.
+            encode (Callable[[Any], tuple[str, Any]], optional): Function to encode the
+                data. Has to return a tuple of (content-type string, encoded data).
+                Defaults to _encode_json.
+
+        Returns:
+            requests.Response: Response from the request
+        """
+        logger.debug(f"_request_raw received {locals()}")
         if not is_absolute_url(url):
             logger.debug(f"Received not absolute url: {url}")
             url = urllib.parse.urljoin(self.url_base, url)
@@ -97,6 +113,26 @@ class Client:
         data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[Headers, Any]:
+        """Make a request and return the headers and deserialized JSON data. Input data
+        can be anything, not just JSON, providing an `encode` function is supplied. Use
+        when expecting JSON data in the response.
+
+        Args:
+            method (RequestMethod): HTTP method to use
+            url (str): Target URL
+            headers (Headers | None, optional): Headers to send with the request.
+                Defaults to None.
+            params (Params | None, optional): Query parameters to send with the request.
+                Defaults to None.
+            data (Any | None, optional): Raw data to send with the request. Data is
+                encoded by the `encode` function before sending. Defaults to None.
+            encode (Callable[[Any], tuple[str, Any]], optional): Function to encode the
+                data. Has to return a tuple of (content-type string, encoded data).
+                Defaults to _encode_json.
+
+        Returns:
+            tuple[Headers, Any]: Response headers and deserialized JSON data
+        """
         response = self._request_raw(method, url, headers, params, data, encode)
 
         if not len(response.text):
