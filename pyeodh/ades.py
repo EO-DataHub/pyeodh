@@ -93,8 +93,10 @@ class Job(EodhObject):
             self._set_props(response)
 
     def delete(self) -> None:
-        """Delete this record."""
-        self._client._request_json_raw("DELETE", self.self_href)
+        """Stop and delete this job."""
+        headers, response = self._client._request_json("DELETE", self.self_href)
+        if response:
+            self._set_props(response)
 
     def _get_results_collection(self) -> Collection | None:
         ln = Link.get_link(self.links, AdesRelType.RESULTS.value)

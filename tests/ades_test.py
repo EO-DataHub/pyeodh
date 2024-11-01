@@ -192,3 +192,11 @@ $graph:
     #         job.refresh()
     # else:
     #     raise AssertionError("Failed to get result items")
+
+
+@pytest.mark.vcr
+def test_delete_job(svc: Ades):
+    p = svc.get_process("convert-url")
+    j = p.execute({})
+    j.delete()
+    assert j.status == AdesJobStatus.DISMISSED.value

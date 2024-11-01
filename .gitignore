@@ -12,3 +12,4 @@ playground/
 .coverage
 coverage.xml
 .cursorrules
+.python-version
