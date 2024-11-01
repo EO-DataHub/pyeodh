@@ -6,7 +6,7 @@ from pyeodh.eodh_object import EodhObject
 from pyeodh.pagination import PaginatedList
 
 
-class TestItem(EodhObject):
+class DummyItem(EodhObject):
     """A simple test object class inheriting from EodhObject."""
 
     def __init__(self, client, headers, data, parent=None):
@@ -26,7 +26,7 @@ def mock_client():
 def paginated_list(mock_client):
     """Fixture to create a PaginatedList instance."""
     return PaginatedList(
-        TestItem,
+        DummyItem,
         mock_client,
         "GET",
         "https://api.example.com/items",
@@ -47,7 +47,7 @@ def test_get_limited_first_page(paginated_list, mock_client):
     result = paginated_list.get_limited()
 
     assert len(result) == 10
-    assert all(isinstance(item, TestItem) for item in result)
+    assert all(isinstance(item, DummyItem) for item in result)
     assert [item.id for item in result] == list(range(10))
 
 
@@ -63,7 +63,7 @@ def test_get_limited_partial_page(paginated_list, mock_client):
     result = paginated_list.get_limited()
 
     assert len(result) == 5
-    assert all(isinstance(item, TestItem) for item in result)
+    assert all(isinstance(item, DummyItem) for item in result)
     assert [item.id for item in result] == list(range(5))
 
 
@@ -71,7 +71,7 @@ def test_get_limited_custom_limit(mock_client):
     """Test get_limited() with a custom pagination limit."""
     custom_limit = 15
     paginated_list = PaginatedList(
-        TestItem,
+        DummyItem,
         mock_client,
         "GET",
         "https://api.example.com/items",
@@ -90,19 +90,21 @@ def test_get_limited_custom_limit(mock_client):
     result = paginated_list.get_limited()
 
     assert len(result) == custom_limit
-    assert all(isinstance(item, TestItem) for item in result)
+    assert all(isinstance(item, DummyItem) for item in result)
     assert [item.id for item in result] == list(range(custom_limit))
 
 
 def test_get_limited_cached_results(paginated_list, mock_client):
     """Test get_limited() when results are already cached."""
     # Populate the _elements list
-    paginated_list._elements = [TestItem(mock_client, {}, {"id": i}) for i in range(10)]
+    paginated_list._elements = [
+        DummyItem(mock_client, {}, {"id": i}) for i in range(10)
+    ]
 
     result = paginated_list.get_limited()
 
     assert len(result) == 10
-    assert all(isinstance(item, TestItem) for item in result)
+    assert all(isinstance(item, DummyItem) for item in result)
     assert [item.id for item in result] == list(range(10))
     mock_client._request_json.assert_not_called()
 
@@ -110,7 +112,7 @@ def test_get_limited_cached_results(paginated_list, mock_client):
 def test_iter_method(mock_client):
     """Test the __iter__ method of PaginatedList."""
     paginated_list = PaginatedList(
-        TestItem,
+        DummyItem,
         mock_client,
         "GET",
         "https://api.example.com/items",
@@ -145,7 +147,7 @@ def test_iter_method(mock_client):
     items = list(paginated_list)
 
     assert len(items) == 15
-    assert all(isinstance(item, TestItem) for item in items)
+    assert all(isinstance(item, DummyItem) for item in items)
     assert [item.id for item in items] == list(range(15))
 
     # Check that _request_json was called for each page
@@ -155,7 +157,7 @@ def test_iter_method(mock_client):
 def test_iter_method_empty_response(mock_client):
     """Test the __iter__ method of PaginatedList with an empty response."""
     paginated_list = PaginatedList(
-        TestItem,
+        DummyItem,
         mock_client,
         "GET",
         "https://api.example.com/items",
@@ -180,7 +182,7 @@ def test_iter_method_empty_response(mock_client):
 def test_iter_method_single_page(mock_client):
     """Test the __iter__ method of PaginatedList with a single page response."""
     paginated_list = PaginatedList(
-        TestItem,
+        DummyItem,
         mock_client,
         "GET",
         "https://api.example.com/items",
@@ -199,14 +201,14 @@ def test_iter_method_single_page(mock_client):
     items = list(paginated_list)
 
     assert len(items) == 5
-    assert all(isinstance(item, TestItem) for item in items)
+    assert all(isinstance(item, DummyItem) for item in items)
     assert [item.id for item in items] == list(range(5))
     mock_client._request_json.assert_called_once()
 
 
 def test_fetch_next_raises_runtime_error(mock_client):
     paginated_list = PaginatedList(
-        TestItem,
+        DummyItem,
         mock_client,
         "GET",
         "https://api.example.com/items",
