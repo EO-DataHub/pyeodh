@@ -36,6 +36,8 @@ class Workspace:
 
         if workspace_name is None:
             workspace_name = self._client.username
+        if workspace_name is None:
+            raise ValueError("Workspace name is required")
 
         url = s3_url(workspace_name, ws_file_path)
 
