@@ -62,7 +62,7 @@ class Item(EodhObject):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
-        self._client._request_json_raw("DELETE", self._pystac_object.self_href)
+        self._client._request_raw("DELETE", self._pystac_object.self_href)
 
     def update(
         self,
@@ -249,7 +249,7 @@ class Collection(EodhObject):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
-        self._client._request_json_raw("DELETE", self._pystac_object.self_href)
+        self._client._request_raw("DELETE", self._pystac_object.self_href)
 
     def create_item(
         self,
@@ -482,7 +482,7 @@ class Catalog(EodhObject):
             raise ConformanceError(
                 f"{Conformance.TRANSACTION_EXTENSION.value}",
             )
-        self._client._request_json_raw("DELETE", self._pystac_object.self_href)
+        self._client._request_raw("DELETE", self._pystac_object.self_href)
 
     def search(
         self,

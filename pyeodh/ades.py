@@ -301,7 +301,7 @@ class Process(EodhObject):
 
     def delete(self) -> None:
         """Delete this record."""
-        self._client._request_json_raw("DELETE", self.self_href)
+        self._client._request_raw("DELETE", self.self_href)
 
 
 class Ades(EodhObject):

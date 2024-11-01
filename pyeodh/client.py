@@ -42,7 +42,7 @@ class Client:
         self._session = requests.Session()
         self._session.headers = {"Authorization": f"Bearer {self.token}"}
 
-    def _request_json_raw(
+    def _request_raw(
         self,
         method: RequestMethod,
         url: str,
@@ -50,7 +50,7 @@ class Client:
         params: Params | None = None,
         data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
-    ) -> tuple[int, Headers, str]:
+    ) -> requests.Response:
         logger.debug(
             f"_request_json_raw received {locals()}",
         )
@@ -86,7 +86,7 @@ class Client:
         # want to recover
         response.raise_for_status()
 
-        return response.status_code, response.headers, response.text
+        return response
 
     def _request_json(
         self,
@@ -97,14 +97,12 @@ class Client:
         data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[Headers, Any]:
-        status, resp_headers, resp_data = self._request_json_raw(
-            method, url, headers, params, data, encode
-        )
+        response = self._request_raw(method, url, headers, params, data, encode)
 
-        if not len(resp_data):
-            return resp_headers, None
+        if not len(response.text):
+            return response.headers, None
 
-        return resp_headers, json.loads(resp_data)
+        return response.headers, json.loads(response.text)
 
     def get_catalog_service(self) -> CatalogService:
         """Initializes the resource catalog API client.
