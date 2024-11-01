@@ -2,7 +2,7 @@ from typing import Any
 
 import pytest
 
-from pyeodh.utils import is_absolute_url, join_url, remove_null_items
+from pyeodh.utils import is_absolute_url, join_url, remove_null_items, s3_url
 
 
 @pytest.mark.parametrize(
@@ -62,3 +62,41 @@ def test_remove_null_items(
     input_dict: dict[str, Any], expected_dict: dict[str, Any]
 ) -> None:
     assert remove_null_items(input_dict) == expected_dict
+
+
+@pytest.mark.parametrize(
+    "workspace_name, path_to_file, expected",
+    [
+        # Basic case
+        (
+            "test-workspace",
+            "data/file.txt",
+            "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
+            "eodhp-test-workspaces1/data/file.txt",
+        ),
+        # Path with leading slash
+        (
+            "test-workspace",
+            "/data/file.txt",
+            "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
+            "eodhp-test-workspaces1/data/file.txt",
+        ),
+        # Path with multiple leading slashes
+        (
+            "test-workspace",
+            "///data/file.txt",
+            "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
+            "eodhp-test-workspaces1/data/file.txt",
+        ),
+    ],
+)
+def test_s3_url(workspace_name: str, path_to_file: str, expected: str) -> None:
+    """Test s3_url function with various input combinations.
+
+    Args:
+        workspace_name: Name of the workspace to test
+        path_to_file: Path to file within workspace to test
+        expected: Expected S3 URL output
+    """
+    result = s3_url(workspace_name, path_to_file)
+    assert result == expected
