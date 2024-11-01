@@ -1,0 +1,31 @@
+#!/bin/bash
+
+check_token_leaks() {
+    echo "Searching for potential token leaks in git tracked files..."
+    # Check if .env file exists
+    if [ ! -f .env ]; then
+        echo ".env file not found"
+        return
+    fi
+    
+    # Get ADES_TOKEN value from .env
+    export ADES_TOKEN=$(grep "ADES_TOKEN" .env | cut -d '=' -f2 | tr -d '"')
+    
+    if [ -z "$ADES_TOKEN" ]; then
+        echo "ADES_TOKEN not found in .env"
+        return
+    fi
+    
+    
+    FOUND_FILES=$(git ls-files -z | xargs -0 grep -l $ADES_TOKEN)
+    
+    if [ -n "$FOUND_FILES" ]; then
+        echo "WARNING: ADES_TOKEN found in the following files:"
+        echo "$FOUND_FILES"
+        exit 1
+    fi
+    echo "No token leaks found"
+}
+
+check_token_leaks
+make check

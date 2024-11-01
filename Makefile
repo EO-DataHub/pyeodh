@@ -1,6 +1,7 @@
 record := none
 
 install:
+	ln -s $(PWD)/.pre-commit .git/hooks/pre-commit
 	poetry install
 check:
 	poetry run black --preview --check pyeodh tests
