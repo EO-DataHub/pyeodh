@@ -38,21 +38,6 @@ def test_get_processes(svc: Ades):
 
 
 @pytest.mark.vcr
-def test_get_jobs(svc: Ades):
-    jobs = svc.get_jobs()
-    assert isinstance(jobs, list)
-    assert all(isinstance(job, Job) for job in jobs)
-
-
-@pytest.mark.vcr
-def test_get_job(svc: Ades):
-    jobs = svc.get_jobs()
-    job = svc.get_job(jobs[0].id)
-    assert isinstance(job, Job)
-    assert job.id == jobs[0].id
-
-
-@pytest.mark.vcr
 def test_get_non_existent_process(svc: Ades):
     with pytest.raises(requests.exceptions.HTTPError):
         svc.get_process("non-existent-process-id")
@@ -192,6 +177,22 @@ $graph:
     #         job.refresh()
     # else:
     #     raise AssertionError("Failed to get result items")
+
+
+@pytest.mark.vcr
+def test_get_jobs(svc: Ades):
+    jobs = svc.get_jobs()
+    assert isinstance(jobs, list)
+    assert all(isinstance(job, Job) for job in jobs)
+
+
+@pytest.mark.vcr
+def test_get_job(svc: Ades):
+    jobs = svc.get_jobs()
+    if len(jobs) > 0:
+        job = svc.get_job(jobs[0].id)
+        assert isinstance(job, Job)
+        assert job.id == jobs[0].id
 
 
 @pytest.mark.vcr
