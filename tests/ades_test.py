@@ -54,8 +54,8 @@ def test_process_execution(svc: Ades):
     # Deploy a process
     process = svc.deploy_process(
         cwl_url=(
-            "https://raw.githubusercontent.com/EOEPCA/deployment-guide/main/"
-            "deploy/samples/requests/processing/convert-url-app.cwl"
+            "https://raw.githubusercontent.com/EO-DataHub/pyeodh/refs/heads/main/"
+            "tests/data/convert-url.yml"
         )
     )
     assert isinstance(process, Process)
@@ -77,8 +77,8 @@ $graph:
   # Workflow entrypoint
   - class: Workflow
     id: convert-url
-    label: convert url app
-    doc: Convert URL YAML
+    label: updated convert url app
+    doc: Updated Convert URL YAML
     requirements:
       ResourceRequirement:
         coresMax: 1
