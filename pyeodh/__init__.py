@@ -4,5 +4,5 @@ from pyeodh.logger import setup as setup_logs
 
 setup_logs()
 
-__version__ = "0.0.7"
+__version__ = "0.0.8"
 __all__ = ["Client", "set_log_level"]
