@@ -143,8 +143,8 @@ $graph:
 """
 
     process.update(cwl_yaml=cwl_yaml)
-    assert process.title == "convert url app"
-    assert process.description == "Convert URL YAML"
+    assert process.title == "updated convert url app"
+    assert process.description == "Updated Convert URL YAML"
 
     # Execute a process
     job = process.execute(
