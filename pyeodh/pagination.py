@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING, Generic, Iterator, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Generic, Iterator, Type, TypeVar
 
 from pyeodh import consts
 from pyeodh.eodh_object import EodhObject
@@ -77,7 +77,7 @@ class PaginatedList(Generic[T]):
             self._elements += new_elements
             yield from new_elements
 
-    def __getitem__(self, index: int | slice) -> T:
+    def __getitem__(self, index: int | slice) -> Any:
         assert isinstance(index, (int, slice))
         if isinstance(index, int):
             self._fetch_to_index(index)
