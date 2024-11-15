@@ -77,10 +77,13 @@ class PaginatedList(Generic[T]):
             self._elements += new_elements
             yield from new_elements
 
-    def __getitem__(self, index: int) -> T:
-        assert isinstance(index, int)
-        self._fetch_to_index(index)
-        return self._elements[index]
+    def __getitem__(self, index: int | slice) -> T:
+        assert isinstance(index, (int, slice))
+        if isinstance(index, int):
+            self._fetch_to_index(index)
+            return self._elements[index]
+        elif isinstance(index, slice):
+            return self.PagedSlice(self, index)
 
     def _fetch_to_index(self, index: int) -> None:
         while len(self._elements) <= index and self._has_next():
@@ -137,3 +140,22 @@ class PaginatedList(Generic[T]):
         if len(self._elements) < limit:
             self._fetch_to_index(limit)
         return self._elements[:limit]
+
+    class PagedSlice:
+        def __init__(self, _list: PaginatedList[T], _slice: slice):
+            self._list = _list
+            self._start = _slice.start or 0
+            self._stop = _slice.stop
+            self._step = _slice.step or 1
+
+        def __iter__(self) -> Iterator[T]:
+            index = self._start
+            while not (self._stop is not None and index >= self._stop):
+                if len(self._list._elements) > index or self._list._has_next():
+                    yield self._list[index]
+                    index += self._step
+                else:
+                    return
+
+        def __getitem__(self, index: int | slice) -> T:
+            return self._list[index]

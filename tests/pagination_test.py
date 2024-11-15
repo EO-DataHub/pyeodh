@@ -51,6 +51,40 @@ def test_get_limited_first_page(paginated_list, mock_client):
     assert [item.id for item in result] == list(range(10))
 
 
+@pytest.mark.parametrize(
+    "a_slice",
+    [
+        slice(0, 5, None),
+        slice(2, 7, None),
+        slice(0, 10, None),
+        slice(5, 10, None),
+        slice(0, 10, 2),
+        slice(1, 8, 3),
+    ],
+)
+def test_pagination_slicing_support(
+    paginated_list: PaginatedList,
+    mock_client: Mock,
+    a_slice: slice,
+) -> None:
+    """Test that slicing is supported with different slice combinations."""
+
+    mock_response = {
+        "items": [{"id": i} for i in range(10)],
+        "links": [{"rel": "next", "href": "https://api.example.com/items?page=2"}],
+        "context": {"matched": 25},
+    }
+    mock_client._request_json.return_value = ({}, mock_response)
+
+    result = list(paginated_list[a_slice])
+
+    range_obj = range(*a_slice.indices(25))
+    slice_length = len(range_obj)
+
+    assert len(result) == slice_length
+    assert [item.id for item in result] == list(range_obj)
+
+
 def test_get_limited_partial_page(paginated_list, mock_client):
     """Test get_limited() when fetching a partial page of results."""
     mock_response = {
