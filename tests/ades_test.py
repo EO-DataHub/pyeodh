@@ -54,8 +54,8 @@ def test_process_execution(svc: Ades):
     # Deploy a process
     process = svc.deploy_process(
         cwl_url=(
-            "https://raw.githubusercontent.com/EO-DataHub/pyeodh/main/"
-            "tests/data/convert-url.cwl"
+            "https://raw.githubusercontent.com/EOEPCA/deployment-guide/main/"
+            "deploy/samples/requests/processing/convert-url-app.cwl"
         )
     )
     assert isinstance(process, Process)
