@@ -77,8 +77,8 @@ $graph:
   # Workflow entrypoint
   - class: Workflow
     id: convert-url
-    label: updated convert url app
-    doc: Updated Convert URL YAML
+    label: convert url app
+    doc: Convert URL YAML
     requirements:
       ResourceRequirement:
         coresMax: 1
@@ -143,8 +143,8 @@ $graph:
 """
 
     process.update(cwl_yaml=cwl_yaml)
-    assert process.title == "updated convert url app"
-    assert process.description == "Updated Convert URL YAML"
+    assert process.title == "convert url app"
+    assert process.description == "Convert URL YAML"
 
     # Execute a process
     job = process.execute(
