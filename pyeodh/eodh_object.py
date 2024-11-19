@@ -191,3 +191,18 @@ class EodhObject:
         if hasattr(value, "__geo_interface__"):
             return getattr(value, "__geo_interface__")
         return value
+
+    @classmethod
+    def from_href(cls, client: Client, href: str) -> EodhObject:
+        """Fetch and initialize an object from given URL.
+
+        Args:
+            client (Client): Client instance.
+            href (str): URL to fetch the object from.
+
+        Returns:
+            EodhObject: Initialized object.
+        """
+
+        headers, data = client._request_json("GET", href)
+        return cls(client, headers, data)
