@@ -7,7 +7,7 @@ import pyeodh
 import pyeodh.pagination
 import pyeodh.resource_catalog
 from pyeodh import consts
-from pyeodh.resource_catalog import CatalogService
+from pyeodh.resource_catalog import CatalogService, Item
 from pyeodh.utils import ConformanceError
 
 
@@ -107,6 +107,22 @@ def test_get_collection_item(svc: CatalogService):
 
 
 @pytest.mark.vcr
+def test_get_item_from_href(svc: CatalogService):
+    item = pyeodh.resource_catalog.Item.from_href(
+        svc._client,
+        "https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/"
+        "ceda-stac-catalogue/collections/sentinel2_ard/items/neodc.sentinel_ard.data."
+        "sentinel_2.2023.11.20.S2A_20231120_latn501lonw0036_T30UVA_ORB037_20231120132"
+        "420_utm30n_osgb",
+    )
+    assert isinstance(item, pyeodh.resource_catalog.Item)
+    assert (
+        item.id == "neodc.sentinel_ard.data.sentinel_2.2023.11.20."
+        "S2A_20231120_latn501lonw0036_T30UVA_ORB037_20231120132420_utm30n_osgb"
+    )
+
+
+@pytest.mark.vcr
 @patch(
     "pyeodh.resource_catalog.CatalogService.get_conformance",
     return_value=["https://api.stacspec.org/v1.0.0/core"],
@@ -158,3 +174,42 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
         item.update(properties={"new": "property"})
     with pytest.raises(ConformanceError):
         item.delete()
+
+
+@patch("pyeodh.client.Client._request_json")
+def test_from_href_mocked(mock_request_json, svc: CatalogService):
+    href = "https://example.com/api/stac/item1"
+
+    # Mock response data
+    mock_response_data = {
+        "type": "Feature",
+        "stac_version": "1.0.0",
+        "id": "item1",
+        "collection": "collection1",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [[[0, 90], [0, -90], [-180, -90], [-180, 90], [0, 90]]],
+        },
+        "bbox": [0, 90, 0, -90],
+        "properties": {
+            "datetime": "2023-11-20T11:23:51Z",
+            "updated": "2024-11-05T07:43:53.975696Z",
+            "start_datetime": "2023-11-20T11:23:51Z",
+            "end_datetime": "2023-11-20T11:23:51Z",
+        },
+        "links": [
+            {
+                "rel": "self",
+                "type": "application/geo+json",
+                "href": "https://example.com/api/stac/item1",
+            }
+        ],
+        "assets": {},
+    }
+
+    # Mock the _request_json method to return the mock response
+    mock_request_json.return_value = (None, mock_response_data)
+
+    item = Item.from_href(svc._client, href)
+    assert isinstance(item, Item)
+    assert item.id == mock_response_data["id"]
