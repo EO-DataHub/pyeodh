@@ -54,7 +54,7 @@ def test_get_catalogs_from_catalog(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collections_from_catalog(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-fastapi")
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collections = cat.get_collections()
     assert isinstance(collections, list)
     assert all(
@@ -64,14 +64,14 @@ def test_get_collections_from_catalog(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collection_from_catalog(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-fastapi")
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     assert collection.id == "cmip6"
 
 
 @pytest.mark.vcr
 def test_get_collection_items(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-fastapi")
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     assert isinstance(items, pyeodh.pagination.PaginatedList)
@@ -82,7 +82,7 @@ def test_get_collection_items(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collection_items_with_limit(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-fastapi")
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     items = collection.get_items().get_limited()
     assert len(items) == consts.PAGINATION_LIMIT
@@ -90,7 +90,7 @@ def test_get_collection_items_with_limit(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collection_items_total_count(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-fastapi")
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     assert isinstance(items.total_count, int)
@@ -98,7 +98,7 @@ def test_get_collection_items_total_count(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collection_item(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-fastapi")
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     item = collection.get_item(items[0].id)
@@ -128,7 +128,7 @@ def test_get_item_from_href(svc: CatalogService):
     return_value=["https://api.stacspec.org/v1.0.0/core"],
 )
 def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-fastapi")
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     item = collection.get_items()[0]
     # Test Catalog methods

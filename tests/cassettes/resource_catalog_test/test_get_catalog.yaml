@@ -2,97 +2,124 @@ interactions:
 - request:
     body: null
     headers:
-      Authorization:
-      - Bearer None
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
     method: GET
     uri: https://test.eodatahub.org.uk/api/catalogue/stac
   response:
     body:
-      string: '{"type":"Catalog","id":"stac-fastapi","title":"stac-fastapi-elasticsearch","description":"A
-        STAC FastAPI with an Elasticsearch backend","stac_version":"1.0.0","conformsTo":["http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/item-search#sort","/catalogues","https://api.stacspec.org/v1.0.0/ogcapi-features","/discovery-search","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0-rc.2/item-search#context","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0-rc.1/core","https://api.stacspec.org/v1.0.0/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0/item-search#query"],"links":[{"rel":"self","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
-        conformance classes implemented by this server","href":"https://test.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://test.eodatahub.org.uk/api/catalogue/stac/search","method":"GET"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://test.eodatahub.org.uk/api/catalogue/stac/search","method":"POST"},{"rel":"child","type":"application/json","title":"Supported
-        Datasets","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets"},{"rel":"child","type":"application/json","title":"stac-fastapi-elasticsearch","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/stac-fastapi"},{"rel":"child","type":"application/json","title":"User
-        Datasets","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/user-datasets"},{"rel":"service-desc","type":"application/vnd.oai.openapi+json;version=3.0","title":"OpenAPI
-        service description","href":"https://test.eodatahub.org.uk/api/catalogue/stac/api"},{"rel":"service-doc","type":"text/html","title":"OpenAPI
-        service documentation","href":"https://test.eodatahub.org.uk/api/catalogue/stac/api.html"}],"stac_extensions":[]}'
+      string: !!binary |
+        H4sIAOpcRGcC/81W30/bMBD+V6zscTim9K3THioG055AgmkPCE2uc2k8nDj4nHYV4n/fOWnaFHUl
+        DUPaCxBz333f/fD5niK/KiGaROfSS2Pn0UmkE/pELxVPJf0qNZ157Q28OOZg6A+tEKRTGRklgMrp
+        0mtbkOmU3dxOz9kl2Uyvv7Gl9hmTBbvogthMqgcoEgIHzz8X4LBBj+LT+JSOlS1S63K8tdHkLsq8
+        L3EiBLHHAYAlqNi6uVjU9kJZY0AFAUjYYE3Gy+UytiUUc41xAV4EkLBzFUJIQfrKAfKRGNX4IqUf
+        DtboA1zcqXjUIeRNRB9SB8A9/Pb9XJwJ7SHfgLXx4F5HdjX+LUL1aM46QdEX/4WU29edv8jNUTwz
+        iVrxcNaDaDd0MAkOSRrx9sv3DuqxArc6EoPW+eF9NQfbrwBta/Vpw66+4xtinTehmstf1cUWiUZl
+        6Squ+vk9ELKVOD4dfJeOikcmC1koSLiyeSmdpkxzgjjpres5DAiZE6rjFHVeGuDdXumbhfHWy+Zs
+        53oPcdTg708io4sHpIn4FDkwYS6DScOYbma5LEujqaaUStG2nIOU/tMWwgP6GGxCdc+qWShFXD2E
+        8mxbQYRCiej5pOVw1vr35gjG78LRfRm2dOvXJTTOQdb2+QsvmvhxeTNmHSRT9KQhIKubJQeaRgmb
+        rZjPNDIEt2hKPlj4VuJW+OaC7NFMc+bjHt1se6kGStk4yMFnNmwJXy9u/z9R11c3XVUq0ybpV92q
+        LGnCU/W+EAeCx7fUrflEga1XnrReh4g7uHm9XWR33Rsi7zs1+j9NW0UO92UsXCitgIdlc7+yRZHE
+        Vup6shJD3Xaf1pvl53G9Vbaqr8gkLKdrp6y7wQ6PYTeHG8G2ozc8vCLzuTkkxqoqTBP5djlxTfV8
+        v16ziRwKrGfh5O7++Q+H1w08BAwAAA==
     headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - Accept,Authorization,Content-Type
       Access-Control-Allow-Methods:
-      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      - '*'
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
       - '1728000'
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '3076'
+      - '706'
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Oct 2024 06:15:51 GMT
+      - Mon, 25 Nov 2024 11:18:02 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 642d71984e3d1baa43fcd1fe0b0c012e.cloudfront.net (CloudFront)
+      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - apaVasqpen_eKrvlvjuBDP1YEyUYZMNtrBdWU8-9T__uE4Thu_8kug==
+      - Q2XYisFwnuOclfFrwomNceXaDXRzJOzZ9GrR1RDR7m5rrfWBtFqVew==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
     status:
       code: 200
       message: OK
 - request:
     body: null
     headers:
-      Authorization:
-      - Bearer None
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
     method: GET
     uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets
   response:
     body:
-      string: '{"type":"Catalog","stac_version":"1.0.0","stac_extensions":[],"id":"supported-datasets","title":"Supported
-        Datasets","description":"A collection of EODHP catalogues","links":[{"rel":"self","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/collections"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/catalogs"},{"rel":"conformance","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"search","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/search","method":"POST"},{"rel":"search","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/search","method":"GET"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/earth-search-aws"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-fastapi"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/test-catalog"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/defra"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/airbus"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"}],"conformsTo":["http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/item-search#sort","/catalogues","https://api.stacspec.org/v1.0.0/ogcapi-features","/discovery-search","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0-rc.2/item-search#context","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0-rc.1/core","https://api.stacspec.org/v1.0.0/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0/item-search#query"]}'
+      string: !!binary |
+        H4sIAOpcRGcC/8VWX2/aMBD/Kih7HI6hfeNtWqvtrZXat6majHMhXp3Y9V1gqOK77wwJhGlrA1LJ
+        SyTb9/tz53Ps14TWHpJZ8lWRsm6RjBMkpX8uIaBxFS9M00k6aafhN0EVFzCZ/XgaJybjCKy9d4Eg
+        ExmTIBByOBmykfehXRzdHBYzQB2Mp53Cl5F21oKOw5HLR7d3N9/vR3pnqIYIsKZ6jpKvSQAbJcHm
+        UWTnXXlvDcczXv5C5hwnRYCcVwoijzMpCZBScNFfUc9TFxZp/SyVN3IvI2OC7RDlP5LajFt5rwJU
+        9CEGOirBORowyTh1aXl56IThrTRrHR/aVbkLpao0fIydDv9BFUEFXVw8/71sCVS4eNDv7x4ee/pa
+        gPt8UW/fbrvWdGFsdvGKRRLRBAxuRpkwr3FwG96qCmhwGxnkQQ3ugruWCrFrXqFWw++OhkyJGCX2
+        oGTD93rzI8JHx5fuXpLJ0xiMHnQUlMvt4+Dopz3eRnPwarVKnYdqYTDlDpARJN1CM4nIQVEdAMVU
+        Trf4KudPgAb9hpYIOp12BJtifsoDgCB+nvSjuJKGoNyDjSUI7yO7Hv+XoX6xV52keCTa/XuH/K/a
+        nKQzV2h4D3muh9Bx6mAzPKdorNuv3keolxrC+kQMctOe31d8E/XbgLa1+rRh19/pDdHUTR49cWVm
+        UDt+d6/78b6RslN4PTn7LJ2Uj8qW8bWSCe1KfhUbrrRgSFDkQs+fASNLRnVI0ZTeguj2St8qXB9Y
+        9nNHx/scoh3+afMH6EtpzC0NAAA=
     headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      - Accept,Authorization,Content-Type
       Access-Control-Allow-Methods:
-      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      - '*'
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
       - '1728000'
-      Cache-Control:
-      - no-cache
       Connection:
       - keep-alive
       Content-Length:
-      - '3384'
+      - '590'
       Content-Type:
       - application/json
       Date:
-      - Fri, 25 Oct 2024 06:15:51 GMT
+      - Mon, 25 Nov 2024 11:18:02 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 642d71984e3d1baa43fcd1fe0b0c012e.cloudfront.net (CloudFront)
+      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - -CZZ8tfwBvSd42oQbHipBAKzMFqgUf5_VsUX_DFhA8V5rjW8WNEgaw==
+      - TCNCrStib9QrXKAPaCCJC0S82pPg_8DQdUf4M2XXRDD0BlbmxZ5FMg==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
     status:
       code: 200
       message: OK
