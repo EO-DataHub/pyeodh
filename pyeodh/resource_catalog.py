@@ -514,6 +514,12 @@ class Catalog(EodhObject):
         assert is_optional(filter_crs, str), filter_crs
         assert filter_lang in ["cql-json", "cql2-json", "cql2-text", None]
 
+        if self.id == "planet" and catalog_paths is not None:
+            logger.warning(
+                "Catalog paths are not supported for planet catalog, ignoring."
+            )
+            catalog_paths = None
+
         data = remove_null_items(
             {
                 "limit": limit,
