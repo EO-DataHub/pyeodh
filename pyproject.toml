@@ -7,7 +7,7 @@ license = "BSD-2-Clause"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9"
 requests-oauthlib = "^2.0.0"
 pystac = "^1.10.0"
 owslib = "^0.31.0"
@@ -36,7 +36,7 @@ sphinx-rtd-theme = "^2.0.0"
 shapely = "^2.0.4"
 matplotlib = "^3.9.0"
 pillow = "^10.3.0"
-rioxarray = "^0.15.7"
+rioxarray = "^0.15.0"
 fsspec = "^2024.6.1"
 folium = "^0.17.0"
 

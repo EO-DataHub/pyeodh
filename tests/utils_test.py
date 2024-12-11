@@ -1,7 +1,8 @@
-from typing import Any
+from typing import Any, Type, Union
 
 import pytest
 
+from pyeodh.eodh_object import is_optional
 from pyeodh.utils import is_absolute_url, join_url, remove_null_items, s3_url
 
 
@@ -40,7 +41,9 @@ def test_is_absolute_url(url: str, expected: bool) -> None:
         (("/path", "to", "resource"), "/path/to/resource"),
     ],
 )
-def test_join_url(args: tuple[str, ...], expected: str | type[ValueError]) -> None:
+def test_join_url(
+    args: tuple[str, ...], expected: Union[str, type[ValueError]]
+) -> None:
     if expected is ValueError:
         with pytest.raises(ValueError):
             join_url(*args)
@@ -100,3 +103,40 @@ def test_s3_url(workspace_name: str, path_to_file: str, expected: str) -> None:
     """
     result = s3_url(workspace_name, path_to_file)
     assert result == expected
+
+
+@pytest.mark.parametrize(
+    "value, type_, expected",
+    [
+        # Test with single type
+        (None, str, True),
+        ("hello", str, True),
+        (123, str, False),
+        # Test with tuple of types
+        (None, (str, int), True),
+        ("hello", (str, int), True),
+        (123, (str, int), True),
+        (1.23, (str, int), False),
+        # Test with various Python types
+        (None, dict, True),
+        ({}, dict, True),
+        ([], dict, False),
+        # Test with complex types
+        (None, list, True),
+        ([], list, True),
+        ({}, list, False),
+    ],
+)
+def test_is_optional(
+    value: Any, type_: Union[Type, tuple[Type, ...]], expected: bool
+) -> None:
+    """Test is_optional function with various input combinations.
+
+    Args:
+        value: The value to test
+        type_: The type or tuple of types to check against
+        expected: Expected boolean result
+
+    The function tests if a value is either None or matches the specified type(s).
+    """
+    assert is_optional(value, type_) == expected
