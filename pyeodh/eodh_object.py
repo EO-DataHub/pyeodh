@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import typing
-from types import NoneType
 from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
 
 from pystac import STACObject
@@ -18,12 +17,12 @@ T = TypeVar("T")
 T_base = TypeVar("T_base", bound="EodhObject")
 
 
-def is_optional(value: Any, type: Type | tuple[Type, ...]) -> bool:
+def is_optional(value: Any, type_: Type | tuple[Type, ...]) -> bool:
     types = ()
-    if isinstance(type, tuple):
-        types = (*type, NoneType)
+    if isinstance(type_, tuple):
+        types = (*type_, type(None))
     else:
-        types = (type, NoneType)
+        types = (type_, type(None))
     return isinstance(value, types)
 
 

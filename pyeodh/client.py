@@ -1,7 +1,7 @@
 import json
 import logging
 import urllib.parse
-from typing import Any, Callable
+from typing import Any, Callable, Optional, Union
 
 import requests
 from owslib.map import wms111, wms130
@@ -26,8 +26,8 @@ class Client:
     def __init__(
         self,
         base_url: str = consts.API_BASE_URL,
-        username: str | None = None,
-        token: str | None = None,
+        username: Optional[str] = None,
+        token: Optional[str] = None,
     ) -> None:
         if not is_absolute_url(base_url):
             raise ValueError("base_url must be an absolute URL")
@@ -49,9 +49,9 @@ class Client:
         self,
         method: RequestMethod,
         url: str,
-        headers: Headers | None = None,
-        params: Params | None = None,
-        data: Any | None = None,
+        headers: Optional[Headers] = None,
+        params: Optional[Params] = None,
+        data: Optional[Any] = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> requests.Response:
         """Make a raw request.
@@ -59,11 +59,11 @@ class Client:
         Args:
             method (RequestMethod): HTTP method to use
             url (str): Target URL
-            headers (Headers | None, optional): Headers to send with the request.
+            headers (Optional[Headers], optional): Headers to send with the request.
                 Defaults to None.
-            params (Params | None, optional): Query parameters to send with the request.
-                Defaults to None.
-            data (Any | None, optional): Raw data to send with the request. Data is
+            params (Optional[Params], optional): Query parameters to send with the
+                request. Defaults to None.
+            data (Optional[Any], optional): Raw data to send with the request. Data is
                 encoded by the `encode` function before sending. Defaults to None.
             encode (Callable[[Any], tuple[str, Any]], optional): Function to encode the
                 data. Has to return a tuple of (content-type string, encoded data).
@@ -111,9 +111,9 @@ class Client:
         self,
         method: RequestMethod,
         url: str,
-        headers: Headers | None = None,
-        params: Params | None = None,
-        data: Any | None = None,
+        headers: Optional[Headers] = None,
+        params: Optional[Params] = None,
+        data: Optional[Any] = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[Headers, Any]:
         """Make a request and return the headers and deserialized JSON data. Input data
@@ -123,11 +123,11 @@ class Client:
         Args:
             method (RequestMethod): HTTP method to use
             url (str): Target URL
-            headers (Headers | None, optional): Headers to send with the request.
+            headers (Optional[Headers], optional): Headers to send with the request.
                 Defaults to None.
-            params (Params | None, optional): Query parameters to send with the request.
-                Defaults to None.
-            data (Any | None, optional): Raw data to send with the request. Data is
+            params (Optional[Params], optional): Query parameters to send with the
+                request. Defaults to None.
+            data (Optional[Any], optional): Raw data to send with the request. Data is
                 encoded by the `encode` function before sending. Defaults to None.
             encode (Callable[[Any], tuple[str, Any]], optional): Function to encode the
                 data. Has to return a tuple of (content-type string, encoded data).
@@ -215,7 +215,7 @@ class Client:
 
         return wmts
 
-    def get_wms(self) -> wms111.WebMapService_1_1_1 | wms130.WebMapService_1_3_0:
+    def get_wms(self) -> Union[wms111.WebMapService_1_1_1, wms130.WebMapService_1_3_0]:
         """Initialized the OWSLib WebMapService
 
         Returns:

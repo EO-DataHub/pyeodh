@@ -1,4 +1,5 @@
 import os
+from typing import Union
 
 import dotenv
 import pytest
@@ -30,7 +31,7 @@ def workspace() -> Workspace:
     ],
 )
 def test_upload_file(
-    workspace: Workspace, file: str | bytes, ws_file_path: str
+    workspace: Workspace, file: Union[str, bytes], ws_file_path: str
 ) -> None:
     workspace.upload_file(file=file, ws_file_path=ws_file_path)
 

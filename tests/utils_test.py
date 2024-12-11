@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Union
 
 import pytest
 
@@ -40,7 +40,9 @@ def test_is_absolute_url(url: str, expected: bool) -> None:
         (("/path", "to", "resource"), "/path/to/resource"),
     ],
 )
-def test_join_url(args: tuple[str, ...], expected: str | type[ValueError]) -> None:
+def test_join_url(
+    args: tuple[str, ...], expected: Union[str, type[ValueError]]
+) -> None:
     if expected is ValueError:
         with pytest.raises(ValueError):
             join_url(*args)
