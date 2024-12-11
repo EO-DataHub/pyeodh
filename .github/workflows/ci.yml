@@ -8,6 +8,10 @@ on:
 
   workflow_dispatch: ~
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   qa:
     runs-on: ubuntu-latest
