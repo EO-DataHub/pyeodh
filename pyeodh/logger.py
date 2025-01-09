@@ -20,10 +20,6 @@ def setup(level: int = logging.WARNING):
     if env_level is not None and env_level.lower() in ["yes", "true", "on", "1"]:
         logger.setLevel(logging.DEBUG)
 
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(MultiLineFormatter("%(levelname)s: %(message)s"))
-    logger.addHandler(stream_handler)
-
 
 def set_log_level(level: int):
     """Set message level for logging.
