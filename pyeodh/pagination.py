@@ -96,6 +96,11 @@ class PaginatedList(Generic[T]):
     def _fetch_next(self) -> list[T]:
         if not self._next_url:
             raise RuntimeError("Next url not specified!")
+        if "/planet/search?next=" in self._next_url:
+            self._next_url, next_token = self._next_url.split("?next=")
+            if self._data is None:
+                self._data = {}
+            self._data["next"] = next_token
         headers, resp_data = self._client._request_json(
             self._method,
             self._next_url,
