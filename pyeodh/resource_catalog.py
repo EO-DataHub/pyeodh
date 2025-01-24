@@ -17,6 +17,13 @@ from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
 from pyeodh.utils import ConformanceError, join_url, remove_null_items
 
+from ceda_datapoint.core.cloud import (
+    DataPointCloudProduct,
+    DataPointCluster
+)
+
+from ceda_datapoint.core.item import identify_cloud_type
+
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
     from datetime import datetime as Datetime
@@ -114,6 +121,31 @@ class Item(EodhObject):
         if resp_data:
             self._set_props(self._pystac_object.from_dict(resp_data))
 
+    def get_cloud_products(self) -> list[DataPointCloudProduct]:
+        """
+        Added feature that uses the CEDA
+        DataPoint library to create a list of
+        CloudProduct objects here."""
+
+        products = []
+        # Iterate over assets in this item
+        for id, asset in self.assets.items():
+
+            cf = identify_cloud_type(id, asset)
+            if cf is None:
+                continue
+
+            products.append(
+                DataPointCloudProduct(
+                    asset,
+                    id=f'{self.id}-{id}', cf=cf,
+                    stac_attrs={'bbox':self.bbox}, 
+                    properties=self.properties,
+                    mapper=None
+                )
+            )
+            
+        return products
 
 class Collection(EodhObject):
     _pystac_object: pystac.Collection
