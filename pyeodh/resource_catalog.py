@@ -121,7 +121,9 @@ class Item(EodhObject):
         if resp_data:
             self._set_props(self._pystac_object.from_dict(resp_data))
 
-    def get_cloud_products(self) -> list[DataPointCloudProduct]:
+    def get_cloud_products(
+            self
+        ) -> list[DataPointCloudProduct] | DataPointCluster | None:
         """
         Added feature that uses the CEDA
         DataPoint library to create a list of
@@ -131,6 +133,8 @@ class Item(EodhObject):
         # Iterate over assets in this item
         for id, asset in self.assets.items():
 
+            asset = asset.to_dict()
+
             cf = identify_cloud_type(id, asset)
             if cf is None:
                 continue
@@ -139,13 +143,25 @@ class Item(EodhObject):
                 DataPointCloudProduct(
                     asset,
                     id=f'{self.id}-{id}', cf=cf,
-                    stac_attrs={'bbox':self.bbox}, 
-                    properties=self.properties,
-                    mapper=None
+                    meta={'bbox':self.bbox}, 
+                    properties=self.properties
                 )
             )
+
+        if len(products) == 0:
+            return []
+        if len(products) == 1:
+            return products[0]
             
-        return products
+        # Could also just return the list. 
+        # See https://cedadev.github.io/datapoint/cloud_formats.html
+        # for reasons to use the cluster.
+        
+        return DataPointCluster(
+            products,
+            parent_id=f'{self.id}-cluster',
+            meta={'bbox':self.bbox}
+        )
 
 class Collection(EodhObject):
     _pystac_object: pystac.Collection
