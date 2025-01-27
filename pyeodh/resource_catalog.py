@@ -10,16 +10,14 @@ import pystac.catalog
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
+from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+from ceda_datapoint.core.item import identify_cloud_type
 
 from pyeodh import consts
 from pyeodh.eodh_object import EodhObject, is_optional
 from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
 from pyeodh.utils import ConformanceError, join_url, remove_null_items
-
-from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
-
-from ceda_datapoint.core.item import identify_cloud_type
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
