@@ -11,7 +11,7 @@ python = "^3.9"
 requests-oauthlib = "^2.0.0"
 pystac = "^1.10.0"
 owslib = "^0.31.0"
-ceda-datapoint = "^0.4.1"
+ceda-datapoint = "^0.4.2"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"
@@ -22,7 +22,7 @@ ipykernel = "^6.29.4"
 python-dotenv = "^1.0.1"
 
 [tool.poetry.group.test.dependencies]
-pytest = "^8.1.1"
+pytest = "^7.2.0"
 vcrpy = "^6.0.1"
 pytest-cov = "^5.0.0"
 pytest-recording = "^0.13.2"
