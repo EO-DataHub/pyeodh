@@ -17,10 +17,7 @@ from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
 from pyeodh.utils import ConformanceError, join_url, remove_null_items
 
-from ceda_datapoint.core.cloud import (
-    DataPointCloudProduct,
-    DataPointCluster
-)
+from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
 
 from ceda_datapoint.core.item import identify_cloud_type
 
@@ -122,8 +119,8 @@ class Item(EodhObject):
             self._set_props(self._pystac_object.from_dict(resp_data))
 
     def get_cloud_products(
-            self
-        ) -> list[DataPointCloudProduct] | DataPointCluster | None:
+        self,
+    ) -> list[DataPointCloudProduct] | DataPointCluster | None:
         """
         Added feature that uses the CEDA
         DataPoint library to create a list of
@@ -142,9 +139,10 @@ class Item(EodhObject):
             products.append(
                 DataPointCloudProduct(
                     asset,
-                    id=f'{self.id}-{id}', cf=cf,
-                    meta={'bbox':self.bbox}, 
-                    properties=self.properties
+                    id=f"{self.id}-{id}",
+                    cf=cf,
+                    meta={"bbox": self.bbox},
+                    properties=self.properties,
                 )
             )
 
@@ -152,16 +150,15 @@ class Item(EodhObject):
             return []
         if len(products) == 1:
             return products[0]
-            
-        # Could also just return the list. 
+
+        # Could also just return the list.
         # See https://cedadev.github.io/datapoint/cloud_formats.html
         # for reasons to use the cluster.
-        
+
         return DataPointCluster(
-            products,
-            parent_id=f'{self.id}-cluster',
-            meta={'bbox':self.bbox}
+            products, parent_id=f"{self.id}-cluster", meta={"bbox": self.bbox}
         )
+
 
 class Collection(EodhObject):
     _pystac_object: pystac.Collection
