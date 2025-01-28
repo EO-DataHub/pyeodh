@@ -13,3 +13,6 @@ test:
 html:
 	cd docs && \
 	poetry run make html SPHINXOPTS="-W"
+format:
+	poetry run black pyeodh tests
+	poetry run isort pyeodh tests
