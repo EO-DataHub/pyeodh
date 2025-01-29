@@ -34,6 +34,12 @@ make check
 make test
 ```
 
+Format codebase with black and isort:
+
+```
+make format
+```
+
 To recreate all VCR cassettes run:
 
 ```
