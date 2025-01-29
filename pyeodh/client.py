@@ -1,12 +1,9 @@
 import json
 import logging
 import urllib.parse
-from typing import Any, Callable, Optional, Union
+from typing import Any, Callable, Optional
 
 import requests
-from owslib.map import wms111, wms130
-from owslib.wms import WebMapService
-from owslib.wmts import WebMapTileService
 
 from pyeodh import consts
 from pyeodh.ades import Ades
@@ -197,30 +194,3 @@ class Client:
         # * ^^^^
 
         return Ades(self, headers, data)
-
-    def get_wmts(self) -> WebMapTileService:
-        """Initializes the OWSLib WebMapTileService
-
-        Returns:
-            WebMapTileService: Initialized WMTS
-        """
-        url = join_url(self.url_base, "vs/cache/ows/wmts/")
-        wmts = WebMapTileService(url)
-
-        # Patch wmts object attribute error
-        # see https://github.com/geopython/OWSLib/issues/572
-        for i, op in enumerate(wmts.operations):
-            if not hasattr(op, "name"):
-                wmts.operations[i].name = ""
-
-        return wmts
-
-    def get_wms(self) -> Union[wms111.WebMapService_1_1_1, wms130.WebMapService_1_3_0]:
-        """Initialized the OWSLib WebMapService
-
-        Returns:
-            WebMapService: Initialized WMS
-        """
-        url = join_url(self.url_base, "vs/cache/ows")
-        wms = WebMapService(url, version="1.1.1")
-        return wms
