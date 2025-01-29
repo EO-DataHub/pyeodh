@@ -7,11 +7,11 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
+from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+from ceda_datapoint.core.item import identify_cloud_type
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
-from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
-from ceda_datapoint.core.item import identify_cloud_type
 
 from pyeodh import consts
 from pyeodh.eodh_object import EodhObject, is_optional
