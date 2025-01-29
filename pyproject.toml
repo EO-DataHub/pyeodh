@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyeodh"
-version = "0.0.11"
+version = "0.0.12"
 description = "A lightweight Python client for EODH APIs."
 authors = ["Dusan Figala <dusan@oxidian.com>"]
 license = "BSD-2-Clause"
@@ -11,7 +11,7 @@ python = "^3.9"
 requests-oauthlib = "^2.0.0"
 pystac = "^1.10.0"
 owslib = "^0.31.0"
-ceda-datapoint = "^0.4.2"
+ceda-datapoint = "^0.4.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"
