@@ -7,9 +7,9 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
-from owslib.wmts import WebMapTileService
 from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
 from ceda_datapoint.core.item import identify_cloud_type
+from owslib.wmts import WebMapTileService
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
