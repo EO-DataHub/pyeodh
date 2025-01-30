@@ -7,6 +7,7 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
+from owslib.wmts import WebMapTileService
 from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
 from ceda_datapoint.core.item import identify_cloud_type
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
@@ -362,6 +363,11 @@ class Catalog(EodhObject):
         """URL pointing to collections endpoint."""
         return join_url(self._pystac_object.self_href, "collections")
 
+    @cached_property
+    def wmts_href(self) -> str:
+        """URL pointing to WMTS endpoint."""
+        return join_url(self._pystac_object.self_href, "wmts")
+
     def get_catalogs(self) -> list[Catalog]:
         """Fetches children catalogs of this parent catalog.
 
@@ -584,6 +590,22 @@ class Catalog(EodhObject):
         return PaginatedList(
             Item, self._client, "POST", url, "features", first_data=data, parent=self
         )
+
+    def get_wmts(self) -> WebMapTileService:
+        """Initializes the OWSLib WebMapTileService
+
+        Returns:
+            WebMapTileService: Initialized WMTS
+        """
+        wmts = WebMapTileService(self.wmts_href)
+
+        # Patch wmts object attribute error
+        # see https://github.com/geopython/OWSLib/issues/572
+        for i, op in enumerate(wmts.operations):
+            if not hasattr(op, "name"):
+                wmts.operations[i].name = ""
+
+        return wmts
 
 
 class CatalogService(Catalog):

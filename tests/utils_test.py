@@ -75,21 +75,21 @@ def test_remove_null_items(
             "test-workspace",
             "data/file.txt",
             "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
-            "eodhp-test-workspaces1/data/file.txt",
+            "workspaces-eodhp-test/data/file.txt",
         ),
         # Path with leading slash
         (
             "test-workspace",
             "/data/file.txt",
             "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
-            "eodhp-test-workspaces1/data/file.txt",
+            "workspaces-eodhp-test/data/file.txt",
         ),
         # Path with multiple leading slashes
         (
             "test-workspace",
             "///data/file.txt",
             "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
-            "eodhp-test-workspaces1/data/file.txt",
+            "workspaces-eodhp-test/data/file.txt",
         ),
     ],
 )

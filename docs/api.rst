@@ -2,7 +2,8 @@ API
 ==============
 
 .. automodule:: pyeodh
-   :members: set_log_level
+   :members:
+   :exclude-members: Client
    :undoc-members:
    :show-inheritance:
 

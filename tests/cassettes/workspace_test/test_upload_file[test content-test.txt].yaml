@@ -15,7 +15,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: PUT
-    uri: https://figi44.workspaces.test.eodhp.eco-ke-staging.com/files/eodhp-test-workspaces1/test.txt
+    uri: https://figi44.workspaces.test.eodhp.eco-ke-staging.com/files/workspaces-eodhp-test/test.txt
   response:
     body:
       string: ''
@@ -25,7 +25,7 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Fri, 01 Nov 2024 11:43:05 GMT
+      - Wed, 29 Jan 2025 19:00:36 GMT
       ETag:
       - '"9473fdd0d880a43c21b7778d34872157"'
       Server:
@@ -33,17 +33,17 @@ interactions:
       Vary:
       - Origin
       Via:
-      - 1.1 b27f21f2e46f0db2d89ec3930dfac728.cloudfront.net (CloudFront)
+      - 1.1 9ed2eeec8748ea461af0d1cbf998da0e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - ionpctH4xHvng0Xn65qb8RjTP6PwLfIf39GhfuFxpVdo1P5mu-KxIw==
+      - Y6AYrVxDBYp66UVXj-jeTyMpKUQfauI312PlgP5D11W8P94yOcZTVA==
       X-Amz-Cf-Pop:
-      - VIE50-P2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       x-amz-id-2:
-      - 5gYDwZ/FAYTTuMccw8zjtEMeM0stlfU3Xdh8mEalovP7opBbcG2F1yNFBagGh1VuGAHy2kjfGeI=
+      - JedNC5s83nDWDYHVpFoZd6gGWRJZ9mNxrIHk31Emtwpql8QJRN/pKXwO+SyrJZKPk3htfAz/uCGQFVRHBmFYKg==
       x-amz-request-id:
-      - 8QMFKYTV60BDA7NG
+      - YHXCC8TSFDXCSN0N
       x-amz-server-side-encryption:
       - AES256
     status:
