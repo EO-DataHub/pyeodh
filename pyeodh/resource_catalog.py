@@ -8,6 +8,8 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 import pystac
 import pystac.catalog
 from owslib.wmts import WebMapTileService
+from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+from ceda_datapoint.core.item import identify_cloud_type
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
@@ -114,6 +116,47 @@ class Item(EodhObject):
 
         if resp_data:
             self._set_props(self._pystac_object.from_dict(resp_data))
+
+    def get_cloud_products(
+        self,
+    ) -> list[DataPointCloudProduct] | DataPointCluster | None:
+        """
+        Added feature that uses the CEDA
+        DataPoint library to create a list of
+        CloudProduct objects here."""
+
+        products = []
+        # Iterate over assets in this item
+        for id, asset in self.assets.items():
+
+            asset = asset.to_dict()
+
+            cf = identify_cloud_type(id, asset)
+            if cf is None:
+                continue
+
+            products.append(
+                DataPointCloudProduct(
+                    asset,
+                    id=f"{self.id}-{id}",
+                    cf=cf,
+                    meta={"bbox": self.bbox},
+                    properties=self.properties,
+                )
+            )
+
+        if len(products) == 0:
+            return []
+        if len(products) == 1:
+            return products[0]
+
+        # Could also just return the list.
+        # See https://cedadev.github.io/datapoint/cloud_formats.html
+        # for reasons to use the cluster.
+
+        return DataPointCluster(
+            products, parent_id=f"{self.id}-cluster", meta={"bbox": self.bbox}
+        )
 
 
 class Collection(EodhObject):
