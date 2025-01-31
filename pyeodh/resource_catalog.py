@@ -117,7 +117,7 @@ class Item(EodhObject):
 
     def get_cloud_products(
         self,
-        ) -> object | None:
+    ) -> object | None:
         """
         Added feature that uses the CEDA
         DataPoint library to create a list of
@@ -131,8 +131,8 @@ class Item(EodhObject):
             from ceda_datapoint.core.item import identify_cloud_type
         except ImportError:
             logger.error(
-                'Unable to import DataPoint connectors - install '
-                ' with `pip install ceda-datapoint`'
+                "Unable to import DataPoint connectors - install "
+                " with `pip install ceda-datapoint`"
             )
             return None
 
