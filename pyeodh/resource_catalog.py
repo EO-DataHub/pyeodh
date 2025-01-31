@@ -7,8 +7,6 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
-from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
-from ceda_datapoint.core.item import identify_cloud_type
 from owslib.wmts import WebMapTileService
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
@@ -119,11 +117,24 @@ class Item(EodhObject):
 
     def get_cloud_products(
         self,
-    ) -> list[DataPointCloudProduct] | DataPointCluster | None:
+        ) -> object | None:
         """
         Added feature that uses the CEDA
         DataPoint library to create a list of
         CloudProduct objects here."""
+
+        try:
+            from ceda_datapoint.core.cloud import (
+                DataPointCloudProduct,
+                DataPointCluster,
+            )
+            from ceda_datapoint.core.item import identify_cloud_type
+        except ImportError:
+            logger.error(
+                'Unable to import DataPoint connectors - install '
+                ' with `pip install ceda-datapoint`'
+            )
+            return None
 
         products = []
         # Iterate over assets in this item
