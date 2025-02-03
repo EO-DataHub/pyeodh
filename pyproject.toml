@@ -11,7 +11,7 @@ python = "^3.9"
 requests-oauthlib = "^2.0.0"
 pystac = "^1.10.0"
 owslib = "^0.31.0"
-ceda-datapoint = "^0.4.5"
+ceda-datapoint = "^0.4.6"
 poetry = "^1.8.5"
 
 [tool.poetry.group.dev.dependencies]
