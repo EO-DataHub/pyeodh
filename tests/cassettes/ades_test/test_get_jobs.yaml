@@ -263,8 +263,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:44 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 1f7383179aa19c47a962c46236696426.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -441,8 +439,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:46 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 a1c66294cb416b399374a845b97656d2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -615,8 +611,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:48 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -811,8 +805,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:50 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 d5da174e34f35b7d1482b8432bf7e084.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -994,8 +986,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:53 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 bb390afd921c223e0fe4921fbc23bbe8.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -1173,8 +1163,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:55 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 79ba346413d83ce62db11c8d0b05c22c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -1366,8 +1354,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:57 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 79ba346413d83ce62db11c8d0b05c22c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -1432,8 +1418,6 @@ interactions:
       - Fri, 07 Feb 2025 11:51:58 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
       - 1.1 0bb58964819755c192fe9c24c342bd1a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
@@ -1446,6 +1430,80 @@ interactions:
       - gzip
       vary:
       - accept-encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api
+  response:
+    body:
+      string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
+        "links": [{"rel": "self", "type": "application/json", "title": "this document",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel": "alternate",
+        "type": "text/html", "title": "this document", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
+        {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
+        "title": "the API definition", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/api"},
+        {"rel": "service-doc", "type": "text/html", "title": "the API definition",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/api.html"}, {"rel":
+        "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
+        "title": "OGC API - Processes conformance classes implemented by this server",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
+        {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
+        classes implemented by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
+        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
+        "title": "The processes offered by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
+        {"rel": "alternate", "type": "text/html", "title": "The processes offered
+        by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
+        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
+        "title": "Job Management", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
+        "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 07 Feb 2025 11:58:48 GMT
+      Server:
+      - nginx/1.27.0
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 614c7e2196cc5b32f71450d1d8261094.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - DCYqC-5iauvqTk-EXmArssiAFnc98xil-n7BCsUNV9S8ZTqRDE9emA==
+      X-Amz-Cf-Pop:
+      - VIE50-C2
+      X-Cache:
+      - Miss from cloudfront
+      x-also-also-also-powered-by:
+      - dru.securityOut
+      x-also-also-powered-by:
+      - dru.securityIn
+      x-also-powered-by:
+      - jwt.securityIn
+      x-powered-by:
+      - ZOO-Project-DRU
     status:
       code: 200
       message: OK
