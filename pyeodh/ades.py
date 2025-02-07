@@ -435,7 +435,7 @@ class Ades(EodhObject):
         headers, response = self._client._request_json("GET", location)
         return Process(self._client, headers, response, self.processes_href)
 
-    def get_jobs(self) -> PaginatedList[Job]:
+    def get_jobs(self, limit: int = consts.PAGINATION_LIMIT) -> PaginatedList[Job]:
         """Fetches a list of jobs triggered by the user.
 
         Calls: GET /jobs
@@ -450,7 +450,7 @@ class Ades(EodhObject):
             "GET",
             self.jobs_href,
             "jobs",
-            params={"limit": consts.PAGINATION_LIMIT},
+            params={"limit": limit},
         )
 
     def get_job(self, job_id) -> Job:
