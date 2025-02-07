@@ -12,7 +12,10 @@ from pyeodh.pagination import PaginatedList
 
 @pytest.fixture(scope="module")
 def vcr_config():
-    return {"filter_headers": ["Authorization"]}
+    return {
+        "filter_headers": ["Authorization"],
+        "decode_compressed_response": True,
+    }
 
 
 @pytest.fixture
