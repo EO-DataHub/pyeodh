@@ -7,7 +7,9 @@ from enum import Enum
 from functools import cached_property
 from typing import TYPE_CHECKING, Any
 
+from pyeodh import consts
 from pyeodh.eodh_object import EodhObject
+from pyeodh.pagination import PaginatedList
 from pyeodh.resource_catalog import Collection, Item
 from pyeodh.types import Headers, Link
 from pyeodh.utils import join_url
@@ -54,8 +56,8 @@ class Job(EodhObject):
         data (Any): Raw response data received when requesting this record
     """
 
-    def __init__(self, client: Client, headers: Headers, data: Any):
-        super().__init__(client, headers, data)
+    def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
+        super().__init__(client, headers, data, **kwargs)
 
     def _set_props(self, obj: dict) -> None:
         self.id = self._make_str_prop(obj.get("jobID"))
@@ -433,19 +435,23 @@ class Ades(EodhObject):
         headers, response = self._client._request_json("GET", location)
         return Process(self._client, headers, response, self.processes_href)
 
-    def get_jobs(self) -> list[Job]:
+    def get_jobs(self) -> PaginatedList[Job]:
         """Fetches a list of jobs triggered by the user.
 
         Calls: GET /jobs
 
         Returns:
-            list[Job]: List of user's jobs.
+            PaginatedList[Job]: List of user's jobs.
         """
 
-        headers, response = self._client._request_json("GET", self.jobs_href)
-        if not response:
-            return []
-        return [Job(self._client, headers, item) for item in response.get("jobs", [])]
+        return PaginatedList(
+            Job,
+            self._client,
+            "GET",
+            self.jobs_href,
+            "jobs",
+            params={"limit": consts.PAGINATION_LIMIT},
+        )
 
     def get_job(self, job_id) -> Job:
         """Fetches an individual job.

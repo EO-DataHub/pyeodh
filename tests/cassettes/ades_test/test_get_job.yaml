@@ -157,4 +157,417 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs?limit=10
+  response:
+    body:
+      string: '{"jobs": [{"jobID": "12fe1b9e-bcb4-11ef-be28-8ef03814f15e", "type":
+        "process", "processID": "convert-url", "created": "2024-12-17T20:18:27.492Z",
+        "started": "2024-12-17T20:18:27.492Z", "finished": "2024-12-17T20:19:29.356Z",
+        "updated": "2024-12-17T20:19:28.974Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/12fe1b9e-bcb4-11ef-be28-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/12fe1b9e-bcb4-11ef-be28-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-12fe1b9e-bcb4-11ef-be28-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-12fe1b9e-bcb4-11ef-be28-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "3208f4e6-de74-11ef-8d93-12e2ea552ab2", "type": "process", "processID":
+        "convert-url", "created": "2025-01-29T19:06:51.585Z", "started": "2025-01-29T19:06:51.585Z",
+        "finished": "2025-01-29T19:08:07.097Z", "updated": "2025-01-29T19:08:06.678Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/3208f4e6-de74-11ef-8d93-12e2ea552ab2"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/3208f4e6-de74-11ef-8d93-12e2ea552ab2/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-3208f4e6-de74-11ef-8d93-12e2ea552ab2/node_stage_in.log",
+        "title": "Tool log node_stage_in.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-3208f4e6-de74-11ef-8d93-12e2ea552ab2/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-3208f4e6-de74-11ef-8d93-12e2ea552ab2/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "3bc0d142-bd7d-11ef-9835-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-18T20:18:24.798Z", "started": "2024-12-18T20:18:24.798Z",
+        "finished": "2024-12-18T20:19:28.145Z", "updated": "2024-12-18T20:19:27.811Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/3bc0d142-bd7d-11ef-9835-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/3bc0d142-bd7d-11ef-9835-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-3bc0d142-bd7d-11ef-9835-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-3bc0d142-bd7d-11ef-9835-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "8f6e7c0a-c0a1-11ef-8c97-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-22T20:16:00.495Z", "started": "2024-12-22T20:16:00.495Z",
+        "finished": "2024-12-22T20:17:00.286Z", "updated": "2024-12-22T20:16:59.937Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/8f6e7c0a-c0a1-11ef-8c97-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/8f6e7c0a-c0a1-11ef-8c97-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-8f6e7c0a-c0a1-11ef-8c97-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-8f6e7c0a-c0a1-11ef-8c97-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "5b6b2f58-bfd8-11ef-b3de-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-21T20:15:44.396Z", "started": "2024-12-21T20:15:44.396Z",
+        "finished": "2024-12-21T20:16:44.985Z", "updated": "2024-12-21T20:16:44.640Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/5b6b2f58-bfd8-11ef-b3de-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/5b6b2f58-bfd8-11ef-b3de-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-5b6b2f58-bfd8-11ef-b3de-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-5b6b2f58-bfd8-11ef-b3de-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "607d8460-bf0f-11ef-bc46-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-20T20:17:04.109Z", "started": "2024-12-20T20:17:04.109Z",
+        "finished": "2024-12-20T20:18:06.216Z", "updated": "2024-12-20T20:18:05.792Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/607d8460-bf0f-11ef-bc46-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/607d8460-bf0f-11ef-bc46-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-607d8460-bf0f-11ef-bc46-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-607d8460-bf0f-11ef-bc46-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "4575ee92-be46-11ef-a2c9-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-19T20:17:29.893Z", "started": "2024-12-19T20:17:29.893Z",
+        "finished": "2024-12-19T20:18:31.012Z", "updated": "2024-12-19T20:18:30.589Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/4575ee92-be46-11ef-a2c9-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/4575ee92-be46-11ef-a2c9-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-4575ee92-be46-11ef-a2c9-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-4575ee92-be46-11ef-a2c9-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "dd34e5d6-c16a-11ef-bded-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-23T20:16:59.785Z", "started": "2024-12-23T20:16:59.785Z",
+        "finished": "2024-12-23T20:18:02.469Z", "updated": "2024-12-23T20:18:01.628Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/dd34e5d6-c16a-11ef-bded-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/dd34e5d6-c16a-11ef-bded-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-dd34e5d6-c16a-11ef-bded-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-dd34e5d6-c16a-11ef-bded-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "f9a2eba4-c233-11ef-b720-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-24T20:16:36.404Z", "started": "2024-12-24T20:16:36.404Z",
+        "finished": "2024-12-24T20:17:37.715Z", "updated": "2024-12-24T20:17:37.265Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/f9a2eba4-c233-11ef-b720-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/f9a2eba4-c233-11ef-b720-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-f9a2eba4-c233-11ef-b720-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-f9a2eba4-c233-11ef-b720-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "2d8847f6-c2fd-11ef-b1ce-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-25T20:16:52.685Z", "started": "2024-12-25T20:16:52.685Z",
+        "finished": "2024-12-25T20:17:53.624Z", "updated": "2024-12-25T20:17:53.203Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/2d8847f6-c2fd-11ef-b1ce-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/2d8847f6-c2fd-11ef-b1ce-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-2d8847f6-c2fd-11ef-b1ce-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-2d8847f6-c2fd-11ef-b1ce-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]}],
+        "links": [{"rel": "self", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        {"rel": "next", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs?limit=10&skip=10"}],
+        "numberTotal": 10}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 07 Feb 2025 11:52:00 GMT
+      Server:
+      - nginx/1.27.0
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 b031f43146c9801101822eabdc464390.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - OfeBB7klVXeQEXfemRGoeESk1sINT9MngCDbB3yYQ-cyfIm-G3WzqA==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - accept-encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs?limit=10&skip=10&limit=10
+  response:
+    body:
+      string: '{"jobs": [{"jobID": "553bacba-c3c6-11ef-a543-8ef03814f15e", "type":
+        "process", "processID": "convert-url", "created": "2024-12-26T20:16:47.700Z",
+        "started": "2024-12-26T20:16:47.700Z", "finished": "2024-12-26T20:17:48.945Z",
+        "updated": "2024-12-26T20:17:48.569Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/553bacba-c3c6-11ef-a543-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/553bacba-c3c6-11ef-a543-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-553bacba-c3c6-11ef-a543-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-553bacba-c3c6-11ef-a543-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "b7238b5a-cad8-11ef-b056-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2025-01-04T20:16:01.102Z", "started": "2025-01-04T20:16:01.102Z",
+        "finished": "2025-01-04T20:17:02.799Z", "updated": "2025-01-04T20:17:02.298Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/b7238b5a-cad8-11ef-b056-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/b7238b5a-cad8-11ef-b056-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-b7238b5a-cad8-11ef-b056-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-b7238b5a-cad8-11ef-b056-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "a90ce9ae-ca0f-11ef-bd36-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2025-01-03T20:16:48.714Z", "started": "2025-01-03T20:16:48.714Z",
+        "finished": "2025-01-03T20:17:51.818Z", "updated": "2025-01-03T20:17:51.384Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/a90ce9ae-ca0f-11ef-bd36-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/a90ce9ae-ca0f-11ef-bd36-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-a90ce9ae-ca0f-11ef-bd36-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-a90ce9ae-ca0f-11ef-bd36-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "767a7f68-c48f-11ef-b6a9-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-27T20:16:32.756Z", "started": "2024-12-27T20:16:32.756Z",
+        "finished": "2024-12-27T20:17:33.116Z", "updated": "2024-12-27T20:17:32.661Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/767a7f68-c48f-11ef-b6a9-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/767a7f68-c48f-11ef-b6a9-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-767a7f68-c48f-11ef-b6a9-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-767a7f68-c48f-11ef-b6a9-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "82735248-c946-11ef-a1d7-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2025-01-02T20:16:55.105Z", "started": "2025-01-02T20:16:55.105Z",
+        "finished": "2025-01-02T20:17:56.674Z", "updated": "2025-01-02T20:17:56.207Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/82735248-c946-11ef-a1d7-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/82735248-c946-11ef-a1d7-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-82735248-c946-11ef-a1d7-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-82735248-c946-11ef-a1d7-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "c14e51b6-c621-11ef-8931-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-29T20:16:15.597Z", "started": "2024-12-29T20:16:15.597Z",
+        "finished": "2024-12-29T20:17:18.117Z", "updated": "2024-12-29T20:17:17.734Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/c14e51b6-c621-11ef-8931-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/c14e51b6-c621-11ef-8931-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-c14e51b6-c621-11ef-8931-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-c14e51b6-c621-11ef-8931-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "047246b8-c6eb-11ef-b6c8-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-30T20:16:57.098Z", "started": "2024-12-30T20:16:57.098Z",
+        "finished": "2024-12-30T20:17:57.329Z", "updated": "2024-12-30T20:17:56.926Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/047246b8-c6eb-11ef-b6c8-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/047246b8-c6eb-11ef-b6c8-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-047246b8-c6eb-11ef-b6c8-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-047246b8-c6eb-11ef-b6c8-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "89a713d4-c558-11ef-a1f5-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2024-12-28T20:15:53.584Z", "started": "2024-12-28T20:15:53.584Z",
+        "finished": "2024-12-28T20:16:55.787Z", "updated": "2024-12-28T20:16:55.254Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/89a713d4-c558-11ef-a1f5-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/89a713d4-c558-11ef-a1f5-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-89a713d4-c558-11ef-a1f5-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-89a713d4-c558-11ef-a1f5-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"jobID": "693364ec-cce5-11ef-a16b-8ef03814f15e", "type": "process", "processID":
+        "cloud-free-best-pixel-h", "created": "2025-01-07T10:51:56.406Z", "started":
+        "2025-01-07T10:51:56.406Z", "finished": "2025-01-07T10:53:55.067Z", "updated":
+        "2025-01-07T10:53:44.172Z", "status": "failed", "message": "Unable to run
+        the Service. The message returned back by the Service was the following: Exception
+        during execution...\nTraceback (most recent call last):\n  File \"/opt/zooservices_user/figi44/cloud-free-best-pixel-h/service.py\",
+        line 503, in cloud_free_best_pixel_h\n    exit_status = runner.execute()\n  File
+        \"/usr/local/lib/python3.8/dist-packages/zoo_calrissian_runner/__init__.py\",
+        line 495, in execute\n    output = self.execution.get_output()\n  File \"/usr/local/lib/python3.8/dist-packages/pycalrissian-0.7.0-py3.8.egg/pycalrissian/execution.py\",
+        line 84, in get_output\n    return json.load(staged_file)\n  File \"/usr/lib/python3.8/json/__init__.py\",
+        line 293, in load\n    return loads(fp.read(),\n  File \"/usr/lib/python3.8/json/__init__.py\",
+        line 357, in loads\n    return _default_decoder.decode(s)\n  File \"/usr/lib/python3.8/json/decoder.py\",
+        line 337, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n  File
+        \"/usr/lib/python3.8/json/decoder.py\", line 355, in raw_decode\n    raise
+        JSONDecodeError(\"Expecting value\", s, err.value) from None\njson.decoder.JSONDecodeError:
+        Expecting value: line 1 column 1 (char 0)\n\n", "links": [{"title": "Status
+        location", "rel": "monitor", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/693364ec-cce5-11ef-a16b-8ef03814f15e"}]},
+        {"jobID": "e6259f32-cba1-11ef-8df7-8ef03814f15e", "type": "process", "processID":
+        "convert-url", "created": "2025-01-05T20:16:08.793Z", "started": "2025-01-05T20:16:08.793Z",
+        "finished": "2025-01-05T20:17:11.212Z", "updated": "2025-01-05T20:17:10.729Z",
+        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/e6259f32-cba1-11ef-8df7-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/e6259f32-cba1-11ef-8df7-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-e6259f32-cba1-11ef-8df7-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-e6259f32-cba1-11ef-8df7-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]}],
+        "links": [{"rel": "self", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        {"rel": "prev", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs?limit=10&skip=0"},
+        {"rel": "next", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs?limit=10&skip=20"}],
+        "numberTotal": 10}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 07 Feb 2025 11:52:02 GMT
+      Server:
+      - nginx/1.27.0
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - uvVSS0wXBg_Y9LzfBg37RvKxibA1LJdxxHK-Cu_0bWUrv3-uSRXDMw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - accept-encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/12fe1b9e-bcb4-11ef-be28-8ef03814f15e
+  response:
+    body:
+      string: '{"jobID": "12fe1b9e-bcb4-11ef-be28-8ef03814f15e", "type": "process",
+        "processID": "convert-url", "created": "2024-12-17T20:18:27.492Z", "started":
+        "2024-12-17T20:18:27.492Z", "finished": "2024-12-17T20:19:29.356Z", "updated":
+        "2024-12-17T20:19:28.974Z", "status": "successful", "message": "ZOO-Kernel
+        successfully run your service!", "links": [{"title": "Status location", "rel":
+        "monitor", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/12fe1b9e-bcb4-11ef-be28-8ef03814f15e"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs/12fe1b9e-bcb4-11ef-be28-8ef03814f15e/results"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-12fe1b9e-bcb4-11ef-be28-8ef03814f15e/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "https://test.eodatahub.org.uk/ades/figi44/temp/convert-url-12fe1b9e-bcb4-11ef-be28-8ef03814f15e/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 07 Feb 2025 11:52:03 GMT
+      Server:
+      - nginx/1.27.0
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 3544838dca6112dd616da017a568e76a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Ch0phB2eSWMYLvwElW1jGcridHuJB61zl2jRoohMsT0hd9GqGAVQQw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+      content-encoding:
+      - gzip
+      vary:
+      - accept-encoding
+    status:
+      code: 200
+      message: OK
 version: 1
