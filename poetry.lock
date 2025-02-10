@@ -348,13 +348,13 @@ redis = ["redis (>=2.10.5)"]
 
 [[package]]
 name = "ceda-datapoint"
-version = "0.4.5"
+version = "0.4.6"
 description = "DataPoint provides python-based search/access tools for using data primarily from the CEDA Archive."
 optional = false
 python-versions = "<4.0,>=3.9"
 files = [
-    {file = "ceda_datapoint-0.4.5-py3-none-any.whl", hash = "sha256:9960ed6373b240f474767bea48689ebbdc2193f577d7ba7abad6e8046bd2b892"},
-    {file = "ceda_datapoint-0.4.5.tar.gz", hash = "sha256:95c0d1a5cf2bd6ca0acc6d4bbec47eab9ca0b22eae88b7619277851393836f40"},
+    {file = "ceda_datapoint-0.4.6-py3-none-any.whl", hash = "sha256:442cdd8bd1682ecc0291c342218c66b026fe0b8bd06f00ed7cc24284f4e6a379"},
+    {file = "ceda_datapoint-0.4.6.tar.gz", hash = "sha256:278751a83507b616d77620f4b0ffce0fbc5430650d0bb5a272ebb8aa0b1eb96e"},
 ]
 
 [package.dependencies]
@@ -5163,4 +5163,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "895396e5cb7d6b95d7c7d3d021723b2dd3c2e200935fa294b39480f40cdbe758"
+content-hash = "7c7b07893d8de44b77f7213e8df7d302a5c263a5bf42abaaefcea8dbc3388c52"
