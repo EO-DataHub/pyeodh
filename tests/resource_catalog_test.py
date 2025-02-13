@@ -176,7 +176,7 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
     with pytest.raises(ConformanceError):
         item.delete()
     with pytest.raises(ConformanceError):
-        p = item.get_cloud_products()
+        _ = item.get_cloud_products()
 
 
 @patch("pyeodh.client.Client._request_json")
