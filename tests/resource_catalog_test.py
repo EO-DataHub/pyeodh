@@ -109,13 +109,18 @@ def test_get_collection_item(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_cloud_product(svc: CatalogService):
-    import xarray
-    from ceda_datapoint.core.cloud import DataPointCloudProduct
-
     cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     item = collection.get_item(items[0].id)
+    try:
+        product = item.get_cloud_products()
+    except Exception as err:
+        assert isinstance(err, ImportError)
+
+    import xarray
+    from ceda_datapoint.core.cloud import DataPointCloudProduct
+
     product = item.get_cloud_products()
     assert isinstance(product, DataPointCloudProduct)
     assert item.id in product.id
