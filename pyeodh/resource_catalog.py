@@ -123,6 +123,13 @@ class Item(EodhObject):
         DataPoint library to create a list of
         CloudProduct objects here."""
 
+        if not self.get_root().check_conforms_to(
+            Conformance.TRANSACTION_EXTENSION.value
+        ):
+            raise ConformanceError(
+                f"{Conformance.TRANSACTION_EXTENSION.value}",
+            )
+
         try:
             from ceda_datapoint.core.cloud import (
                 DataPointCloudProduct,
