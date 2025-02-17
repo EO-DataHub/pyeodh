@@ -11,6 +11,14 @@ from pyeodh.resource_catalog import CatalogService, Item
 from pyeodh.utils import ConformanceError
 
 
+@pytest.fixture(scope="module")
+def vcr_config():
+    return {
+        "filter_headers": ["Authorization"],
+        "decode_compressed_response": True,
+    }
+
+
 @pytest.fixture
 def svc() -> CatalogService:
     return pyeodh.Client().get_catalog_service()

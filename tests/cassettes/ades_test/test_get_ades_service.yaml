@@ -1,49 +1,6 @@
 interactions:
 - request:
     body: null
-    headers: {}
-    method: GET
-    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/non-existent-process-id
-  response:
-    body:
-      string: "{\"title\":\"NoSuchProcess\",\"type\":\"http://www.opengis.net/def/rel/ogc/1.0/exception/no-such-process\",\"detail\":\"Unable
-        to parse the ZCFG file: non-existent-process-id.zcfg (No message provided)\"}Content-Type:
-        application/json;encoding=utf-8\r\nStatus: 400 Bad request\r\n\r\n{\"title\":\"InvalidParameterValue\",\"type\":\"InvalidParameterValue\",\"detail\":\"Unable
-        to parse the ZCFG file: non-existent-process-id.zcfg.\"}Content-Type: application/json;encoding=utf-8\r\nStatus:
-        500 Not Implemented\r\n\r\n{\"title\":\"NoApplicableCode\",\"type\":\"NoApplicableCode\",\"detail\":\"ZOO
-        Kernel failed to process your request, receiving signal 6 = SIGABRT \"}"
-    headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Headers:
-      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - GET, PUT, POST, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '618'
-      Content-Type:
-      - text/plain; charset=utf-8
-      Date:
-      - Fri, 25 Oct 2024 06:15:38 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 c855d201fddbb6ef22989607fe8f5d1e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - wsdQsCufv6mJCpk_VZW4RzaVQGUA_z-EN8LwRgLpRZTYE0MfPNT8XQ==
-      X-Amz-Cf-Pop:
-      - VIE50-C2
-      X-Cache:
-      - Error from cloudfront
-    status:
-      code: 404
-      message: Not Found
-- request:
-    body: null
     headers:
       Accept:
       - '*/*'
@@ -92,15 +49,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 07 Feb 2025 11:58:46 GMT
+      - Fri, 07 Feb 2025 11:58:44 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 fadd210e8fada96866356688e5524d10.cloudfront.net (CloudFront)
+      - 1.1 614c7e2196cc5b32f71450d1d8261094.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - vMFiDbPNWZvKMzAR98Dqapx56U__lzvDg46uJWpxDY1NTPtyYAOjSQ==
+      - pozOrdMEsAnI4vTFonKd4wnqK7pnvMXTZQBdYi0BT25863Dk0fEeYw==
       X-Amz-Cf-Pop:
       - VIE50-C2
       X-Cache:

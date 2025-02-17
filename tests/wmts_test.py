@@ -4,6 +4,14 @@ from owslib.wmts import WebMapTileService
 import pyeodh
 
 
+@pytest.fixture(scope="module")
+def vcr_config():
+    return {
+        "filter_headers": ["Authorization"],
+        "decode_compressed_response": True,
+    }
+
+
 @pytest.mark.vcr
 def test_get_wmts() -> None:
     wmts = (

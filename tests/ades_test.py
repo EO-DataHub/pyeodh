@@ -7,11 +7,15 @@ import requests
 
 import pyeodh
 from pyeodh.ades import Ades, AdesJobStatus, Job, Process
+from pyeodh.pagination import PaginatedList
 
 
 @pytest.fixture(scope="module")
 def vcr_config():
-    return {"filter_headers": ["Authorization"]}
+    return {
+        "filter_headers": ["Authorization"],
+        "decode_compressed_response": True,
+    }
 
 
 @pytest.fixture
@@ -182,13 +186,13 @@ $graph:
 @pytest.mark.vcr
 def test_get_jobs(svc: Ades):
     jobs = svc.get_jobs()
-    assert isinstance(jobs, list)
+    assert isinstance(jobs, PaginatedList)
     assert all(isinstance(job, Job) for job in jobs)
 
 
 @pytest.mark.vcr
 def test_get_job(svc: Ades):
-    jobs = svc.get_jobs()
+    jobs = svc.get_jobs().get_limited()
     if len(jobs) > 0:
         job = svc.get_job(jobs[0].id)
         assert isinstance(job, Job)
