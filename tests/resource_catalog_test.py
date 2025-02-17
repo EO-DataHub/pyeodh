@@ -106,10 +106,11 @@ def test_get_collection_item(svc: CatalogService):
     assert isinstance(item, pyeodh.resource_catalog.Item)
     assert item.id == items[0].id
 
+
 @pytest.mark.vcr
 def test_get_cloud_product(svc: CatalogService):
-    from ceda_datapoint.core.cloud import DataPointCloudProduct
     import xarray
+    from ceda_datapoint.core.cloud import DataPointCloudProduct
 
     cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
@@ -118,7 +119,7 @@ def test_get_cloud_product(svc: CatalogService):
     product = item.get_cloud_products()
     assert isinstance(product, DataPointCloudProduct)
     assert item.id in product.id
-    
+
     ds = product.open_dataset()
     assert isinstance(ds, xarray.Dataset)
 
@@ -191,7 +192,7 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
         item.update(properties={"new": "property"})
     with pytest.raises(ConformanceError):
         item.delete()
-    #with pytest.raises(ConformanceError):
+    # with pytest.raises(ConformanceError):
     #    _ = item.get_cloud_products()
 
 
