@@ -114,7 +114,7 @@ def test_get_cloud_product_fail(svc: CatalogService):
     items = collection.get_items()
     item = collection.get_item(items[0].id)
     try:
-        product = item.get_cloud_products()
+        _ = item.get_cloud_products()
     except Exception as err:
         assert isinstance(err, ImportError)
 
