@@ -118,6 +118,7 @@ def test_get_cloud_product_fail(svc: CatalogService):
     except Exception as err:
         assert isinstance(err, ImportError)
 
+
 @pytest.mark.vcr
 def test_get_cloud_product(svc: CatalogService):
     import xarray
