@@ -39,15 +39,15 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 29 Jan 2025 20:01:38 GMT
+      - Mon, 17 Feb 2025 11:20:24 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 a60a14dea4b4a9f77d34297a625f2e24.cloudfront.net (CloudFront)
+      - 1.1 c9e93510e33ab69af0de2f41455fbb80.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - sRkpxpJfoi56u4ni29ZdlHSE7uh6KfbU36XLzUe6BB7S8Sf9PCCc0g==
+      - s8F3asQlPbza39hkIUOUa_ZeI7Sw9kahlvcMQt9PDPTMXWhQvm4rvQ==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - LHR50-P1
       X-Cache:
       - Miss from cloudfront
       cache-control:
@@ -77,7 +77,7 @@ interactions:
       string: '{"type":"Catalog","stac_version":"1.0.0","stac_extensions":[],"id":"ceda-stac-catalogue","title":"CEDA
         STAC API","description":"This is an experimental STAC API server.\nThe content
         is subject to change the and there is no guarantee surrounding its uptime.\n","links":[{"rel":"self","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
-        conformance classes implemented by this server","href":"https://test.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/catalogs"},{"rel":"search","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"POST"},{"rel":"search","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"GET"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel1"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cordex"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3-climatology"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/land_cover"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/ukcp"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel2_ard"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-day"}],"conformsTo":["https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0-rc.1/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","/discovery-search","/catalogues","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0-rc.2/item-search#context"]}'
+        conformance classes implemented by this server","href":"https://test.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/catalogs"},{"rel":"search","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"POST"},{"rel":"search","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"GET"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cordex"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-day"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3a-day"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3a-night"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3b-day"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3-climatology"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/land_cover"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel1"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel2_ard"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/ukcp"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cci"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3b-night"}],"conformsTo":["https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0-rc.1/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","/discovery-search","/catalogues","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0-rc.2/item-search#context"]}'
     headers:
       Access-Control-Allow-Headers:
       - Accept,Authorization,Content-Type
@@ -90,19 +90,19 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '739'
+      - '760'
       Content-Type:
       - application/json
       Date:
-      - Wed, 29 Jan 2025 20:01:38 GMT
+      - Mon, 17 Feb 2025 11:20:25 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 1f98172ca4214b0e937b7d3d534b34cc.cloudfront.net (CloudFront)
+      - 1.1 f73d71dfa047571774d2c0460e5108ec.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - RMC0eJQfP8kx22AHetWkrKfgUN3tx3u1r29pDzlNn5cdMq8k1P2tiQ==
+      - JD_c95qqnAvY8WWdF-8MkqNDNtSeUgykSdiGT08qcOHSiWuyjVUruA==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - LHR50-P1
       X-Cache:
       - Miss from cloudfront
       cache-control:
@@ -129,7 +129,7 @@ interactions:
     uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6
   response:
     body:
-      string: '{"type":"Collection","stac_version":"1.0.0","stac_extensions":[],"id":"cmip6","title":"CMIP6","description":"CMIP6","links":[{"rel":"self","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"items","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6/items"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"aggregate","type":"application/json","href":"https://test.eodatahub.org.uk/ceda-stac-catalogue/collections/cmip6/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://test.eodatahub.org.uk/ceda-stac-catalogue/collections/cmip6/aggregations"},{"rel":"queryables","type":"application/json","href":"https://test.eodatahub.org.uk/ceda-stac-catalogue/collections/cmip6/queryables"}],"keywords":[],"license":"cmip6","providers":[],"extent":{"spatial":{"bbox":[[-180.0,-90.0,179.99999991618097,89.99999995809048]]},"temporal":{"interval":[["1850-01-01T00:00:00.000Z","4114-12-16T12:00:00.000Z"]]}},"summaries":{"experiment_title":["SSP-based
+      string: '{"type":"Collection","stac_version":"1.0.0","stac_extensions":[],"id":"cmip6","title":"CMIP6","description":"CMIP6","links":[{"rel":"self","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"items","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6/items"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"license","href":"https://test.eodatahub.org.uk/api/catalogue/licences/default_workspace/CMIP6_Terms_of_Use.pdf","type":"application/pdf"}],"keywords":[],"license":"other","providers":[],"extent":{"spatial":{"bbox":[[-180.0,-90.0,179.99999991618097,89.99999995809048]]},"temporal":{"interval":[["1850-01-01T00:00:00.000Z","4114-12-16T12:00:00.000Z"]]}},"summaries":{"experiment_title":["SSP-based
         RCP scenario with high radiative forcing by the end of century. Following
         approximately RCP8.5 global forcing pathway with SSP5 socioeconomic conditions.
         Concentration-driven.","SSP-based RCP scenario with medium radiative forcing
@@ -201,19 +201,19 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3459'
+      - '3468'
       Content-Type:
       - application/json
       Date:
-      - Wed, 29 Jan 2025 20:01:38 GMT
+      - Mon, 17 Feb 2025 11:20:25 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 df0aa1ee2f3a5b8f1aa2a31aa4b7db86.cloudfront.net (CloudFront)
+      - 1.1 717666fbcd9eb8ed70d0f46dd99d0448.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Q3Bs-9kwiBSOFTvBTCMYNRSRicBDsD18y5WlkEmhjmB_opxdeudeHw==
+      - rnDBT1AdBYc36v17XuwQe_ICOGOYOOS8gpb72ytACPTRugJolnVk9w==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - LHR50-P1
       X-Cache:
       - Miss from cloudfront
       cache-control:
@@ -241,7 +241,7 @@ interactions:
       string: '{"type":"Catalog","stac_version":"1.0.0","stac_extensions":[],"id":"ceda-stac-catalogue","title":"CEDA
         STAC API","description":"This is an experimental STAC API server.\nThe content
         is subject to change the and there is no guarantee surrounding its uptime.\n","links":[{"rel":"self","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
-        conformance classes implemented by this server","href":"https://test.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/catalogs"},{"rel":"search","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"POST"},{"rel":"search","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"GET"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel1"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cordex"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3-climatology"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/land_cover"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/ukcp"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel2_ard"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-day"}],"conformsTo":["https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0-rc.1/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","/discovery-search","/catalogues","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0-rc.2/item-search#context"]}'
+        conformance classes implemented by this server","href":"https://test.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections"},{"rel":"data","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/catalogs"},{"rel":"search","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"POST"},{"rel":"search","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/search","method":"GET"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cordex"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-day"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3a-day"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3a-night"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3b-day"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-sst-cdrv3-climatology"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/land_cover"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel1"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/sentinel2_ard"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/ukcp"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cci"},{"rel":"child","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/eocis-lst-s3b-night"}],"conformsTo":["https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0-rc.1/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","/discovery-search","/catalogues","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0-rc.2/item-search#context"]}'
     headers:
       Access-Control-Allow-Headers:
       - Accept,Authorization,Content-Type
@@ -254,19 +254,19 @@ interactions:
       Connection:
       - close
       Content-Length:
-      - '4394'
+      - '5274'
       Content-Type:
       - application/json
       Date:
-      - Wed, 29 Jan 2025 20:01:39 GMT
+      - Mon, 17 Feb 2025 11:20:25 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
+      - 1.1 717666fbcd9eb8ed70d0f46dd99d0448.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - ZKbQWEt88879JF14U_EtpO5UwU7MnoBnaNb2lhFm6eUOl59N2jMg4w==
+      - vBoi5snHbflrw8KRM8wPW4wXRD86MvtXG_EL77tC-EgNXIq4wJj_7g==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - LHR50-P1
       X-Cache:
       - Miss from cloudfront
       cache-control:
@@ -343,15 +343,70 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 29 Jan 2025 20:01:39 GMT
+      - Mon, 17 Feb 2025 11:20:25 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 77d19519a1c9ed821ab469548b9d17f4.cloudfront.net (CloudFront)
+      - 1.1 717666fbcd9eb8ed70d0f46dd99d0448.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - qoPbxC7FofnLZbTGpb74syp8spCkrlDz1RLOZjlA3ko6_nZ3OeaGng==
+      - HZiDRry68qzAiec53iKcpkSGvA1PP64SAnWECZdUgS5RTjeWkWlGdA==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - LHR50-P1
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-encoding:
+      - gzip
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806
+  response:
+    body:
+      string: '{"type":"Feature","stac_version":"1.0.0","stac_extensions":[],"id":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","collection":"cmip6","geometry":{"type":"Polygon","coordinates":[[[-180.0,-90.0],[178.75,-90.0],[178.75,90.0],[-180.0,90.0],[-180.0,-90.0]]]},"bbox":[-180.0,-90.0,178.75,90.0],"properties":{"datetime":"4072-01-01T00:00:00Z","start_datetime":"4029-01-16T12:00:00Z","end_datetime":"4114-12-16T12:00:00Z","access":["HTTPServer"],"index_node":null,"latest":true,"pid":null,"replica":false,"retracted":false,"instance_id":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","citation_url":"http://cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806.json","variable_long_name":"Surface
+        Upwelling Shortwave Radiation","variable_units":"W m-2","cf_standard_name":"surface_upwelling_shortwave_flux_in_air","activity_id":"ScenarioMIP","data_specs_version":"01.00.29","experiment_title":"update
+        of RCP8.5 based on SSP5","frequency":"mon","further_info_url":"https://furtherinfo.es-doc.org/CMIP6.THU.CIESM.ssp585.none.r1i1p1f1","grid":"gs1x1","grid_label":"gr","institution_id":"THU","mip_era":"CMIP6","source_id":"CIESM","source_type":"AOGCM","experiment_id":"ssp585","sub_experiment_id":"none","nominal_resolution":"100
+        km","table_id":"Amon","variable_id":"rsus","variant_label":"r1i1p1f1","levels":null,"updated":"2024-12-17T12:58:04.744865Z","created":"2024-02-20T20:41:36.951308Z"},"links":[{"rel":"self","type":"application/geo+json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806"},{"rel":"parent","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"collection","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue/collections/cmip6"},{"rel":"root","type":"application/json","href":"https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/ceda-stac-catalogue"}],"assets":{"reference_file":{"checksum":null,"checksum_type":null,"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/kerchunk/pipeline1/ScenarioMIP/THU/CIESM/kr1.0/CMIP6_ScenarioMIP_THU_CIESM_ssp585_r1i1p1f1_Amon_rsus_gr_v20200806_kr1.0.json","roles":["reference","data"],"size":null,"type":"application/zstd","open_zarr_kwargs":{"decode_times":true}},"data0001":{"href":"https://dap.ceda.ac.uk/badc/cmip6/data/CMIP6/ScenarioMIP/THU/CIESM/ssp585/r1i1p1f1/Amon/rsus/gr/v20200806/rsus_Amon_CIESM_ssp585_r1i1p1f1_gr_402901-411412.nc","roles":["data"],"checksum":null,"checksum_type":null,"type":"application/netcdf","time":"4029-01-01T00:00:00/4114-12-31T23:59:59","area":[-180.0,-90.0,178.75,90.0]}}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1123'
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 17 Feb 2025 11:20:25 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 7309328e91f012108061822748228b68.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - ePVzpMLZwVwbXUtw6KxFNsxfPH3nCanWJAG5uTsYZEluWMaikW8Z-A==
+      X-Amz-Cf-Pop:
+      - LHR50-P1
       X-Cache:
       - Miss from cloudfront
       cache-control:
@@ -399,7 +454,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 17 Feb 2025 09:37:55 GMT
+      - Mon, 17 Feb 2025 11:20:27 GMT
       ETag:
       - '"65d361a0-4bf93"'
       Last-Modified:

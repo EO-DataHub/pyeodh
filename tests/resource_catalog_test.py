@@ -116,6 +116,36 @@ def test_get_collection_item(svc: CatalogService):
 
 
 @pytest.mark.vcr
+def test_get_cloud_product_fail(svc: CatalogService):
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
+    collection = cat.get_collection("cmip6")
+    items = collection.get_items()
+    item = collection.get_item(items[0].id)
+    try:
+        _ = item.get_cloud_products()
+    except Exception as err:
+        assert isinstance(err, ImportError)
+
+
+@pytest.mark.vcr
+def test_get_cloud_product(svc: CatalogService):
+    import xarray
+    from ceda_datapoint.core.cloud import DataPointCloudProduct
+
+    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
+    collection = cat.get_collection("cmip6")
+    items = collection.get_items()
+    item = collection.get_item(items[0].id)
+
+    product = item.get_cloud_products()
+    assert isinstance(product, DataPointCloudProduct)
+    assert item.id in product.id
+
+    ds = product.open_dataset()
+    assert isinstance(ds, xarray.Dataset)
+
+
+@pytest.mark.vcr
 def test_get_item_from_href(svc: CatalogService):
     item = pyeodh.resource_catalog.Item.from_href(
         svc._client,
@@ -183,6 +213,8 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
         item.update(properties={"new": "property"})
     with pytest.raises(ConformanceError):
         item.delete()
+    # with pytest.raises(ConformanceError):
+    #    _ = item.get_cloud_products()
 
 
 @patch("pyeodh.client.Client._request_json")
