@@ -7,16 +7,12 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
+from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+from ceda_datapoint.core.item import identify_cloud_type
 from owslib.wmts import WebMapTileService
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
-
-from ceda_datapoint.core.cloud import (
-    DataPointCloudProduct,
-    DataPointCluster,
-)
-from ceda_datapoint.core.item import identify_cloud_type
 
 from pyeodh import consts
 from pyeodh.eodh_object import EodhObject, is_optional
@@ -127,11 +123,11 @@ class Item(EodhObject):
         """Retrieve the cloud product(s) attributed to this item.
 
         Feature added from the CEDA DataPoint library to access cloud
-        products as either an individual product object or a set of 
+        products as either an individual product object or a set of
         products represented by a cluster. See the documentation
-        for using cloud products and clusters at: 
+        for using cloud products and clusters at:
         https://cedadev.github.io/datapoint/usage.html
-        
+
         Typical usage:
 
             product = item.get_cloud_products()
