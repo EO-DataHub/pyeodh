@@ -12,6 +12,12 @@ from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
 from pystac.provider import Provider
 
+from ceda_datapoint.core.cloud import (
+    DataPointCloudProduct,
+    DataPointCluster,
+)
+from ceda_datapoint.core.item import identify_cloud_type
+
 from pyeodh import consts
 from pyeodh.eodh_object import EodhObject, is_optional
 from pyeodh.pagination import PaginatedList
@@ -117,31 +123,21 @@ class Item(EodhObject):
 
     def get_cloud_products(
         self,
-    ) -> object | None:
+    ) -> DataPointCloudProduct | DataPointCluster | list:
+        """Retrieve the cloud product(s) attributed to this item.
+
+        Feature added from the CEDA DataPoint library to access cloud
+        products as either an individual product object or a set of 
+        products represented by a cluster. See the documentation
+        for using cloud products and clusters at: 
+        https://cedadev.github.io/datapoint/usage.html
+        
+        Typical usage:
+
+            product = item.get_cloud_products()
+            ds = product.open_dataset()
+            # Continue with the `ds` xarray.Dataset
         """
-        Added feature that uses the CEDA
-        DataPoint library to create a list of
-        CloudProduct objects here."""
-
-        # if not self.get_root().check_conforms_to(
-        #    Conformance.TRANSACTION_EXTENSION.value
-        # ):
-        #    raise ConformanceError(
-        #        f"{Conformance.TRANSACTION_EXTENSION.value}",
-        #    )
-
-        try:
-            from ceda_datapoint.core.cloud import (
-                DataPointCloudProduct,
-                DataPointCluster,
-            )
-            from ceda_datapoint.core.item import identify_cloud_type
-        except ImportError:
-            logger.error(
-                "Unable to import DataPoint connectors - install "
-                " with `pip install ceda-datapoint`"
-            )
-            return None
 
         products = []
         # Iterate over assets in this item
