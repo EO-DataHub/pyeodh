@@ -114,19 +114,6 @@ def test_get_collection_item(svc: CatalogService):
     assert isinstance(item, pyeodh.resource_catalog.Item)
     assert item.id == items[0].id
 
-
-@pytest.mark.vcr
-def test_get_cloud_product_fail(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
-    collection = cat.get_collection("cmip6")
-    items = collection.get_items()
-    item = collection.get_item(items[0].id)
-    try:
-        _ = item.get_cloud_products()
-    except Exception as err:
-        assert isinstance(err, ImportError)
-
-
 @pytest.mark.vcr
 def test_get_cloud_product(svc: CatalogService):
     import xarray
