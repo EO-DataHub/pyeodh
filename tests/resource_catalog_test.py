@@ -114,6 +114,7 @@ def test_get_collection_item(svc: CatalogService):
     assert isinstance(item, pyeodh.resource_catalog.Item)
     assert item.id == items[0].id
 
+
 @pytest.mark.vcr
 def test_get_cloud_product(svc: CatalogService):
     import xarray
