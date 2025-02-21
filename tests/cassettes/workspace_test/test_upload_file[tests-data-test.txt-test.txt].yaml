@@ -20,27 +20,35 @@ interactions:
     uri: https://figi44.staging.eodatahub-workspaces.org.uk/files/workspaces-eodhp-staging/test.txt
   response:
     body:
-      string: User not authorized for workspace 'figi44'
+      string: ''
     headers:
       Connection:
       - keep-alive
       Content-Length:
-      - '42'
+      - '0'
       Date:
-      - Fri, 21 Feb 2025 12:00:23 GMT
+      - Fri, 21 Feb 2025 15:08:30 GMT
+      ETag:
+      - '"3b36a281996b25ef96c756093668068c"'
       Server:
-      - CloudFront
+      - AmazonS3
       Vary:
       - Origin
       Via:
-      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
+      - 1.1 61059d408bfb8da19f49f0698d5e1608.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - F0rew4hezU0mBSCwpLLAp4lBaf_GXU0EBA76UvO739zyKhe_qTrWWw==
+      - Zt3H6Ojj_BNxSt74yk7bxRSwReBtiKiJuXgJyacT8-jv6bFh2md-vQ==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
-      - LambdaGeneratedResponse from cloudfront
+      - Miss from cloudfront
+      x-amz-id-2:
+      - qsN0juYCdQR+XeKdzoRXC/qU6tYSRa3uN7hBIs0AM/TDeuXzxlNvlmUb6xFmzyNgPcKIy794Wd8=
+      x-amz-request-id:
+      - ZCHN5MTEZV73R0P0
+      x-amz-server-side-encryption:
+      - AES256
     status:
-      code: 403
-      message: Forbidden
+      code: 200
+      message: OK
 version: 1
