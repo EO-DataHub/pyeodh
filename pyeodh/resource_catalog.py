@@ -7,6 +7,8 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
+from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+from ceda_datapoint.core.item import identify_cloud_type
 from owslib.wmts import WebMapTileService
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
@@ -114,6 +116,57 @@ class Item(EodhObject):
 
         if resp_data:
             self._set_props(self._pystac_object.from_dict(resp_data))
+
+    def get_cloud_products(
+        self,
+    ) -> DataPointCloudProduct | DataPointCluster | list:
+        """Retrieve the cloud product(s) attributed to this item.
+
+        Feature added from the CEDA DataPoint library to access cloud
+        products as either an individual product object or a set of
+        products represented by a cluster. See the documentation
+        for using cloud products and clusters at:
+        https://cedadev.github.io/datapoint/usage.html
+
+        Typical usage:
+
+            product = item.get_cloud_products()
+            ds = product.open_dataset()
+            # Continue with the `ds` xarray.Dataset
+        """
+
+        products = []
+        # Iterate over assets in this item
+        for id, asset in self.assets.items():
+
+            asset = asset.to_dict()
+
+            cf = identify_cloud_type(id, asset)
+            if cf is None:
+                continue
+
+            products.append(
+                DataPointCloudProduct(
+                    asset,
+                    id=f"{self.id}-{id}",
+                    cf=cf,
+                    meta={"bbox": self.bbox},
+                    properties=self.properties,
+                )
+            )
+
+        if len(products) == 0:
+            return []
+        if len(products) == 1:
+            return products[0]
+
+        # Could also just return the list.
+        # See https://cedadev.github.io/datapoint/cloud_formats.html
+        # for reasons to use the cluster.
+
+        return DataPointCluster(
+            products, parent_id=f"{self.id}-cluster", meta={"bbox": self.bbox}
+        )
 
 
 class Collection(EodhObject):
