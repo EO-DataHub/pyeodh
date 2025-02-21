@@ -32,8 +32,21 @@ class Client:
         self.url_base = base_url
         self.username = username
         self.token = token
+        self.environment = self._get_environment(base_url)
         self._build_session()
         self.workspace = Workspace(self)
+
+    def _get_environment(self, url: str) -> str:
+        """Get the environment from the base URL.
+
+        Returns:
+            str: The environment
+        """
+        env = urllib.parse.urlparse(url).netloc.split(".")[0]
+        logger.debug(f"Environment: {env}")
+        if env not in consts.Environment:
+            raise ValueError(f"Invalid environment: {env}")
+        return env
 
     def _build_session(
         self,

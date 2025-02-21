@@ -68,32 +68,45 @@ def test_remove_null_items(
 
 
 @pytest.mark.parametrize(
-    "workspace_name, path_to_file, expected",
+    "workspace_name, environment, path_to_file, expected",
     [
-        # Basic case
+        # Basic case with staging environment
         (
             "test-workspace",
+            "staging",
             "data/file.txt",
-            "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
-            "workspaces-eodhp-test/data/file.txt",
+            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
+            "workspaces-eodhp-staging/data/file.txt",
         ),
         # Path with leading slash
         (
             "test-workspace",
+            "staging",
             "/data/file.txt",
-            "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
-            "workspaces-eodhp-test/data/file.txt",
+            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
+            "workspaces-eodhp-staging/data/file.txt",
         ),
         # Path with multiple leading slashes
         (
             "test-workspace",
+            "staging",
             "///data/file.txt",
-            "https://test-workspace.workspaces.test.eodhp.eco-ke-staging.com/files/"
+            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
+            "workspaces-eodhp-staging/data/file.txt",
+        ),
+        # Test with test environment
+        (
+            "test-workspace",
+            "test",
+            "data/file.txt",
+            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
             "workspaces-eodhp-test/data/file.txt",
         ),
     ],
 )
-def test_s3_url(workspace_name: str, path_to_file: str, expected: str) -> None:
+def test_s3_url(
+    workspace_name: str, environment: str, path_to_file: str, expected: str
+) -> None:
     """Test s3_url function with various input combinations.
 
     Args:
@@ -101,7 +114,7 @@ def test_s3_url(workspace_name: str, path_to_file: str, expected: str) -> None:
         path_to_file: Path to file within workspace to test
         expected: Expected S3 URL output
     """
-    result = s3_url(workspace_name, path_to_file)
+    result = s3_url(workspace_name, environment, path_to_file)
     assert result == expected
 
 

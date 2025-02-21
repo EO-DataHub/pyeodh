@@ -29,7 +29,7 @@ def test_get_catalog_service(svc: CatalogService):
     assert svc._pystac_object.STAC_OBJECT_TYPE == "Catalog"
     assert (
         svc._pystac_object.self_href
-        == "https://test.eodatahub.org.uk/api/catalogue/stac/"
+        == "https://staging.eodatahub.org.uk/api/catalogue/stac/"
     )
 
 
@@ -119,9 +119,10 @@ def test_get_collection_item(svc: CatalogService):
 def test_get_item_from_href(svc: CatalogService):
     item = pyeodh.resource_catalog.Item.from_href(
         svc._client,
-        "https://test.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets/"
-        "ceda-stac-catalogue/collections/sentinel2_ard/items/neodc.sentinel_ard.data."
-        "sentinel_2.2023.11.20.S2A_20231120_latn501lonw0036_T30UVA_ORB037_20231120132"
+        "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-"
+        "datasets/ceda-stac-catalogue/collections/sentinel2_ard/items/"
+        "neodc.sentinel_ard.data.sentinel_2.2023.11.20."
+        "S2A_20231120_latn501lonw0036_T30UVA_ORB037_20231120132"
         "420_utm30n_osgb",
     )
     assert isinstance(item, pyeodh.resource_catalog.Item)

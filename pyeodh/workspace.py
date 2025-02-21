@@ -39,7 +39,7 @@ class Workspace:
         if workspace_name is None:
             raise ValueError("Workspace name is required")
 
-        url = s3_url(workspace_name, ws_file_path)
+        url = s3_url(workspace_name, self._client.environment, ws_file_path)
 
         if isinstance(file, str):
             if not Path(file).is_file():

@@ -1,6 +1,14 @@
-API_BASE_URL = "https://test.eodatahub.org.uk"
+from enum import Enum
+
+
+class Environment(str, Enum):
+    STAGING = "staging"
+    TEST = "test"
+
+
+API_BASE_URL = f"https://{Environment.STAGING.value}.eodatahub.org.uk"
 S3_BASE_URL_TEMPLATE = (
-    "https://{workspace_name}.workspaces.test.eodhp.eco-ke-staging.com/files/"
-    "workspaces-eodhp-test"
+    "https://{workspace_name}.{environment}.eodatahub-workspaces.org.uk/files/"
+    "workspaces-eodhp-{environment}"
 )
 PAGINATION_LIMIT = 10

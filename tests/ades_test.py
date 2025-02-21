@@ -30,7 +30,7 @@ def svc() -> Ades:
 def test_get_ades_service(svc: Ades):
     assert (
         svc.self_href
-        == f"https://test.eodatahub.org.uk/ades/{svc._client.username}/ogc-api/"
+        == f"https://staging.eodatahub.org.uk/ades/{svc._client.username}/ogc-api/"
     )
 
 
@@ -58,8 +58,9 @@ def test_process_execution(svc: Ades):
     # Deploy a process
     process = svc.deploy_process(
         cwl_url=(
-            "https://raw.githubusercontent.com/EOEPCA/deployment-guide/main/"
-            "deploy/samples/requests/processing/convert-url-app.cwl"
+            "https://raw.githubusercontent.com/EOEPCA/deployment-guide/"
+            "caaf6eb539c41ff04c7c2b47a1e01b5b7fa6e87f/deploy/samples/requests/"
+            "processing/convert-url-app.cwl"
         )
     )
     assert isinstance(process, Process)
