@@ -120,7 +120,7 @@ def test_get_cloud_product(svc: CatalogService):
     import xarray
     from ceda_datapoint.core.cloud import DataPointCloudProduct
 
-    cat = svc.get_catalog("supported-datasets/ceda-stac-catalogue")
+    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     item = collection.get_item(items[0].id)
@@ -202,8 +202,6 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
         item.update(properties={"new": "property"})
     with pytest.raises(ConformanceError):
         item.delete()
-    # with pytest.raises(ConformanceError):
-    #    _ = item.get_cloud_products()
 
 
 @patch("pyeodh.client.Client._request_json")
