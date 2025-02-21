@@ -1,49 +1,6 @@
 interactions:
 - request:
     body: null
-    headers: {}
-    method: GET
-    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/non-existent-process-id
-  response:
-    body:
-      string: "{\"title\":\"NoSuchProcess\",\"type\":\"http://www.opengis.net/def/rel/ogc/1.0/exception/no-such-process\",\"detail\":\"Unable
-        to parse the ZCFG file: non-existent-process-id.zcfg (No message provided)\"}Content-Type:
-        application/json;encoding=utf-8\r\nStatus: 400 Bad request\r\n\r\n{\"title\":\"InvalidParameterValue\",\"type\":\"InvalidParameterValue\",\"detail\":\"Unable
-        to parse the ZCFG file: non-existent-process-id.zcfg.\"}Content-Type: application/json;encoding=utf-8\r\nStatus:
-        500 Not Implemented\r\n\r\n{\"title\":\"NoApplicableCode\",\"type\":\"NoApplicableCode\",\"detail\":\"ZOO
-        Kernel failed to process your request, receiving signal 6 = SIGABRT \"}"
-    headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
-      Access-Control-Allow-Headers:
-      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - GET, PUT, POST, DELETE, PATCH, OPTIONS
-      Access-Control-Allow-Origin:
-      - '*'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '618'
-      Content-Type:
-      - text/plain; charset=utf-8
-      Date:
-      - Fri, 25 Oct 2024 06:15:38 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 c855d201fddbb6ef22989607fe8f5d1e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - wsdQsCufv6mJCpk_VZW4RzaVQGUA_z-EN8LwRgLpRZTYE0MfPNT8XQ==
-      X-Amz-Cf-Pop:
-      - VIE50-C2
-      X-Cache:
-      - Error from cloudfront
-    status:
-      code: 404
-      message: Not Found
-- request:
-    body: null
     headers:
       Accept:
       - '*/*'
@@ -54,30 +11,30 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api
+    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api
   response:
     body:
       string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
         "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel": "alternate",
-        "type": "text/html", "title": "this document", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel":
+        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
         {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/api"},
+        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api"},
         {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/api.html"}, {"rel":
-        "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api.html"},
+        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
         "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
+        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
         {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
+        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
+        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
         {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
+        by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
         {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
+        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -92,17 +49,17 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 07 Feb 2025 11:58:46 GMT
+      - Fri, 21 Feb 2025 11:58:38 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 fadd210e8fada96866356688e5524d10.cloudfront.net (CloudFront)
+      - 1.1 f631e696fd022598ec39e248ac48b192.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - vMFiDbPNWZvKMzAR98Dqapx56U__lzvDg46uJWpxDY1NTPtyYAOjSQ==
+      - BQzznb0ZkaLFmmsZCyynLrnAEePZPVTQsGaaNEMV94_dCLoNmNYdXQ==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       x-also-also-also-powered-by:
@@ -116,4 +73,48 @@ interactions:
     status:
       code: 200
       message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/non-existent-process-id
+  response:
+    body:
+      string: "{\n  \"title\": \"NoSuchProcess\",\n  \"type\": \"http://www.opengis.net/def/rel/ogc/1.0/exception/no-such-process\",\n
+        \ \"detail\": \"Unable to parse the ZCFG file: non-existent-process-id.zcfg
+        (No message provided)\"\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Origin:
+      - '*'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '205'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Fri, 21 Feb 2025 11:58:40 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 bb390afd921c223e0fe4921fbc23bbe8.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - F5qXUyqHdBFDaUTAG6sOlEpU7pOr79z2Lkju4IPqQVhLFWZ237b7rA==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Error from cloudfront
+    status:
+      code: 404
+      message: Not Found
 version: 1

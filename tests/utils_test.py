@@ -99,7 +99,7 @@ def test_remove_null_items(
             "test-workspace",
             "test",
             "data/file.txt",
-            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
+            "https://test-workspace.test.eodatahub-workspaces.org.uk/files/"
             "workspaces-eodhp-test/data/file.txt",
         ),
     ],

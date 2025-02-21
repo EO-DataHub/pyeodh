@@ -63,7 +63,7 @@ def test_upload_file_mocked(mocker: MockerFixture, workspace: Workspace) -> None
     assert spy.call_args.args[0] == "PUT"
     assert (
         spy.call_args.args[1]
-        == f"https://{workspace_name}.workspaces.test.eodhp.eco-ke-staging.com/files/"
-        f"workspaces-eodhp-test/{ws_file_path}"
+        == f"https://{workspace_name}.staging.eodatahub-workspaces.org.uk/files/"
+        f"workspaces-eodhp-staging/{ws_file_path}"
     )
     assert spy.call_args.kwargs["data"] == test_content

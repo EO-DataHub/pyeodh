@@ -1,57 +1,75 @@
 interactions:
 - request:
     body: null
-    headers: {}
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
     method: GET
-    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes
+    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api
   response:
     body:
-      string: '{"processes": [{"id": "display", "title": "Print Cheetah templates
-        as HTML", "description": "Print Cheetah templates as HTML.", "mutable": false,
-        "version": "2.0.0", "jobControlOptions": ["sync-execute", "async-execute",
-        "dismiss"], "outputTransmission": ["value", "reference"], "links": [{"rel":
-        "self", "type": "application/json", "title": "Process Description", "href":
-        "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/display"}]},
-        {"id": "echo", "title": "Echo input", "description": "Simply echo the value
-        provided as input", "mutable": false, "version": "2.0.0", "metadata": [{"title":
-        "Demo"}], "jobControlOptions": ["sync-execute", "async-execute", "dismiss"],
-        "outputTransmission": ["value", "reference"], "links": [{"rel": "self", "type":
-        "application/json", "title": "Process Description", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/echo"}]},
-        {"id": "convert-url", "title": "convert url app", "description": "Convert
-        URL YAML", "mutable": true, "version": "0.1.2", "metadata": [{"role": "https://schema.org/softwareVersion",
-        "value": "0.1.2"}], "outputTransmission": ["value", "reference"], "jobControlOptions":
-        ["async-execute", "dismiss"], "links": [{"rel": "self", "type": "application/json",
-        "title": "Process Description", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url"}]}],
-        "links": [{"rel": "self", "type": "application/json", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes"}]}'
+      string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
+        "links": [{"rel": "self", "type": "application/json", "title": "this document",
+        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel":
+        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
+        {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
+        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api"},
+        {"rel": "service-doc", "type": "text/html", "title": "the API definition",
+        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api.html"},
+        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
+        "title": "OGC API - Processes conformance classes implemented by this server",
+        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
+        {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
+        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
+        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
+        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
+        {"rel": "alternate", "type": "text/html", "title": "The processes offered
+        by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
+        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
+        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
+        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
     headers:
-      Access-Control-Allow-Credentials:
-      - 'true'
       Access-Control-Allow-Headers:
-      - DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization,Prefer
+      - Content-Type,Authorization,Prefer
       Access-Control-Allow-Methods:
-      - GET, PUT, POST, DELETE, PATCH, OPTIONS
+      - '*'
       Access-Control-Allow-Origin:
       - '*'
       Access-Control-Max-Age:
       - '1728000'
       Connection:
       - keep-alive
-      Content-Length:
-      - '1490'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 25 Oct 2024 06:15:33 GMT
+      - Fri, 21 Feb 2025 11:58:36 GMT
       Server:
       - nginx/1.27.0
+      Transfer-Encoding:
+      - chunked
       Via:
-      - 1.1 3d4555926457517be3e728d2175d92a2.cloudfront.net (CloudFront)
+      - 1.1 2a5c925255bb252ff0ed65977311f74e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - a7TQNfPY74zgif8RCFsFm06KJID6pvU_uZUCDUVkOitLkC8eMmZeIw==
+      - 6Nbgj5NjfK0ixkwFd17y3oIJhb7lNKWMPYOzgAz85d3UfrtFwvRgCw==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
+      x-also-also-also-powered-by:
+      - dru.securityOut
+      x-also-also-powered-by:
+      - dru.securityIn
+      x-also-powered-by:
+      - jwt.securityIn
+      x-powered-by:
+      - ZOO-Project-DRU
     status:
       code: 200
       message: OK
@@ -67,30 +85,23 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://test.eodatahub.org.uk/ades/figi44/ogc-api
+    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes
   response:
     body:
-      string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
-        "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel": "alternate",
-        "type": "text/html", "title": "this document", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
-        {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/api"},
-        {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/api.html"}, {"rel":
-        "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
-        "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
-        {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
-        {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
-        {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://test.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
+      string: '{"processes": [{"id": "echo", "title": "Echo input", "description":
+        "Simply echo the value provided as input", "mutable": false, "version": "2.0.0",
+        "metadata": [{"title": "Demo"}], "jobControlOptions": ["sync-execute", "async-execute",
+        "dismiss"], "outputTransmission": ["value", "reference"], "links": [{"rel":
+        "self", "type": "application/json", "title": "Process Description", "href":
+        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/echo"}], "AccessReasoning":
+        "Workspace owns this workflow"}, {"id": "convert-url", "title": "convert url
+        app", "description": "Convert URL YAML", "mutable": true, "version": "0.1.2",
+        "metadata": [{"role": "https://schema.org/softwareVersion", "value": "0.1.2"}],
+        "outputTransmission": ["value", "reference"], "jobControlOptions": ["async-execute",
+        "dismiss"], "links": [{"rel": "self", "type": "application/json", "title":
+        "Process Description", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url"}],
+        "AccessReasoning": "Workspace owns this workflow"}], "links": [{"rel": "self",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -105,27 +116,23 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 07 Feb 2025 11:58:45 GMT
+      - Fri, 21 Feb 2025 11:58:37 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 39103e0eac16074bdce5f23fa11c3dcc.cloudfront.net (CloudFront)
+      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - oKV80Atx5W9oAxZx1D-5XScVppOzM7JDqzj8fFRl-ENeCoy1rz_cGg==
+      - wHWSYFUeg6i9YIPWEi1kWPSnOPUr0EcvYmPFPXUNbY4BkvmSX44RWg==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-      x-also-also-also-powered-by:
-      - dru.securityOut
-      x-also-also-powered-by:
-      - dru.securityIn
-      x-also-powered-by:
-      - jwt.securityIn
-      x-powered-by:
-      - ZOO-Project-DRU
+      content-length:
+      - '1169'
+      vary:
+      - accept-encoding
     status:
       code: 200
       message: OK
