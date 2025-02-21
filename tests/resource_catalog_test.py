@@ -10,6 +10,8 @@ from pyeodh import consts
 from pyeodh.resource_catalog import CatalogService, Item
 from pyeodh.utils import ConformanceError
 
+CEDA_CAT_ID = "supported-datasets/catalogs/ceda-stac-catalogue"
+
 
 @pytest.fixture(scope="module")
 def vcr_config():
@@ -62,7 +64,7 @@ def test_get_catalogs_from_catalog(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collections_from_catalog(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collections = cat.get_collections()
     assert isinstance(collections, list)
     assert all(
@@ -72,14 +74,14 @@ def test_get_collections_from_catalog(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collection_from_catalog(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")
     assert collection.id == "cmip6"
 
 
 @pytest.mark.vcr
 def test_get_collection_items(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     assert isinstance(items, pyeodh.pagination.PaginatedList)
@@ -90,7 +92,7 @@ def test_get_collection_items(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collection_items_with_limit(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")
     items = collection.get_items().get_limited()
     assert len(items) == consts.PAGINATION_LIMIT
@@ -99,7 +101,7 @@ def test_get_collection_items_with_limit(svc: CatalogService):
 @pytest.mark.vcr
 @pytest.mark.skip(reason="This test is flaky and fails intermittently")
 def test_get_collection_items_total_count(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     assert isinstance(items.total_count, int)
@@ -107,7 +109,7 @@ def test_get_collection_items_total_count(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_collection_item(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     item = collection.get_item(items[0].id)
@@ -120,7 +122,7 @@ def test_get_cloud_product(svc: CatalogService):
     import xarray
     from ceda_datapoint.core.cloud import DataPointCloudProduct
 
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")
     items = collection.get_items()
     item = collection.get_item(items[0].id)
@@ -156,7 +158,7 @@ def test_get_item_from_href(svc: CatalogService):
     return_value=["https://api.stacspec.org/v1.0.0/core"],
 )
 def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+    cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")
     item = collection.get_items()[0]
     # Test Catalog methods
@@ -202,6 +204,8 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
         item.update(properties={"new": "property"})
     with pytest.raises(ConformanceError):
         item.delete()
+    # with pytest.raises(ConformanceError):
+    #    _ = item.get_cloud_products()
 
 
 @patch("pyeodh.client.Client._request_json")
