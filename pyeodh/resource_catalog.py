@@ -168,6 +168,47 @@ class Item(EodhObject):
             products, parent_id=f"{self.id}-cluster", meta={"bbox": self.bbox}
         )
 
+    def commercial_data_order(
+        self,
+        product_bundle: str,
+        workspace: str | None = None,
+        aoi: list[list[list[float]]] | None = None,
+        extra_data: dict | None = None,
+    ):
+        """Order commercial data. Available only for specific catalogs.
+
+
+        Args:
+            workspace (str, optional): The workspace to order the data from. Defaults to
+                the username pyeodh client was initialized with.
+            product_bundle (str): The product bundle to order from the commercial data
+                provider.
+            aoi (list[float] | None, optional): Coordinates to limit the AOI of the item
+                for purchase where possible. Given in the same nested format as STAC.
+                Defaults to None.
+            extra_data (dict | None, optional): A placeholder for future data options to
+                include in the item. Defaults to None.
+        """
+
+        if workspace is None:
+            workspace = self._client.username
+
+        api_url = (
+            f"/api/catalogue/manage/catalogs/user-datasets/{workspace}/commercial-data"
+        )
+        payload: dict[str, Any] = {
+            "url": self._pystac_object.self_href,
+            "product_bundle": product_bundle,
+        }
+        if aoi:
+            payload["coordinates"] = aoi
+        if extra_data:
+            payload["extra_data"] = extra_data
+
+        _, data = self._client._request_json("POST", api_url, data=payload)
+
+        logger.info(f"Commercial data ordered: {data.get('message')}")
+
 
 class Collection(EodhObject):
     _pystac_object: pystac.Collection
