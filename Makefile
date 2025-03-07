@@ -3,7 +3,11 @@ record := none
 .PHONY: install
 install:
 	ln -s $(PWD)/.pre-commit .git/hooks/pre-commit
-	poetry install
+	poetry install --all-extras
+
+.PHONY: sync
+sync:
+	poetry sync
 
 .PHONY: check
 check:
