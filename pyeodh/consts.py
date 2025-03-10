@@ -2,6 +2,7 @@ from enum import Enum
 
 
 class Environment(Enum):
+    PRODUCTION = "prod"
     STAGING = "staging"
     TEST = "test"
 

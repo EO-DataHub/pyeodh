@@ -44,7 +44,8 @@ class Client:
         """
         env = urllib.parse.urlparse(url).netloc.split(".")[0]
         logger.debug(f"Environment: {env}")
-
+        if env == "eodatahub":  # prod environment doesn't have a subdomain
+            return consts.Environment.PRODUCTION.value
         if env not in set(e.value for e in consts.Environment):
             raise ValueError(f"Invalid environment: {env}")
         return env
