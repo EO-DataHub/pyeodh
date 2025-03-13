@@ -11,30 +11,30 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api
   response:
     body:
       string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
         "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel":
-        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/"}, {"rel":
+        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/index.html"},
         {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api"},
+        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api"},
         {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
         "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance"},
         {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
+        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
+        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes"},
         {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
+        by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"},
         {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
+        "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs.html"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -49,15 +49,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 12:00:01 GMT
+      - Thu, 13 Mar 2025 13:32:20 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 f18b0bd4a5b62e5fb49428cc4789689e.cloudfront.net (CloudFront)
+      - 1.1 6ec6c63eb2f7ec00507af95b1621674c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - hPs6IfDGPAkk9PL295HzQhh8ghDRG07rd6mqHJma2wq-wxX5bOaHCw==
+      - 1EI7_pPmfdW4pTvGXG2zrabdEA0we9dvNOHt9k9x-QTi9hSzdZdQsA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -85,35 +85,19 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs?limit=10
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs?limit=10
   response:
     body:
-      string: '{"jobs": [{"jobID": "58093494-f044-11ef-a256-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:09:40.514Z",
-        "started": "2025-02-21T11:09:40.514Z", "finished": "2025-02-21T11:11:09.528Z",
-        "updated": "2025-02-21T11:11:08.907Z", "status": "successful", "message":
+      string: '{"jobs": [{"jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "finished": "2025-03-13T13:32:15.994Z",
+        "updated": "2025-03-13T13:32:15.785Z", "status": "successful", "message":
         "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
-        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/58093494-f044-11ef-a256-ca3e8cd28499"},
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"},
         {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
-        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/58093494-f044-11ef-a256-ca3e8cd28499/results"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-58093494-f044-11ef-a256-ca3e8cd28499/convert.log",
-        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-58093494-f044-11ef-a256-ca3e8cd28499/node_stage_out.log",
-        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
-        {"jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type": "process", "processID":
-        "convert-url", "created": "2025-02-21T11:58:54.995Z", "started": "2025-02-21T11:58:54.995Z",
-        "finished": "2025-02-21T11:59:57.307Z", "updated": "2025-02-21T11:59:56.801Z",
-        "status": "successful", "message": "ZOO-Kernel successfully run your service!",
-        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"},
-        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
-        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499/results"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-391b59a2-f04b-11ef-aa81-ca3e8cd28499/convert.log",
-        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-391b59a2-f04b-11ef-aa81-ca3e8cd28499/node_stage_out.log",
-        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]}],
-        "links": [{"rel": "self", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs"}],
-        "numberTotal": 2}'
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31/results"}]}],
+        "links": [{"rel": "self", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"}],
+        "numberTotal": 1}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -125,26 +109,22 @@ interactions:
       - '1728000'
       Connection:
       - keep-alive
+      Content-Length:
+      - '928'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 12:00:03 GMT
+      - Thu, 13 Mar 2025 13:32:20 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
-      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
+      - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Uo_Yxpd3V3idrVHAPV1H20z8OIQXdRmVlRdwPE_xFJkoJrfCnenUJQ==
+      - eQ_R9hzvAZZdV9PSstOUze352uggujos8JV7aWabPVS_w3fVb4yFfQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-      content-length:
-      - '2483'
-      vary:
-      - accept-encoding
     status:
       code: 200
       message: OK
@@ -160,21 +140,17 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/58093494-f044-11ef-a256-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"jobID": "58093494-f044-11ef-a256-ca3e8cd28499", "type": "process",
-        "processID": "convert-url", "created": "2025-02-21T11:09:40.514Z", "started":
-        "2025-02-21T11:09:40.514Z", "finished": "2025-02-21T11:11:09.528Z", "updated":
-        "2025-02-21T11:11:08.907Z", "status": "successful", "message": "ZOO-Kernel
+      string: '{"jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type": "process",
+        "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z", "started":
+        "2025-03-13T13:30:53.935Z", "finished": "2025-03-13T13:32:15.994Z", "updated":
+        "2025-03-13T13:32:15.785Z", "status": "successful", "message": "ZOO-Kernel
         successfully run your service!", "links": [{"title": "Status location", "rel":
-        "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/58093494-f044-11ef-a256-ca3e8cd28499"},
+        "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"},
         {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
-        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/58093494-f044-11ef-a256-ca3e8cd28499/results"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-58093494-f044-11ef-a256-ca3e8cd28499/convert.log",
-        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-58093494-f044-11ef-a256-ca3e8cd28499/node_stage_out.log",
-        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]}'
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31/results"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -186,26 +162,22 @@ interactions:
       - '1728000'
       Connection:
       - keep-alive
+      Content-Length:
+      - '767'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 12:00:04 GMT
+      - Thu, 13 Mar 2025 13:32:21 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
-      - 1.1 cb11ca2ff3db5adbe7df4bca70e51594.cloudfront.net (CloudFront)
+      - 1.1 32f35b6a71829a460d6fdae31f270164.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - PDlrbzvMwWMaF3OLIYvrPdV4OOBVb0x0ho2RwloXl0jwiZ59mpc52w==
+      - hSFS2F9NYMR0-COmEDaE7xbHMHM11mSMXjnl2kCiszLuJaKeRYoctw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-      content-length:
-      - '1163'
-      vary:
-      - accept-encoding
     status:
       code: 200
       message: OK

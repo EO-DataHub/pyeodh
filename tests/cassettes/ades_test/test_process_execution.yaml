@@ -11,30 +11,30 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api
   response:
     body:
       string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
         "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel":
-        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/"}, {"rel":
+        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/index.html"},
         {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api"},
+        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api"},
         {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
         "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance"},
         {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
+        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
+        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes"},
         {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
+        by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"},
         {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
+        "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs.html"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -49,15 +49,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:41 GMT
+      - Thu, 13 Mar 2025 13:30:46 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 cb11ca2ff3db5adbe7df4bca70e51594.cloudfront.net (CloudFront)
+      - 1.1 0bb58964819755c192fe9c24c342bd1a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 3WRFEgBA2mIi0Rs4Owo48ezDKcgDF6E54qKnYOWHM09U4cffNcBAkA==
+      - f1VOO7nNuMLpENsyMUZmaYdl1tlFacc97et8WaRcN40pgesHETJAgw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -85,117 +85,38 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url
   response:
     body:
-      string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
-        \ \"description\": \"Convert URL YAML\",\n  \"mutable\": true,\n  \"version\":
-        \"0.1.2\",\n  \"metadata\": [\n    {\n      \"role\": \"https://schema.org/softwareVersion\",\n
-        \     \"value\": \"0.1.2\"\n    }\n  ],\n  \"outputTransmission\": [\n    \"value\",\n
-        \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
-        \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
-        \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
-        \     \"href\": \"https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
-        \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
-        to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
-        {\n        \"type\": \"string\"\n      }\n    },\n    \"size\": {\n      \"title\":
-        \"the percentage for a resize operation\",\n      \"description\": \"the percentage
-        for a resize operation\",\n      \"schema\": {\n        \"type\": \"string\"\n
-        \     }\n    },\n    \"url\": {\n      \"title\": \"the image to convert\",\n
-        \     \"description\": \"the image to convert\",\n      \"schema\": {\n        \"type\":
-        \"string\"\n      }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\":
-        {\n      \"title\": \"converted_image\",\n      \"description\": \"None\",\n
-        \     \"extended-schema\": {\n        \"oneOf\": [\n          {\n            \"allOf\":
-        [\n              {\n                \"$ref\": \"http://zoo-project.org/dl/link.json\"\n
-        \             },\n              {\n                \"type\": \"object\",\n
-        \               \"properties\": {\n                  \"type\": {\n                    \"enum\":
-        [\n                      \"application/json\"\n                    ]\n                  }\n
-        \               }\n              }\n            ]\n          },\n          {\n
-        \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
-        \           ],\n            \"properties\": {\n              \"value\": {\n
-        \               \"oneOf\": [\n                  {\n                    \"type\":
-        \"object\"\n                  }\n                ]\n              }\n            }\n
-        \         }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
-        [\n          {\n            \"type\": \"object\"\n          }\n        ]\n
-        \     }\n    }\n  }\n}"
+      string: "{\n  \"title\": \"NoSuchProcess\",\n  \"type\": \"http://www.opengis.net/def/rel/ogc/1.0/exception/no-such-process\",\n
+        \ \"detail\": \"Unable to parse the ZCFG file: convert-url.zcfg (No message
+        provided)\"\n}"
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
       Access-Control-Allow-Origin:
       - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:58:43 GMT
-      Server:
-      - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
-      Via:
-      - 1.1 1f98172ca4214b0e937b7d3d534b34cc.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - TABjxDSdfKLnjvKuTdSqbrM29RKBdDwYLdQBmiSQYvNLQXzr6g42Lg==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-      content-length:
-      - '2178'
-      vary:
-      - accept-encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
-      - '0'
-      User-Agent:
-      - python-requests/2.32.3
-    method: DELETE
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
-  response:
-    body:
-      string: ''
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
+      - '193'
+      Content-Type:
+      - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:44 GMT
+      - Thu, 13 Mar 2025 13:30:47 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 9ed2eeec8748ea461af0d1cbf998da0e.cloudfront.net (CloudFront)
+      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - XxHoga5X62j_yZ_Selu1piJ4vvpbwA9Fn7OAO-uFTMuMEZ7I03h9tQ==
+      - JWI4sFJWMxwhXNYeYzQ3lw6C4dl7WeLWiMhmpKWt-M2arxP9JuCJKA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
-      - Miss from cloudfront
+      - Error from cloudfront
     status:
-      code: 204
-      message: No Content
+      code: 404
+      message: Not Found
 - request:
     body: '{"executionUnit": {"href": "https://raw.githubusercontent.com/EOEPCA/deployment-guide/caaf6eb539c41ff04c7c2b47a1e01b5b7fa6e87f/deploy/samples/requests/processing/convert-url-app.cwl",
       "type": "application/cwl"}}'
@@ -213,7 +134,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: POST
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes
   response:
     body:
       string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
@@ -223,7 +144,7 @@ interactions:
         \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
         \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
         \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
-        \     \"href\": \"https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \     \"href\": \"https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url/execution\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -237,23 +158,23 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '625'
+      - '631'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:47 GMT
+      - Thu, 13 Mar 2025 13:30:49 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 a60a14dea4b4a9f77d34297a625f2e24.cloudfront.net (CloudFront)
+      - 1.1 9ed2eeec8748ea461af0d1cbf998da0e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - V4q5trG-FVWyUOF1eQO0ZEXZUDQpGtfr4K8Zg6hPPD_-QztYzjvw6A==
+      - tN7GD_6YgK8QdQwRQJBayTxDSZKehhqltuOUXEOVMJYeWbOsBzWWUQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       location:
-      - https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+      - https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url
     status:
       code: 201
       message: Created
@@ -269,7 +190,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url
   response:
     body:
       string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
@@ -279,7 +200,7 @@ interactions:
         \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
         \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
         \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
-        \     \"href\": \"https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \     \"href\": \"https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url/execution\"\n
         \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
         to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
         {\n        \"type\": \"string\",\n        \"default\": \"resize\",\n        \"nullable\":
@@ -318,21 +239,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:48 GMT
+      - Thu, 13 Mar 2025 13:30:50 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 b9288402a0a891e0bbaca832ecabae60.cloudfront.net (CloudFront)
+      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - l1xaP2WL06NIDcsM__aJ8rBJ2V0UC-76D27FqjVRLP3bvEjEmrC70Q==
+      - 8zgS4doJgir6u-_LsDsC3TktDOVh0CNI7rvHjljcIn5lkvemZfm0Ug==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       content-length:
-      - '2390'
+      - '2396'
       vary:
       - accept-encoding
     status:
@@ -350,7 +271,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url
   response:
     body:
       string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
@@ -360,7 +281,7 @@ interactions:
         \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
         \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
         \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
-        \     \"href\": \"https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \     \"href\": \"https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url/execution\"\n
         \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
         to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
         {\n        \"type\": \"string\",\n        \"default\": \"resize\",\n        \"nullable\":
@@ -399,21 +320,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:49 GMT
+      - Thu, 13 Mar 2025 13:30:50 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 b9288402a0a891e0bbaca832ecabae60.cloudfront.net (CloudFront)
+      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - T5Tu5ncdl1IY-yUbbSq-ET3n7xng9RXVfkXmawS0VfS3-TtyGGVrlw==
+      - 58Vs79U6EyQae5Uc83O3m_tTywBuIPxCKOugtK474WCHn7aWJXgHVw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       content-length:
-      - '2390'
+      - '2396'
       vary:
       - accept-encoding
     status:
@@ -455,7 +376,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: PUT
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url
   response:
     body:
       string: ''
@@ -471,19 +392,19 @@ interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 21 Feb 2025 11:58:52 GMT
+      - Thu, 13 Mar 2025 13:30:52 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 bb390afd921c223e0fe4921fbc23bbe8.cloudfront.net (CloudFront)
+      - 1.1 8197d89da72990bb606996d5e7c73ab6.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - kEjn7Oy-_Qf8pf6j0sCaP9RSGxTNNuA_avUnBA95Ob-1qO2ltyTkvQ==
+      - KzCKyEmfrjrKMLCk5WiTsjsfCcI1ooiCJWN85vgc_39eg2CXu4oDaA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       location:
-      - https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+      - https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url
       x-also-also-also-powered-by:
       - dru.securityOut
       x-also-also-powered-by:
@@ -507,7 +428,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url
   response:
     body:
       string: "{\n  \"id\": \"convert-url\",\n  \"title\": \"convert url app\",\n
@@ -517,7 +438,7 @@ interactions:
         \   \"reference\"\n  ],\n  \"jobControlOptions\": [\n    \"async-execute\",\n
         \   \"dismiss\"\n  ],\n  \"links\": [\n    {\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/execute\",\n
         \     \"type\": \"application/json\",\n      \"title\": \"Execute End Point\",\n
-        \     \"href\": \"https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution\"\n
+        \     \"href\": \"https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url/execution\"\n
         \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
         to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
         {\n        \"type\": \"string\"\n      }\n    },\n    \"size\": {\n      \"title\":
@@ -554,21 +475,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:53 GMT
+      - Thu, 13 Mar 2025 13:30:53 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 e14614617e85116e937d5168b35a94de.cloudfront.net (CloudFront)
+      - 1.1 d5da174e34f35b7d1482b8432bf7e084.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - hz0Bmb0ICwuT7h9pcYqV_RUmn5aHxmxuS7d55yz_hhUeKvGw9IiCDA==
+      - qWbC1fubhK7C1LhojgyMleiL64OLcXmzivD2Vh28cmtND5Dj7nhopQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       content-length:
-      - '2178'
+      - '2184'
       vary:
       - accept-encoding
     status:
@@ -576,7 +497,7 @@ interactions:
       message: OK
 - request:
     body: '{"inputs": {"fn": "resize", "url": "https://eoepca.org/media_portal/images/logo6_med.original.png",
-      "size": "50%", "workspace": "figi44"}}'
+      "size": "50%", "workspace": "oxidian-test"}}'
     headers:
       Accept:
       - '*/*'
@@ -585,7 +506,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '138'
+      - '144'
       Content-Type:
       - application/json
       Prefer:
@@ -593,16 +514,16 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: POST
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url/execution
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/convert-url/execution
   response:
     body:
-      string: "{\n  \"jobID\": \"391b59a2-f04b-11ef-aa81-ca3e8cd28499\",\n  \"type\":
-        \"process\",\n  \"processID\": \"convert-url\",\n  \"created\": \"2025-02-21T11:58:54.995Z\",\n
-        \ \"started\": \"2025-02-21T11:58:54.995Z\",\n  \"updated\": \"2025-02-21T11:58:54.995Z\",\n
+      string: "{\n  \"jobID\": \"6317aba6-000f-11f0-aebf-925b27b1cd31\",\n  \"type\":
+        \"process\",\n  \"processID\": \"convert-url\",\n  \"created\": \"2025-03-13T13:30:53.935Z\",\n
+        \ \"started\": \"2025-03-13T13:30:53.935Z\",\n  \"updated\": \"2025-03-13T13:30:53.935Z\",\n
         \ \"status\": \"running\",\n  \"message\": \"ZOO-Kernel accepted to run your
         service!\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
         \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499\"\n
+        \"https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -618,21 +539,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:55 GMT
+      - Thu, 13 Mar 2025 13:30:54 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 9b9ab8e6e595847652a9158c684a8926.cloudfront.net (CloudFront)
+      - 1.1 77d19519a1c9ed821ab469548b9d17f4.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 78grjX27fEhdypeJ8AQ5XiXHu0TuFVWu5wrQKhdZwDt8ONityhCk-Q==
+      - QFxLgSUPAG8IoPIlbs0qkHvqiCO6h7AX4kBQjCm6vduMulMd4OP4pQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       location:
-      - https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+      - https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
       preference-applied:
       - respond-async
       x-also-also-also-powered-by:
@@ -658,14 +579,15 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"progress": 20, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:58:56.691Z",
-        "status": "running", "message": "upload required files", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -678,267 +600,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '479'
+      - '513'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:56 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 32f35b6a71829a460d6fdae31f270164.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - AbjZWhf2AFVbbSf5Hq0OjZAVtfF5DBYfx1CDBrzwO5lR8ajTYqk6xA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 20, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:58:56.691Z",
-        "status": "running", "message": "upload required files", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '479'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:00 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 f3303a5632dc925c26253530523fa328.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - hFBuBFmMEGA718E6h6LbWvYWYiGx4TcUuB8dof-b_N-m8FWgiq9yXw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 20, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:58:56.691Z",
-        "status": "running", "message": "upload required files", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '479'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:03 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 d19bc25644fc0cb24d9e1c2cb87755ca.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - zadT0Amj3LsBfXsnKutlKaPh_euEKQiOOLXujuVpVbo9nuGo8MO5Gg==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 20, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:58:56.691Z",
-        "status": "running", "message": "upload required files", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '479'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:06 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 1f7383179aa19c47a962c46236696426.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - NFM-MTJnLpD_kq_2P5svUUzpRCV-DXtjV2nxHWTSk8VO_BcKqWyyMw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 20, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:58:56.691Z",
-        "status": "running", "message": "upload required files", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '479'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:09 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 6fc3cae9692b6db972e4990be9921fae.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - ipyw7JughPdVO4gmIOcl9B523Xyav6KKjrl68E31n0B9R4P1PbdugA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 20, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:58:56.691Z",
-        "status": "running", "message": "upload required files", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '479'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:12 GMT
+      - Thu, 13 Mar 2025 13:30:55 GMT
       Server:
       - nginx/1.27.0
       Via:
       - 1.1 0bb58964819755c192fe9c24c342bd1a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - iTlMKwKwKZeYV4LbB4bEwgyk_LBeZXHbIdaIiVYvNxFxGvaD3nTMtw==
+      - GbbFJnEG9czs6BzI5q5P-RclkJkvj5g4LUiLmXchGWNNl7cu24hJYw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -958,515 +630,15 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:14 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 7bb80b5d9f75710222feac15033d6af0.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - LoV297gxcnQnXvZuu3uAxiUqO0-g17mh3S8MSjSOFmA9HYoGXiO4YQ==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:17 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 e14614617e85116e937d5168b35a94de.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - 1_4q0x7CEge0E0Tb9Jr0jnxh7Jr-7TAypEzR4IKnWVS8vjXR3loV9Q==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:20 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 168125097acf734cd7750e139a974b38.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - ONJEAFWwzAUs100rCHmnxPevrtotqNrIuA87cNWOeK2YhT5ecPAo2g==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:23 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 0c8bf5614b4bcc3e76982cb7ff9a7662.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - k7CRTUv1xrfeweCE_K6bf73B5oq6ziXNxljDzqwRPshGMmkPFHwWBQ==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:26 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 2a5c925255bb252ff0ed65977311f74e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - aLkzsP6BPw2sMGApNsXY7MZEMbDIfYbxvgDgUJqsUVUWd_lgyVTBcA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:29 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 d5da174e34f35b7d1482b8432bf7e084.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - Zl4jdYVqpDMNAqd341ytx1g0kwS5dlNPVmiTJDl2chAe00a7DjkRxA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:31 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 d19bc25644fc0cb24d9e1c2cb87755ca.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - dX7SCCjChjVGf_6DwjCF87G4UjvroPYfnImaau9f9sQM0d61Xy19CA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:34 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 bb390afd921c223e0fe4921fbc23bbe8.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - t30bUjFzbVjwsEbyLeafzBw6Aekhn_7mudCn8F_Wmt52uBWKMBTyiw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:37 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 d05dc840d6cf3901928326ad8b6d38c2.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - uGiFY_GFQMOtC_P26bMEDjKvzxKiLHuRQXYHpA0LGFlF0jHgDN5S9w==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 23, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:12.050Z",
-        "status": "running", "message": "execution submitted", "links": [{"title":
-        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '477'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Fri, 21 Feb 2025 11:59:40 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 badae0844eca8f0bad6677607d947120.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - nDvPVuS-Wx-gtJWQTYP9tEFqf7FzthuOSNv3TNWJwf4hAri82dptGQ==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
-  response:
-    body:
-      string: '{"progress": 90, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:42.270Z",
-        "status": "running", "message": "delivering outputs, logs and usage report",
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
         "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -1479,17 +651,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '499'
+      - '513'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:59:43 GMT
+      - Thu, 13 Mar 2025 13:30:57 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 8197d89da72990bb606996d5e7c73ab6.cloudfront.net (CloudFront)
+      - 1.1 77d19519a1c9ed821ab469548b9d17f4.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - O9SkH2YcexQp3TPTSth_R2xw8nQVk7YX2wqSp8mmnsWeju8nvqYFvg==
+      - HdHBhoi5mUKvyA0veEdnkeIwD27p6ognGyZpgk1J881emBDAFLA_fg==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1509,15 +681,15 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"progress": 90, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:42.270Z",
-        "status": "running", "message": "delivering outputs, logs and usage report",
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
         "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -1530,17 +702,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '499'
+      - '513'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:59:46 GMT
+      - Thu, 13 Mar 2025 13:31:00 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 4bc1976da553dde6dd59c4ea33001b72.cloudfront.net (CloudFront)
+      - 1.1 6fc3cae9692b6db972e4990be9921fae.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 6j_HnJCrzntscNUKObaIDc-ITzKbea1fbVvU1idtyfs_N5uPiOMbAQ==
+      - M7INAJeUbg1tope82-pXvq02Mz9A5EuvbCXc0YuFuu_NMUUfoLSJTg==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1560,15 +732,15 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"progress": 90, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:42.270Z",
-        "status": "running", "message": "delivering outputs, logs and usage report",
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
         "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -1581,17 +753,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '499'
+      - '513'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:59:49 GMT
+      - Thu, 13 Mar 2025 13:31:02 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 4614c36172b2854b1e1e94af37435c8e.cloudfront.net (CloudFront)
+      - 1.1 79ba346413d83ce62db11c8d0b05c22c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - a2YG0RSk1W42XtxW55zsw4v2udxr_9K5HaDugo9WN40C2_M0kdi9Og==
+      - Uo5iDcLsGpRtRxEfRIOtiLZ2z3yYeBjSigtcpULwTaaiyFLrdr6ysQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1611,15 +783,15 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"progress": 90, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:42.270Z",
-        "status": "running", "message": "delivering outputs, logs and usage report",
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
         "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -1632,17 +804,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '499'
+      - '513'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:59:52 GMT
+      - Thu, 13 Mar 2025 13:31:05 GMT
       Server:
       - nginx/1.27.0
       Via:
-      - 1.1 4614c36172b2854b1e1e94af37435c8e.cloudfront.net (CloudFront)
+      - 1.1 5a9253ffd4a04a82b061e7ef23f713d4.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - hLm-MkiStqjgLbDf4apEcLVgonqcx2sun65D_71Q0e6E99v5RNLDtA==
+      - rsEIosKEmH4skwQuDKVjVLl5kOyoXQ5pHlVgWyTnyFlrath-VXIDwQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1662,15 +834,15 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"progress": 90, "jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type":
-        "process", "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z",
-        "started": "2025-02-21T11:58:54.995Z", "updated": "2025-02-21T11:59:42.270Z",
-        "status": "running", "message": "delivering outputs, logs and usage report",
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
         "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"}]}'
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -1683,17 +855,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '499'
+      - '513'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:59:54 GMT
+      - Thu, 13 Mar 2025 13:31:07 GMT
       Server:
       - nginx/1.27.0
       Via:
       - 1.1 b5f551be30f63eca57ca04273cb75994.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 1SxHFLmgmLXVt5s1dkrQvVy_uu_4ub47IwyU08HkFLS_0K4yx5kz5g==
+      - YRZbG8QkvSCkmWJ0JhsdxtUvyX0KobFO-P57k0CJDlSeZyZka-vx8w==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1713,21 +885,15 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
   response:
     body:
-      string: '{"jobID": "391b59a2-f04b-11ef-aa81-ca3e8cd28499", "type": "process",
-        "processID": "convert-url", "created": "2025-02-21T11:58:54.995Z", "started":
-        "2025-02-21T11:58:54.995Z", "finished": "2025-02-21T11:59:57.307Z", "updated":
-        "2025-02-21T11:59:56.801Z", "status": "successful", "message": "ZOO-Kernel
-        successfully run your service!", "links": [{"title": "Status location", "rel":
-        "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499"},
-        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
-        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs/391b59a2-f04b-11ef-aa81-ca3e8cd28499/results"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-391b59a2-f04b-11ef-aa81-ca3e8cd28499/convert.log",
-        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
-        {"href": "https://staging.eodatahub.org.uk/ades/figi44/temp/convert-url-391b59a2-f04b-11ef-aa81-ca3e8cd28499/node_stage_out.log",
-        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]}'
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -1739,26 +905,1382 @@ interactions:
       - '1728000'
       Connection:
       - keep-alive
+      Content-Length:
+      - '513'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:59:57 GMT
+      - Thu, 13 Mar 2025 13:31:10 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
-      - 1.1 a198ea04052d45eb515f27260bc6c05c.cloudfront.net (CloudFront)
+      - 1.1 2a9856881d192b485d1bf1928e98c7ec.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - F5C6A3NV8RcuQWzRwvv0lgCpXgcmlaSKNLkSWSd6J7w61CxRHy0xqQ==
+      - bO-mDvtqzinVueLxXxFOPeG_FYRkJhzq0QHACmUcFhza0hpR8Ky1KQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-      content-length:
-      - '1163'
-      vary:
-      - accept-encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '513'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:12 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 77d19519a1c9ed821ab469548b9d17f4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - u9F9IQcZCKOx4r3NqfIvebBaZ-rDJ147HfMqSMpbVM8rR3D9aMPFJg==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '513'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:15 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 f3303a5632dc925c26253530523fa328.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 5ubFVYBWbEPfbDETl3OYi42f1Qo9TWMkCaxlvwxDJA3wI0diSy04pQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '513'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:17 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 f631e696fd022598ec39e248ac48b192.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Uocue2R8ZszRnodoilWW4RTuOHDDOJthx4WXLLPbPpvndrKsgrf2Gw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 10, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:30:54.950Z",
+        "status": "running", "message": "workflow wrapped, creating processing environment",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '513'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:20 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 d19bc25644fc0cb24d9e1c2cb87755ca.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 1_m5XekaMcRye_O9pXZXqj_M1NsTv04Nm4dfnQxcqS3s4c4Nnwit_g==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 20, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:20.483Z",
+        "status": "running", "message": "upload required files", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '485'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:22 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 d05dc840d6cf3901928326ad8b6d38c2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - YFmZeYPLWFTb1xcAW9bqQMKjOinTTgwtlZNGoooVN6uyUaJPIcA5Ig==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 20, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:20.483Z",
+        "status": "running", "message": "upload required files", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '485'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:25 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 1f98172ca4214b0e937b7d3d534b34cc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - kXlMYUrqmEbdgnXDv3tX7JSgUcdGHQF6DHhznFmRtKQ2CN4kdtMNGw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 20, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:20.483Z",
+        "status": "running", "message": "upload required files", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '485'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:27 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 f18b0bd4a5b62e5fb49428cc4789689e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 7RW3x0ldSPepkEZyCiPDRJyVLvlJsyOD5yuFYxxyEucAK5jWaU8Qxw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 20, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:20.483Z",
+        "status": "running", "message": "upload required files", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '485'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:30 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 a60a14dea4b4a9f77d34297a625f2e24.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - BkHpRyixAnt7a7Piqv4J6wvpTF3s-YzKKVkH6OI2PSa14I349rq6lQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 20, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:20.483Z",
+        "status": "running", "message": "upload required files", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '485'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:32 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 d5da174e34f35b7d1482b8432bf7e084.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - o6W8CkF6qaYYL--L7ISjdT5J_cb93zrehwASVwwOpADNYmuT3UqJMQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 20, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:20.483Z",
+        "status": "running", "message": "upload required files", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '485'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:35 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 3544838dca6112dd616da017a568e76a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 44ZeedTEDAGLKiGSzza_TI37MKrz7ZrrofOu5PWRfdhR4TFNWUlbHw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:38 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 f3303a5632dc925c26253530523fa328.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - L5xZ--yLzkdshXqd8Pmfak1eKD-eA2ZDRDCtcx0RkG0huwH6X91BaQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:40 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 9b9ab8e6e595847652a9158c684a8926.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - p1DTiODyRwx86DcUZGAUMO1QG-7MN8LCeovwo9Iu0oMbU4Gv13xO1w==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:43 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 db66f1cc00a415c34c42ad011b26850c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - uxEOGid037ui9qhjShiWwkbxFHeMlCa3bC2eGTbx4LvsK5kJE2l5VQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:45 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 7bb80b5d9f75710222feac15033d6af0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - L_J2pxTqVX_eGgn0qI6jCP-SLqL5GaGAxiSCjDh1A9DnucsDNEgBaA==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:47 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 79ba346413d83ce62db11c8d0b05c22c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - EY7j6s3YiHCMNj9UtP_p8MX8x2O9CbtADVf_4lPejq58SfuEEa_BQw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:50 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 5a9253ffd4a04a82b061e7ef23f713d4.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - gFtfHq3mXYNXdHE0PsjuOMVmSnisD6O40CQlu8YFx83vqwWYyUz0-w==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:52 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 b5f551be30f63eca57ca04273cb75994.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - LdAmaiodtLgHISNr-RYFxTOiRSAKjwn5zErT5IvzooYYmAA00cVrlg==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:55 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 7UTxTKerN9rYr3e7N7EuLIRbaPfT0X_J2dC6EP8Loa2fVBAx7KFi9A==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:31:58 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 a1c66294cb416b399374a845b97656d2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - _M6IIqYwuXao2ONhBXIvC0OMcBJZ-_LHTniqvcJssqKbl71CzbJwrw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:00 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 9ed2eeec8748ea461af0d1cbf998da0e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - oN57w6HdQmm4T49xBYnjk73SCMVe3pP1XpzpxLwdvELcA1ah9gUDrw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:03 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 2a9856881d192b485d1bf1928e98c7ec.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - HzmLcaXRtr5nU2QdRHhONLbzxS0PvMqZtMaFWFnMG76GPTwVfgE9lA==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 23, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:31:35.710Z",
+        "status": "running", "message": "execution submitted", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:05 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 32f35b6a71829a460d6fdae31f270164.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Fv2mbMpg5mPyxGNPeXzOXtmbvwaWaqUjXVOXAPuvtwOSoMdqkHtO9A==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 90, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:32:05.876Z",
+        "status": "running", "message": "delivering outputs, logs and usage report",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '505'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:08 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 9ed2eeec8748ea461af0d1cbf998da0e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - d1s48zSuPoG8TPRFxWESFeibEzBvU8oFHn3IvoL_lRmv8WuN7g4xFA==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 90, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:32:05.876Z",
+        "status": "running", "message": "delivering outputs, logs and usage report",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '505'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:10 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 cb11ca2ff3db5adbe7df4bca70e51594.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - -B17PeVXwF7Q-DN5gaQd81BF_zhjuLnEWX5mdfwwrDhkgbTDdgI9Iw==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 90, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:32:05.876Z",
+        "status": "running", "message": "delivering outputs, logs and usage report",
+        "links": [{"title": "Status location", "rel": "monitor", "type": "application/json",
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '505'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:13 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - NkT6-AZzvs11yV6q_PO4ne3Q6RClbGUW62lliYROqUJsjTQUZLqM0Q==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"progress": 97, "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
+        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+        "started": "2025-03-13T13:30:53.935Z", "updated": "2025-03-13T13:32:15.785Z",
+        "status": "running", "message": "Post-execution hook", "links": [{"title":
+        "Status location", "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '483'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:15 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 8VYHrTRSHqOz3ryHwi6T6TG8rSHCnCssQNRKZ83XGeZFsS30M69_KQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
+  response:
+    body:
+      string: '{"jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type": "process",
+        "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z", "started":
+        "2025-03-13T13:30:53.935Z", "finished": "2025-03-13T13:32:15.994Z", "updated":
+        "2025-03-13T13:32:15.785Z", "status": "successful", "message": "ZOO-Kernel
+        successfully run your service!", "links": [{"title": "Status location", "rel":
+        "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31/results"}]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '767'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Thu, 13 Mar 2025 13:32:18 GMT
+      Server:
+      - nginx/1.27.0
+      Via:
+      - 1.1 2a5c925255bb252ff0ed65977311f74e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 467pgZDRYLe96J6d7wKLw1O3Zh9aZwCWX0X1zU3Gr95TekpqzRtWjQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
     status:
       code: 200
       message: OK

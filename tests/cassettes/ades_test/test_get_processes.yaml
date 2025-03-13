@@ -11,30 +11,30 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api
   response:
     body:
       string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
         "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel":
-        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/"}, {"rel":
+        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/index.html"},
         {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api"},
+        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api"},
         {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
         "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance"},
         {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
+        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
+        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes"},
         {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
+        by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"},
         {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
+        "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs.html"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -49,15 +49,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:36 GMT
+      - Thu, 13 Mar 2025 13:30:44 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 2a5c925255bb252ff0ed65977311f74e.cloudfront.net (CloudFront)
+      - 1.1 b9288402a0a891e0bbaca832ecabae60.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 6Nbgj5NjfK0ixkwFd17y3oIJhb7lNKWMPYOzgAz85d3UfrtFwvRgCw==
+      - myvBF381mpZZnjILeV7yqxgLl2fWO8n-9nHdU3Tc1B-P6d_Eikxi4g==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -85,7 +85,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes
   response:
     body:
       string: '{"processes": [{"id": "echo", "title": "Echo input", "description":
@@ -93,15 +93,9 @@ interactions:
         "metadata": [{"title": "Demo"}], "jobControlOptions": ["sync-execute", "async-execute",
         "dismiss"], "outputTransmission": ["value", "reference"], "links": [{"rel":
         "self", "type": "application/json", "title": "Process Description", "href":
-        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/echo"}], "AccessReasoning":
-        "Workspace owns this workflow"}, {"id": "convert-url", "title": "convert url
-        app", "description": "Convert URL YAML", "mutable": true, "version": "0.1.2",
-        "metadata": [{"role": "https://schema.org/softwareVersion", "value": "0.1.2"}],
-        "outputTransmission": ["value", "reference"], "jobControlOptions": ["async-execute",
-        "dismiss"], "links": [{"rel": "self", "type": "application/json", "title":
-        "Process Description", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes/convert-url"}],
+        "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/echo"}],
         "AccessReasoning": "Workspace owns this workflow"}], "links": [{"rel": "self",
-        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"}]}'
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -113,26 +107,22 @@ interactions:
       - '1728000'
       Connection:
       - keep-alive
+      Content-Length:
+      - '656'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:37 GMT
+      - Thu, 13 Mar 2025 13:30:45 GMT
       Server:
       - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
       Via:
-      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
+      - 1.1 93fcd07b66eaf26b036f14e2ec9d73ea.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - wHWSYFUeg6i9YIPWEi1kWPSnOPUr0EcvYmPFPXUNbY4BkvmSX44RWg==
+      - atWxHPHa4JtPET0ha89MBWsAntqhSj7Zxxh1fESmhmdfHjqJRHx7LA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-      content-length:
-      - '1169'
-      vary:
-      - accept-encoding
     status:
       code: 200
       message: OK

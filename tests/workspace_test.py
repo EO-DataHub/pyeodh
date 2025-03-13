@@ -1,7 +1,5 @@
-import os
 from typing import Union
 
-import dotenv
 import pytest
 from pytest_mock import MockerFixture
 
@@ -18,11 +16,8 @@ def vcr_config():
 
 
 @pytest.fixture
-def workspace() -> Workspace:
-    dotenv.load_dotenv()
-    username = os.getenv("ADES_USER", "figi44")
-    token = os.getenv("ADES_TOKEN", "test_token")
-    return pyeodh.Client(username=username, token=token).workspace
+def workspace(api_token: str, username: str) -> Workspace:
+    return pyeodh.Client(username=username, token=api_token).workspace
 
 
 @pytest.mark.vcr

@@ -11,30 +11,30 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/figi44/ogc-api
+    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api
   response:
     body:
       string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
         "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/"}, {"rel":
-        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/index.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/"}, {"rel":
+        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/index.html"},
         {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api"},
+        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api"},
         {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/api.html"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
         "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance"},
+        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance"},
         {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/conformance.html"},
+        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes"},
+        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes"},
         {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/processes.html"},
+        by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes.html"},
         {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs"},
+        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"},
         {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://staging.eodatahub.org.uk/ades/figi44/ogc-api/jobs.html"}]}'
+        "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs.html"}]}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -49,15 +49,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Fri, 21 Feb 2025 11:58:34 GMT
+      - Thu, 13 Mar 2025 13:36:22 GMT
       Server:
       - nginx/1.27.0
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 d33f640b9793fb0553cc6dbe55988068.cloudfront.net (CloudFront)
+      - 1.1 1f98172ca4214b0e937b7d3d534b34cc.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - c1Evc53OM6RY9C783yIgudXkKNXiIfpUVhtgB8NzXM_RVmQmGGcm-g==
+      - RtjQORfDZu0JMlt4MvvfZLTiFU3cD43iYc-pn2a6TryWc7DtIvwBtw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:

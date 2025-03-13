@@ -15,7 +15,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: PUT
-    uri: https://figi44.staging.eodatahub-workspaces.org.uk/files/workspaces-eodhp-staging/test.txt
+    uri: https://oxidian-test.staging.eodatahub-workspaces.org.uk/files/workspaces-eodhp-staging/test.txt
   response:
     body:
       string: ''
@@ -25,7 +25,7 @@ interactions:
       Content-Length:
       - '0'
       Date:
-      - Fri, 21 Feb 2025 15:08:29 GMT
+      - Thu, 13 Mar 2025 13:32:33 GMT
       ETag:
       - '"9473fdd0d880a43c21b7778d34872157"'
       Server:
@@ -33,17 +33,21 @@ interactions:
       Vary:
       - Origin
       Via:
-      - 1.1 dcfb75fa135c8a89160cd57d1f78027a.cloudfront.net (CloudFront)
+      - 1.1 b9288402a0a891e0bbaca832ecabae60.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - xdsOr243ZVkkRuoz_fKJZIwzNFltlq92kEnCtF6UM0AmzNAgFv4WYQ==
+      - nhFoQW1Zx3WfyLqGdR0_iIjgdvTVQMLuBNDq5RzPHWnS4v6nWdHdRA==
       X-Amz-Cf-Pop:
-      - VIE50-P2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
+      x-amz-checksum-crc64nvme:
+      - Z9s8rhTbnlM=
+      x-amz-checksum-type:
+      - FULL_OBJECT
       x-amz-id-2:
-      - AqTj5iKUmuZz0wrJ+ozaNQJhL12RInR4SPUGBPqDLfSTIL8YO5fCtb18CEOnCnE9C8llFTcj0oYS9bGQCZv1Iw==
+      - p/2i29vmtdwm9u6FJE7I8ahB9T2ykdC44+vqVfWjxdYIxDFAH/UCPxZ/L4xlQI420jVRvD1/83M=
       x-amz-request-id:
-      - GDEJQM4NDH91XQE9
+      - K6R8TANDQWFRZ97N
       x-amz-server-side-encryption:
       - AES256
     status:
