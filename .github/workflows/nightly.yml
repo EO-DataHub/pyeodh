@@ -34,7 +34,7 @@ jobs:
 
       - name: Run tests
         env:
-          EODH_TOKEN: ${{ secrets.EODH_TOKEN }}
+          EODH_PASSWORD: ${{ secrets.EODH_PASSWORD }}
           EODH_USERNAME: ${{ secrets.EODH_USERNAME }}
           EODH_KEYCLOAK_REALM: ${{ secrets.EODH_KEYCLOAK_REALM }}
           EODH_CLIENT_ID: ${{ secrets.EODH_CLIENT_ID }}
