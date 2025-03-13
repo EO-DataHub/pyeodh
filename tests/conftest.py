@@ -12,6 +12,11 @@ def api_token() -> Generator[str, None, None]:
     dotenv.load_dotenv()
     username = os.getenv("EODH_USERNAME")
     password = os.getenv("EODH_PASSWORD")
+
+    if not password:
+        yield "token"
+        return
+
     base_url = "https://staging.eodatahub.org.uk"
 
     keycloak_realm = os.getenv("EODH_KEYCLOAK_REALM")
@@ -56,4 +61,4 @@ def api_token() -> Generator[str, None, None]:
 @pytest.fixture(scope="session")
 def username() -> str:
     dotenv.load_dotenv()
-    return os.getenv("EODH_USERNAME", "foobar")
+    return os.getenv("EODH_USERNAME", "oxidian-test")
