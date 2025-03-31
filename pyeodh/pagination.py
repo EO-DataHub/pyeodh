@@ -64,9 +64,9 @@ class PaginatedList(Generic[T]):
                 params=params,
                 data=data,
             )
-            self._total_count = resp_data.get("context", {}).get("matched")
+            self._total_count = resp_data.get("numMatched")
             if self._total_count is None:
-                logger.warning("`context.matched` number is not in the response.")
+                logger.warning("`numMatched` number is not in the response.")
 
         return self._total_count
 

@@ -10,7 +10,7 @@ from pyeodh import consts
 from pyeodh.resource_catalog import CatalogService, Item
 from pyeodh.utils import ConformanceError
 
-CEDA_CAT_ID = "supported-datasets/catalogs/ceda-stac-catalogue"
+CEDA_CAT_ID = "public/catalogs/stac-fastapi"
 
 
 @pytest.fixture(scope="module")
@@ -50,13 +50,13 @@ def test_get_conformance(svc: CatalogService):
 
 @pytest.mark.vcr
 def test_get_catalog(svc: CatalogService):
-    cat = svc.get_catalog("supported-datasets")
-    assert cat.id == "supported-datasets"
+    cat = svc.get_catalog("public")
+    assert cat.id == "public"
 
 
 @pytest.mark.vcr
 def test_get_catalogs_from_catalog(svc: CatalogService):
-    parent_catalog = svc.get_catalog("supported-datasets")
+    parent_catalog = svc.get_catalog("public")
     children = parent_catalog.get_catalogs()
     assert isinstance(children, list)
     assert all(isinstance(elem, pyeodh.resource_catalog.Catalog) for elem in children)
@@ -99,7 +99,6 @@ def test_get_collection_items_with_limit(svc: CatalogService):
 
 
 @pytest.mark.vcr
-@pytest.mark.skip(reason="This test is flaky and fails intermittently")
 def test_get_collection_items_total_count(svc: CatalogService):
     cat = svc.get_catalog(CEDA_CAT_ID)
     collection = cat.get_collection("cmip6")

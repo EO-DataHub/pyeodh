@@ -17,7 +17,7 @@ def test_get_wmts() -> None:
     wmts = (
         pyeodh.Client()
         .get_catalog_service()
-        .get_catalog("supported-datasets/catalogs/ceda-stac-catalogue")
+        .get_catalog("public/catalogs/stac-fastapi")
         .get_wmts()
     )
     assert isinstance(wmts, WebMapTileService)
