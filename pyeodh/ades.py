@@ -224,12 +224,8 @@ class Process(EodhObject):
     @cached_property
     def execute_href(self) -> str:
         """URL pointing to processes execution endpoint."""
-        ln = Link.get_link(self.links, AdesRelType.EXECUTE.value)
-        if ln is None:
-            raise ValueError(
-                f"{self} does not have a link pointing to processes execution endpoint"
-            )
-        return ln.href
+
+        return join_url(self.self_href, "execution")
 
     def execute(self, inputs: dict, workspace: str | None = None) -> Job:
         """Trigger process workflow execution.
@@ -339,18 +335,12 @@ class Ades(EodhObject):
     @cached_property
     def processes_href(self) -> str:
         """URL pointing to processes endpoint."""
-        ln = Link.get_link(self.links, AdesRelType.PROCESSES.value)
-        if ln is None:
-            raise ValueError(f"{self} does not have a link pointing to processes")
-        return ln.href
+        return join_url(self.self_href, "processes")
 
     @cached_property
     def jobs_href(self) -> str:
         """URL pointing to jobs endpoint."""
-        ln = Link.get_link(self.links, AdesRelType.JOBS.value)
-        if ln is None:
-            raise ValueError(f"{self} does not have a link pointing to jobs")
-        return ln.href
+        return join_url(self.self_href, "jobs")
 
     def get_processes(self) -> list[Process]:
         """Fetches available processes

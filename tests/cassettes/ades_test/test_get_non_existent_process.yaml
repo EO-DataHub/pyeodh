@@ -11,33 +11,19 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test
   response:
     body:
-      string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
-        "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/"}, {"rel":
-        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/index.html"},
-        {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api"},
-        {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
-        "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance"},
-        {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes"},
-        {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"},
-        {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs.html"}]}'
+      string: '{"id":"oxidian-test","description":"Catalog for oxidian-test workspace","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/commercial-data","title":"oxidian-test
+        Commercial Data"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/processing-results","title":"oxidian-test
+        Processing Results"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/saved-data","title":"oxidian-test
+        Saved Data"}],"title":"oxidian-test Workspace Catalog","type":"Catalog","stac_extensions":[],"conformsTo":["https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v1.0.0/item-search#query","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/item-search#sort"]}'
     headers:
       Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
+      - Accept,Authorization,Content-Type
       Access-Control-Allow-Methods:
       - '*'
       Access-Control-Allow-Origin:
@@ -47,29 +33,25 @@ interactions:
       Connection:
       - keep-alive
       Content-Type:
-      - application/json;charset=UTF-8
+      - application/json
       Date:
-      - Thu, 13 Mar 2025 13:30:45 GMT
+      - Thu, 01 May 2025 11:28:28 GMT
       Server:
-      - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
+      - nginx/1.27.4
       Via:
-      - 1.1 9b9ab8e6e595847652a9158c684a8926.cloudfront.net (CloudFront)
+      - 1.1 93fcd07b66eaf26b036f14e2ec9d73ea.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - U2odm3jpRCRdr3LVz4eg5OLZh0j4aY5ocRvVv2OEq7ZOSsSm_Rk3Vg==
+      - GnaUFuKKfXR_AgPIHrNPhUGhq-z7UFR54lkuKkXgHXH3jzJbg1gJYA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-      x-also-also-also-powered-by:
-      - dru.securityOut
-      x-also-also-powered-by:
-      - dru.securityIn
-      x-also-powered-by:
-      - jwt.securityIn
-      x-powered-by:
-      - ZOO-Project-DRU
+      cache-control:
+      - max-age=0
+      content-length:
+      - '3988'
+      vary:
+      - Accept-Encoding
     status:
       code: 200
       message: OK
@@ -85,7 +67,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes/non-existent-process-id
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/processes/non-existent-process-id
   response:
     body:
       string: "{\n  \"title\": \"NoSuchProcess\",\n  \"type\": \"http://www.opengis.net/def/rel/ogc/1.0/exception/no-such-process\",\n
@@ -103,13 +85,13 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 13 Mar 2025 13:30:46 GMT
+      - Thu, 01 May 2025 11:28:29 GMT
       Server:
-      - nginx/1.27.0
+      - nginx/1.27.4
       Via:
-      - 1.1 4614c36172b2854b1e1e94af37435c8e.cloudfront.net (CloudFront)
+      - 1.1 4b7022ec3e11edfdd972039992f837de.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - ryMahn9IDONjXOFrRzNuI4oteki_hZiKJOooS03URHBe8ZZ1nC6LRQ==
+      - wROrGzK2-vFSvan6YTvLJq0SlcfOzfP8abKxjuGEer6m1Twzt-0mHw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:

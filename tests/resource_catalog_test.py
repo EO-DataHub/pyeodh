@@ -10,7 +10,7 @@ from pyeodh import consts
 from pyeodh.resource_catalog import CatalogService, Item
 from pyeodh.utils import ConformanceError
 
-CEDA_CAT_ID = "public/catalogs/stac-fastapi"
+CEDA_CAT_ID = "public/catalogs/ceda-stac-catalogue"
 
 
 @pytest.fixture(scope="module")
@@ -138,16 +138,15 @@ def test_get_collection_item(svc: CatalogService):
 def test_get_item_from_href(svc: CatalogService):
     item = pyeodh.resource_catalog.Item.from_href(
         svc._client,
-        "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-"
-        "datasets/catalogs/ceda-stac-catalogue/collections/sentinel2_ard/items/"
-        "neodc.sentinel_ard.data.sentinel_2.2023.11.20."
-        "S2A_20231120_latn501lonw0036_T30UVA_ORB037_20231120132"
-        "420_utm30n_osgb",
+        "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/"
+        "ceda-stac-catalogue/collections/sentinel2_ard/items/neodc.sentinel_ard.data."
+        "sentinel_2.2025.04.11.S2A_20250411_latn572lonw0021_T30VWJ_ORB123_20250411183"
+        "553_utm30n_osgb",
     )
     assert isinstance(item, pyeodh.resource_catalog.Item)
     assert (
-        item.id == "neodc.sentinel_ard.data.sentinel_2.2023.11.20."
-        "S2A_20231120_latn501lonw0036_T30UVA_ORB037_20231120132420_utm30n_osgb"
+        item.id == "neodc.sentinel_ard.data.sentinel_2.2025.04.11."
+        "S2A_20250411_latn572lonw0021_T30VWJ_ORB123_20250411183553_utm30n_osgb"
     )
 
 

@@ -11,33 +11,19 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test
   response:
     body:
-      string: '{"title": "ZOO-Project with Deploy, Replace, Undeploy and CWL support",
-        "links": [{"rel": "self", "type": "application/json", "title": "this document",
-        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/"}, {"rel":
-        "alternate", "type": "text/html", "title": "this document", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/index.html"},
-        {"rel": "service-desc", "type": "application/vnd.oai.openapi+json;version=3.0",
-        "title": "the API definition", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api"},
-        {"rel": "service-doc", "type": "text/html", "title": "the API definition",
-        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/api.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/conformance", "type": "application/json",
-        "title": "OGC API - Processes conformance classes implemented by this server",
-        "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance"},
-        {"rel": "alternate", "type": "text/html", "title": "OGC API - Processes conformance
-        classes implemented by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/conformance.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/processes", "type": "application/json",
-        "title": "The processes offered by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes"},
-        {"rel": "alternate", "type": "text/html", "title": "The processes offered
-        by this server", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/processes.html"},
-        {"rel": "http://www.opengis.net/def/rel/ogc/1.0/job-list", "type": "application/json",
-        "title": "Job Management", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"},
-        {"rel": "alternate", "type": "text/html", "title": "Job Management", "href":
-        "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs.html"}]}'
+      string: '{"id":"oxidian-test","description":"Catalog for oxidian-test workspace","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/commercial-data","title":"oxidian-test
+        Commercial Data"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/processing-results","title":"oxidian-test
+        Processing Results"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/saved-data","title":"oxidian-test
+        Saved Data"}],"title":"oxidian-test Workspace Catalog","type":"Catalog","stac_extensions":[],"conformsTo":["https://api.stacspec.org/v1.0.0/item-search#query","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0/collections","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter"]}'
     headers:
       Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
+      - Accept,Authorization,Content-Type
       Access-Control-Allow-Methods:
       - '*'
       Access-Control-Allow-Origin:
@@ -47,29 +33,25 @@ interactions:
       Connection:
       - keep-alive
       Content-Type:
-      - application/json;charset=UTF-8
+      - application/json
       Date:
-      - Thu, 13 Mar 2025 13:32:20 GMT
+      - Thu, 01 May 2025 11:48:46 GMT
       Server:
-      - nginx/1.27.0
-      Transfer-Encoding:
-      - chunked
+      - nginx/1.27.4
       Via:
-      - 1.1 6ec6c63eb2f7ec00507af95b1621674c.cloudfront.net (CloudFront)
+      - 1.1 a198ea04052d45eb515f27260bc6c05c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 1EI7_pPmfdW4pTvGXG2zrabdEA0we9dvNOHt9k9x-QTi9hSzdZdQsA==
+      - SSXCle46WsPK7QCFxrIyHn_vfzorsY0uxw4EnVyTfkxMe17_KZS7aw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-      x-also-also-also-powered-by:
-      - dru.securityOut
-      x-also-also-powered-by:
-      - dru.securityIn
-      x-also-powered-by:
-      - jwt.securityIn
-      x-powered-by:
-      - ZOO-Project-DRU
+      cache-control:
+      - max-age=0
+      content-length:
+      - '3988'
+      vary:
+      - Accept-Encoding
     status:
       code: 200
       message: OK
@@ -85,19 +67,132 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs?limit=10
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs?limit=10
   response:
     body:
-      string: '{"jobs": [{"jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type":
-        "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
+      string: '{"jobs": [{"id": "7cfb88ce-0011-11f0-9e46-925b27b1cd31", "jobID": "7cfb88ce-0011-11f0-9e46-925b27b1cd31",
+        "type": "process", "processID": "convert-url", "created": "2025-03-13T13:45:56.251Z",
+        "started": "2025-03-13T13:45:56.251Z", "finished": "2025-03-13T13:46:52.674Z",
+        "updated": "2025-03-13T13:46:52.466Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/7cfb88ce-0011-11f0-9e46-925b27b1cd31"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/7cfb88ce-0011-11f0-9e46-925b27b1cd31/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-7cfb88ce-0011-11f0-9e46-925b27b1cd31/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-7cfb88ce-0011-11f0-9e46-925b27b1cd31/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "6317aba6-000f-11f0-aebf-925b27b1cd31", "jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31",
+        "type": "process", "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z",
         "started": "2025-03-13T13:30:53.935Z", "finished": "2025-03-13T13:32:15.994Z",
         "updated": "2025-03-13T13:32:15.785Z", "status": "successful", "message":
         "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
-        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"},
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"},
         {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
-        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31/results"}]}],
-        "links": [{"rel": "self", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs"}],
-        "numberTotal": 1}'
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-6317aba6-000f-11f0-aebf-925b27b1cd31/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-6317aba6-000f-11f0-aebf-925b27b1cd31/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "5229c3e0-0048-11f0-ba43-925b27b1cd31", "jobID": "5229c3e0-0048-11f0-ba43-925b27b1cd31",
+        "type": "process", "processID": "convert-url", "created": "2025-03-13T20:18:26.750Z",
+        "started": "2025-03-13T20:18:26.750Z", "finished": "2025-03-13T20:19:25.171Z",
+        "updated": "2025-03-13T20:19:24.972Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/5229c3e0-0048-11f0-ba43-925b27b1cd31"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/5229c3e0-0048-11f0-ba43-925b27b1cd31/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-5229c3e0-0048-11f0-ba43-925b27b1cd31/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-5229c3e0-0048-11f0-ba43-925b27b1cd31/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "5b6afda0-01da-11f0-aa5a-96056687b502", "jobID": "5b6afda0-01da-11f0-aa5a-96056687b502",
+        "type": "process", "processID": "convert-url", "created": "2025-03-15T20:16:19.933Z",
+        "started": "2025-03-15T20:16:19.933Z", "finished": "2025-03-15T20:17:20.372Z",
+        "updated": "2025-03-15T20:17:20.196Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/5b6afda0-01da-11f0-aa5a-96056687b502"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/5b6afda0-01da-11f0-aa5a-96056687b502/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-5b6afda0-01da-11f0-aa5a-96056687b502/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-5b6afda0-01da-11f0-aa5a-96056687b502/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "61c3d97a-0111-11f0-b43b-96056687b502", "jobID": "61c3d97a-0111-11f0-b43b-96056687b502",
+        "type": "process", "processID": "convert-url", "created": "2025-03-14T20:17:41.733Z",
+        "started": "2025-03-14T20:17:41.733Z", "finished": "2025-03-14T20:18:39.855Z",
+        "updated": "2025-03-14T20:18:39.663Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/61c3d97a-0111-11f0-b43b-96056687b502"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/61c3d97a-0111-11f0-b43b-96056687b502/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-61c3d97a-0111-11f0-b43b-96056687b502/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-61c3d97a-0111-11f0-b43b-96056687b502/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "b85b3010-02a3-11f0-93b0-96056687b502", "jobID": "b85b3010-02a3-11f0-93b0-96056687b502",
+        "type": "process", "processID": "convert-url", "created": "2025-03-16T20:17:44.638Z",
+        "started": "2025-03-16T20:17:44.638Z", "finished": "2025-03-16T20:18:43.876Z",
+        "updated": "2025-03-16T20:18:43.697Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/b85b3010-02a3-11f0-93b0-96056687b502"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/b85b3010-02a3-11f0-93b0-96056687b502/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-b85b3010-02a3-11f0-93b0-96056687b502/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-b85b3010-02a3-11f0-93b0-96056687b502/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "0d36302a-036d-11f0-a6b2-96056687b502", "jobID": "0d36302a-036d-11f0-a6b2-96056687b502",
+        "type": "process", "processID": "convert-url", "created": "2025-03-17T20:18:55.934Z",
+        "started": "2025-03-17T20:18:55.934Z", "finished": "2025-03-17T20:19:54.108Z",
+        "updated": "2025-03-17T20:19:53.952Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/0d36302a-036d-11f0-a6b2-96056687b502"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/0d36302a-036d-11f0-a6b2-96056687b502/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-0d36302a-036d-11f0-a6b2-96056687b502/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-0d36302a-036d-11f0-a6b2-96056687b502/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "642a5634-04ff-11f0-b2f7-eadd75232b79", "jobID": "642a5634-04ff-11f0-b2f7-eadd75232b79",
+        "type": "process", "processID": "convert-url", "created": "2025-03-19T20:18:59.381Z",
+        "started": "2025-03-19T20:18:59.381Z", "finished": "2025-03-19T20:19:57.725Z",
+        "updated": "2025-03-19T20:19:57.546Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/642a5634-04ff-11f0-b2f7-eadd75232b79"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/642a5634-04ff-11f0-b2f7-eadd75232b79/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-642a5634-04ff-11f0-b2f7-eadd75232b79/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-642a5634-04ff-11f0-b2f7-eadd75232b79/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "8696038e-05c8-11f0-8605-eadd75232b79", "jobID": "8696038e-05c8-11f0-8605-eadd75232b79",
+        "type": "process", "processID": "convert-url", "created": "2025-03-20T20:18:45.983Z",
+        "started": "2025-03-20T20:18:45.983Z", "finished": "2025-03-20T20:19:46.642Z",
+        "updated": "2025-03-20T20:19:46.464Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/8696038e-05c8-11f0-8605-eadd75232b79"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/8696038e-05c8-11f0-8605-eadd75232b79/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-8696038e-05c8-11f0-8605-eadd75232b79/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-8696038e-05c8-11f0-8605-eadd75232b79/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]},
+        {"id": "aa3f8ed0-0691-11f0-9bf7-a6e16052765d", "jobID": "aa3f8ed0-0691-11f0-9bf7-a6e16052765d",
+        "type": "process", "processID": "convert-url", "created": "2025-03-21T20:18:34.784Z",
+        "started": "2025-03-21T20:18:34.784Z", "finished": "2025-03-21T20:19:33.117Z",
+        "updated": "2025-03-21T20:19:32.925Z", "status": "successful", "message":
+        "ZOO-Kernel successfully run your service!", "links": [{"title": "Status location",
+        "rel": "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/aa3f8ed0-0691-11f0-9bf7-a6e16052765d"},
+        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
+        "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/aa3f8ed0-0691-11f0-9bf7-a6e16052765d/results"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-aa3f8ed0-0691-11f0-9bf7-a6e16052765d/convert.log",
+        "title": "Tool log convert.log", "rel": "related", "type": "text/plain"},
+        {"href": "http://localhost:8080/oxidian-test/temp/convert-url-aa3f8ed0-0691-11f0-9bf7-a6e16052765d/node_stage_out.log",
+        "title": "Tool log node_stage_out.log", "rel": "related", "type": "text/plain"}]}],
+        "links": [{"rel": "self", "type": "application/json", "href": "http://localhost:8080/oxidian-test/ogc-api/jobs"},
+        {"rel": "next", "type": "application/json", "href": "http://localhost:8080/oxidian-test/ogc-api/jobs?limit=10&skip=10"}],
+        "numberTotal": 10}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -109,75 +204,26 @@ interactions:
       - '1728000'
       Connection:
       - keep-alive
-      Content-Length:
-      - '928'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 13 Mar 2025 13:32:20 GMT
+      - Thu, 01 May 2025 11:48:47 GMT
       Server:
-      - nginx/1.27.0
+      - nginx/1.27.4
+      Transfer-Encoding:
+      - chunked
       Via:
-      - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
+      - 1.1 badae0844eca8f0bad6677607d947120.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - eQ_R9hzvAZZdV9PSstOUze352uggujos8JV7aWabPVS_w3fVb4yFfQ==
+      - 1YtT0pkH3wPDBhSmO87Y70Mp4Nzb66Ltmh_VWwqjieyYlUoMw7zIdQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31
-  response:
-    body:
-      string: '{"jobID": "6317aba6-000f-11f0-aebf-925b27b1cd31", "type": "process",
-        "processID": "convert-url", "created": "2025-03-13T13:30:53.935Z", "started":
-        "2025-03-13T13:30:53.935Z", "finished": "2025-03-13T13:32:15.994Z", "updated":
-        "2025-03-13T13:32:15.785Z", "status": "successful", "message": "ZOO-Kernel
-        successfully run your service!", "links": [{"title": "Status location", "rel":
-        "monitor", "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31"},
-        {"title": "Result location", "rel": "http://www.opengis.net/def/rel/ogc/1.0/results",
-        "type": "application/json", "href": "https://staging.eodatahub.org.uk/ades/oxidian-test/ogc-api/jobs/6317aba6-000f-11f0-aebf-925b27b1cd31/results"}]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '767'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 13 Mar 2025 13:32:21 GMT
-      Server:
-      - nginx/1.27.0
-      Via:
-      - 1.1 32f35b6a71829a460d6fdae31f270164.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - hSFS2F9NYMR0-COmEDaE7xbHMHM11mSMXjnl2kCiszLuJaKeRYoctw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
+      content-length:
+      - '12875'
+      vary:
+      - accept-encoding
     status:
       code: 200
       message: OK

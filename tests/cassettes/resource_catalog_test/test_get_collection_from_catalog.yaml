@@ -15,15 +15,13 @@ interactions:
   response:
     body:
       string: '{"type":"Catalog","id":"stac-fastapi","title":"EO DataHub Catalogue","description":"The
-        Earth Observation Data Hub STAC Catalogue","stac_version":"1.0.0","conformsTo":["http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v0.3.0/aggregation","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/collections"],"links":[{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"data","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        Earth Observation Data Hub STAC Catalogue","stac_version":"1.0.0","conformsTo":["https://api.stacspec.org/v1.0.0/item-search#query","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0/collections","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter"],"links":[{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"data","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
         conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"search","type":"application/geo+json","title":"STAC
         search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"GET"},{"rel":"search","type":"application/geo+json","title":"STAC
         search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"POST"},{"rel":"queryables","type":"application/schema+json","title":"Queryables","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/queryables"},{"rel":"aggregate","type":"application/json","title":"Aggregate","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregate"},{"rel":"aggregations","type":"application/json","title":"Aggregations","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregations"},{"rel":"child","type":"application/json","title":"Commercial
         Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/commercial"},{"rel":"child","type":"application/json","title":"Public
-        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"child","type":"application/json","title":"Supported
-        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/supported-datasets"},{"rel":"child","type":"application/json","title":"User
-        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"child","type":"application/json","title":"User
-        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user-datasets"},{"rel":"service-desc","type":"application/vnd.oai.openapi+json;version=3.0","title":"OpenAPI
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"child","type":"application/json","title":"User
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"service-desc","type":"application/vnd.oai.openapi+json;version=3.0","title":"OpenAPI
         service description","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/api"},{"rel":"service-doc","type":"text/html","title":"OpenAPI
         service documentation","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/api.html"}],"stac_extensions":[]}'
     headers:
@@ -40,21 +38,21 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 31 Mar 2025 12:43:36 GMT
+      - Thu, 01 May 2025 11:09:23 GMT
       Server:
-      - nginx/1.27.0
+      - nginx/1.27.4
       Via:
-      - 1.1 4ca98b546b8d71c72caf6a3d8f75dc24.cloudfront.net (CloudFront)
+      - 1.1 b5f551be30f63eca57ca04273cb75994.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - iK_76nwiTarOBcSCCKQGY4b0eYyPOw4EN7nZjUzbTCrUJZ9-mV1o2w==
+      - 47eb97nBtrjtbq2LppU0VE9FhuF11cNyBBNnGT58hfeQLoUkRuxJrQ==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       cache-control:
       - max-age=300, stale-while-revalidate=300
       content-length:
-      - '3846'
+      - '3536'
       vary:
       - Accept-Encoding
     status:
@@ -72,29 +70,32 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue
   response:
     body:
-      string: '{"id":"stac-fastapi","description":"This is an experimental STAC API
-        server.\nThe content is subject to change the and there is no guarantee surrounding
-        its uptime.\n","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
-        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/DYAMOND3_N2560","title":"DYAMOND3
-        N2560 STAC Index"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cci","title":"CCI"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cmip6","title":"CMIP6"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cordex","title":"CORDEX"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-aerosol-slstr-daily-s3a","title":"EOCIS
-        AEROSOL from Sentinel 3A daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-aerosol-slstr-daily-s3b","title":"EOCIS
-        AEROSOL from Sentinel 3B daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-aerosol-slstr-monthly-s3a","title":"EOCIS
-        AEROSOL from Sentinel 3A monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-aerosol-slstr-monthly-s3b","title":"EOCIS
-        AEROSOL from Sentinel 3B monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-lst-s3a-day","title":"EOCIS
-        Land Surface Temperature from Sentinel 3A daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-lst-s3a-night","title":"EOCIS
-        Land Surface Temperature from Sentinel 3A daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-lst-s3b-day","title":"EOCIS
-        Land Surface Temperature from Sentinel 3B daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-lst-s3b-night","title":"EOCIS
-        Land Surface Temperature from Sentinel 3B daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/eocis-sst-cdrv3","title":"EOCIS
-        Sea-Surface Temperatures V3"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/sentinel1_ard","title":"Sentinel
-        1 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/sentinel2_ard","title":"Sentinel
-        2 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/ukcp","title":"UK
-        Climate Projections (UKCP18)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/wcrp","title":"WCRP
-        STAC Index"}],"stac_extensions":[],"title":"CEDA STAC API","type":"Catalog","conformsTo":["http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json"]}'
+      string: '{"id":"ceda-stac-catalogue","description":"This is an experimental
+        STAC API server.\nThe content is subject to change the and there is no guarantee
+        surrounding its uptime.\n","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/DYAMOND3_N2560","title":"DYAMOND3
+        N2560 STAC Index"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cci","title":"CCI"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6","title":"CMIP6"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cordex","title":"CORDEX"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3a","title":"EOCIS
+        AEROSOL from Sentinel 3A daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3b","title":"EOCIS
+        AEROSOL from Sentinel 3B daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3a","title":"EOCIS
+        AEROSOL from Sentinel 3A monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3b","title":"EOCIS
+        AEROSOL from Sentinel 3B monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-arctic-sea-ice-thickness-monthly","title":"EOCIS
+        Arctic Monthly Gridded Sea Ice Thickness Product from CryoSat-2"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-day","title":"EOCIS
+        Land Surface Temperature from Sentinel 3A daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-night","title":"EOCIS
+        Land Surface Temperature from Sentinel 3A daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-day","title":"EOCIS
+        Land Surface Temperature from Sentinel 3B daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-night","title":"EOCIS
+        Land Surface Temperature from Sentinel 3B daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-sst-cdrv3","title":"EOCIS
+        Sea-Surface Temperatures V3"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/land_cover","title":"ESA
+        Land Cover Climate Change Initiative (CCI): Global Land Cover Maps"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1","title":"Sentinel-1
+        Single Look Complex (SLC)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1_ard","title":"Sentinel
+        1 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel2_ard","title":"Sentinel
+        2 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp","title":"UK
+        Climate Projections (UKCP18)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/wcrp","title":"WCRP
+        UK Node STAC Index"}],"stac_extensions":[],"title":"CEDA STAC API","type":"Catalog","conformsTo":["https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson"]}'
     headers:
       Access-Control-Allow-Headers:
       - Accept,Authorization,Content-Type
@@ -109,21 +110,21 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 31 Mar 2025 12:43:36 GMT
+      - Thu, 01 May 2025 11:09:23 GMT
       Server:
-      - nginx/1.27.0
+      - nginx/1.27.4
       Via:
-      - 1.1 42c9dddb4e518a9ed3248bf50565b120.cloudfront.net (CloudFront)
+      - 1.1 badae0844eca8f0bad6677607d947120.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - _gXhRv0d4DDG0aHEVLT12lVvvdkMc4DsyYs7JOyzL6fKwkUfK_7EWg==
+      - RG4ST2_OGJ5vDKWtu2o7bOLaZlKMmFRzudOtRiznOhKVBzIPQNNSQw==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       cache-control:
       - max-age=300, stale-while-revalidate=300
       content-length:
-      - '7090'
+      - '8035'
       vary:
       - Accept-Encoding
     status:
@@ -141,7 +142,7 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cmip6
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6
   response:
     body:
       string: '{"id":"cmip6","description":"The WCRP Coupled Model Intercomparison
@@ -155,7 +156,7 @@ interactions:
         Full details are available from the CMIP6 pages (see linked documentation
         on this record).\n\nCEDA provides access to key CMIP6 simulations including
         those generated by the UK CMIP6 collaboration between the Met Office and NERC.
-        Replicas of international data sets are provided to aid local access and use.","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cmip6/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cmip6/aggregations"},{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cmip6/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cmip6/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/stac-fastapi/collections/cmip6"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/licences/default_workspace/CMIP6_Terms_of_Use.pdf","rel":"license","type":"application/pdf"}],"stac_extensions":[],"title":"CMIP6","type":"Collection","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/cmip6_thumbnail.png","type":"image/png","roles":["thumbnail"]}},"license":"other","extent":{"spatial":{"bbox":[[-180.0,-90.0,179.99999991618097,89.99999995809048]]},"temporal":{"interval":[["1850-01-01T00:00:00.000Z","4114-12-16T12:00:00.000Z"]]}},"keywords":["MIP","CMIP","CMIP6","WCRP","climate
+        Replicas of international data sets are provided to aid local access and use.","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/aggregations"},{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/licences/default_workspace/CMIP6_Terms_of_Use.pdf","rel":"license","type":"application/pdf"}],"stac_extensions":[],"title":"CMIP6","type":"Collection","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/cmip6_thumbnail.png","type":"image/png","roles":["thumbnail"]}},"license":"other","extent":{"spatial":{"bbox":[[-180.0,-90.0,179.99999991618097,89.99999995809048]]},"temporal":{"interval":[["1850-01-01T00:00:00.000Z","4114-12-16T12:00:00.000Z"]]}},"keywords":["MIP","CMIP","CMIP6","WCRP","climate
         change","IPCC","climate","model","simulation","multi-model"],"providers":[],"summaries":{"experiment_title":["SSP-based
         RCP scenario with high radiative forcing by the end of century. Following
         approximately RCP8.5 global forcing pathway with SSP5 socioeconomic conditions.
@@ -230,21 +231,21 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 31 Mar 2025 12:43:36 GMT
+      - Thu, 01 May 2025 11:09:23 GMT
       Server:
-      - nginx/1.27.0
+      - nginx/1.27.4
       Via:
-      - 1.1 c855d201fddbb6ef22989607fe8f5d1e.cloudfront.net (CloudFront)
+      - 1.1 4b7022ec3e11edfdd972039992f837de.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - YnKRlQmF4-5FAOWsUmrv2H4NKI1s5vTFgZ_mjl0tU7JhvYmBI_KdYw==
+      - jV2S0WMqo61UFnWqk9CDIUcnaNN_BvcCWmQ4hnCTCopVrd9fnzxLsA==
       X-Amz-Cf-Pop:
-      - VIE50-C2
+      - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       cache-control:
       - max-age=300, stale-while-revalidate=300
       content-length:
-      - '17401'
+      - '17443'
       vary:
       - Accept-Encoding
     status:

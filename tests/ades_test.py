@@ -25,7 +25,8 @@ def svc(api_token: str, username: str) -> Ades:
 def test_get_ades_service(svc: Ades):
     assert (
         svc.self_href
-        == f"https://staging.eodatahub.org.uk/ades/{svc._client.username}/ogc-api/"
+        == "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/"
+        f"{svc._client.username}"
     )
 
 

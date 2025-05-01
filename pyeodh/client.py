@@ -179,6 +179,8 @@ class Client:
                 "Valid username and token required for accessing protected API "
                 "endpoints."
             )
-        headers, data = self._request_json("GET", f"/ades/{self.username}/ogc-api")
+        headers, data = self._request_json(
+            "GET", f"/api/catalogue/stac/catalogs/user/catalogs/{self.username}"
+        )
 
         return Ades(self, headers, data)
