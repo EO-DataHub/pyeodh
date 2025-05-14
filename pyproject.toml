@@ -3,7 +3,7 @@ name = "pyeodh"
 version = "0.1.2"
 description = "A lightweight Python client for EODH APIs."
 authors = ["Dusan Figala <dusan@oxidian.com>"]
-license = "BSD-2-Clause"
+license = "BSD-3-Clause"
 readme = "README.md"
 
 [tool.poetry.dependencies]
