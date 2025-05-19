@@ -179,8 +179,15 @@ class Client:
                 "Valid username and token required for accessing protected API "
                 "endpoints."
             )
-        headers, data = self._request_json(
-            "GET", f"/api/catalogue/stac/catalogs/user/catalogs/{self.username}"
-        )
-
-        return Ades(self, headers, data)
+        data = {
+            "links": [
+                {
+                    "rel": "self",
+                    "href": (
+                        f"{self.url_base}/api/catalogue/stac/catalogs/user/catalogs/"
+                        f"{self.username}"
+                    ),
+                }
+            ]
+        }
+        return Ades(self, Headers(), data)
