@@ -11,62 +11,6 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test
-  response:
-    body:
-      string: '{"id":"oxidian-test","description":"Catalog for oxidian-test workspace","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
-        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/commercial-data","title":"oxidian-test
-        Commercial Data"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/processing-results","title":"oxidian-test
-        Processing Results"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/saved-data","title":"oxidian-test
-        Saved Data"}],"title":"oxidian-test Workspace Catalog","type":"Catalog","stac_extensions":[],"conformsTo":["https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson"]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Accept,Authorization,Content-Type
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 01 May 2025 11:29:39 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 79ba346413d83ce62db11c8d0b05c22c.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - fpiDwTABrVYimOYLW2cInm7hqn8VDZsdduEM7vWjBfi7-neOGqw02Q==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-      cache-control:
-      - max-age=0
-      content-length:
-      - '3988'
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
     uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/processes/convert-url
   response:
     body:
@@ -115,15 +59,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:29:39 GMT
+      - Wed, 21 May 2025 11:26:07 GMT
       Server:
       - nginx/1.27.4
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 2a9856881d192b485d1bf1928e98c7ec.cloudfront.net (CloudFront)
+      - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - w-GlnqA_Qk5rQwsPbD1FHGVFQPXe4B7uYE8ExX8nTQ6KxOQ7gcDHGQ==
+      - y0VWi9I0NPDHYGUhwvQbUbVASQRMDf3OOkVEMgnA7EL7AGn2tsVyhQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -156,14 +100,14 @@ interactions:
     uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/processes/convert-url/execution
   response:
     body:
-      string: "{\n  \"progress\": 0,\n  \"id\": \"924f6724-267f-11f0-b3e9-9e77abaf8eec\",\n
-        \ \"jobID\": \"924f6724-267f-11f0-b3e9-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:29:40.868Z\",\n
-        \ \"started\": \"2025-05-01T11:29:40.868Z\",\n  \"updated\": \"2025-05-01T11:29:40.868Z\",\n
+      string: "{\n  \"progress\": 0,\n  \"id\": \"6419c43c-3636-11f0-a09c-ca5f458bf742\",\n
+        \ \"jobID\": \"6419c43c-3636-11f0-a09c-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:26:08.714Z\",\n
+        \ \"started\": \"2025-05-21T11:26:08.714Z\",\n  \"updated\": \"2025-05-21T11:26:08.714Z\",\n
         \ \"status\": \"running\",\n  \"message\": \"ZOO-Kernel accepted to run your
         service!\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
         \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/924f6724-267f-11f0-b3e9-9e77abaf8eec\"\n
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6419c43c-3636-11f0-a09c-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -179,21 +123,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:29:41 GMT
+      - Wed, 21 May 2025 11:26:09 GMT
       Server:
       - nginx/1.27.4
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 77d19519a1c9ed821ab469548b9d17f4.cloudfront.net (CloudFront)
+      - 1.1 32f35b6a71829a460d6fdae31f270164.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - A9wYcwxbzCVPl1REgtn2ZBWsc9-iyrd8pLazVLqqlCXY01BV8EkiWg==
+      - x7_I7FdJYJ9SmPmUFCEEnW5KqzCBdi_mEzxNJR4FDrzew4XW2orxIQ==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
       - Miss from cloudfront
       location:
-      - https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/924f6724-267f-11f0-b3e9-9e77abaf8eec
+      - https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6419c43c-3636-11f0-a09c-ca5f458bf742
       preference-applied:
       - respond-async
       x-also-also-powered-by:
@@ -219,16 +163,16 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: DELETE
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/924f6724-267f-11f0-b3e9-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6419c43c-3636-11f0-a09c-ca5f458bf742
   response:
     body:
-      string: '{"id": "924f6724-267f-11f0-b3e9-9e77abaf8eec", "jobID": "924f6724-267f-11f0-b3e9-9e77abaf8eec",
+      string: '{"id": "6419c43c-3636-11f0-a09c-ca5f458bf742", "jobID": "6419c43c-3636-11f0-a09c-ca5f458bf742",
         "status": "dismissed", "message": "ZOO-Kernel successfully dismissed your
         service!", "links": [{"title": "The job list for the current process", "rel":
         "parent", "type": "application/json", "href": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs"}],
-        "type": "process", "processID": "convert-url", "created": "2025-05-01T11:29:40.868Z",
-        "started": "2025-05-01T11:29:40.868Z", "finished": "2025-05-01T11:29:41.289Z",
-        "updated": "2025-05-01T11:29:41.265Z"}'
+        "type": "process", "processID": "convert-url", "created": "2025-05-21T11:26:08.714Z",
+        "started": "2025-05-21T11:26:08.714Z", "finished": "2025-05-21T11:26:09.213Z",
+        "updated": "2025-05-21T11:26:09.137Z"}'
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -245,13 +189,13 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:29:41 GMT
+      - Wed, 21 May 2025 11:26:09 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 6fc3cae9692b6db972e4990be9921fae.cloudfront.net (CloudFront)
+      - 1.1 cb11ca2ff3db5adbe7df4bca70e51594.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 0hS6h3VEJYU4MS5N71WkDNs2ekj5bH50Vi1qkJSBkatPstBoxVnD1g==
+      - hhYrxXqAWieyNL32ZhLXDdCNUC--YNVlBGp98GybLDjzz1Ze_3Je_Q==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:

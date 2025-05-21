@@ -11,62 +11,6 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test
-  response:
-    body:
-      string: '{"id":"oxidian-test","description":"Catalog for oxidian-test workspace","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
-        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/commercial-data","title":"oxidian-test
-        Commercial Data"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/processing-results","title":"oxidian-test
-        Processing Results"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/catalogs/saved-data","title":"oxidian-test
-        Saved Data"}],"title":"oxidian-test Workspace Catalog","type":"Catalog","stac_extensions":[],"conformsTo":["https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v0.3.0/aggregation","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter"]}'
-    headers:
-      Access-Control-Allow-Headers:
-      - Accept,Authorization,Content-Type
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 01 May 2025 11:28:29 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - DcSrzio7H-CEvjQ4vPTYqfwrXJVRCA20ziqWzhC0c59eeOAy1rBD4g==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-      cache-control:
-      - max-age=0
-      content-length:
-      - '3988'
-      vary:
-      - Accept-Encoding
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
     uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/processes/convert-url
   response:
     body:
@@ -96,10 +40,11 @@ interactions:
         \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
         \           ],\n            \"properties\": {\n              \"value\": {\n
         \               \"oneOf\": [\n                  {\n                    \"type\":
-        \"object\"\n                  }\n                ]\n              }\n            }\n
-        \         }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
-        [\n          {\n            \"type\": \"object\"\n          }\n        ]\n
-        \     }\n    }\n  }\n}"
+        \"object\",\n                    \"format\": \"geojson-feature-collection\"\n
+        \                 }\n                ]\n              }\n            }\n          }\n
+        \       ]\n      },\n      \"schema\": {\n        \"oneOf\": [\n          {\n
+        \           \"type\": \"object\",\n            \"format\": \"geojson-feature-collection\"\n
+        \         }\n        ]\n      }\n    }\n  }\n}"
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -114,21 +59,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:29 GMT
+      - Wed, 21 May 2025 11:24:45 GMT
       Server:
       - nginx/1.27.4
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 2a5c925255bb252ff0ed65977311f74e.cloudfront.net (CloudFront)
+      - 1.1 e8eef83cd13aefba4fb880502e4a1c40.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - R7ucO7vX8nikmC8H4bk-i0BecpfILtvcysFBKzlk9eRmV-99jF55Pg==
+      - E47Mp1T9IrR3CcLHIg6VRn6pDHZfLox13-MfPbsr4k_O2n9H_6uMLg==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
       content-length:
-      - '2213'
+      - '2325'
       vary:
       - accept-encoding
     status:
@@ -164,15 +109,15 @@ interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 May 2025 11:28:30 GMT
+      - Wed, 21 May 2025 11:24:46 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
+      - 1.1 8b49735be00c2f56b8beee942c059dda.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - XNZYyri_M1iqFN4rFA6RZGbGQrxpZf8_7q5-7lKYyBw0EtQb3GM_pg==
+      - -VP2ltNGREJuUlOOvb-fWgPZurU0Za0hivfTtxmYel2mnP3dCKwbMQ==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
     status:
@@ -223,15 +168,15 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:32 GMT
+      - Wed, 21 May 2025 11:24:47 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 6ec6c63eb2f7ec00507af95b1621674c.cloudfront.net (CloudFront)
+      - 1.1 61059d408bfb8da19f49f0698d5e1608.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - F-0fNd9-YA4Mmj5LGtTTtBO0SPe9YVyFHw84cRZHcPud8cJ0zlFr9g==
+      - w0N168krLIH1qXlecg-fnnfYFBdimizGggaZYMt9ElAYOV0On3eySg==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
       location:
@@ -264,29 +209,28 @@ interactions:
         \     \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/processes/convert-url/execution\"\n
         \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
         to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
-        {\n        \"type\": \"string\",\n        \"default\": \"resize\",\n        \"nullable\":
-        true\n      }\n    },\n    \"size\": {\n      \"title\": \"the percentage
-        for a resize operation\",\n      \"description\": \"the percentage for a resize
-        operation\",\n      \"schema\": {\n        \"type\": \"string\",\n        \"default\":
-        \"50%\",\n        \"nullable\": true\n      }\n    },\n    \"url\": {\n      \"title\":
-        \"the image to convert\",\n      \"description\": \"the image to convert\",\n
-        \     \"schema\": {\n        \"type\": \"string\",\n        \"default\": \"https://eoepca.org/media_portal/images/logo6_med.original.png\",\n
-        \       \"nullable\": true\n      }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\":
-        {\n      \"title\": \"converted_image\",\n      \"description\": \"None\",\n
-        \     \"extended-schema\": {\n        \"oneOf\": [\n          {\n            \"allOf\":
-        [\n              {\n                \"$ref\": \"http://zoo-project.org/dl/link.json\"\n
-        \             },\n              {\n                \"type\": \"object\",\n
-        \               \"properties\": {\n                  \"type\": {\n                    \"enum\":
-        [\n                      \"application/json\"\n                    ]\n                  }\n
-        \               }\n              }\n            ]\n          },\n          {\n
-        \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
-        \           ],\n            \"properties\": {\n              \"value\": {\n
-        \               \"oneOf\": [\n                  {\n                    \"type\":
-        \"object\",\n                    \"format\": \"geojson-feature-collection\"\n
-        \                 }\n                ]\n              }\n            }\n          }\n
-        \       ]\n      },\n      \"schema\": {\n        \"oneOf\": [\n          {\n
-        \           \"type\": \"object\",\n            \"format\": \"geojson-feature-collection\"\n
-        \         }\n        ]\n      }\n    }\n  }\n}"
+        {\n        \"type\": \"string\",\n        \"default\": \"resize\"\n      }\n
+        \   },\n    \"size\": {\n      \"title\": \"the percentage for a resize operation\",\n
+        \     \"description\": \"the percentage for a resize operation\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"default\": \"50%\"\n      }\n
+        \   },\n    \"url\": {\n      \"title\": \"the image to convert\",\n      \"description\":
+        \"the image to convert\",\n      \"schema\": {\n        \"type\": \"string\",\n
+        \       \"default\": \"https://eoepca.org/media_portal/images/logo6_med.original.png\"\n
+        \     }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\": {\n      \"title\":
+        \"converted_image\",\n      \"description\": \"None\",\n      \"extended-schema\":
+        {\n        \"oneOf\": [\n          {\n            \"allOf\": [\n              {\n
+        \               \"$ref\": \"http://zoo-project.org/dl/link.json\"\n              },\n
+        \             {\n                \"type\": \"object\",\n                \"properties\":
+        {\n                  \"type\": {\n                    \"enum\": [\n                      \"application/json\"\n
+        \                   ]\n                  }\n                }\n              }\n
+        \           ]\n          },\n          {\n            \"type\": \"object\",\n
+        \           \"required\": [\n              \"value\"\n            ],\n            \"properties\":
+        {\n              \"value\": {\n                \"oneOf\": [\n                  {\n
+        \                   \"type\": \"object\",\n                    \"format\":
+        \"geojson-feature-collection\"\n                  }\n                ]\n              }\n
+        \           }\n          }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
+        [\n          {\n            \"type\": \"object\",\n            \"format\":
+        \"geojson-feature-collection\"\n          }\n        ]\n      }\n    }\n  }\n}"
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -301,21 +245,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:32 GMT
+      - Wed, 21 May 2025 11:24:48 GMT
       Server:
       - nginx/1.27.4
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
+      - 1.1 93c19401e4c3042840b49b10b9478098.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Dn8KboVlk46dXxVmffkfBcem4CxHu-WKS-J6wkiz6DyogWXC_a7Gqg==
+      - yO_NszupX6lLO4zvrqErsa_Fd_2uvChIj4Idhn9qbGu8IHPR4AF4hg==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
       content-length:
-      - '2537'
+      - '2459'
       vary:
       - accept-encoding
     status:
@@ -346,29 +290,28 @@ interactions:
         \     \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/processes/convert-url/execution\"\n
         \   }\n  ],\n  \"inputs\": {\n    \"fn\": {\n      \"title\": \"the operation
         to perform\",\n      \"description\": \"the operation to perform\",\n      \"schema\":
-        {\n        \"type\": \"string\",\n        \"default\": \"resize\",\n        \"nullable\":
-        true\n      }\n    },\n    \"size\": {\n      \"title\": \"the percentage
-        for a resize operation\",\n      \"description\": \"the percentage for a resize
-        operation\",\n      \"schema\": {\n        \"type\": \"string\",\n        \"default\":
-        \"50%\",\n        \"nullable\": true\n      }\n    },\n    \"url\": {\n      \"title\":
-        \"the image to convert\",\n      \"description\": \"the image to convert\",\n
-        \     \"schema\": {\n        \"type\": \"string\",\n        \"default\": \"https://eoepca.org/media_portal/images/logo6_med.original.png\",\n
-        \       \"nullable\": true\n      }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\":
-        {\n      \"title\": \"converted_image\",\n      \"description\": \"None\",\n
-        \     \"extended-schema\": {\n        \"oneOf\": [\n          {\n            \"allOf\":
-        [\n              {\n                \"$ref\": \"http://zoo-project.org/dl/link.json\"\n
-        \             },\n              {\n                \"type\": \"object\",\n
-        \               \"properties\": {\n                  \"type\": {\n                    \"enum\":
-        [\n                      \"application/json\"\n                    ]\n                  }\n
-        \               }\n              }\n            ]\n          },\n          {\n
-        \           \"type\": \"object\",\n            \"required\": [\n              \"value\"\n
-        \           ],\n            \"properties\": {\n              \"value\": {\n
-        \               \"oneOf\": [\n                  {\n                    \"type\":
-        \"object\",\n                    \"format\": \"geojson-feature-collection\"\n
-        \                 }\n                ]\n              }\n            }\n          }\n
-        \       ]\n      },\n      \"schema\": {\n        \"oneOf\": [\n          {\n
-        \           \"type\": \"object\",\n            \"format\": \"geojson-feature-collection\"\n
-        \         }\n        ]\n      }\n    }\n  }\n}"
+        {\n        \"type\": \"string\",\n        \"default\": \"resize\"\n      }\n
+        \   },\n    \"size\": {\n      \"title\": \"the percentage for a resize operation\",\n
+        \     \"description\": \"the percentage for a resize operation\",\n      \"schema\":
+        {\n        \"type\": \"string\",\n        \"default\": \"50%\"\n      }\n
+        \   },\n    \"url\": {\n      \"title\": \"the image to convert\",\n      \"description\":
+        \"the image to convert\",\n      \"schema\": {\n        \"type\": \"string\",\n
+        \       \"default\": \"https://eoepca.org/media_portal/images/logo6_med.original.png\"\n
+        \     }\n    }\n  },\n  \"outputs\": {\n    \"converted_image\": {\n      \"title\":
+        \"converted_image\",\n      \"description\": \"None\",\n      \"extended-schema\":
+        {\n        \"oneOf\": [\n          {\n            \"allOf\": [\n              {\n
+        \               \"$ref\": \"http://zoo-project.org/dl/link.json\"\n              },\n
+        \             {\n                \"type\": \"object\",\n                \"properties\":
+        {\n                  \"type\": {\n                    \"enum\": [\n                      \"application/json\"\n
+        \                   ]\n                  }\n                }\n              }\n
+        \           ]\n          },\n          {\n            \"type\": \"object\",\n
+        \           \"required\": [\n              \"value\"\n            ],\n            \"properties\":
+        {\n              \"value\": {\n                \"oneOf\": [\n                  {\n
+        \                   \"type\": \"object\",\n                    \"format\":
+        \"geojson-feature-collection\"\n                  }\n                ]\n              }\n
+        \           }\n          }\n        ]\n      },\n      \"schema\": {\n        \"oneOf\":
+        [\n          {\n            \"type\": \"object\",\n            \"format\":
+        \"geojson-feature-collection\"\n          }\n        ]\n      }\n    }\n  }\n}"
     headers:
       Access-Control-Allow-Headers:
       - Content-Type,Authorization,Prefer
@@ -383,21 +326,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:33 GMT
+      - Wed, 21 May 2025 11:24:48 GMT
       Server:
       - nginx/1.27.4
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 2a5c925255bb252ff0ed65977311f74e.cloudfront.net (CloudFront)
+      - 1.1 dcfb75fa135c8a89160cd57d1f78027a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Q9OFQENWmO0NK3WlGoaDjhLiJt9Z-4TGpZZ8YY_7RBz-b7mgF_l1jw==
+      - N1ZB-jwSeJ2wCLOkFbG3ob26JqN46Vc49NUVk6WLVwNxjEWMiU2h-w==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
       content-length:
-      - '2537'
+      - '2459'
       vary:
       - accept-encoding
     status:
@@ -455,15 +398,15 @@ interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 May 2025 11:28:34 GMT
+      - Wed, 21 May 2025 11:24:50 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 93fcd07b66eaf26b036f14e2ec9d73ea.cloudfront.net (CloudFront)
+      - 1.1 017ad1832cd713f03365c1b7a97c8576.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - kwkCk6k9imOSX8ZXr-X_uwKpp1KxMVSZMQPyijnTRTu85Jm_X13scw==
+      - TSMCcvski8Tqb9el55xxHt4uYVmGZ6yzxZCBzIA491rekEHbGz1VCQ==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
       location:
@@ -537,17 +480,17 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:34 GMT
+      - Wed, 21 May 2025 11:24:51 GMT
       Server:
       - nginx/1.27.4
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 93fcd07b66eaf26b036f14e2ec9d73ea.cloudfront.net (CloudFront)
+      - 1.1 c7fb0ef8cc8bb7055eaaaf9c7fa117ce.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - PxQPbXYQkImPvgetxVkXT9npoOKRHKxw2PQtnA3ka8afrGtZlDPkXA==
+      - kw3VThAIxBGp7SKnPckP5f5ySeZX6WiGNakG1pJOWz3gg2yflRubcw==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
       content-length:
@@ -579,14 +522,14 @@ interactions:
     uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/processes/convert-url/execution
   response:
     body:
-      string: "{\n  \"progress\": 0,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:35.865Z\",\n
+      string: "{\n  \"progress\": 0,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:52.139Z\",\n
         \ \"status\": \"running\",\n  \"message\": \"ZOO-Kernel accepted to run your
         service!\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
         \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -602,21 +545,21 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:36 GMT
+      - Wed, 21 May 2025 11:24:52 GMT
       Server:
       - nginx/1.27.4
       Transfer-Encoding:
       - chunked
       Via:
-      - 1.1 8197d89da72990bb606996d5e7c73ab6.cloudfront.net (CloudFront)
+      - 1.1 21e3976732d94cc8844cd643b7eb43fe.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 3KtgpBDdgLxXticPhD3bs1Vx1La8MQAZX2hcY5SoHE5HpHsW9ta2ZA==
+      - 91fs8M-x9AV-W5pdNEu9dnq7UZQgKuf7LQWdUG1aRXqRQLdopwKFsg==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P2
       X-Cache:
       - Miss from cloudfront
       location:
-      - https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+      - https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
       preference-applied:
       - respond-async
       x-also-also-powered-by:
@@ -640,17 +583,17 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
   response:
     body:
-      string: "{\n  \"progress\": 3,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:36.165Z\",\n
+      string: "{\n  \"progress\": 3,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:52.590Z\",\n
         \ \"status\": \"running\",\n  \"message\": \"Inputs downloaded, nested processes
         execution finalized\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
         \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -668,13 +611,1075 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:36 GMT
+      - Wed, 21 May 2025 11:24:53 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 d05dc840d6cf3901928326ad8b6d38c2.cloudfront.net (CloudFront)
+      - 1.1 e72e5f48f0da91aae20d958e6142d90c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 8IIFSbWPHGuL5gHrHiglj9u3j-bDDpmg_mpIuhttxe49EUKVtbEwNA==
+      - bQPnrRFBeQoXjOA3JbPf3FLgBfCEPsTHDF5JCVDk5j4Ea3I-1JRpEw==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 10,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:53.177Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"workflow wrapped, creating processing
+        environment\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
+        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '650'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:24:55 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 716b0e2bdabd9e2a9664763a8947130c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - MrwzJJJyTEaKSAKQU0f7uECJvRxUdEbwZP6iTanohSRzAsUh5FvTzA==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 10,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:53.177Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"workflow wrapped, creating processing
+        environment\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
+        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '650'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:24:58 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 06af757cca578328170db512532c8702.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - iB6LHUVX0yWBbrxN7_0h32D2lcl3hCAwwfQvnpQAQILhm4lJWPhSXA==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 20,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:58.347Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '622'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:00 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 e72e5f48f0da91aae20d958e6142d90c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - vqlYE3fZeC_XrAXZgKQyh2AxM3xC1QCVH4EPEj1m2S_QT6WIeZ5Dvw==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 20,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:58.347Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '622'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:03 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 9cf04b48b6c1d39fa4ec78ed3583f106.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - cuDg6PUn2W3bEvzoSKCw25SNsrnwql8k6eDUboN6-kD7KbEedAygsQ==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 20,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:58.347Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '622'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:05 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 9bdc826515bbec1eaddb7cb6182e2678.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - -Vu0pkPO1tW8tB3ryioF0hdF72-_eyzc_UTX0dVWg32QDNRs3YU-Bg==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 20,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:58.347Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '622'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:08 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 0233e9abe55cb1e7cabd26c22e41e28c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - L9RDZ81cXDaX0SF6bk5mSvagr_PwHXrb0tvvJ8G6WhCoCaBrE1SUFQ==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 20,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:58.347Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '622'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:10 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 b7e3fe9e93a263950f30a1525491b1aa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - YHnq85DVfkiBSeqKOvugcTf9a3gahQp4whPZYJ89XRrNi4S6t1C8eQ==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 20,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:24:58.347Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '622'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:13 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 bafbf16eb63b1b2d01d7de86535488ec.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 6-daoau-BH0DSUJiqG2GxqNDYFEzUTeKOGX3-GCw46ULT45u6RU_lw==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:15 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 581ced6577fa2054087db3aa564e1b58.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - VJriqnaTvhXCA85AVjnHlAy4qzGScZJMuSyiS8A8VaT3EuUKL8CaSg==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:18 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 08f9b351f61685659ad70b790734f9b0.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 36snEgnO4zudRGECXuoV9wCQKDV1vvObYtZ4O8Ea2PGqHF0wow89nA==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:20 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 e8eef83cd13aefba4fb880502e4a1c40.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - zpA2hoIbSFtKyW5OxwcsdUkX7DvosUzdbQTwOmeJoZBvp01I1Ar8mA==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:23 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 7e6e89f6989c614914afa5697ad62aaa.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - _h2y8X48BSJm9S4apXIzUoS9S05mUDDByRP3JO6gUbXwfy2BVrGrwA==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:25 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 50755d2085d3b2c5c8cb4d6cb8bd7d3e.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - KpprbPjLgHaxabAYLug6k63CKob0mgPP27PzCPkoVtR5zs-gXRK8jQ==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:28 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 8b49735be00c2f56b8beee942c059dda.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - A1vleGo_1q2zl40Lpnh4TMoBTkA3a1-iAl4reBTa5jyvHlVlTsspSQ==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:30 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 9bdc826515bbec1eaddb7cb6182e2678.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - EUF5Vr3zZKVStJA-JQadvpjV5nkS4zR_dyaGz-Inc_cWyXaPB-eMXQ==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:33 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 c7fb0ef8cc8bb7055eaaaf9c7fa117ce.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - G6XMVehA211UHbA6PKK3oLxQsNSMgODEL-Ta79G4zE27ub4taEZtUQ==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:35 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 a321fbca3f677651c704e7e61331ecb6.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - UMvJL4rwevRVDsBwjb2LMrbI-83xyXBWQGEJ8OwhNGy7ywbxg9lcJw==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:38 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 e8eef83cd13aefba4fb880502e4a1c40.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - _trzRrZ6M5mGvHXt1FTTvZCvr6UaqGGk1tCz2-IPbCmgJFWugX7ROg==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:40 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 c94a2497027b6029cd67213e98dc6618.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - jwmS87jxCaw5YpBBAtu8blsr02q5NT68NFaNBH3AWwxGoOLL-V0avA==
+      X-Amz-Cf-Pop:
+      - VIE50-P2
+      X-Cache:
+      - Miss from cloudfront
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
+  response:
+    body:
+      string: "{\n  \"progress\": 23,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:13.620Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
+        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
+        \   }\n  ]\n}"
+    headers:
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization,Prefer
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '620'
+      Content-Type:
+      - application/json;charset=UTF-8
+      Date:
+      - Wed, 21 May 2025 11:25:43 GMT
+      Server:
+      - nginx/1.27.4
+      Via:
+      - 1.1 a60a14dea4b4a9f77d34297a625f2e24.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Jm1imyPoZQU6WmQHQ8Vo1_D_54VkO8TeX7z6RU1f8RLeB6cCkhcBKw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -694,16 +1699,17 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
   response:
     body:
-      string: "{\n  \"progress\": 20,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:36.934Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+      string: "{\n  \"progress\": 90,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:43.792Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
+        usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
+        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -717,229 +1723,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '622'
+      - '642'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:39 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 32f35b6a71829a460d6fdae31f270164.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - XHkR8auYpAp-xSf-l4DxF1fiu1-h0VgkKqOcGuM91drTYaOPgwiImA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 20,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:36.934Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '622'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:28:41 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 9b9ab8e6e595847652a9158c684a8926.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - 9T44GfgcxscWOZj8Se6CnJahth4K0-oJaszWBb6PAx_AN18dSJfyFw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 20,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:36.934Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '622'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:28:43 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 91afcef6d5c7e90d0a4bb2c3a456c690.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - Qyj3rF2e5-qk9o9jkN6lwkXDMfakrfyqjsSkEzLx_VdUY-in9YLIqw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 20,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:36.934Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '622'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:28:46 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 d5da174e34f35b7d1482b8432bf7e084.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - 9OAj6KEvXOJjwKcV8V-lrVSKgEsGZsUks7WtGrTn4acB4BnNcQxtfQ==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 20,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:36.934Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '622'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:28:48 GMT
+      - Wed, 21 May 2025 11:25:45 GMT
       Server:
       - nginx/1.27.4
       Via:
       - 1.1 7df0d6b4ce8f8b155434dd5d830b76be.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - MZx2GJP2T711KKV4-vk5ppUI53BkJxCQa4QxZ3dSF4TK8-LEtU67dQ==
+      - Gmkq9G_xvhnYtVLX_BCnA3Ad1zLGbUVKXKyAc3Vpo3xuPv4okulfcA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -959,16 +1753,17 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
   response:
     body:
-      string: "{\n  \"progress\": 20,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:36.934Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"upload required files\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+      string: "{\n  \"progress\": 90,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:43.792Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
+        usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
+        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -982,17 +1777,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '622'
+      - '642'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:50 GMT
+      - Wed, 21 May 2025 11:25:48 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
+      - 1.1 cb11ca2ff3db5adbe7df4bca70e51594.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - cRkVgnFT5SIBSv8RgJq0KsLHMlBhnKj4JbD6F3dbhqJpMa9ZYSMYSw==
+      - AbgprH6uUfHjmYcazxc_nMp38kMXzegvGXcchOyEL5uqezfn5IL1QA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1012,16 +1807,17 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
   response:
     body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+      string: "{\n  \"progress\": 90,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:43.792Z\",\n
+        \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
+        usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
+        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -1035,229 +1831,17 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '620'
+      - '642'
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:28:53 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 3544838dca6112dd616da017a568e76a.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - q8ahWsHndceWJuHgpOrkkDjz75jhcgtMCvzmQXRhLuO5qrvqPvDsdw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:28:55 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 4614c36172b2854b1e1e94af37435c8e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - HiY01vC_Oxv6iYFI1RZKEYXZIBTuqyR2a-Cl1LUQJRqmZvt5j-fxnA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:28:57 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 a1c66294cb416b399374a845b97656d2.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - PlIQc7E9Wnoc_Uwf9RH6eAaeRmzyohy3SZGhuu9qjubuHilfdPrrTg==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:00 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 1d04caaed0a43993076e404ebf3738da.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - i29ERf8Q0bbnEenYo61oX3x8IUB8v4k8a7w6Z_lBPdu5qpIvLoBmmw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:02 GMT
+      - Wed, 21 May 2025 11:25:50 GMT
       Server:
       - nginx/1.27.4
       Via:
       - 1.1 2a9856881d192b485d1bf1928e98c7ec.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - tIjwHrJBsUNdPfnKIhetu1Weuezp_TvsEyxW5vc_s1Q7PQcunlxl7g==
+      - TpukeHmjHCxCzoE4hkI4vgULEx2coRYFSMmFtr7CxD44bip3V1kKQA==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1277,441 +1861,17 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
   response:
     body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:05 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 d5da174e34f35b7d1482b8432bf7e084.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - -AeceafCofNtsobBD8_SD7RTexzEk_I5NuRo_opE-hy6sMUd7xjRFg==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:07 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 5a9253ffd4a04a82b061e7ef23f713d4.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - ddRULC-GSBWeB-Et44ERCRMXNCI6UJoNoN9xGCHxElX4b5XnALL7sw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:10 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 8197d89da72990bb606996d5e7c73ab6.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - teWtQOpMhV70ToM9pIOCotAbHvH8w2ywHO7WMlPEupYxsoxi3mOfqw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:12 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 168125097acf734cd7750e139a974b38.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - 1wgDikmS-0H_ze8cGAb9vDdlpNNPWPXpyA70zVAgUeUGQeE3Qo-Y9A==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:14 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 91afcef6d5c7e90d0a4bb2c3a456c690.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - IGJtvGRcPFLOyVTpvO9h4wuCqpWlgllOjuj3sIPJtBtpcQEMQeDl6A==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:17 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 c76f57c516237f120f723cde4dab446e.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - OSetTPc49k26Jolf7pSrwTO1br6HVJ1Fo7Unazd0lT9_Mii55Hny-A==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:19 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 77d19519a1c9ed821ab469548b9d17f4.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - dgwcpcZlWir3ZxtHlU2kZ2pPfyHfDRG_7mXO1Fxj1hiyNGnmaOlvlw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 23,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:28:52.325Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"execution submitted\",\n  \"links\":
-        [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '620'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:22 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 d05dc840d6cf3901928326ad8b6d38c2.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - nRNOfI8xBIjgAMIO-xWN4mZt5y1urgfl6Qz94q1eDkp1iU0Y7IYHKA==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 90,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:29:22.972Z\",\n
+      string: "{\n  \"progress\": 90,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:43.792Z\",\n
         \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
         usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
         \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -1729,13 +1889,13 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:29:24 GMT
+      - Wed, 21 May 2025 11:25:53 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 f3303a5632dc925c26253530523fa328.cloudfront.net (CloudFront)
+      - 1.1 db66f1cc00a415c34c42ad011b26850c.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - m6c60aqjrfIq6mUV7awoZiJbgdr5LXF-wB2DSBwY3kt8-vova900dQ==
+      - sdEXICHOcJ965Jl2sKMEkVYvAR_p_zdHI7oYywnCvkM_YtP7rjt-9A==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1755,17 +1915,17 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
   response:
     body:
-      string: "{\n  \"progress\": 90,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:29:22.972Z\",\n
+      string: "{\n  \"progress\": 90,\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n
+        \ \"jobID\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n
+        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n
+        \ \"started\": \"2025-05-21T11:24:52.139Z\",\n  \"updated\": \"2025-05-21T11:25:43.792Z\",\n
         \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
         usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
         \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -1783,13 +1943,13 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:29:26 GMT
+      - Wed, 21 May 2025 11:25:55 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 badae0844eca8f0bad6677607d947120.cloudfront.net (CloudFront)
+      - 1.1 0bb58964819755c192fe9c24c342bd1a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - Sjt0XX-Dz_2-BKUVqRghS4gZ9TyS3eLardJD9DWRbOnYwvRTqYqzDQ==
+      - _JIfRXquIc55sqMAza_FA_Qpha5rRE1UujZwURMWV4RuNm6ajp5x_A==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
@@ -1809,181 +1969,19 @@ interactions:
       User-Agent:
       - python-requests/2.32.3
     method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742
   response:
     body:
-      string: "{\n  \"progress\": 90,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:29:22.972Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
-        usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
-        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '642'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:29 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 2a9856881d192b485d1bf1928e98c7ec.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - DUwB0Va5rq_xNLhLE7BwP22xqZZRKgIB1TQjJQzQgyKuo66kou87pQ==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 90,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:29:22.972Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
-        usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
-        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '642'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:31 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 bb390afd921c223e0fe4921fbc23bbe8.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - XCf5etjGWguQ-7l0DqMA9YEGJqWDnvUiK48Y3D3P1sj0fz6e3-P5DQ==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"progress\": 90,\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n
-        \ \"jobID\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n
-        \ \"processID\": \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n
-        \ \"started\": \"2025-05-01T11:28:35.865Z\",\n  \"updated\": \"2025-05-01T11:29:22.972Z\",\n
-        \ \"status\": \"running\",\n  \"message\": \"delivering outputs, logs and
-        usage report\",\n  \"links\": [\n    {\n      \"title\": \"Status location\",\n
-        \     \"rel\": \"monitor\",\n      \"type\": \"application/json\",\n      \"href\":
-        \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
-        \   }\n  ]\n}"
-    headers:
-      Access-Control-Allow-Headers:
-      - Content-Type,Authorization,Prefer
-      Access-Control-Allow-Methods:
-      - '*'
-      Access-Control-Allow-Origin:
-      - '*'
-      Access-Control-Max-Age:
-      - '1728000'
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '642'
-      Content-Type:
-      - application/json;charset=UTF-8
-      Date:
-      - Thu, 01 May 2025 11:29:34 GMT
-      Server:
-      - nginx/1.27.4
-      Via:
-      - 1.1 32f35b6a71829a460d6fdae31f270164.cloudfront.net (CloudFront)
-      X-Amz-Cf-Id:
-      - F6kXOnkpSrhFwcXutc6cxGbQnnBNKe_AxpuWDnqmKy-fAFDWv-x9Hw==
-      X-Amz-Cf-Pop:
-      - PRG50-C1
-      X-Cache:
-      - Miss from cloudfront
-    status:
-      code: 200
-      message: OK
-- request:
-    body: null
-    headers:
-      Accept:
-      - '*/*'
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      User-Agent:
-      - python-requests/2.32.3
-    method: GET
-    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec
-  response:
-    body:
-      string: "{\n  \"id\": \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"jobID\":
-        \"6b90621e-267f-11f0-aa23-9e77abaf8eec\",\n  \"type\": \"process\",\n  \"processID\":
-        \"convert-url\",\n  \"created\": \"2025-05-01T11:28:35.865Z\",\n  \"started\":
-        \"2025-05-01T11:28:35.865Z\",\n  \"finished\": \"2025-05-01T11:29:35.945Z\",\n
-        \ \"updated\": \"2025-05-01T11:29:35.711Z\",\n  \"status\": \"successful\",\n
+      string: "{\n  \"id\": \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"jobID\":
+        \"36747234-3636-11f0-8ecc-ca5f458bf742\",\n  \"type\": \"process\",\n  \"processID\":
+        \"convert-url\",\n  \"created\": \"2025-05-21T11:24:52.139Z\",\n  \"started\":
+        \"2025-05-21T11:24:52.139Z\",\n  \"finished\": \"2025-05-21T11:25:57.836Z\",\n
+        \ \"updated\": \"2025-05-21T11:25:57.488Z\",\n  \"status\": \"successful\",\n
         \ \"message\": \"ZOO-Kernel successfully run your service!\",\n  \"links\":
         [\n    {\n      \"title\": \"Status location\",\n      \"rel\": \"monitor\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec\"\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742\"\n
         \   },\n    {\n      \"title\": \"Result location\",\n      \"rel\": \"http://www.opengis.net/def/rel/ogc/1.0/results\",\n
-        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/6b90621e-267f-11f0-aa23-9e77abaf8eec/results\"\n
+        \     \"type\": \"application/json\",\n      \"href\": \"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/oxidian-test/jobs/36747234-3636-11f0-8ecc-ca5f458bf742/results\"\n
         \   }\n  ]\n}"
     headers:
       Access-Control-Allow-Headers:
@@ -2001,13 +1999,13 @@ interactions:
       Content-Type:
       - application/json;charset=UTF-8
       Date:
-      - Thu, 01 May 2025 11:29:36 GMT
+      - Wed, 21 May 2025 11:25:58 GMT
       Server:
       - nginx/1.27.4
       Via:
-      - 1.1 b031f43146c9801101822eabdc464390.cloudfront.net (CloudFront)
+      - 1.1 0bb58964819755c192fe9c24c342bd1a.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - 9nPY4jqqLCUjJCnDSqDA07sAPIWr-9Qt5xKAx4DA6E-l1rjiqFYHpQ==
+      - UQ-P09uQO_fmEmh1K7Ue270EYn5x0TIyyZ-uqvJ2KEtwEukOBVyUxw==
       X-Amz-Cf-Pop:
       - PRG50-C1
       X-Cache:
