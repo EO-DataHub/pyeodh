@@ -14,11 +14,7 @@ owslib = "^0.31.0"
 poetry = "^1.8.5"
 zarr = "^2"
 lxml = "5.3.0"
-
-# ceda-datapoint = { version = "^0.4.7", optional = true }
-
-# [tool.poetry.extras]
-# datapoint = ["ceda-datapoint"]
+ceda-datapoint = "^0.4.12"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.3.0"
