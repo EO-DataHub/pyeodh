@@ -7,6 +7,8 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
+from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+from ceda_datapoint.core.item import identify_cloud_type
 from owslib.wmts import WebMapTileService
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
@@ -17,15 +19,6 @@ from pyeodh.eodh_object import EodhObject, is_optional
 from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
 from pyeodh.utils import ConformanceError, join_url, remove_null_items
-
-# try:
-#     from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
-#     from ceda_datapoint.core.item import identify_cloud_type
-
-#     HAS_CEDA = True
-# except ImportError:
-#     HAS_CEDA = False
-
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
@@ -124,65 +117,57 @@ class Item(EodhObject):
         if resp_data:
             self._set_props(self._pystac_object.from_dict(resp_data))
 
-    # def get_cloud_products(
-    #     self,
-    # ) -> DataPointCloudProduct | DataPointCluster | list:
-    #     """Retrieve the cloud product(s) attributed to this item.
+    def get_cloud_products(
+        self,
+    ) -> DataPointCloudProduct | DataPointCluster | list[DataPointCloudProduct]:
+        """Retrieve the cloud product(s) attributed to this item.
 
-    #     Feature added from the CEDA DataPoint library to access cloud
-    #     products as either an individual product object or a set of
-    #     products represented by a cluster. See the documentation
-    #     for using cloud products and clusters at:
-    #     https://cedadev.github.io/datapoint/usage.html
+        Feature added from the CEDA DataPoint library to access cloud
+        products as either an individual product object or a set of
+        products represented by a cluster. See the documentation
+        for using cloud products and clusters at:
+        https://cedadev.github.io/datapoint/usage.html
 
-    #     Note:
-    #         This functionality requires the optional 'ceda-datapoint' package.
-    #         Install with: TBA
+        Note:
+            This functionality requires the optional 'ceda-datapoint' package.
+            Install with: TBA
 
-    #     Typical usage:
-    #         product = item.get_cloud_products()
-    #         ds = product.open_dataset()
-    #         # Continue with the `ds` xarray.Dataset
-    #     """
-    #     if not HAS_CEDA:
-    #         logger.warning(
-    #             "CEDA functionality requires the 'ceda-datapoint' package. "
-    #             "Install with: TBA"
-    #         )
-    #         return []
+        Typical usage:
+            product = item.get_cloud_products()
+            ds = product.open_dataset()
+            # Continue with the `ds` xarray.Dataset
+        """
 
-    #     products = []
-    #     # Iterate over assets in this item
-    #     for id, asset in self.assets.items():
+        products = []
+        # Iterate over assets in this item
+        for id, asset in self.assets.items():
 
-    #         asset = asset.to_dict()
+            cf = identify_cloud_type(id, asset)
+            if cf is None:
+                continue
 
-    #         cf = identify_cloud_type(id, asset)
-    #         if cf is None:
-    #             continue
+            products.append(
+                DataPointCloudProduct(
+                    asset.to_dict(),  # Convert Asset to dict
+                    id=f"{self.id}-{id}",
+                    cf=cf,
+                    meta={"bbox": self.bbox},
+                    properties=self.properties,
+                )
+            )
 
-    #         products.append(
-    #             DataPointCloudProduct(
-    #                 asset,
-    #                 id=f"{self.id}-{id}",
-    #                 cf=cf,
-    #                 meta={"bbox": self.bbox},
-    #                 properties=self.properties,
-    #             )
-    #         )
+        if len(products) == 0:
+            return []
+        if len(products) == 1:
+            return products[0]
 
-    #     if len(products) == 0:
-    #         return []
-    #     if len(products) == 1:
-    #         return products[0]
+        # Could also just return the list.
+        # See https://cedadev.github.io/datapoint/cloud_formats.html
+        # for reasons to use the cluster.
 
-    #     # Could also just return the list.
-    #     # See https://cedadev.github.io/datapoint/cloud_formats.html
-    #     # for reasons to use the cluster.
-
-    #     return DataPointCluster(
-    #         products, parent_id=f"{self.id}-cluster", meta={"bbox": self.bbox}
-    #     )
+        return DataPointCluster(
+            products, parent_id=f"{self.id}-cluster", meta={"bbox": self.bbox}
+        )
 
     def commercial_data_order(
         self,
