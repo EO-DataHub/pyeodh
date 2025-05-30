@@ -128,10 +128,6 @@ class Item(EodhObject):
         for using cloud products and clusters at:
         https://cedadev.github.io/datapoint/usage.html
 
-        Note:
-            This functionality requires the optional 'ceda-datapoint' package.
-            Install with: TBA
-
         Typical usage:
             product = item.get_cloud_products()
             ds = product.open_dataset()
