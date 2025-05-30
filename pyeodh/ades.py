@@ -102,8 +102,15 @@ class Job(EodhObject):
 
     def _get_results_collection(self) -> Collection | None:
         ln = Link.get_link(self.links, AdesRelType.RESULTS.value)
+        if self.status != AdesJobStatus.SUCCESSFUL.value:
+            raise ResultsNotReadyError(
+                f"Results are only available for successful jobs, "
+                f"job {self.id} is {self.status}"
+            )
         if ln is None:
-            raise ResultsNotReadyError(f"{self} does not yet have a link to results.")
+            raise ResultsNotReadyError(
+                f"Job {self.id} does not yet have a link to results."
+            )
         headers, response = self._client._request_json("GET", ln.href)
         if (
             response.get("type", AdesRelType.RESULTS_NOT_READY.value)

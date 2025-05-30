@@ -4,8 +4,9 @@ import pytest
 import requests
 
 import pyeodh
-from pyeodh.ades import Ades, AdesJobStatus, Job, Process
+from pyeodh.ades import Ades, AdesJobStatus, Job, Process, ResultsNotReadyError
 from pyeodh.pagination import PaginatedList
+from pyeodh.resource_catalog import Item
 
 
 @pytest.fixture(scope="module")
@@ -165,19 +166,19 @@ $graph:
         time.sleep(2)
         job.refresh()
 
-    # # Get result items
-    # for _ in range(12):
-    #     try:
-    #         items = job.get_result_items()
-    #         if isinstance(items, list) and all(
-    #             isinstance(item, Item) for item in items
-    #         ):
-    #             break
-    #     except ResultsNotReadyError:
-    #         time.sleep(5)
-    #         job.refresh()
-    # else:
-    #     raise AssertionError("Failed to get result items")
+    # Get result items
+    for _ in range(12):
+        try:
+            items = job.get_result_items()
+            if isinstance(items, list) and all(
+                isinstance(item, Item) for item in items
+            ):
+                break
+        except ResultsNotReadyError:
+            time.sleep(5)
+            job.refresh()
+    else:
+        raise AssertionError("Failed to get result items")
 
 
 @pytest.mark.vcr
