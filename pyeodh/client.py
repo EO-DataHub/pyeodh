@@ -1,5 +1,6 @@
 import json
 import logging
+import os
 import urllib.parse
 from typing import Any, Callable, Optional
 
@@ -22,17 +23,30 @@ def _encode_json(data: dict) -> tuple[str, str]:
 class Client:
     def __init__(
         self,
-        base_url: str = consts.API_BASE_URL,
+        base_url: Optional[str] = None,
         username: Optional[str] = None,
         token: Optional[str] = None,
     ) -> None:
-        if not is_absolute_url(base_url):
-            raise ValueError("base_url must be an absolute URL")
+        """Initialize the client.
 
-        self.url_base = base_url
+        Args:
+            base_url (str, optional): Base URL of the EODH API. If not provided,
+                the EODH_BASE_URL environment variable is used. Defaults to EODH
+                production URL.
+            username (str, optional): Username for authentication. Defaults to None.
+            token (str, optional): Token for authentication. Defaults to None.
+        """
+        self.url_base = base_url or os.getenv("EODH_BASE_URL", consts.API_BASE_URL)
+
+        if not is_absolute_url(self.url_base):
+            raise ValueError(
+                "base_url parameter or EODH_BASE_URL environment variable must be an "
+                "absolute URL"
+            )
+
         self.username = username
         self.token = token
-        self.environment = self._get_environment(base_url)
+        self.environment = self._get_environment(self.url_base)
         self._build_session()
         self.workspace = Workspace(self)
 
