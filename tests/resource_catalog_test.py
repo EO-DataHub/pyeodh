@@ -23,7 +23,9 @@ def vcr_config():
 
 @pytest.fixture
 def svc() -> CatalogService:
-    return pyeodh.Client().get_catalog_service()
+    return pyeodh.Client(
+        base_url="https://staging.eodatahub.org.uk"
+    ).get_catalog_service()
 
 
 @pytest.mark.vcr

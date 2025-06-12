@@ -19,7 +19,9 @@ def vcr_config():
 
 @pytest.fixture
 def svc(api_token: str, username: str) -> Ades:
-    return pyeodh.Client(username=username, token=api_token).get_ades()
+    return pyeodh.Client(
+        username=username, token=api_token, base_url="https://staging.eodatahub.org.uk"
+    ).get_ades()
 
 
 @pytest.mark.vcr

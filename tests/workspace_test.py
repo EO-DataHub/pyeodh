@@ -17,7 +17,9 @@ def vcr_config():
 
 @pytest.fixture
 def workspace(api_token: str, username: str) -> Workspace:
-    return pyeodh.Client(username=username, token=api_token).workspace
+    return pyeodh.Client(
+        username=username, token=api_token, base_url="https://staging.eodatahub.org.uk"
+    ).workspace
 
 
 @pytest.mark.vcr

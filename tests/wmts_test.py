@@ -15,7 +15,7 @@ def vcr_config():
 @pytest.mark.vcr
 def test_get_wmts() -> None:
     wmts = (
-        pyeodh.Client()
+        pyeodh.Client(base_url="https://staging.eodatahub.org.uk")
         .get_catalog_service()
         .get_catalog("public/catalogs/ceda-stac-catalogue")
         .get_wmts()
