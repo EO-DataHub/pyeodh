@@ -681,6 +681,8 @@ class Catalog(EodhObject):
         bbox: list[Any] | None = None,
         intersects: dict | None = None,
         datetime: str | None = None,
+        start_datetime: str | None = None,
+        end_datetime: str | None = None,
         fields: SearchFields | None = None,
         query: dict[str, Any] | list[str] | None = None,
         sort_by: list[SearchSortField] | None = None,
@@ -688,6 +690,31 @@ class Catalog(EodhObject):
         filter_crs: str | None = None,
         filter_lang: Literal["cql-json", "cql2-json", "cql2-text"] | None = None,
     ) -> PaginatedList[Item]:
+        """Search for items in the catalog.
+
+        Args:
+            limit (int): Number of results per page. Defaults to PAGINATION_LIMIT.
+            collections (list[str] | None): Filter by collection IDs.
+            catalog_paths (list[str] | None): Filter by catalog paths.
+            ids (list[str] | None): Filter by item IDs.
+            bbox (list[Any] | None): Bounding box filter.
+            intersects (dict | None): GeoJSON geometry to intersect with.
+            datetime (str | None): Datetime filter string.
+            start_datetime (str | None): Filter items with datetime >= this value.
+                Format: ISO 8601 (e.g., "2024-01-01" or "2024-01-01T00:00:00Z").
+            end_datetime (str | None): Filter items with datetime <= this value.
+                Format: ISO 8601 (e.g., "2024-12-31" or "2024-12-31T23:59:59Z").
+            fields (SearchFields | None): Fields to include/exclude.
+            query (dict[str, Any] | list[str] | None): Query parameters.
+            sort_by (list[SearchSortField] | None): Sort order.
+            filter (dict | None): CQL2 filter expression.
+            filter_crs (str | None): CRS for filter geometries.
+            filter_lang (Literal["cql-json", "cql2-json", "cql2-text"] | None):
+                Filter language.
+
+        Returns:
+            PaginatedList[Item]: Paginated list of matching items.
+        """
         assert isinstance(limit, int), limit
         assert is_optional(collections, list), collections
         assert is_optional(catalog_paths, list), catalog_paths
@@ -695,6 +722,8 @@ class Catalog(EodhObject):
         assert is_optional(bbox, list), bbox
         # assert is_optional(intersects, dict), intersects
         assert is_optional(datetime, str), datetime
+        assert is_optional(start_datetime, str), start_datetime
+        assert is_optional(end_datetime, str), end_datetime
         assert is_optional(fields, dict), fields
         assert is_optional(query, (dict, list)), query
         assert is_optional(sort_by, list), sort_by
@@ -707,6 +736,39 @@ class Catalog(EodhObject):
                 "Catalog paths are not supported for planet catalog, ignoring."
             )
             catalog_paths = None
+
+        # Build datetime filter if start_datetime or end_datetime provided
+        if start_datetime is not None or end_datetime is not None:
+            datetime_filter_args = []
+            if start_datetime is not None:
+                datetime_filter_args.append(
+                    {
+                        "op": ">=",
+                        "args": [
+                            {"property": "properties.datetime"},
+                            start_datetime,
+                        ],
+                    }
+                )
+            if end_datetime is not None:
+                datetime_filter_args.append(
+                    {
+                        "op": "<=",
+                        "args": [{"property": "properties.datetime"}, end_datetime],
+                    }
+                )
+
+            datetime_filter = (
+                {"op": "and", "args": datetime_filter_args}
+                if len(datetime_filter_args) > 1
+                else datetime_filter_args[0]
+            )
+
+            # Merge with existing filter if provided
+            if filter is not None:
+                filter = {"op": "and", "args": [filter, datetime_filter]}
+            else:
+                filter = datetime_filter
 
         data = remove_null_items(
             {
