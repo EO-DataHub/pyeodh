@@ -1,0 +1,281 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac
+  response:
+    body:
+      string: '{"type":"Catalog","id":"stac-fastapi","title":"EO DataHub Catalogue","description":"The
+        Earth Observation Data Hub STAC Catalogue","stac_version":"1.0.0","conformsTo":["https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","https://api.stacspec.org/v1.0.0/core","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v0.3.0/aggregation","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text"],"links":[{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"data","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"GET"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"POST"},{"rel":"queryables","type":"application/schema+json","title":"Queryables","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/queryables"},{"rel":"aggregate","type":"application/json","title":"Aggregate","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregate"},{"rel":"aggregations","type":"application/json","title":"Aggregations","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregations"},{"rel":"child","type":"application/json","title":"Commercial
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/commercial"},{"rel":"child","type":"application/json","title":"Public
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"child","type":"application/json","title":"User
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"service-desc","type":"application/vnd.oai.openapi+json;version=3.0","title":"OpenAPI
+        service description","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/api"},{"rel":"service-doc","type":"text/html","title":"OpenAPI
+        service documentation","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/api.html"}],"stac_extensions":[]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Dec 2025 14:43:24 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 4bc1976da553dde6dd59c4ea33001b72.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - EmDTmMO4z3g48BMGo4rW7F9vop5IaZJZjhUCgSLmBoivMPFem78_EA==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '3536'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue
+  response:
+    body:
+      string: '{"id":"ceda-stac-catalogue","description":"This is an experimental
+        STAC API server.\nThe content is subject to change the and there is no guarantee
+        surrounding its uptime.\n","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ceda_flights","title":"CEDA
+        Flights"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6","title":"CMIP6"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cordex","title":"CORDEX"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3a","title":"EOCIS
+        AEROSOL from Sentinel 3A daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3b","title":"EOCIS
+        AEROSOL from Sentinel 3B daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3a","title":"EOCIS
+        AEROSOL from Sentinel 3A monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3b","title":"EOCIS
+        AEROSOL from Sentinel 3B monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-arctic-sea-ice-thickness-monthly","title":"EOCIS
+        Arctic Monthly Gridded Sea Ice Thickness Product from CryoSat-2"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial","title":"EOCIS
+        Geospatial Information"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-builtarea","title":"EOCIS
+        CHUK Geospatial Information - Built Area"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-elevation","title":"EOCIS
+        CHUK Geospatial Information - Elevation"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-landcover","title":"EOCIS
+        CHUK Geospatial Information - Land Cover"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-fapar","title":"EOCIS
+        CHUK Fraction of Absorbed Photosynthetically Active Radiation"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-lai","title":"EOCIS
+        CHUK Leaf Area Index (LAI)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-day","title":"EOCIS
+        Land Surface Temperature from Sentinel 3A daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-night","title":"EOCIS
+        Land Surface Temperature from Sentinel 3A daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-day","title":"EOCIS
+        Land Surface Temperature from Sentinel 3B daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-night","title":"EOCIS
+        Land Surface Temperature from Sentinel 3B daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-soil-moisture-africa","title":"EOCIS
+        Soil Moisture Africa v2.3.1"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-sst-cdrv3","title":"EOCIS
+        Sea-Surface Temperatures V3"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/land_cover","title":"ESA
+        Land Cover Climate Change Initiative (CCI): Global Land Cover Maps"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1","title":"Sentinel-1
+        Single Look Complex (SLC)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1_ard","title":"Sentinel
+        1 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel2_ard","title":"Sentinel
+        2 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp","title":"UK
+        Climate Projections (UKCP18)"}],"stac_extensions":[],"title":"CEDA STAC API","type":"Catalog","conformsTo":["https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/item-search","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0/collections"]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Dec 2025 14:43:25 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 0bb58964819755c192fe9c24c342bd1a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Cmfid00l8kk3wG5WnYQsfBR_mZ-CIW4eUfO5KjQ-N9cMnL271WF69g==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '9346'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6
+  response:
+    body:
+      string: '{"id":"cmip6","description":"The WCRP Coupled Model Intercomparison
+        Project, Phase 6 (CMIP6), is a global climate model intercomparison project,
+        coordinated by PCMDI (Program For Climate Model Diagnosis and Intercomparison)
+        on behalf of the World Climate Research Program (WCRP) providing input for
+        the Intergovernmental Panel on Climate Change (IPCC) 6th Assessment Report
+        (AR6).\n\nThe CMIP6 archive is managed via the Earth System Grid Federation,
+        a globally distributed archive, with various portals delivering advanced faceted
+        search capabilities provided from a number of participating organisations.
+        Full details are available from the CMIP6 pages (see linked documentation
+        on this record).\n\nCEDA provides access to key CMIP6 simulations including
+        those generated by the UK CMIP6 collaboration between the Met Office and NERC.
+        Replicas of international data sets are provided to aid local access and use.","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/aggregations"},{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/licences/default_workspace/CMIP6_Terms_of_Use.pdf","rel":"license","type":"application/pdf"}],"stac_extensions":[],"title":"CMIP6","type":"Collection","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/cmip6_thumbnail.png","type":"image/png","roles":["thumbnail"]}},"license":"other","extent":{"spatial":{"bbox":[[-180.0,-90.0,179.99999991618097,89.99999995809048]]},"temporal":{"interval":[["1850-01-01T00:00:00.000Z","4114-12-16T12:00:00.000Z"]]}},"keywords":["MIP","CMIP","CMIP6","WCRP","climate
+        change","IPCC","climate","model","simulation","multi-model"],"providers":[],"summaries":{"experiment_title":["SSP-based
+        RCP scenario with high radiative forcing by the end of century. Following
+        approximately RCP8.5 global forcing pathway with SSP5 socioeconomic conditions.
+        Concentration-driven.","SSP-based RCP scenario with medium radiative forcing
+        by the end of the century.  Following approximately RCP4.5 global forcing
+        pathway with SSP2 socioeconomic conditions. Radiative forcing reaches a level
+        of 4.5 W/m2 in 2100. Concentration-driven.","Simulation of recent past (1850
+        to 2014). Impose changing conditions (consistent with observations). Should
+        be initialised from a point early enough in the pre-industrial control run
+        to ensure that the end of all the perturbed runs branching from the end of
+        this historical run end before the end of the control. Only one ensemble member
+        is requested but modelling groups are strongly encouraged to submit at least
+        three ensemble members of their CMIP historical simulation. ","all-forcing
+        simulation of the recent past","all-forcing simulation of the recent past                                                                               ","historical","low-end
+        scenario reaching 1.9 W m-2, based on SSP1","update of RCP2.6 based on SSP1","update
+        of RCP4.5 based on SSP2","update of RCP8.5 based on SSP5"],"data_specs_version":["01.00.21","01.00.23","01.00.27","01.00.28","01.00.29","01.00.30","01.00.31","01.00.32","01.00.33"],"variable_units":["%","1","K","Pa","W
+        m-2","kg m-2","kg m-2 s-1","m s-1"],"table_id":["3hr","Amon","CF3hr","E3hr","day"],"institution_id":["AS-RCEC","AWI","BCC","CAMS","CAS","CCCR-IITM","CCCma","CMCC","CNRM-CERFACS","CSIRO","CSIRO-ARCCSS","DKRZ","E3SM-Project","EC-Earth-Consortium","FIO-QLNM","HAMMOZ-Consortium","INM","IPSL","KIOST","MIROC","MOHC","MPI-M","MRI","NASA-GISS","NCAR","NCC","NIMS-KMA","NOAA-GFDL","NUIST","SNU","THU","UA"],"frequency":["3hr","3hrPt","day","mon","monC"],"variant_label":["r1i1000p1f2","r1i1p1f1","r1i1p1f2","r1i1p1f3","r1i1p2f1"],"variable_id":["clt","hurs","huss","pr","prsn","psl","rlds","rlus","rsds","rss","rsus","sfcWind","snw","tas","tasmax","tasmin","uas","vas"],"activity_id":["CMIP","ScenarioMIP"],"var_id":[],"sub_experiment_id":["none"],"mip_era":["CMIP6"],"physics_index":[],"experiment_id":["historical","ssp119","ssp126","ssp245","ssp585"],"variable_long_name":["Daily
+        Maximum Near-Surface Air Temperature","Daily Minimum Near-Surface Air Temperature","Daily-Mean
+        Near-Surface Wind Speed","Eastward Near-Surface Wind","Eastward Near-Surface
+        Wind                            ","Eastward Near-Surface Wind Speed","Near-Surface
+        Air Temperature","Near-Surface Air Temperature                          ","Near-Surface
+        Relative Humidity","Near-Surface Relative Humidity                        ","Near-Surface
+        Specific Humidity","Near-Surface Specific Humidity                        ","Near-Surface
+        Wind Speed","Net Shortwave Surface Radiation","Northward Near-Surface Wind","Northward
+        Near-Surface Wind                           ","Northward Near-Surface Wind
+        Speed","Precipitation","Precipitation                                         ","Sea
+        Level Pressure","Sea Level Pressure                                    ","Snowfall
+        Flux","Snowfall Flux                                         ","Surface Downwelling
+        Longwave Radiation","Surface Downwelling Shortwave Radiation","Surface Snow
+        Amount","Surface Upwelling Longwave Radiation","Surface Upwelling Shortwave
+        Radiation","Total Cloud Cover Percentage","Total Cloud Fraction"],"source_type":["AER
+        AOGCM CHEM","AER CHEM BGC","AGCM","AOGCM","AOGCM AER","AOGCM AER BGC","AOGCM
+        AER BGC CHEM","AOGCM AER CHEM","AOGCM AER CHEM BGC","AOGCM BGC","AOGCM BGC
+        AER","AOGCM BGC AER CHEM","AOGCM BGC CHEM AER"],"cf_standard_name":["air_pressure_at_mean_sea_level","air_pressure_at_sea_level","air_temperature","cloud_area_fraction","eastward_wind","northward_wind","precipitation_flux","relative_humidity","snowfall_flux","specific_humidity","surface_downwelling_longwave_flux_in_air","surface_downwelling_shortwave_flux_in_air","surface_net_downward_shortwave_flux","surface_snow_amount","surface_upwelling_longwave_flux_in_air","surface_upwelling_shortwave_flux_in_air","wind_speed"],"version":[],"realization_index":[],"instance_id":["CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.clt.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.huss.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.pr.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.prsn.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rlds.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rlus.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rsds.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rsus.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.tas.gn.v20201014","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.clt.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.huss.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.pr.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.prsn.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.psl.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rlds.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rlus.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rsds.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rsus.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.sfcWind.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.tas.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.clt.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.hurs.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.huss.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.pr.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.psl.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rlds.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rlus.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rsds.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rsus.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.sfcWind.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.tas.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.tasmax.gn.v20210517","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.tasmin.gn.v20210517","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.clt.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.pr.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.prsn.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rlds.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rlus.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rsds.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rsus.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.tas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.uas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.vas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.clt.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.huss.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.pr.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.prsn.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.psl.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rlds.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rlus.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rsds.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rsus.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.sfcWind.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.tas.gn.v20200720","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.tasmax.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.tasmin.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.uas.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.vas.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.snw.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.tas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.tasmax.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.tasmin.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.uas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.vas.gn.v20181218","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.clt.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.huss.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.pr.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.prsn.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rlds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rlus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rsds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rsus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.tas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.uas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.vas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.clt.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.hurs.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.huss.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.pr.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.prsn.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.psl.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rlds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rlus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rsds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rsus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.sfcWind.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.tas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.tasmax.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.tasmin.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.uas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.vas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.CF3hr.psl.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.clt.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.hurs.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.huss.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.pr.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.prsn.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.psl.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.rlds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.rlus.gn.v20200212"],"grid":["All
+        grid attributes are set for the native grid and based on information from
+        attribute source.","CESM f09_g16 resolution","LMDZ grid","Native N216 grid
+        (U points); 432 x 324 longitude/latitude","Native N216 grid (V points); 432
+        x 325 longitude/latitude","Native N216 grid; 432 x 324 longitude/latitude","Native
+        N96 grid (U points); 192 x 144 longitude/latitude","Native N96 grid (V points);
+        192 x 145 longitude/latitude","Native N96 grid; 192 x 144 longitude/latitude","ORCA12T1279","T106","T159L62","T159L62-ORCA1L75","T255L91","T255L91-ORCA1L75","T42","T63","T63L49
+        native atmosphere, T63 Linear Gaussian Grid; 128 x 64 longitude/latitude;
+        49 levels; top level 1 hPa","atmos data regridded from Cubed-sphere (c48)
+        to 94X192","atmos data regridded from Cubed-sphere (c96) to 180,288; interpolation
+        method: conserve_order1","atmos data regridded from Cubed-sphere (c96) to
+        180,288; interpolation method: conserve_order2","atmospheric grid: 144x90,
+        ocean grid: 288x180","atmospheric grid: 144x90, ocean grid: 360x180","data
+        regridded to a 359 gaussian grid (360x720 latlon) from a native atmosphere
+        T359l reduced gaussian grid","data regridded to a CMIP6 standard 1x1 degree
+        lonxlat grid from the native grid using an area-average preserving method.","data
+        regridded to a T127 gaussian grid (128x256 latlon) from a native atmosphere
+        T127l reduced gaussian grid","finite-volume grid with 0.9x1.25 degree lat/lon
+        resolution","finite-volume grid with 1.9x2.5 degree lat/lon resolution","gn","gs1x1","gs2x1.5","gs2x2","land
+        data regridded from Cubed-sphere (c96) to 180,288; interpolation method: conserve_order1","lat-lon","native
+        0.9x1.25 finite volume grid (192x288 latxlon)","native 1.9x2.5 finite volume
+        grid (96x144 latxlon)","native atmosphere N96 grid (144x192 latxlon)","native
+        atmosphere N96 grid (145x192 latxlon)","native atmosphere T42 Gaussian grid","native
+        atmosphere T85 Gaussian grid","native atmosphere TL159 gaussian grid (160x320
+        latxlon)","native atmosphere area-weighted latxlon grid (80x180 latxlon)","native
+        atmosphere regular grid","native atmosphere regular grid (128x256 latxlon)","native
+        atmosphere regular grid (192x288 latxlon)"],"grid_label":["gn","gr","gr1"],"initialisation_index":[],"source_id":["ACCESS-CM2","ACCESS-ESM1-5","AWI-CM-1-1-MR","AWI-ESM-1-1-LR","BCC-CSM2-MR","BCC-ESM1","CAMS-CSM1-0","CAS-ESM2-0","CESM2","CESM2-FV2","CESM2-WACCM","CESM2-WACCM-FV2","CIESM","CMCC-CM2-HR4","CMCC-CM2-SR5","CMCC-ESM2","CNRM-CM6-1","CNRM-CM6-1-HR","CNRM-ESM2-1","CanESM5","CanESM5-CanOE","E3SM-1-0","E3SM-1-1","E3SM-1-1-ECA","EC-Earth3","EC-Earth3-AerChem","EC-Earth3-CC","EC-Earth3-Veg","EC-Earth3-Veg-LR","EC-Earth3P-VHR","FGOALS-f3-L","FGOALS-g3","FIO-ESM-2-0","GFDL-CM4","GFDL-ESM4","GISS-E2-1-G","GISS-E2-1-G-CC","GISS-E2-1-H","GISS-E2-2-G","GISS-E2-2-H","HadGEM3-GC31-LL","HadGEM3-GC31-MM","ICON-ESM-LR","IITM-ESM","INM-CM4-8","INM-CM5-0","IPSL-CM5A2-INCA","IPSL-CM6A-LR","IPSL-CM6A-LR-INCA","KACE-1-0-G","KIOST-ESM","MCM-UA-1-0","MIROC-ES2H","MIROC-ES2L","MIROC6","MPI-ESM-1-2-HAM","MPI-ESM1-2-HR","MPI-ESM1-2-LR","MRI-ESM2-0","NESM3","NorCPM1","NorESM2-LM","NorESM2-MM","SAM0-UNICON","TaiESM1","UKESM1-0-LL","UKESM1-1-LL"],"forcing_index":[]}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Dec 2025 14:43:25 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 91afcef6d5c7e90d0a4bb2c3a456c690.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - WUkHzpuL7bkw0K0bIXV_ctkHXqlScvJlkiow82YisjFiKXRHBza5CQ==
+      X-Amz-Cf-Pop:
+      - PRG50-C1
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '17443'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+version: 1

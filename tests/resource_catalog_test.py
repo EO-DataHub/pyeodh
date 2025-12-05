@@ -209,7 +209,13 @@ def test_conformance_error_raised(mock_get_conformance, svc: CatalogService):
 
 
 @patch("pyeodh.client.Client._request_json")
-def test_from_href_mocked(mock_request_json, svc: CatalogService):
+def test_from_href_mocked(mock_request_json, svc: CatalogService) -> None:
+    """Test creating an Item from a URL using mocked response.
+
+    Args:
+        mock_request_json: Mock for the client's _request_json method.
+        svc (CatalogService): CatalogService fixture.
+    """
     href = "https://example.com/api/stac/item1"
 
     # Mock response data
@@ -245,3 +251,112 @@ def test_from_href_mocked(mock_request_json, svc: CatalogService):
     item = Item.from_href(svc._client, href)
     assert isinstance(item, Item)
     assert item.id == mock_response_data["id"]
+
+
+# Tests for self_href property and path discovery methods
+
+
+@pytest.mark.vcr
+def test_catalog_service_self_href(svc: CatalogService) -> None:
+    """Test that CatalogService exposes self_href property.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    assert svc.self_href is not None
+    assert isinstance(svc.self_href, str)
+    assert "stac" in svc.self_href
+
+
+@pytest.mark.vcr
+def test_catalog_self_href(svc: CatalogService) -> None:
+    """Test that Catalog exposes self_href property.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    cat = svc.get_catalog("public")
+    assert cat.self_href is not None
+    assert isinstance(cat.self_href, str)
+    assert "catalogs/public" in cat.self_href
+
+
+@pytest.mark.vcr
+def test_collection_self_href(svc: CatalogService) -> None:
+    """Test that Collection exposes self_href property.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    cat = svc.get_catalog(CEDA_CAT_ID)
+    collection = cat.get_collection("cmip6")
+    assert collection.self_href is not None
+    assert isinstance(collection.self_href, str)
+    assert "collections/cmip6" in collection.self_href
+
+
+@pytest.mark.vcr
+def test_item_self_href(svc: CatalogService) -> None:
+    """Test that Item exposes self_href property.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    cat = svc.get_catalog(CEDA_CAT_ID)
+    collection = cat.get_collection("cmip6")
+    items = collection.get_items()
+    item = items[0]
+    assert item.self_href is not None
+    assert isinstance(item.self_href, str)
+    assert "items/" in item.self_href
+
+
+@pytest.mark.vcr
+def test_catalog_get_path(svc: CatalogService) -> None:
+    """Test Catalog.get_path() returns the catalog path.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    cat = svc.get_catalog("public")
+    path = cat.get_path()
+    assert path == "public"
+
+
+@pytest.mark.vcr
+def test_nested_catalog_get_path(svc: CatalogService) -> None:
+    """Test Catalog.get_path() returns nested catalog path.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    cat = svc.get_catalog(CEDA_CAT_ID)
+    path = cat.get_path()
+    assert path == CEDA_CAT_ID
+
+
+@pytest.mark.vcr
+def test_collection_get_catalog_path(svc: CatalogService) -> None:
+    """Test Collection.get_catalog_path() returns the parent catalog path.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    cat = svc.get_catalog(CEDA_CAT_ID)
+    collection = cat.get_collection("cmip6")
+    catalog_path = collection.get_catalog_path()
+    assert catalog_path == CEDA_CAT_ID
+
+
+@pytest.mark.vcr
+def test_get_catalog_paths(svc: CatalogService) -> None:
+    """Test CatalogService.get_catalog_paths() returns list of catalog paths.
+
+    Args:
+        svc (CatalogService): CatalogService fixture.
+    """
+    paths = svc.get_catalog_paths(recursive=False)
+    assert isinstance(paths, list)
+    assert all(isinstance(p, str) for p in paths)
+    # Should have at least the 'public' catalog
+    assert any("public" in p for p in paths)

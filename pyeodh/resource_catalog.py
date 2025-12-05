@@ -39,6 +39,8 @@ class Conformance(Enum):
 
 
 class Item(EodhObject):
+    """Represents a STAC Item in the resource catalog."""
+
     _pystac_object: pystac.Item
 
     def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
@@ -52,6 +54,15 @@ class Item(EodhObject):
         self.properties = obj.properties
         self.collection = obj.collection_id
         self.assets = obj.assets
+
+    @property
+    def self_href(self) -> str:
+        """URL pointing to this item's endpoint.
+
+        Returns:
+            str: The self href URL.
+        """
+        return self._pystac_object.self_href
 
     def delete(self) -> None:
         """Delete this item.
@@ -207,6 +218,8 @@ class Item(EodhObject):
 
 
 class Collection(EodhObject):
+    """Represents a STAC Collection in the resource catalog."""
+
     _pystac_object: pystac.Collection
 
     def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
@@ -223,6 +236,15 @@ class Collection(EodhObject):
         self.summaries = obj.summaries
         self.assets = obj.assets
 
+    @property
+    def self_href(self) -> str:
+        """URL pointing to this collection's endpoint.
+
+        Returns:
+            str: The self href URL.
+        """
+        return self._pystac_object.self_href
+
     @cached_property
     def items_href(self) -> str:
         """URL pointing to items endpoint."""
@@ -230,6 +252,36 @@ class Collection(EodhObject):
         if not link:
             raise RuntimeError("Object does not have items link!")
         return link.href
+
+    def get_catalog_path(self) -> str:
+        """Get the parent catalog path for this collection.
+
+        Extracts the catalog path from the collection's self_href URL.
+        For example, if self_href is:
+        `.../catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6`
+        This returns: `public/catalogs/ceda-stac-catalogue`
+
+        Returns:
+            str: The parent catalog path.
+
+        Raises:
+            ValueError: If the catalog path cannot be extracted from the URL.
+        """
+        href = self.self_href
+        # Find the catalogs segment and extract path up to /collections
+        if "/catalogs/" not in href or "/collections/" not in href:
+            raise ValueError(f"Cannot extract catalog path from URL: {href}")
+
+        # Find the first /catalogs/ and extract until /collections/
+        catalogs_idx = href.find("/catalogs/")
+        collections_idx = href.find("/collections/")
+
+        if catalogs_idx == -1 or collections_idx == -1:
+            raise ValueError(f"Cannot extract catalog path from URL: {href}")
+
+        # Extract the path between /catalogs/ and /collections/
+        catalog_path = href[catalogs_idx + len("/catalogs/") : collections_idx]
+        return catalog_path
 
     def get_items(self) -> PaginatedList[Item]:
         """Fetches all items within a collection.
@@ -394,6 +446,8 @@ class Collection(EodhObject):
 
 
 class Catalog(EodhObject):
+    """Represents a STAC Catalog in the resource catalog."""
+
     _pystac_object: pystac.Catalog
 
     def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
@@ -404,6 +458,43 @@ class Catalog(EodhObject):
         self.description = obj.description
         self.title = obj.title
         self.conforms_to = obj.extra_fields.get("conformsTo", []).copy()
+
+    @property
+    def self_href(self) -> str:
+        """URL pointing to this catalog's endpoint.
+
+        Returns:
+            str: The self href URL.
+        """
+        return self._pystac_object.self_href
+
+    def get_path(self) -> str:
+        """Get the path for this catalog.
+
+        Extracts the catalog path from the catalog's self_href URL.
+        For example, if self_href is:
+        `.../catalogs/public/catalogs/ceda-stac-catalogue`
+        This returns: `public/catalogs/ceda-stac-catalogue`
+
+        Returns:
+            str: The catalog path.
+
+        Raises:
+            ValueError: If the catalog path cannot be extracted from the URL.
+        """
+        href = self.self_href
+        # Find the catalogs segment and extract the path
+        if "/catalogs/" not in href:
+            raise ValueError(f"Cannot extract catalog path from URL: {href}")
+
+        # Find the first /catalogs/ and extract everything after it
+        catalogs_idx = href.find("/catalogs/")
+        catalog_path = href[catalogs_idx + len("/catalogs/") :]
+
+        # Remove trailing slash if present
+        catalog_path = catalog_path.rstrip("/")
+
+        return catalog_path
 
     @cached_property
     def collections_href(self) -> str:
@@ -657,6 +748,8 @@ class Catalog(EodhObject):
 
 
 class CatalogService(Catalog):
+    """Represents the root STAC Catalog Service."""
+
     def get_collections(self) -> PaginatedList[Collection]:
         """Fetches all resource catalog collections.
 
@@ -666,6 +759,45 @@ class CatalogService(Catalog):
             list[Collection]: List of available collections
         """
         return super().get_collections()
+
+    def get_catalog_paths(self, recursive: bool = True) -> list[str]:
+        """Get all catalog paths available in the catalog service.
+
+        Discovers and returns the paths of all catalogs. When recursive is True,
+        it traverses the entire catalog hierarchy to find all nested catalogs.
+
+        Args:
+            recursive (bool): If True, recursively discover nested catalogs.
+                Defaults to True.
+
+        Returns:
+            list[str]: List of catalog paths (e.g., ['public', 'public/catalogs/ceda']).
+        """
+        paths: list[str] = []
+
+        def _collect_paths(catalog: Catalog) -> None:
+            """Recursively collect catalog paths."""
+            try:
+                path = catalog.get_path()
+                paths.append(path)
+            except ValueError:
+                # Skip catalogs where path cannot be extracted
+                pass
+
+            if recursive:
+                try:
+                    children = catalog.get_catalogs()
+                    for child in children:
+                        _collect_paths(child)
+                except Exception as e:
+                    logger.warning(f"Failed to get child catalogs: {e}")
+
+        # Start with top-level catalogs
+        top_level_catalogs = self.get_catalogs()
+        for catalog in top_level_catalogs:
+            _collect_paths(catalog)
+
+        return paths
 
     def get_catalog(self, catalog_id: str) -> Catalog:
         """Fetches a catalog.
