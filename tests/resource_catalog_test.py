@@ -68,7 +68,7 @@ def test_get_catalogs_from_catalog(svc: CatalogService):
 def test_get_collections_from_catalog(svc: CatalogService):
     cat = svc.get_catalog(CEDA_CAT_ID)
     collections = cat.get_collections()
-    assert isinstance(collections, list)
+    assert isinstance(collections, pyeodh.pagination.PaginatedList)
     assert all(
         isinstance(elem, pyeodh.resource_catalog.Collection) for elem in collections
     )

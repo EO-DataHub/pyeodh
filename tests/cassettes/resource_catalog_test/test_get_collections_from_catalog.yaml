@@ -15,7 +15,7 @@ interactions:
   response:
     body:
       string: '{"type":"Catalog","id":"stac-fastapi","title":"EO DataHub Catalogue","description":"The
-        Earth Observation Data Hub STAC Catalogue","stac_version":"1.0.0","conformsTo":["https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0/collections","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0/item-search#query","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text"],"links":[{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"data","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        Earth Observation Data Hub STAC Catalogue","stac_version":"1.0.0","conformsTo":["https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","https://api.stacspec.org/v1.0.0/core","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json"],"links":[{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"data","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
         conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"search","type":"application/geo+json","title":"STAC
         search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"GET"},{"rel":"search","type":"application/geo+json","title":"STAC
         search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"POST"},{"rel":"queryables","type":"application/schema+json","title":"Queryables","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/queryables"},{"rel":"aggregate","type":"application/json","title":"Aggregate","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregate"},{"rel":"aggregations","type":"application/json","title":"Aggregations","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregations"},{"rel":"child","type":"application/json","title":"Commercial
@@ -33,20 +33,27 @@ interactions:
       - '*'
       Access-Control-Max-Age:
       - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
       Connection:
       - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
       Content-Type:
       - application/json
       Date:
-      - Wed, 21 May 2025 11:26:11 GMT
+      - Fri, 05 Dec 2025 14:27:29 GMT
       Server:
-      - nginx/1.27.4
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
       Via:
-      - 1.1 9ed2eeec8748ea461af0d1cbf998da0e.cloudfront.net (CloudFront)
+      - 1.1 b0edcfbed6fc188ab75a759053d37fb2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - aILBgf41NoWj6aJYkeO_x01j7S6XZ_o6eYILknZNXORxtuvR7mRD9Q==
+      - JzkEeHTKOSWBkCxBcwsu4EuD3acqHgkblEbyHx7SfTwmVTy-uvD9ow==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P3
       X-Cache:
       - Miss from cloudfront
       cache-control:
@@ -78,24 +85,30 @@ interactions:
         surrounding its uptime.\n","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
         conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
         search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"search","type":"application/geo+json","title":"STAC
-        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/DYAMOND3_N2560","title":"DYAMOND3
-        N2560 STAC Index"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cci","title":"CCI"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6","title":"CMIP6"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cordex","title":"CORDEX"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3a","title":"EOCIS
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ceda_flights","title":"CEDA
+        Flights"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6","title":"CMIP6"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cordex","title":"CORDEX"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3a","title":"EOCIS
         AEROSOL from Sentinel 3A daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3b","title":"EOCIS
         AEROSOL from Sentinel 3B daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3a","title":"EOCIS
         AEROSOL from Sentinel 3A monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3b","title":"EOCIS
         AEROSOL from Sentinel 3B monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-arctic-sea-ice-thickness-monthly","title":"EOCIS
-        Arctic Monthly Gridded Sea Ice Thickness Product from CryoSat-2"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-day","title":"EOCIS
+        Arctic Monthly Gridded Sea Ice Thickness Product from CryoSat-2"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial","title":"EOCIS
+        Geospatial Information"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-builtarea","title":"EOCIS
+        CHUK Geospatial Information - Built Area"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-elevation","title":"EOCIS
+        CHUK Geospatial Information - Elevation"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-landcover","title":"EOCIS
+        CHUK Geospatial Information - Land Cover"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-fapar","title":"EOCIS
+        CHUK Fraction of Absorbed Photosynthetically Active Radiation"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-lai","title":"EOCIS
+        CHUK Leaf Area Index (LAI)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-day","title":"EOCIS
         Land Surface Temperature from Sentinel 3A daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-night","title":"EOCIS
         Land Surface Temperature from Sentinel 3A daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-day","title":"EOCIS
         Land Surface Temperature from Sentinel 3B daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-night","title":"EOCIS
-        Land Surface Temperature from Sentinel 3B daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-sst-cdrv3","title":"EOCIS
+        Land Surface Temperature from Sentinel 3B daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-soil-moisture-africa","title":"EOCIS
+        Soil Moisture Africa v2.3.1"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-sst-cdrv3","title":"EOCIS
         Sea-Surface Temperatures V3"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/land_cover","title":"ESA
         Land Cover Climate Change Initiative (CCI): Global Land Cover Maps"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1","title":"Sentinel-1
         Single Look Complex (SLC)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1_ard","title":"Sentinel
         1 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel2_ard","title":"Sentinel
         2 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp","title":"UK
-        Climate Projections (UKCP18)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/wcrp","title":"WCRP
-        UK Node STAC Index"}],"stac_extensions":[],"title":"CEDA STAC API","type":"Catalog","conformsTo":["https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","https://api.stacspec.org/v1.0.0/ogcapi-features","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0/collections","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0/item-search#query","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","https://api.stacspec.org/v1.0.0/item-search#fields","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","https://api.stacspec.org/v1.0.0/core","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text"]}'
+        Climate Projections (UKCP18)"}],"stac_extensions":[],"title":"CEDA STAC API","type":"Catalog","conformsTo":["http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","https://api.stacspec.org/v1.0.0/collections","https://api.stacspec.org/v1.0.0/item-search","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","https://api.stacspec.org/v1.0.0/item-search#sort","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0/item-search#query","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0-rc.1/collection-search","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core"]}'
     headers:
       Access-Control-Allow-Headers:
       - Accept,Authorization,Content-Type
@@ -105,26 +118,33 @@ interactions:
       - '*'
       Access-Control-Max-Age:
       - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
       Connection:
       - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
       Content-Type:
       - application/json
       Date:
-      - Wed, 21 May 2025 11:26:11 GMT
+      - Fri, 05 Dec 2025 14:27:29 GMT
       Server:
-      - nginx/1.27.4
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
       Via:
-      - 1.1 9ed2eeec8748ea461af0d1cbf998da0e.cloudfront.net (CloudFront)
+      - 1.1 75368b7bf20cbbab33ae6a3ed6416920.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - yTGoq2zvLk7-u8DIAb_qlFOT073KBn374pPoYnW4k40TYIkz6ocrRA==
+      - YVH07T3j5t6Wd9-87JaelRq3mnAkegWAZAXGm5atcvHluRLkB0blOg==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P3
       X-Cache:
       - Miss from cloudfront
       cache-control:
       - max-age=300, stale-while-revalidate=300
       content-length:
-      - '8035'
+      - '9346'
       vary:
       - Accept-Encoding
     status:
@@ -145,25 +165,17 @@ interactions:
     uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections
   response:
     body:
-      string: "{\"collections\":[{\"id\":\"wcrp\",\"description\":\"A group of experiments
-        have been conducted using the Met Office Unified Model (MetUM) with a focus
-        on the DYAMOND-3 period (Jan 2020-Feb 2021). While these experiments include
-        standalone explicit convection global simulations we have also developed a
-        cyclic tropical channel and include limited area model simulations to build
-        our understanding of how resolving smaller-scale processes feeds back on to
-        the large-scale atmospheric circulation.\",\"stac_version\":\"1.0.0\",\"links\":[{\"rel\":\"items\",\"type\":\"application/geo+json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/wcrp/items\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/wcrp\"},{\"href\":\"https://api.stac.ceda.ac.uk/string\",\"rel\":\"string\",\"type\":\"image/tiff;
-        application=geotiff\",\"title\":\"string\",\"label:assets\":\"string\",\"additionalProp1\":{}}],\"stac_extensions\":[],\"title\":\"WCRP
-        UK Node STAC Index\",\"type\":\"Collection\",\"assets\":{\"thumbnail\":{\"href\":\"https://hackathon-o.s3-ext.jc.rl.ac.uk/dwest77-test-0603/Example_airtemp.png\",\"type\":\"image/png\",\"roles\":[\"thumbnail\"]}},\"license\":\"string\",\"extent\":{\"spatial\":{\"bbox\":[[-180,-90,180,90]]},\"temporal\":{\"interval\":[[\"2020-01-01T00:00:00Z\",\"2021-03-01T00:00:00Z\"]]}},\"keywords\":[\"HealPix\",\"MetOffice\",\"Km-Scale\"],\"providers\":[],\"summaries\":{}},{\"id\":\"ukcp\",\"description\":\"Regional
-        climate model projections produced as part of the UK Climate Projection 2018
-        (UKCP18) project. The data produced by the Met Office Hadley Centre provides
-        information on changes in climate for the UK until 2080, downscaled to a high
-        resolution (12km), helping to inform adaptation to a changing climate. The
-        projections cover Europe and a 100 year period, 1981-2080, for a high emissions
-        scenario, RCP8.5. Each projection provides an example of climate variability
-        in a changing climate, which is consistent across climate variables at different
-        times and spatial locations. This dataset contains 12km data for the United
-        Kingdom, the Isle of Man and the Channel Islands provided on the Ordnance
-        Survey's British National Grid.\",\"stac_version\":\"1.0.0\",\"links\":[{\"rel\":\"items\",\"type\":\"application/geo+json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp/items\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp\"},{\"href\":\"https://catalogue.ceda.ac.uk/uuid/589211abeb844070a95d061c8cc7f604\",\"rel\":\"ceda_catalogue\",\"type\":\"text/html\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/OGL-UK-3.0.txt\",\"rel\":\"license\",\"type\":\"text/plain\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/OGL-UK-3.0.html\",\"rel\":\"license\",\"type\":\"text/html\"}],\"stac_extensions\":[],\"title\":\"UK
+      string: "{\"collections\":[{\"id\":\"ukcp\",\"description\":\"Regional climate
+        model projections produced as part of the UK Climate Projection 2018 (UKCP18)
+        project. The data produced by the Met Office Hadley Centre provides information
+        on changes in climate for the UK until 2080, downscaled to a high resolution
+        (12km), helping to inform adaptation to a changing climate. The projections
+        cover Europe and a 100 year period, 1981-2080, for a high emissions scenario,
+        RCP8.5. Each projection provides an example of climate variability in a changing
+        climate, which is consistent across climate variables at different times and
+        spatial locations. This dataset contains 12km data for the United Kingdom,
+        the Isle of Man and the Channel Islands provided on the Ordnance Survey's
+        British National Grid.\",\"stac_version\":\"1.0.0\",\"links\":[{\"rel\":\"items\",\"type\":\"application/geo+json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp/items\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp\"},{\"href\":\"https://catalogue.ceda.ac.uk/uuid/589211abeb844070a95d061c8cc7f604\",\"rel\":\"ceda_catalogue\",\"type\":\"text/html\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/OGL-UK-3.0.txt\",\"rel\":\"license\",\"type\":\"text/plain\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/OGL-UK-3.0.html\",\"rel\":\"license\",\"type\":\"text/html\"}],\"stac_extensions\":[],\"title\":\"UK
         Climate Projections (UKCP18)\",\"type\":\"Collection\",\"assets\":{\"thumbnail\":{\"href\":\"https://dap.ceda.ac.uk/badc/ukcp18/metadata/STAC/ukcp18_thumbnail.png\",\"type\":\"image/png\",\"roles\":[\"thumbnail\"]}},\"license\":\"OGL-UK-3.0\",\"extent\":{\"spatial\":{\"bbox\":[[-12.773760091513395,49.313714699819684,3.4064378030598164,60.526678590103984]]},\"temporal\":{\"interval\":[[\"2060-12-01T12:00:00.000Z\",\"2080-11-30T12:00:00.000Z\"]]}},\"keywords\":[\"UK\",\"Climate\",\"Projections\",\"UKCP18\",\"Regional\",\"Europe\",\"Simulation\",\"Model\",\"Runs\"],\"providers\":[{\"name\":\"Met
         Office Hadley Centre\",\"roles\":[\"producer\"],\"url\":\"https://www.metoffice.gov.uk/weather/climate/met-office-hadley-centre/index\"},{\"name\":\"Centre
         for Environmental Data Analysis (CEDA)\",\"roles\":[\"host\"],\"url\":\"https://ceda.ac.uk\"}],\"summaries\":{\"Conventions\":[\"CF-1.7\"],\"references\":[\"https://ukclimateprojections.metoffice.gov.uk\"],\"variable_long_name\":[\"Cloud
@@ -174,7 +186,7 @@ interactions:
         provide high quality, Analysis Ready Data (ARD) for a wide range of applications.
         The dataset contains modified Copernicus Sentinel-2 (Level 1C data processed
         into a surface reflectance product using ARCSI software (Level 2)).\",\"stac_version\":\"1.0.0\",\"links\":[{\"rel\":\"items\",\"type\":\"application/geo+json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel2_ard/items\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel2_ard\"},{\"href\":\"https://catalogue.ceda.ac.uk/uuid/bf9568b558204b81803eeebcc7f529ef\",\"rel\":\"ceda_catalogue\",\"type\":\"text/html\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/OGL-UK-3.0.txt\",\"rel\":\"license\",\"type\":\"text/plain\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/OGL-UK-3.0.html\",\"rel\":\"license\",\"type\":\"text/html\"}],\"stac_extensions\":[\"https://stac-extensions.github.io/render/v1.0.0/schema.json\"],\"title\":\"Sentinel
-        2 ARD\",\"type\":\"Collection\",\"assets\":{\"thumbnail\":{\"href\":\"https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2023/06/10/S2A_20230610_latn527lone0008_T30UYD_ORB137_20230610144925_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref_thumbnail.jpg\",\"type\":\"image/jpg\",\"roles\":[\"thumbnail\"]}},\"license\":\"OGL-UK-3.0\",\"extent\":{\"spatial\":{\"bbox\":[[-9.00034454651177,49.48562028352171,3.1494256015866995,61.33444247301668]]},\"temporal\":{\"interval\":[[\"2022-01-02T11:35:01.000Z\",\"2025-01-21T11:33:19.000Z\"]]}},\"keywords\":[\"Analysis
+        2 ARD\",\"type\":\"Collection\",\"assets\":{\"thumbnail\":{\"href\":\"https://dap.ceda.ac.uk/neodc/sentinel_ard/data/sentinel_2/2025/11/15/S2C_20251115_latn572lonw0054_T30VUJ_ORB123_20251115121213_utm30n_osgb_vmsk_sharp_rad_srefdem_stdsref_thumbnail.jpg\",\"type\":\"image/jpg\",\"roles\":[\"thumbnail\"]}},\"license\":\"OGL-UK-3.0\",\"extent\":{\"spatial\":{\"bbox\":[[-9.00034454651177,49.48562028352171,3.1494256015866995,61.33444247301668]]},\"temporal\":{\"interval\":[[\"2022-01-02T11:35:01Z\",null]]}},\"keywords\":[\"Analysis
         Ready Data\",\"Sentinel\",\"Surface Reflectance\",\"ARD\",\"Level2\",\"ARCSI\",\"JNCC\",\"Defra\",\"ESA\"],\"providers\":[{\"name\":\"Department
         for Environment, Food and Rural Affairs (Defra)\",\"roles\":[\"producer\"],\"url\":\"https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs\"},{\"name\":\"Joint
         Nature Conservation Committee (JNCC)\",\"roles\":[\"producer\"],\"url\":\"https://jncc.gov.uk\"},{\"name\":\"Centre
@@ -189,7 +201,7 @@ interactions:
         provide high quality, Analysis Ready Data (ARD) for a wide range of applications.
         The dataset contains modified Copernicus Sentinel-1 IW GRDH products processed
         using the ESA SNAP toolbox.\",\"stac_version\":\"1.0.0\",\"links\":[{\"rel\":\"items\",\"type\":\"application/geo+json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1_ard/items\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1_ard\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/OGL-UK-3.0.txt\",\"rel\":\"license\",\"type\":\"text/plain\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/OGL-UK-3.0.html\",\"rel\":\"license\",\"type\":\"text/html\"}],\"stac_extensions\":[\"https://stac-extensions.github.io/sar/v1.1.0/schema.json\",\"https://stac-extensions.github.io/projection/v2.0.0/schema.json\",\"https://stac-extensions.github.io/sat/v1.1.0/schema.json\"],\"title\":\"Sentinel
-        1 ARD\",\"type\":\"Collection\",\"assets\":{\"thumbnail\":{\"href\":\"https://dap.ceda.ac.uk/neodc/sentinel_ard/metadata/STAC/S1A_20250228_103_asc_180748_180813_VVVH_G0_GB_OSGB_RTCK_SpkRL.png\",\"type\":\"image/png\",\"roles\":[\"thumbnail\"]}},\"license\":\"OGL-UK-3.0\",\"extent\":{\"spatial\":{\"bbox\":[[-10,50,4,62]]},\"temporal\":{\"interval\":[[\"2015-02-01T00:00:00Z\",\"2015-03-01T00:00:00Z\"]]}},\"keywords\":[\"Analysis
+        1 ARD\",\"type\":\"Collection\",\"assets\":{\"thumbnail\":{\"href\":\"https://dap.ceda.ac.uk/neodc/sentinel_ard/metadata/STAC/S1A_20250228_103_asc_180748_180813_VVVH_G0_GB_OSGB_RTCK_SpkRL.png\",\"type\":\"image/png\",\"roles\":[\"thumbnail\"]}},\"license\":\"OGL-UK-3.0\",\"extent\":{\"spatial\":{\"bbox\":[[-10,50,4,62]]},\"temporal\":{\"interval\":[[\"2015-02-01T00:00:00Z\",null]]}},\"keywords\":[\"Analysis
         Ready Data\",\"Sentinel\",\"ARD\",\"JNCC\",\"Defra\",\"ESA\",\"SNAP\"],\"providers\":[{\"name\":\"Department
         for Environment, Food and Rural Affairs (Defra)\",\"roles\":[\"producer\"],\"url\":\"https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs\"},{\"name\":\"Joint
         Nature Conservation Committee (JNCC)\",\"roles\":[\"producer\"],\"url\":\"https://jncc.gov.uk\"},{\"name\":\"Centre
@@ -255,7 +267,25 @@ interactions:
         ice area fraction\",\"dimensions\":[\"time\",\"lat\",\"lon\"],\"type\":\"data\",\"unit\":\"1\"}},\"renders\":{\"analysed_sst\":{\"title\":\"Sea
         Surface Temperatures (Kelvin)\",\"assets\":[\"reference_file\"],\"reference\":true,\"variable\":\"analysed_sst\",\"colormap_name\":\"turbo\",\"rescale\":[270,320]},\"analysed_sst_uncertainty\":{\"title\":\"Sea
         Surface Temperature Uncertainty (Kelvin)\",\"assets\":[\"reference_file\"],\"reference\":true,\"variable\":\"analysed_sst_uncertainty\",\"colormap_name\":\"viridis\",\"rescale\":[0,2]},\"sea_ice_fraction\":{\"title\":\"Sea
-        Ice Area Fraction\",\"assets\":[\"reference_file\"],\"reference\":true,\"variable\":\"sea_ice_fraction\",\"colormap_name\":\"blues_r\",\"rescale\":[0,1]}}},{\"id\":\"eocis-lst-s3b-night\",\"description\":\"This
+        Ice Area Fraction\",\"assets\":[\"reference_file\"],\"reference\":true,\"variable\":\"sea_ice_fraction\",\"colormap_name\":\"blues_r\",\"rescale\":[0,1]}}},{\"id\":\"eocis-soil-moisture-africa\",\"description\":\"This
+        dataset contains Africa-wide soil moisture and related water balance variables
+        produced within the Earth Observation Climate Information Service (EOCIS)
+        project.\\n\\nThe product is derived using the JULES land surface model, forced
+        with TAMSAT satellite rainfall estimates and other meteorological variables
+        from the NCEP reanalysis, and tuned to NASA SMAP satellite soil moisture observations.
+        Data are provided at the daily scale, from 1983-01-01 to present (latency
+        around 7 days) at 0.25 degrees by 0.25 degrees spatial resolution.\",\"stac_version\":\"1.0.0\",\"links\":[{\"rel\":\"items\",\"type\":\"application/geo+json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-soil-moisture-africa/items\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-soil-moisture-africa\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt\",\"rel\":\"license\",\"type\":\"text/plain\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html\",\"rel\":\"license\",\"type\":\"text/html\"}],\"stac_extensions\":[\"https://stac-extensions.github.io/datacube/v2.2.0/schema.json\",\"https://stac-extensions.github.io/scientific/v1.0.0/schema.json\",\"https://stac-extensions.github.io/render/v2.0.0/schema.json\"],\"title\":\"EOCIS
+        Soil Moisture Africa v2.3.1\",\"type\":\"Collection\",\"assets\":{\"thumbnail\":{\"href\":\"https://eocis.org/data/soil-moisture-africa/items/2025/06/EOCIS-SM-L4-WB-AFRICA-TAMSAT-20250604-fv2.3.1.png\",\"type\":\"image/png\",\"roles\":[\"thumbnail\"]}},\"license\":\"cc-by-4.0\",\"extent\":{\"spatial\":{\"bbox\":[[-17.875,-35.375,51.375,37.375]]},\"temporal\":{\"interval\":[[\"1983-01-01T00:00:00Z\",\"2025-06-04T00:00:00Z\"]]}},\"keywords\":[\"Soil
+        Moisture\",\"Africa\"],\"providers\":[{\"name\":\"University of Reading /
+        TAMSAT\",\"roles\":[\"producer\"],\"url\":\"https://research.reading.ac.uk/tamsat/\"},{\"name\":\"Earth
+        Observation Climate Information Service (EOCIS)\",\"roles\":[\"producer\"],\"url\":\"https://eocis.org\"},{\"name\":\"Centre
+        for Environmental Data Analysis (CEDA)\",\"roles\":[\"host\"],\"url\":\"https://ceda.ac.uk\"}],\"summaries\":{},\"sci:doi\":\"https://dx.doi.org/10.5285/083f0a37e058495eaef542263198019f\",\"sci:citation\":\"Users
+        of these data should cite University of Reading; Maidment, R.; Quaife, T.;
+        Pinnington, E.; Black, E.; Ejigu, A.; Kumar, D.; Thomas, S. (2025): EOCIS:
+        Soil Moisture Africa, v2.3.1. NERC EDS Centre for Environmental Data Analysis,
+        17 June 2025. doi:10.5285/083f0a37e058495eaef542263198019f\",\"sci:publications\":[],\"cube:dimensions\":{\"lon\":{\"type\":\"spatial\",\"axis\":\"x\",\"extent\":[-17.875,51.375],\"reference_system\":4326,\"unit\":\"degrees_east\"},\"lat\":{\"type\":\"spatial\",\"axis\":\"y\",\"extent\":[-35.375,37.375],\"reference_system\":4326,\"unit\":\"degrees_north\"},\"time\":{\"type\":\"temporal\",\"step\":\"P1D\",\"extent\":[\"1983-01-01T00:00:00Z\",\"2025-06-04T00:00:00Z\"]},\"pft\":{\"type\":\"pft\",\"description\":\"Plant
+        Functional Type\",\"values\":[0,1,2,3,4]}},\"cube:variables\":{\"fsmc\":{\"description\":\"PFT
+        soil moisture availability factor (beta)\",\"dimensions\":[\"time\",\"pft\",\"lat\",\"lon\"],\"type\":\"data\",\"unit\":\"1\"}},\"renders\":{}},{\"id\":\"eocis-lst-s3b-night\",\"description\":\"This
         collection contains datasets of level L3C global land surface temperature
         from the SLSTR sensor on board Sentinel 3B observed daily during nighttime.
         \  The collection is available from 2018-11-17.\",\"stac_version\":\"1.0.0\",\"links\":[{\"rel\":\"items\",\"type\":\"application/geo+json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-night/items\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-night\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt\",\"rel\":\"license\",\"type\":\"text/plain\"},{\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html\",\"rel\":\"license\",\"type\":\"text/html\"}],\"stac_extensions\":[\"https://stac-extensions.github.io/datacube/v2.2.0/schema.json\",\"https://stac-extensions.github.io/scientific/v1.0.0/schema.json\"],\"title\":\"EOCIS
@@ -297,7 +327,7 @@ interactions:
         difference vegetation index\",\"dimensions\":[\"time\",\"lat\",\"lon\"],\"type\":\"data\",\"unit\":\"1\"},\"emis\":{\"description\":\"surface
         emissivity\",\"dimensions\":[\"time\",\"lat\",\"lon\"],\"type\":\"data\",\"unit\":\"1\"},\"n\":{\"description\":\"number
         of clear-sky pixels\",\"dimensions\":[\"time\",\"lat\",\"lon\"],\"type\":\"auxiliary\"},\"ncld\":{\"description\":\"number
-        of cloudy pixels\",\"dimensions\":[\"time\",\"lat\",\"lon\"],\"type\":\"auxiliary\"}}}],\"links\":[{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections\"},{\"rel\":\"next\",\"type\":\"application/json\",\"method\":\"GET\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections?token=WyJlb2Npcy1sc3QtczNhLW5pZ2h0Il0%3D\"}],\"numReturned\":10,\"numMatched\":20}"
+        of cloudy pixels\",\"dimensions\":[\"time\",\"lat\",\"lon\"],\"type\":\"auxiliary\"}}}],\"links\":[{\"rel\":\"root\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/\"},{\"rel\":\"parent\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue\"},{\"rel\":\"self\",\"type\":\"application/json\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections\"},{\"rel\":\"next\",\"type\":\"application/json\",\"method\":\"GET\",\"href\":\"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections?token=WyJlb2Npcy1sc3QtczNhLW5pZ2h0Il0%3D\"}],\"numReturned\":10,\"numMatched\":25}"
     headers:
       Access-Control-Allow-Headers:
       - Accept,Authorization,Content-Type
@@ -307,26 +337,539 @@ interactions:
       - '*'
       Access-Control-Max-Age:
       - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
       Connection:
       - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
       Content-Type:
       - application/json
       Date:
-      - Wed, 21 May 2025 11:26:11 GMT
+      - Fri, 05 Dec 2025 14:27:30 GMT
       Server:
-      - nginx/1.27.4
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
       Via:
-      - 1.1 79ba346413d83ce62db11c8d0b05c22c.cloudfront.net (CloudFront)
+      - 1.1 b0edcfbed6fc188ab75a759053d37fb2.cloudfront.net (CloudFront)
       X-Amz-Cf-Id:
-      - P0PhfsHeWizJjqzy_0nOKSUsBueppoV3CMI62Q5U-NNNz4WFUPjG7w==
+      - -sks3F5Iw_J7t7dDVbKFYba7_lXi5I44xFluIYN3ACA0hM_BUE18MA==
       X-Amz-Cf-Pop:
-      - PRG50-C1
+      - VIE50-P3
       X-Cache:
       - Miss from cloudfront
       cache-control:
       - max-age=300, stale-while-revalidate=300
       content-length:
-      - '35330'
+      - '37097'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections?token=WyJlb2Npcy1sc3QtczNhLW5pZ2h0Il0%3D
+  response:
+    body:
+      string: '{"collections":[{"id":"eocis-lst-s3a-day","description":"This collection
+        contains datasets of level L3C global land surface temperature from the SLSTR
+        sensor on board Sentinel 3A observed daily during daytime.   The collection
+        is available from 2016-05-01.","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-day/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-day"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json"],"title":"EOCIS
+        Land Surface Temperature from Sentinel 3A daily (day)","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/eocis-lst-s3a-day-kerchunk/2024/12/EOCIS_-LST-L3C-LST-SLSTRA-0.01deg_1DAILY_DAY-20241231000000-fv4.00.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-179.9949951171875,-89.99500274658203,179.9949951171875,89.99498748779297]]},"temporal":{"interval":[["2016-05-01T00:00:00Z","2024-12-31T00:00:00Z"]]}},"keywords":["Earth
+        Science","Land Surface","Land Temperature","Land Surface Temperature","Global","Sentinel","ESA","EOCIS","Satellite","Imagery","Thermal"],"providers":[{"name":"University
+        of Leicester Surface Temperature Group","roles":["producer"],"url":"https://le.ac.uk/physics/research/earth-observation-science/remote-sensing-of-land-surface"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"cube:dimensions":{"lon":{"type":"spatial","axis":"x","extent":[-180,180],"reference_system":4326,"unit":"degrees_east"},"lat":{"type":"spatial","axis":"y","extent":[-90,90],"reference_system":4326,"unit":"degrees_north"},"time":{"type":"temporal","step":"P1D","extent":["2016-05-01T00:00:00Z","2024-12-31T00:00:00Z"]}},"cube:variables":{"lst":{"description":"land
+        surface temperature","dimensions":["time","lat","lon"],"type":"data","unit":"kelvin"},"lst_uncertainty":{"description":"land
+        surface temperature total uncertainty","dimensions":["time","lat","lon"],"type":"data","unit":"kelvin"},"ndvi":{"description":"normalized
+        difference vegetation index","dimensions":["time","lat","lon"],"type":"data","unit":"1"},"emis":{"description":"surface
+        emissivity","dimensions":["time","lat","lon"],"type":"data","unit":"1"},"n":{"description":"number
+        of clear-sky pixels","dimensions":["time","lat","lon"],"type":"auxiliary"},"ncld":{"description":"number
+        of cloudy pixels","dimensions":["time","lat","lon"],"type":"auxiliary"}}},{"id":"eocis-chuk-land-vegetation-lai","description":"Leaf
+        area index (LAI) are produced from April 2018 to December 2024. These data
+        were produced by the LEAF toolbox (see documentation) from data acquired from
+        the Multispectral Imager (MSI) on Sentinel-2. Gap-filled data are available
+        for 100m spatial resolution at a 15-day temporal resolution.  The data must
+        be divided by a scaling factor of 20.","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-lai/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-lai"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json","https://stac-extensions.github.io/render/v2.0.0/schema.json","https://stac-extensions.github.io/raster/v2.0.0/schema.json"],"title":"EOCIS
+        CHUK Leaf Area Index (LAI)","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/chuk-land-vegetation-lai/items/2024/12/EOCIS-LAI-L2-CHUK-LEAF-GAP-FILLED-100m-20241216-20241231-V1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-20.61388763804565,46.52164871674995,7.619937435522532,61.79039902300326]]},"temporal":{"interval":[["2018-04-01T00:00:00Z","2024-12-31T00:00:00Z"]]}},"keywords":[],"providers":[{"name":"School
+        of Geography and Environmental Science, Southampton University, UK","roles":["producer"],"url":"https://www.southampton.ac.uk/people/5wzysq/professor-jadu-dash"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:citation":"Mohamed,
+        O.; Dash, J. (2025): EOCIS: Land Vegetation Parameters, V1. NERC EDS Centre
+        for Environmental Data Analysis, 22 July 2025. doi:10.5285/da96a0e3306d44a398126403e5d3a654","cube:variables":{"lai_leaf_index":{"description":"Leaf
+        Area Index","dimensions":["time","y","x"],"type":"data","unit":"1"}},"sci:publications":[],"sci:doi":"10.5285/da96a0e3306d44a398126403e5d3a654","cube:dimensions":{"x":{"type":"spatial","axis":"x","extent":[-613350,911550],"reference_system":27700,"unit":"m"},"y":{"type":"spatial","axis":"y","extent":[-289850,1323250],"reference_system":27700,"unit":"m"},"time":{"type":"temporal","step":"P15D","extent":["2018-04-01T00:00:00Z","2024-12-31T00:00:00Z"]}},"renders":{"lai_leaf_index":{"title":"Leaf
+        Area Index (LAI)","assets":["reference_file"],"reference":true,"variable":"lai_leaf_index","colormap_name":"Greens","rescale":[0,20]}}},{"id":"eocis-chuk-land-vegetation-fapar","description":"The
+        fraction of absorbed photosynthetically active radiation (fAPAR) are produced
+        from April 2018 to December 2024. These data were produced by the LEAF toolbox
+        (see documentation) from data acquired from the Multispectral Imager (MSI)
+        on Sentinel-2. Gap-filled data are available for 100m spatial resolution at
+        a 15-day temporal resolution. The data must be divided by a scaling factor
+        of 200.","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-fapar/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-fapar"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json","https://stac-extensions.github.io/render/v2.0.0/schema.json","https://stac-extensions.github.io/raster/v2.0.0/schema.json"],"title":"EOCIS
+        CHUK Fraction of Absorbed Photosynthetically Active Radiation","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/chuk-land-vegetation-fapar/items/2024/12/EOCIS-FAPAR-L2-CHUK-LEAF-GAP-FILLED-100m-20241216-20241231-V1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-20.61388763804565,46.52164871674995,7.619937435522532,61.79039902300326]]},"temporal":{"interval":[["2018-04-01T00:00:00Z","2024-12-31T00:00:00Z"]]}},"keywords":[],"providers":[{"name":"School
+        of Geography and Environmental Science, Southampton University, UK","roles":["producer"],"url":"https://www.southampton.ac.uk/people/5wzysq/professor-jadu-dash"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:publications":[],"cube:variables":{"FAPAR":{"description":"Fraction
+        of Absorbed Photosynthetically Active Radiation","dimensions":["time","y","x"],"type":"data","unit":"1"}},"cube:dimensions":{"x":{"type":"spatial","axis":"x","extent":[-613350,911550],"reference_system":27700,"unit":"m"},"y":{"type":"spatial","axis":"y","extent":[-289850,1323250],"reference_system":27700,"unit":"m"},"time":{"type":"temporal","step":"P15D","extent":["2018-04-01T00:00:00Z","2024-12-31T00:00:00Z"]}},"sci:doi":"10.5285/da96a0e3306d44a398126403e5d3a654","sci:citation":"Mohamed,
+        O.; Dash, J. (2025): EOCIS: Land Vegetation Parameters, V1. NERC EDS Centre
+        for Environmental Data Analysis, 22 July 2025. doi:10.5285/da96a0e3306d44a398126403e5d3a654","renders":{"FAPAR":{"title":"Fraction
+        of Absorbed Photosynthetically Active Radiation","assets":["reference_file"],"reference":true,"variable":"FAPAR","colormap_name":"Greens","rescale":[0,200]}}},{"id":"eocis-chuk-geospatial-landcover","description":"Land
+        cover data on the CHUK grid derived from the UKCEH 25m land cover data","stac_version":"1.1.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-landcover/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-landcover"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json","https://stac-extensions.github.io/render/v2.0.0/schema.json"],"title":"EOCIS
+        CHUK Geospatial Information - Land Cover","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/chuk_geospatial/EOCIS-CHUK_GEOSPATIAL_INFORMATION-L4-LANDCOVER-MERGED-2023-fv1.1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-15.37353897,47.08929443,4.748765945,61.13276672]]},"temporal":{"interval":[["2023-07-01T00:00:00Z","2023-07-01T00:00:00Z"]]}},"keywords":["Land
+        Cover","UK"],"providers":[{"name":"The Institute for Environmental Analytics","roles":["producer"],"url":"https://the-iea.org"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:doi":"10.5285/b766867ceadb409da64d480bdbe4057d","sci:citation":"\"Lloyd-Hughes,
+        B.; Griffiths, G.; Roesch, M. (2025): EOCIS: Geospatial Information Files
+        V1.1. NERC EDS Centre for Environmental Data Analysis, 27 August 2025.","sci:publications":[],"cube:dimensions":{"x":{"type":"spatial","axis":"x","extent":[-331950,764950],"reference_system":27700,"unit":"m"},"y":{"type":"spatial","axis":"y","extent":[-266950,1249950],"reference_system":27700,"unit":"m"}}},{"id":"eocis-chuk-geospatial-elevation","description":"Elevation
+        data on the CHUK grid derived from the Copernicus Global 30m DEM data","stac_version":"1.1.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-elevation/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-elevation"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json","https://stac-extensions.github.io/render/v2.0.0/schema.json"],"title":"EOCIS
+        CHUK Geospatial Information - Elevation","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/chuk_geospatial/EOCIS-CHUK_GEOSPATIAL_INFORMATION-L4-ELEVATION-MERGED-2023-fv1.0.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-15.37353897,47.08929443,4.748765945,61.13276672]]},"temporal":{"interval":[["2023-07-01T00:00:00Z","2023-07-01T00:00:00Z"]]}},"keywords":["Elevation","DEM","UK"],"providers":[{"name":"The
+        Institute for Environmental Analytics","roles":["producer"],"url":"https://the-iea.org"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:doi":"10.5285/b766867ceadb409da64d480bdbe4057d","sci:citation":"\"Lloyd-Hughes,
+        B.; Griffiths, G.; Roesch, M. (2025): EOCIS: Geospatial Information Files
+        V1.1. NERC EDS Centre for Environmental Data Analysis, 27 August 2025.","sci:publications":[],"cube:dimensions":{"x":{"type":"spatial","axis":"x","extent":[-331950,764950],"reference_system":27700,"unit":"m"},"y":{"type":"spatial","axis":"y","extent":[-266950,1249950],"reference_system":27700,"unit":"m"}}},{"id":"eocis-chuk-geospatial-builtarea","description":"Urban
+        and suburban area fractions, derived from the UKCEH 10m land cover data","stac_version":"1.1.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-builtarea/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-builtarea"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json","https://stac-extensions.github.io/render/v2.0.0/schema.json"],"title":"EOCIS
+        CHUK Geospatial Information - Built Area","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/chuk_geospatial/EOCIS-CHUK_GEOSPATIAL_INFORMATION-L4-BUILTAREA-MERGED-2023-fv1.1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-15.37353897,47.08929443,4.748765945,61.13276672]]},"temporal":{"interval":[["2023-07-01T00:00:00Z","2023-07-01T00:00:00Z"]]}},"keywords":["Land
+        Cover","UK"],"providers":[{"name":"The Institute for Environmental Analytics","roles":["producer"],"url":"https://the-iea.org"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:doi":"10.5285/b766867ceadb409da64d480bdbe4057d","sci:citation":"\"Lloyd-Hughes,
+        B.; Griffiths, G.; Roesch, M. (2025): EOCIS: Geospatial Information Files
+        V1.1. NERC EDS Centre for Environmental Data Analysis, 27 August 2025.","sci:publications":[],"cube:dimensions":{"x":{"type":"spatial","axis":"x","extent":[-331950,764950],"reference_system":27700,"unit":"m"},"y":{"type":"spatial","axis":"y","extent":[-266950,1249950],"reference_system":27700,"unit":"m"}}},{"id":"eocis-chuk-geospatial","description":"EOCIS
+        Geospatial Information","stac_version":"1.1.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":[],"title":"EOCIS
+        Geospatial Information","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/chuk_geospatial/EOCIS-CHUK_GEOSPATIAL_INFORMATION-L4-ELEVATION-MERGED-2023-fv1.0.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-15.37247,47.08979,4.74876,61.13232]]},"temporal":{"interval":[["2023-07-01T00:00:00Z","2023-07-01T00:00:00Z"]]}},"keywords":[],"providers":[],"summaries":{}},{"id":"eocis-arctic-sea-ice-thickness-monthly","description":"The
+        sea ice products provide a 5x5 km grid of Arctic sea ice thickness (for the
+        whole Arctic region and of 17 sub-regions), delivered as NetCDF files.  EOCIS
+        sea ice thickness NetCDF products are generated monthly by the Centre for
+        Polar Observation and Modelling (CPOM) from radar altimetry measurements taken
+        from the ESA CryoSAT-2 satellite during the winter months (Oct-Apr). Sea ice
+        thickness is only reliably measured from satellite radar altimetry during
+        the winter months. During summer, melt ponds can form on the sea ice floes
+        making it difficult for the satellite to differentiate between floes and leads,
+        and hence calculate sea ice freeboard (and subsequently thickness). Measurement
+        during summer months using radar altimetry is an area of active research (Landy
+        et al, 2022) but is not yet operationally processed.","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-arctic-sea-ice-thickness-monthly/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-arctic-sea-ice-thickness-monthly"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json","https://stac-extensions.github.io/render/v2.0.0/schema.json"],"title":"EOCIS
+        Arctic Monthly Gridded Sea Ice Thickness Product from CryoSat-2","type":"Collection","assets":{"thumbnail":{"href":"https://gws-access.jasmin.ac.uk/public/nceo_uor/eocis-stac/eocis-arctic-sea-ice-thickness-monthly-aux/items/2024/11/EOCIS-SEAICE-L3C-SITHICK-CS2-5KM-202411-fv1.0.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[0.0,44.1015,359.9999,88.2304]]},"temporal":{"interval":[["2010-11-15T00:00:00Z","2024-11-15T00:00:00Z"]]}},"keywords":["Sea
+        Ice","Thickness","Radar Altimeters"],"providers":[{"name":"Andy Ridout, Alan
+        Muir (CPOM, University College London)","roles":["producer"],"url":"http://www.cpom.org.uk"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:doi":"https://dx.doi.org/10.5285/4c246cb11aa04651a0182b2d329a84f9","sci:citation":"Ridout,
+        A.; Palmer, B.; Muir, A.; Swiggs, A.; McMillan, M.; Maddalena, J. (2025):
+        EOCIS: Arctic Sea Ice Thickness Grids, v1.00. NERC EDS Centre for Environmental
+        Data Analysis, 20 March 2025. doi:10.5285/4c246cb11aa04651a0182b2d329a84f9.","sci:publications":[],"cube:dimensions":{"xc":{"type":"spatial","axis":"xc","extent":[-3850000,3749999],"reference_system":3413,"unit":"m"},"yc":{"type":"spatial","axis":"yc","extent":[-5350000,5849999],"reference_system":3413,"unit":"m"},"time":{"type":"temporal","step":"P1M","extent":["2010-11-15T00:00:00Z","2024-11-15T00:00:00Z"]}},"cube:variables":{"sea_ice_thickness":{"description":"sea
+        ice thickness","dimensions":["time","yc","xc"],"type":"data","unit":"m"},"sea_ice_thickness_stdev":{"description":"standard
+        deviation of sea ice thickness, defined as the standard deviation of the thickness
+        in the grid cell","dimensions":["time","yc","xc"],"type":"data","unit":"m"},"n_thickness_measurements":{"description":"number
+        of contributing thickness measurements","dimensions":["time","yc","xc"],"type":"auxiliary"}},"renders":{"sea_ice_thickness":{"title":"Sea
+        Ice Thickness","assets":["reference_file"],"reference":true,"variable":"sea_ice_thickness","colormap_name":"blues_r","rescale":[0,3.5]},"sea_ice_thickness_stdev":{"title":"Standard
+        deviation of Sea Ice Thickness","assets":["reference_file"],"reference":true,"variable":"analysed_sst_uncertainty","colormap_name":"viridis","rescale":[0,2]}}},{"id":"eocis-aerosol-slstr-monthly-s3b","description":"This
+        dataset contains the level-3 monthly mean aerosol properties products from
+        Sentinel-3B SLSTR satellite observations. Data are processed using the Swansea
+        University algorithm","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3b/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3b"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json"],"title":"EOCIS
+        AEROSOL from Sentinel 3B monthly","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/eocis-aerosol-slstr-monthly-s3b/2024/12/202412-C3S-L3C_AEROSOL-AER_PRODUCTS-SLSTR_SENTINEL_S3B-SU_MONTHLY-v1.14.1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-180.0,-90.0,180.0,90.0]]},"temporal":{"interval":[["2018-05-15T00:00:00Z","2024-12-15T00:00:00Z"]]}},"keywords":["Global","Sentinel","ESA","EOCIS","Satellite","Observation","Atmosphere"],"providers":[{"name":"Swansea
+        University","roles":["producer"],"url":"https://www.swansea.ac.uk/staff/science/geography/p.r.j.north/"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:publications":[{"doi":"","citation":"Pearson,
+        K., North, P., Heckel, A., Hornero, A., Kinne, S., Popp, T., Sogacheva, L.,
+        Griesfeller, J., Atmospheric aerosol measurements from the ATSR-SLSTR series
+        of dual-view satellite instruments 1995-2022, Scientific Data (2025)"}],"sci:doi":"https://dx.doi.org/10.5285/a89007aa668d4e2f940dbb3d3dfcc3dc","cube:dimensions":{"longitude":{"type":"spatial","axis":"x","extent":[-180,180],"reference_system":4326,"unit":"degrees_east"},"latitude":{"type":"spatial","axis":"y","extent":[-90,90],"reference_system":4326,"unit":"degrees_north"}},"cube:variables":{"pixel_count":{"unit":"1","description":"number
+        of retrieval pixels in grid cell","type":"data","dimensions":["latitude","longitude"]},"AOD550_mean":{"unit":"1","description":"aerosol
+        optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_mean":{"unit":"1","description":"aerosol
+        optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_mean":{"unit":"1","description":"aerosol
+        optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_mean":{"unit":"1","description":"aerosol
+        optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_mean":{"unit":"1","description":"angstrom
+        exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_sdev":{"unit":"1","description":"standard
+        deviation angstrom exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_mean":{"unit":"1","description":"fine
+        mode AOD","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_sdev":{"unit":"1","description":"standard
+        deviation fine mode AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_mean":{"unit":"1","description":"non-spherical
+        dust AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_sdev":{"unit":"1","description":"standard
+        deviation non-spherical dust AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_mean":{"unit":"1","description":"absorbing
+        AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_sdev":{"unit":"1","description":"standard
+        deviation absorbing AOD","type":"data","dimensions":["latitude","longitude"]},"SSA550_mean":{"unit":"1","description":"single
+        scattering albedo at 550nm","type":"data","dimensions":["latitude","longitude"]},"SSA550_sdev":{"unit":"1","description":"standard
+        deviation of SSA","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_min":{"unit":"1","description":"minimum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_max":{"unit":"1","description":"maximum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]}},"sci:citation":"Users
+        of these data should cite the dataset along with the dataset paper: Pearson,
+        K. et al. Atmospheric aerosol measurements from the ATSR-SLSTR series of dual-view
+        satellite instruments 1995-2022. Scientific Data (2025)."},{"id":"eocis-aerosol-slstr-monthly-s3a","description":"This
+        dataset contains the level-3 monthly mean aerosol properties products from
+        Sentinel-3A SLSTR satellite observations. Data are processed using the Swansea
+        University algorithm","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3a/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3a"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json"],"title":"EOCIS
+        AEROSOL from Sentinel 3A monthly","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/eocis-aerosol-slstr-monthly-s3a/2024/12/202412-C3S-L3C_AEROSOL-AER_PRODUCTS-SLSTR_SENTINEL_S3A-SU_MONTHLY-v1.14.1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-180.0,-90.0,180.0,90.0]]},"temporal":{"interval":[["2016-05-15T00:00:00Z","2024-12-15T00:00:00Z"]]}},"keywords":["Global","Sentinel","ESA","EOCIS","Satellite","Observation","Atmosphere"],"providers":[{"name":"Swansea
+        University","roles":["producer"],"url":"https://www.swansea.ac.uk/staff/science/geography/p.r.j.north/"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:publications":[{"doi":"","citation":"Pearson,
+        K., North, P., Heckel, A., Hornero, A., Kinne, S., Popp, T., Sogacheva, L.,
+        Griesfeller, J., Atmospheric aerosol measurements from the ATSR-SLSTR series
+        of dual-view satellite instruments 1995-2022, Scientific Data (2025)"}],"sci:doi":"https://dx.doi.org/10.5285/a89007aa668d4e2f940dbb3d3dfcc3dc","sci:citation":"Users
+        of these data should cite the dataset along with the dataset paper: Pearson,
+        K. et al. Atmospheric aerosol measurements from the ATSR-SLSTR series of dual-view
+        satellite instruments 1995-2022. Scientific Data (2025).","cube:dimensions":{"longitude":{"type":"spatial","axis":"x","extent":[-180,180],"reference_system":4326,"unit":"degrees_east"},"latitude":{"type":"spatial","axis":"y","extent":[-90,90],"reference_system":4326,"unit":"degrees_north"}},"cube:variables":{"pixel_count":{"unit":"1","description":"number
+        of retrieval pixels in grid cell","type":"data","dimensions":["latitude","longitude"]},"AOD550_mean":{"unit":"1","description":"aerosol
+        optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_mean":{"unit":"1","description":"aerosol
+        optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_mean":{"unit":"1","description":"aerosol
+        optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_mean":{"unit":"1","description":"aerosol
+        optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_mean":{"unit":"1","description":"angstrom
+        exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_sdev":{"unit":"1","description":"standard
+        deviation angstrom exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_mean":{"unit":"1","description":"fine
+        mode AOD","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_sdev":{"unit":"1","description":"standard
+        deviation fine mode AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_mean":{"unit":"1","description":"non-spherical
+        dust AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_sdev":{"unit":"1","description":"standard
+        deviation non-spherical dust AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_mean":{"unit":"1","description":"absorbing
+        AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_sdev":{"unit":"1","description":"standard
+        deviation absorbing AOD","type":"data","dimensions":["latitude","longitude"]},"SSA550_mean":{"unit":"1","description":"single
+        scattering albedo at 550nm","type":"data","dimensions":["latitude","longitude"]},"SSA550_sdev":{"unit":"1","description":"standard
+        deviation of SSA","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_min":{"unit":"1","description":"minimum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_max":{"unit":"1","description":"maximum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]}}}],"links":[{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"next","type":"application/json","method":"GET","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections?token=WyJlb2Npcy1hZXJvc29sLXNsc3RyLW1vbnRobHktczNhIl0%3D"}],"numReturned":10,"numMatched":25}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Dec 2025 14:27:30 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 6625b1cccb0c6c7f4662ba020559645c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Ud2pSyx0m8RP9CvnA4Skcpz8eNGWEdLEdGcRqnlxXJ6jUJSCGFL0bA==
+      X-Amz-Cf-Pop:
+      - VIE50-P3
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '42168'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections?token=WyJlb2Npcy1hZXJvc29sLXNsc3RyLW1vbnRobHktczNhIl0%3D
+  response:
+    body:
+      string: '{"collections":[{"id":"eocis-aerosol-slstr-daily-s3b","description":"This
+        dataset contains the level-3 daily mean aerosol properties products from Sentinel-3B
+        SLSTR satellite observations. Data are processed using the Swansea University
+        algorithm","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3b/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3b"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json"],"title":"EOCIS
+        AEROSOL from Sentinel 3B daily","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/eocis-aerosol-slstr-daily-s3b/2024/12/20241231-C3S-L3C_AEROSOL-AER_PRODUCTS-SLSTR_SENTINEL_S3B-SU_DAILY-v1.14.1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-180.0,-90.0,180.0,90.0]]},"temporal":{"interval":[["2018-05-30T00:00:00Z","2024-12-31T00:00:00Z"]]}},"keywords":["Global","Sentinel","ESA","EOCIS","Satellite","Observation","Atmosphere"],"providers":[{"name":"Swansea
+        University","roles":["producer"],"url":"https://www.swansea.ac.uk/staff/science/geography/p.r.j.north/"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"sci:publications":[{"doi":"","citation":"Pearson,
+        K., North, P., Heckel, A., Hornero, A., Kinne, S., Popp, T., Sogacheva, L.,
+        Griesfeller, J., Atmospheric aerosol measurements from the ATSR-SLSTR series
+        of dual-view satellite instruments 1995-2022, Scientific Data (2025)"}],"cube:dimensions":{"longitude":{"type":"spatial","axis":"x","extent":[-180,180],"reference_system":4326,"unit":"degrees_east"},"latitude":{"type":"spatial","axis":"y","extent":[-90,90],"reference_system":4326,"unit":"degrees_north"}},"sci:doi":"https://dx.doi.org/10.5285/f18f81e6fe014e5ab7b847f282f9de7b","cube:variables":{"pixel_count":{"unit":"1","description":"number
+        of retrieval pixels in grid cell","type":"data","dimensions":["latitude","longitude"]},"AOD550_mean":{"unit":"1","description":"aerosol
+        optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_mean":{"unit":"1","description":"aerosol
+        optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_mean":{"unit":"1","description":"aerosol
+        optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_mean":{"unit":"1","description":"aerosol
+        optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_mean":{"unit":"1","description":"angstrom
+        exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_sdev":{"unit":"1","description":"standard
+        deviation angstrom exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_mean":{"unit":"1","description":"fine
+        mode AOD","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_sdev":{"unit":"1","description":"standard
+        deviation fine mode AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_mean":{"unit":"1","description":"non-spherical
+        dust AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_sdev":{"unit":"1","description":"standard
+        deviation non-spherical dust AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_mean":{"unit":"1","description":"absorbing
+        AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_sdev":{"unit":"1","description":"standard
+        deviation absorbing AOD","type":"data","dimensions":["latitude","longitude"]},"SSA550_mean":{"unit":"1","description":"single
+        scattering albedo at 550nm","type":"data","dimensions":["latitude","longitude"]},"SSA550_sdev":{"unit":"1","description":"standard
+        deviation of SSA","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_min":{"unit":"1","description":"minimum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_max":{"unit":"1","description":"maximum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]}},"sci:citation":"Users
+        of these data should cite the dataset along with the dataset paper: Pearson,
+        K. et al. Atmospheric aerosol measurements from the ATSR-SLSTR series of dual-view
+        satellite instruments 1995-2022. Scientific Data (2025)."},{"id":"eocis-aerosol-slstr-daily-s3a","description":"This
+        dataset contains the level-3 daily mean aerosol properties products from Sentinel-3A
+        SLSTR satellite observations. Data are processed using the Swansea University
+        algorithm","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3a/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3a"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":["https://stac-extensions.github.io/datacube/v2.2.0/schema.json","https://stac-extensions.github.io/scientific/v1.0.0/schema.json"],"title":"EOCIS
+        AEROSOL from Sentinel 3A daily","type":"Collection","assets":{"thumbnail":{"href":"https://eocis.org/data/eocis-aerosol-slstr-daily-s3a/2024/12/20241231-C3S-L3C_AEROSOL-AER_PRODUCTS-SLSTR_SENTINEL_S3A-SU_DAILY-v1.14.1.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-180.0,-90.0,180.0,90.0]]},"temporal":{"interval":[["2016-05-01T00:00:00Z","2024-12-31T00:00:00Z"]]}},"keywords":["Global","Sentinel","ESA","EOCIS","Satellite","Observation","Atmosphere"],"providers":[{"name":"Swansea
+        University","roles":["producer"],"url":"https://www.swansea.ac.uk/staff/science/geography/p.r.j.north/"},{"name":"Earth
+        Observation Climate Information Service (EOCIS)","roles":["producer"],"url":"https://eocis.org"},{"name":"Centre
+        for Environmental Data Analysis (CEDA)","roles":["host"],"url":"https://ceda.ac.uk"}],"summaries":{},"cube:variables":{"pixel_count":{"unit":"1","description":"number
+        of retrieval pixels in grid cell","type":"data","dimensions":["latitude","longitude"]},"AOD550_mean":{"unit":"1","description":"aerosol
+        optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_mean":{"unit":"1","description":"aerosol
+        optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_mean":{"unit":"1","description":"aerosol
+        optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_mean":{"unit":"1","description":"aerosol
+        optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_sdev":{"unit":"1","description":"standard
+        deviation aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_mean":{"unit":"1","description":"angstrom
+        exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"ANG550_870_sdev":{"unit":"1","description":"standard
+        deviation angstrom exponent computed on AOD550nm and AOD870nm","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_mean":{"unit":"1","description":"fine
+        mode AOD","type":"data","dimensions":["latitude","longitude"]},"FM_AOD550_sdev":{"unit":"1","description":"standard
+        deviation fine mode AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_mean":{"unit":"1","description":"non-spherical
+        dust AOD","type":"data","dimensions":["latitude","longitude"]},"D_AOD550_sdev":{"unit":"1","description":"standard
+        deviation non-spherical dust AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_mean":{"unit":"1","description":"absorbing
+        AOD","type":"data","dimensions":["latitude","longitude"]},"AAOD550_sdev":{"unit":"1","description":"standard
+        deviation absorbing AOD","type":"data","dimensions":["latitude","longitude"]},"SSA550_mean":{"unit":"1","description":"single
+        scattering albedo at 550nm","type":"data","dimensions":["latitude","longitude"]},"SSA550_sdev":{"unit":"1","description":"standard
+        deviation of SSA","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD550_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 550 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_min":{"unit":"1","description":"minimum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD670_uncertainty_max":{"unit":"1","description":"maximum
+        L2 Uncertainty on AOT at 670 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty aerosol optical thickness at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD870_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 870 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_mean":{"unit":"1","description":"Mean
+        of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_sdev":{"unit":"1","description":"standard
+        deviation of L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty":{"unit":"1","description":"propagated
+        L2 uncertainty in aerosol optical thickness at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_min":{"unit":"1","description":"minimum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]},"AOD1600_uncertainty_max":{"unit":"1","description":"maximum
+        L2 uncertainty on AOT at 1600 nm","type":"data","dimensions":["latitude","longitude"]}},"sci:citation":"Users
+        of these data should cite the dataset along with the dataset paper: Pearson,
+        K. et al. Atmospheric aerosol measurements from the ATSR-SLSTR series of dual-view
+        satellite instruments 1995-2022. Scientific Data (2025).","sci:publications":[{"doi":"","citation":"Pearson,
+        K., North, P., Heckel, A., Hornero, A., Kinne, S., Popp, T., Sogacheva, L.,
+        Griesfeller, J., Atmospheric aerosol measurements from the ATSR-SLSTR series
+        of dual-view satellite instruments 1995-2022, Scientific Data (2025)"}],"sci:doi":"https://dx.doi.org/10.5285/f18f81e6fe014e5ab7b847f282f9de7b","cube:dimensions":{"longitude":{"type":"spatial","axis":"x","extent":[-180,180],"reference_system":4326,"unit":"degrees_east"},"latitude":{"type":"spatial","axis":"y","extent":[-90,90],"reference_system":4326,"unit":"degrees_north"}}},{"id":"cordex","description":"The
+        vision of the CORDEX  program is to enhance and coordinate the science and
+        application of regional climate downscaling through global partnerships. The
+        program is sponsored by the World Climate Research Program (WCRP) to organise
+        an internationally coordinated framework to produce improved regional climate
+        change projections for all land regions world-wide. The CORDEX-results will
+        serve as input for climate change impact and adaptation studies. The CORDEX
+        regional downscaling domains include: South America, North America, Africa,
+        Europe, East Asia, Central Asia, West Asia, Australasia, Antarctica, Arctic.
+        CORDEX data are also available from the Earth System Grid Federation (ESGF).","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cordex/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cordex"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/text/CC-BY-4.0.txt","rel":"license","type":"text/plain"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/stac/licences/spdx/html/CC-BY-4.0.html","rel":"license","type":"text/html"}],"stac_extensions":[],"title":"CORDEX","type":"Collection","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cordex/metadata/STAC/cordex_thumbnail.png","type":"image/png","roles":["thumbnail"]}},"license":"cc-by-4.0","extent":{"spatial":{"bbox":[[-44.744885293766856,21.917300317436457,64.96437773108482,72.63994894456118]]},"temporal":{"interval":[["1951-12-01T00:00:00.000Z","2100-12-31T21:00:00.000Z"]]}},"keywords":["CORDEX","Regional
+        Climate Downscaling","climate change impact","climate change adaptation"],"providers":[],"summaries":{"product":["output"],"time_frequency":["3hr","day"],"variable_long_name":["Daily
+        Maximum Near-Surface Air Temperature","Daily Minimum Near-Surface Air Temperature","Eastward
+        Near-Surface Wind","Near-Surface Air Temperature","Near-Surface Relative Humidity","Near-Surface
+        Specific Humidity","Near-Surface Wind Speed","Northward Near-Surface Wind","Precipitation","Sea
+        Level Pressure","Snowfall Flux","Surface Downwelling Longwave Radiation","Surface
+        Downwelling Shortwave Radiation","Surface Snow Amount","Surface Upwelling
+        Longwave Radiation","Surface Upwelling Shortwave Radiation","Total Cloud Fraction"],"driving_model":["CNRM-CERFACS-CNRM-CM5","ECMWF-ERAINT","MOHC-HadGEM2-ES","MPI-M-MPI-ESM-LR","NCC-NorESM1-M"],"variable_units":["%","1","K","Pa","W
+        m-2","kg m-2","kg m-2 s-1","m s-1"],"driving_experiment_name":["evaluation","historical","rcp26","rcp85"],"project":["CORDEX"],"ensemble":["r1i1p1"],"cf_standard_name":["air_pressure_at_sea_level","air_temperature","cloud_area_fraction","eastward_wind","northward_wind","precipitation_flux","relative_humidity","snowfall_flux","specific_humidity","surface_downwelling_longwave_flux_in_air","surface_downwelling_shortwave_flux_in_air","surface_snow_amount","surface_upwelling_longwave_flux_in_air","surface_upwelling_shortwave_flux_in_air","wind_speed"],"experiment_familys":[],"rcm_name":["MOHC-HadREM3-GA7-05"],"experiment":["evaluation","historical","rcp26","rcp85"],"domain":["EUR-11"],"institute":["MOHC"],"var_id":[],"rcm_version_id":[]}},{"id":"cmip6","description":"The
+        WCRP Coupled Model Intercomparison Project, Phase 6 (CMIP6), is a global climate
+        model intercomparison project, coordinated by PCMDI (Program For Climate Model
+        Diagnosis and Intercomparison) on behalf of the World Climate Research Program
+        (WCRP) providing input for the Intergovernmental Panel on Climate Change (IPCC)
+        6th Assessment Report (AR6).\n\nThe CMIP6 archive is managed via the Earth
+        System Grid Federation, a globally distributed archive, with various portals
+        delivering advanced faceted search capabilities provided from a number of
+        participating organisations. Full details are available from the CMIP6 pages
+        (see linked documentation on this record).\n\nCEDA provides access to key
+        CMIP6 simulations including those generated by the UK CMIP6 collaboration
+        between the Met Office and NERC. Replicas of international data sets are provided
+        to aid local access and use.","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"href":"https://staging.eodatahub.org.uk/api/catalogue/licences/default_workspace/CMIP6_Terms_of_Use.pdf","rel":"license","type":"application/pdf"}],"stac_extensions":[],"title":"CMIP6","type":"Collection","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/cmip6_thumbnail.png","type":"image/png","roles":["thumbnail"]}},"license":"other","extent":{"spatial":{"bbox":[[-180.0,-90.0,179.99999991618097,89.99999995809048]]},"temporal":{"interval":[["1850-01-01T00:00:00.000Z","4114-12-16T12:00:00.000Z"]]}},"keywords":["MIP","CMIP","CMIP6","WCRP","climate
+        change","IPCC","climate","model","simulation","multi-model"],"providers":[],"summaries":{"experiment_title":["SSP-based
+        RCP scenario with high radiative forcing by the end of century. Following
+        approximately RCP8.5 global forcing pathway with SSP5 socioeconomic conditions.
+        Concentration-driven.","SSP-based RCP scenario with medium radiative forcing
+        by the end of the century.  Following approximately RCP4.5 global forcing
+        pathway with SSP2 socioeconomic conditions. Radiative forcing reaches a level
+        of 4.5 W/m2 in 2100. Concentration-driven.","Simulation of recent past (1850
+        to 2014). Impose changing conditions (consistent with observations). Should
+        be initialised from a point early enough in the pre-industrial control run
+        to ensure that the end of all the perturbed runs branching from the end of
+        this historical run end before the end of the control. Only one ensemble member
+        is requested but modelling groups are strongly encouraged to submit at least
+        three ensemble members of their CMIP historical simulation. ","all-forcing
+        simulation of the recent past","all-forcing simulation of the recent past                                                                               ","historical","low-end
+        scenario reaching 1.9 W m-2, based on SSP1","update of RCP2.6 based on SSP1","update
+        of RCP4.5 based on SSP2","update of RCP8.5 based on SSP5"],"data_specs_version":["01.00.21","01.00.23","01.00.27","01.00.28","01.00.29","01.00.30","01.00.31","01.00.32","01.00.33"],"variable_units":["%","1","K","Pa","W
+        m-2","kg m-2","kg m-2 s-1","m s-1"],"table_id":["3hr","Amon","CF3hr","E3hr","day"],"institution_id":["AS-RCEC","AWI","BCC","CAMS","CAS","CCCR-IITM","CCCma","CMCC","CNRM-CERFACS","CSIRO","CSIRO-ARCCSS","DKRZ","E3SM-Project","EC-Earth-Consortium","FIO-QLNM","HAMMOZ-Consortium","INM","IPSL","KIOST","MIROC","MOHC","MPI-M","MRI","NASA-GISS","NCAR","NCC","NIMS-KMA","NOAA-GFDL","NUIST","SNU","THU","UA"],"frequency":["3hr","3hrPt","day","mon","monC"],"variant_label":["r1i1000p1f2","r1i1p1f1","r1i1p1f2","r1i1p1f3","r1i1p2f1"],"variable_id":["clt","hurs","huss","pr","prsn","psl","rlds","rlus","rsds","rss","rsus","sfcWind","snw","tas","tasmax","tasmin","uas","vas"],"activity_id":["CMIP","ScenarioMIP"],"var_id":[],"sub_experiment_id":["none"],"mip_era":["CMIP6"],"physics_index":[],"experiment_id":["historical","ssp119","ssp126","ssp245","ssp585"],"variable_long_name":["Daily
+        Maximum Near-Surface Air Temperature","Daily Minimum Near-Surface Air Temperature","Daily-Mean
+        Near-Surface Wind Speed","Eastward Near-Surface Wind","Eastward Near-Surface
+        Wind                            ","Eastward Near-Surface Wind Speed","Near-Surface
+        Air Temperature","Near-Surface Air Temperature                          ","Near-Surface
+        Relative Humidity","Near-Surface Relative Humidity                        ","Near-Surface
+        Specific Humidity","Near-Surface Specific Humidity                        ","Near-Surface
+        Wind Speed","Net Shortwave Surface Radiation","Northward Near-Surface Wind","Northward
+        Near-Surface Wind                           ","Northward Near-Surface Wind
+        Speed","Precipitation","Precipitation                                         ","Sea
+        Level Pressure","Sea Level Pressure                                    ","Snowfall
+        Flux","Snowfall Flux                                         ","Surface Downwelling
+        Longwave Radiation","Surface Downwelling Shortwave Radiation","Surface Snow
+        Amount","Surface Upwelling Longwave Radiation","Surface Upwelling Shortwave
+        Radiation","Total Cloud Cover Percentage","Total Cloud Fraction"],"source_type":["AER
+        AOGCM CHEM","AER CHEM BGC","AGCM","AOGCM","AOGCM AER","AOGCM AER BGC","AOGCM
+        AER BGC CHEM","AOGCM AER CHEM","AOGCM AER CHEM BGC","AOGCM BGC","AOGCM BGC
+        AER","AOGCM BGC AER CHEM","AOGCM BGC CHEM AER"],"cf_standard_name":["air_pressure_at_mean_sea_level","air_pressure_at_sea_level","air_temperature","cloud_area_fraction","eastward_wind","northward_wind","precipitation_flux","relative_humidity","snowfall_flux","specific_humidity","surface_downwelling_longwave_flux_in_air","surface_downwelling_shortwave_flux_in_air","surface_net_downward_shortwave_flux","surface_snow_amount","surface_upwelling_longwave_flux_in_air","surface_upwelling_shortwave_flux_in_air","wind_speed"],"version":[],"realization_index":[],"instance_id":["CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.clt.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.huss.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.pr.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.prsn.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rlds.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rlus.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rsds.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.rsus.gn.v20201013","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.3hr.tas.gn.v20201014","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.clt.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.huss.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.pr.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.prsn.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.psl.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rlds.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rlus.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rsds.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.rsus.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.sfcWind.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.Amon.tas.gn.v20200623","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.clt.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.hurs.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.huss.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.pr.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.psl.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rlds.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rlus.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rsds.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.rsus.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.sfcWind.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.tas.gn.v20200626","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.tasmax.gn.v20210517","CMIP6.CMIP.AS-RCEC.TaiESM1.historical.r1i1p1f1.day.tasmin.gn.v20210517","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.clt.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.pr.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.prsn.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rlds.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rlus.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rsds.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.rsus.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.tas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.uas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.3hr.vas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.clt.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.huss.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.pr.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.prsn.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.psl.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rlds.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rlus.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rsds.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.rsus.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.sfcWind.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.tas.gn.v20200720","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.tasmax.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.tasmin.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.uas.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.Amon.vas.gn.v20200511","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.snw.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.tas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.tasmax.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.tasmin.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.uas.gn.v20181218","CMIP6.CMIP.AWI.AWI-CM-1-1-MR.historical.r1i1p1f1.day.vas.gn.v20181218","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.clt.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.huss.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.pr.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.prsn.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rlds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rlus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rsds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.rsus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.tas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.uas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.3hr.vas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.clt.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.hurs.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.huss.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.pr.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.prsn.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.psl.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rlds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rlus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rsds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.rsus.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.sfcWind.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.tas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.tasmax.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.tasmin.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.uas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.Amon.vas.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.CF3hr.psl.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.clt.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.hurs.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.huss.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.pr.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.prsn.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.psl.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.rlds.gn.v20200212","CMIP6.CMIP.AWI.AWI-ESM-1-1-LR.historical.r1i1p1f1.day.rlus.gn.v20200212"],"grid":["All
+        grid attributes are set for the native grid and based on information from
+        attribute source.","CESM f09_g16 resolution","LMDZ grid","Native N216 grid
+        (U points); 432 x 324 longitude/latitude","Native N216 grid (V points); 432
+        x 325 longitude/latitude","Native N216 grid; 432 x 324 longitude/latitude","Native
+        N96 grid (U points); 192 x 144 longitude/latitude","Native N96 grid (V points);
+        192 x 145 longitude/latitude","Native N96 grid; 192 x 144 longitude/latitude","ORCA12T1279","T106","T159L62","T159L62-ORCA1L75","T255L91","T255L91-ORCA1L75","T42","T63","T63L49
+        native atmosphere, T63 Linear Gaussian Grid; 128 x 64 longitude/latitude;
+        49 levels; top level 1 hPa","atmos data regridded from Cubed-sphere (c48)
+        to 94X192","atmos data regridded from Cubed-sphere (c96) to 180,288; interpolation
+        method: conserve_order1","atmos data regridded from Cubed-sphere (c96) to
+        180,288; interpolation method: conserve_order2","atmospheric grid: 144x90,
+        ocean grid: 288x180","atmospheric grid: 144x90, ocean grid: 360x180","data
+        regridded to a 359 gaussian grid (360x720 latlon) from a native atmosphere
+        T359l reduced gaussian grid","data regridded to a CMIP6 standard 1x1 degree
+        lonxlat grid from the native grid using an area-average preserving method.","data
+        regridded to a T127 gaussian grid (128x256 latlon) from a native atmosphere
+        T127l reduced gaussian grid","finite-volume grid with 0.9x1.25 degree lat/lon
+        resolution","finite-volume grid with 1.9x2.5 degree lat/lon resolution","gn","gs1x1","gs2x1.5","gs2x2","land
+        data regridded from Cubed-sphere (c96) to 180,288; interpolation method: conserve_order1","lat-lon","native
+        0.9x1.25 finite volume grid (192x288 latxlon)","native 1.9x2.5 finite volume
+        grid (96x144 latxlon)","native atmosphere N96 grid (144x192 latxlon)","native
+        atmosphere N96 grid (145x192 latxlon)","native atmosphere T42 Gaussian grid","native
+        atmosphere T85 Gaussian grid","native atmosphere TL159 gaussian grid (160x320
+        latxlon)","native atmosphere area-weighted latxlon grid (80x180 latxlon)","native
+        atmosphere regular grid","native atmosphere regular grid (128x256 latxlon)","native
+        atmosphere regular grid (192x288 latxlon)"],"grid_label":["gn","gr","gr1"],"initialisation_index":[],"source_id":["ACCESS-CM2","ACCESS-ESM1-5","AWI-CM-1-1-MR","AWI-ESM-1-1-LR","BCC-CSM2-MR","BCC-ESM1","CAMS-CSM1-0","CAS-ESM2-0","CESM2","CESM2-FV2","CESM2-WACCM","CESM2-WACCM-FV2","CIESM","CMCC-CM2-HR4","CMCC-CM2-SR5","CMCC-ESM2","CNRM-CM6-1","CNRM-CM6-1-HR","CNRM-ESM2-1","CanESM5","CanESM5-CanOE","E3SM-1-0","E3SM-1-1","E3SM-1-1-ECA","EC-Earth3","EC-Earth3-AerChem","EC-Earth3-CC","EC-Earth3-Veg","EC-Earth3-Veg-LR","EC-Earth3P-VHR","FGOALS-f3-L","FGOALS-g3","FIO-ESM-2-0","GFDL-CM4","GFDL-ESM4","GISS-E2-1-G","GISS-E2-1-G-CC","GISS-E2-1-H","GISS-E2-2-G","GISS-E2-2-H","HadGEM3-GC31-LL","HadGEM3-GC31-MM","ICON-ESM-LR","IITM-ESM","INM-CM4-8","INM-CM5-0","IPSL-CM5A2-INCA","IPSL-CM6A-LR","IPSL-CM6A-LR-INCA","KACE-1-0-G","KIOST-ESM","MCM-UA-1-0","MIROC-ES2H","MIROC-ES2L","MIROC6","MPI-ESM-1-2-HAM","MPI-ESM1-2-HR","MPI-ESM1-2-LR","MRI-ESM2-0","NESM3","NorCPM1","NorESM2-LM","NorESM2-MM","SAM0-UNICON","TaiESM1","UKESM1-0-LL","UKESM1-1-LL"],"forcing_index":[]}},{"id":"ceda_flights","description":"Search
+        for flights within the CEDA flights index using the parameters below. Search
+        for specific flights by Collection, Flight Code, Instrument or Keyword Search,
+        or filter specific flights by temporal geospatial parameters. Flights from
+        FAAM, NERC-ARSF, SAFIRE, AWI-Polar5, Kit-Enduro, and INTA-CASA aircraft and
+        the APEX instrument flown on the DLR aircraft are now included.","stac_version":"1.0.0","links":[{"rel":"items","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ceda_flights/items"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ceda_flights"}],"stac_extensions":[],"title":"CEDA
+        Flights","type":"Collection","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/faam/metadata/thumbnail_global.png","type":"image/png","roles":["thumbnail"]}},"license":"other","extent":{"spatial":{"bbox":[[-180,-90,179.99999991618097,89.99999995809048]]},"temporal":{"interval":[["1995-01-01T00:00:00Z","2025-01-01T12:00:00Z"]]}},"keywords":["CEDA","NCAS","FAAM","EUFAR","ARSF","MOASA","SAFIRE","MASIN","ORCHESTRA"],"providers":[],"summaries":{}}],"links":[{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"}],"numReturned":5,"numMatched":25}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Dec 2025 14:27:30 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 cffda3c778905a23572a8498e1276d96.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - keWEc5GnyD-JOX3-sBiiuSy1X8zVuRQl_ejaMgVhrIIgLT4XhXI6lA==
+      X-Amz-Cf-Pop:
+      - VIE50-P3
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '39971'
       vary:
       - Accept-Encoding
     status:

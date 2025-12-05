@@ -137,7 +137,6 @@ class Item(EodhObject):
         products = []
         # Iterate over assets in this item
         for id, asset in self.assets.items():
-
             cf = identify_cloud_type(id, asset)
             if cf is None:
                 continue
@@ -435,7 +434,7 @@ class Catalog(EodhObject):
                 logger.warning(f"{e} => Skipping")
         return catalogs
 
-    def get_collections(self) -> list[Collection]:
+    def get_collections(self) -> PaginatedList[Collection]:
         """Fetches all resource catalog collections.
 
         Calls: GET /catalogs/{catalog_id}/collections
@@ -444,13 +443,14 @@ class Catalog(EodhObject):
             list[Collection]: List of available collections
         """
 
-        headers, response = self._client._request_json("GET", self.collections_href)
-        if not response:
-            return []
-        return [
-            Collection(self._client, headers, item, parent=self)
-            for item in response.get("collections", [])
-        ]
+        return PaginatedList(
+            Collection,
+            self._client,
+            "GET",
+            self.collections_href,
+            "collections",
+            parent=self,
+        )
 
     def get_collection(self, collection_id: str) -> Collection:
         """Fetches a resource catalog collection.
@@ -657,8 +657,7 @@ class Catalog(EodhObject):
 
 
 class CatalogService(Catalog):
-
-    def get_collections(self) -> list[Collection]:
+    def get_collections(self) -> PaginatedList[Collection]:
         """Fetches all resource catalog collections.
 
         Calls: GET /collections
