@@ -111,6 +111,7 @@ def test_get_collection_item(svc: CatalogService):
     assert item.id == items[0].id
 
 
+@pytest.mark.skip(reason="ceda-datapoint is broken")
 @pytest.mark.vcr
 def test_get_cloud_product(svc: CatalogService):
     import xarray
