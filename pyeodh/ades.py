@@ -27,9 +27,7 @@ class AdesRelType(Enum):
     PROCESSES = "http://www.opengis.net/def/rel/ogc/1.0/processes"
     JOBS = "http://www.opengis.net/def/rel/ogc/1.0/job-list"
     RESULTS = "http://www.opengis.net/def/rel/ogc/1.0/results"
-    RESULTS_NOT_READY = (
-        "http://www.opengis.net/def/rel/ogc/1.0/exception/result-not-ready"
-    )
+    RESULTS_NOT_READY = "http://www.opengis.net/def/rel/ogc/1.0/exception/result-not-ready"
     EXECUTE = "http://www.opengis.net/def/rel/ogc/1.0/execute"
 
 
@@ -56,7 +54,7 @@ class Job(EodhObject):
         data (Any): Raw response data received when requesting this record
     """
 
-    def __init__(self, client: Client, headers: Headers, data: Any, **kwargs):
+    def __init__(self, client: Client, headers: Headers, data: dict, **kwargs: Any) -> None:
         super().__init__(client, headers, data, **kwargs)
 
     def _set_props(self, obj: dict) -> None:
@@ -90,13 +88,13 @@ class Job(EodhObject):
 
     def refresh(self) -> None:
         """Refresh this object with the latest data from the API."""
-        headers, response = self._client._request_json("GET", self.self_href)
+        _, response = self._client._request_json("GET", self.self_href)
         if response:
             self._set_props(response)
 
     def delete(self) -> None:
         """Stop and delete this job."""
-        headers, response = self._client._request_json("DELETE", self.self_href)
+        _, response = self._client._request_json("DELETE", self.self_href)
         if response:
             self._set_props(response)
 
@@ -104,19 +102,12 @@ class Job(EodhObject):
         ln = Link.get_link(self.links, AdesRelType.RESULTS.value)
         if self.status != AdesJobStatus.SUCCESSFUL.value:
             raise ResultsNotReadyError(
-                f"Results are only available for successful jobs, "
-                f"job {self.id} is {self.status}"
+                f"Results are only available for successful jobs, job {self.id} is {self.status}"
             )
         if ln is None:
-            raise ResultsNotReadyError(
-                f"Job {self.id} does not yet have a link to results."
-            )
+            raise ResultsNotReadyError(f"Job {self.id} does not yet have a link to results.")
         headers, response = self._client._request_json("GET", ln.href)
-        if (
-            response.get("type", AdesRelType.RESULTS_NOT_READY.value)
-            == AdesRelType.RESULTS_NOT_READY.value
-        ):
-
+        if response.get("type", AdesRelType.RESULTS_NOT_READY.value) == AdesRelType.RESULTS_NOT_READY.value:
             logger.info(f"Job {self.id} results not ready.")
             raise ResultsNotReadyError(f"Job {self.id} results not ready.")
 
@@ -155,11 +146,11 @@ class Metadata:
     href: str | None
 
     @classmethod
-    def from_dict(cls, data: dict[str, str]):
+    def from_dict(cls, data: dict[str, str]) -> Metadata:
         return cls(
-            title=data.get("title", None),
-            role=data.get("role", None),
-            href=data.get("href", None),
+            title=data.get("title"),
+            role=data.get("role"),
+            href=data.get("href"),
         )
 
 
@@ -181,12 +172,12 @@ class AdditionalParameters:
     parameters: list[Parameter]
 
     @classmethod
-    def from_dict(cls, data: dict):
+    def from_dict(cls, data: dict) -> AdditionalParameters:
         params = [Parameter(d["name"], d["value"]) for d in data.get("parameters", [])]
         return cls(
-            title=data.get("title", None),
-            role=data.get("role", None),
-            href=data.get("href", None),
+            title=data.get("title"),
+            role=data.get("role"),
+            href=data.get("href"),
             parameters=params,
         )
 
@@ -201,7 +192,7 @@ class Process(EodhObject):
         parent_url (str): URL of the parent API endpoint, usually `/processes`
     """
 
-    def __init__(self, client: Client, headers: Headers, data: Any, parent_url: str):
+    def __init__(self, client: Client, headers: Headers, data: dict, parent_url: str) -> None:
         super().__init__(client, headers, data)
         self.self_href = join_url(parent_url, self.id or "")
 
@@ -212,18 +203,12 @@ class Process(EodhObject):
         self.links = [Link.from_dict(d) for d in obj.get("links", [])]
         self.version = self._make_str_prop(obj.get("version"))
         self.mutable: bool | None = obj.get("mutable")
-        self.job_control_options = self._make_list_of_strs_prop(
-            obj.get("jobControlOptions", [])
-        )
-        self.output_transmission = self._make_list_of_strs_prop(
-            obj.get("outputTransmission", [])
-        )
+        self.job_control_options = self._make_list_of_strs_prop(obj.get("jobControlOptions", []))
+        self.output_transmission = self._make_list_of_strs_prop(obj.get("outputTransmission", []))
         self.keywords = self._make_list_of_strs_prop(obj.get("keywords", []))
-        self.metadata: list[Metadata] = [
-            Metadata.from_dict(d) for d in obj.get("metadata", [])
-        ]
-        self.additional_parameters: AdditionalParameters = (
-            AdditionalParameters.from_dict(obj.get("additionalParameters", {}))
+        self.metadata: list[Metadata] = [Metadata.from_dict(d) for d in obj.get("metadata", [])]
+        self.additional_parameters: AdditionalParameters = AdditionalParameters.from_dict(
+            obj.get("additionalParameters", {})
         )
         self.inputs_schema = self._make_dict_prop(obj.get("inputs", {}))
         self.outputs_schema = self._make_dict_prop(obj.get("outputs", {}))
@@ -254,9 +239,7 @@ class Process(EodhObject):
         post_headers = Headers()
         post_headers["Prefer"] = "respond-async"
         post_data = {"inputs": inputs}
-        headers, response = self._client._request_json(
-            "POST", self.execute_href, headers=post_headers, data=post_data
-        )
+        headers, response = self._client._request_json("POST", self.execute_href, headers=post_headers, data=post_data)
         return Job(self._client, headers, response)
 
     def update(
@@ -285,9 +268,7 @@ class Process(EodhObject):
             raise ValueError("Provide either cwl_yaml or cwl_url argument.")
 
         if cwl_yaml is not None:
-            headers, response = self._client._request_json(
-                "PUT", self.self_href, data=cwl_yaml, encode=encode
-            )
+            _, response = self._client._request_json("PUT", self.self_href, data=cwl_yaml, encode=encode)
 
         if cwl_url is not None:
             data = {
@@ -296,11 +277,9 @@ class Process(EodhObject):
                     "type": "application/cwl",
                 }
             }
-            headers, response = self._client._request_json(
-                "PUT", self.self_href, data=data
-            )
+            _, response = self._client._request_json("PUT", self.self_href, data=data)
 
-        headers, response = self._client._request_json("GET", self.self_href)
+        _, response = self._client._request_json("GET", self.self_href)
         if response:
             self._set_props(response)
 
@@ -318,7 +297,7 @@ class Ades(EodhObject):
         data (Any): Raw response data received when requesting this record
     """
 
-    def __init__(self, client: Client, headers: Headers, data: Any):
+    def __init__(self, client: Client, headers: Headers, data: dict) -> None:
         super().__init__(client, headers, data)
 
     def _set_props(self, obj: dict) -> None:
@@ -361,10 +340,7 @@ class Ades(EodhObject):
         headers, response = self._client._request_json("GET", self.processes_href)
         if not response:
             return []
-        return [
-            Process(self._client, headers, item, self.processes_href)
-            for item in response.get("processes", [])
-        ]
+        return [Process(self._client, headers, item, self.processes_href) for item in response.get("processes", [])]
 
     def get_process(self, process_id: str) -> Process:
         """Fetch an individual process
@@ -410,9 +386,7 @@ class Ades(EodhObject):
             raise ValueError("Provide either cwl_yaml or cwl_url argument.")
         headers = None
         if cwl_yaml is not None:
-            headers, response = self._client._request_json(
-                "POST", self.processes_href, data=cwl_yaml, encode=encode
-            )
+            headers, response = self._client._request_json("POST", self.processes_href, data=cwl_yaml, encode=encode)
 
         if cwl_url is not None:
             data = {
@@ -421,9 +395,7 @@ class Ades(EodhObject):
                     "type": "application/cwl",
                 }
             }
-            headers, response = self._client._request_json(
-                "POST", self.processes_href, data=data
-            )
+            headers, response = self._client._request_json("POST", self.processes_href, data=data)
 
         location = headers.get("Location") if headers else None
         if not location:
@@ -450,7 +422,7 @@ class Ades(EodhObject):
             params={"limit": limit},
         )
 
-    def get_job(self, job_id) -> Job:
+    def get_job(self, job_id: str) -> Job:
         """Fetches an individual job.
 
         Args:

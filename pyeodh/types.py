@@ -1,10 +1,10 @@
 from dataclasses import dataclass
-from typing import Literal, Optional, Type, TypedDict, TypeVar, Union
+from typing import Literal, TypedDict, TypeVar
 
 from requests.structures import CaseInsensitiveDict
 
 Headers = CaseInsensitiveDict
-Params = dict[str, Union[str, int]]
+Params = dict[str, str | int]
 RequestMethod = Literal["GET", "POST", "DELETE", "PUT"]
 
 
@@ -34,11 +34,11 @@ class Link:
 
     rel: str
     href: str
-    title: Optional[str] = None
-    media_type: Optional[str] = None
+    title: str | None = None
+    media_type: str | None = None
 
     @classmethod
-    def from_dict(cls: Type[L], data: dict[str, str]) -> L:
+    def from_dict(cls: type[L], data: dict[str, str]) -> L:
         """Create a Link instance from a dictionary.
 
         Args:
@@ -50,12 +50,12 @@ class Link:
         return cls(
             rel=data["rel"],
             href=data["href"],
-            title=data.get("title", None),
-            media_type=data.get("type", None),
+            title=data.get("title"),
+            media_type=data.get("type"),
         )
 
     @staticmethod
-    def get_link(links: list[L], rel: str) -> Optional[L]:
+    def get_link(links: list[L], rel: str) -> L | None:
         """Find a link with the specified relationship type.
 
         Args:

@@ -19,16 +19,13 @@ def vcr_config():
 
 @pytest.fixture
 def svc(api_token: str, username: str) -> Ades:
-    return pyeodh.Client(
-        username=username, token=api_token, base_url="https://staging.eodatahub.org.uk"
-    ).get_ades()
+    return pyeodh.Client(username=username, token=api_token, base_url="https://staging.eodatahub.org.uk").get_ades()
 
 
 @pytest.mark.vcr
 def test_get_ades_service(svc: Ades):
     assert (
-        svc.self_href
-        == "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/"
+        svc.self_href == "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user/catalogs/"
         f"{svc._client.username}"
     )
 
@@ -172,9 +169,7 @@ $graph:
     for _ in range(12):
         try:
             items = job.get_result_items()
-            if isinstance(items, list) and all(
-                isinstance(item, Item) for item in items
-            ):
+            if isinstance(items, list) and all(isinstance(item, Item) for item in items):
                 break
         except ResultsNotReadyError:
             time.sleep(5)
@@ -194,9 +189,11 @@ def test_get_jobs(svc: Ades):
 def test_get_job(svc: Ades):
     jobs = svc.get_jobs().get_limited()
     if len(jobs) > 0:
-        job = svc.get_job(jobs[0].id)
+        first_id = jobs[0].id
+        assert first_id is not None
+        job = svc.get_job(first_id)
         assert isinstance(job, Job)
-        assert job.id == jobs[0].id
+        assert job.id == first_id
 
 
 @pytest.mark.vcr

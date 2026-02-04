@@ -1,6 +1,6 @@
 import os
 import time
-from typing import Generator
+from collections.abc import Generator
 
 import dotenv
 import pytest
@@ -22,9 +22,7 @@ def api_token() -> Generator[str, None, None]:
     keycloak_realm = os.getenv("EODH_KEYCLOAK_REALM")
     client_id = os.getenv("EODH_CLIENT_ID")
 
-    token_url = (
-        f"{base_url}/keycloak/realms/{keycloak_realm}/protocol/openid-connect/token"
-    )
+    token_url = f"{base_url}/keycloak/realms/{keycloak_realm}/protocol/openid-connect/token"
     data = {
         "client_id": client_id,
         "username": username,
