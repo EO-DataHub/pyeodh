@@ -17,7 +17,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "ceda-datapoint>=0.5.2",
+    "ceda-datapoint==0.4.12",
     "lxml>=6.0.2",
     "owslib>=0.35.0",
     "pystac>=1.14.3",

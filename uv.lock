@@ -290,28 +290,26 @@ wheels = [
 
 [[package]]
 name = "ceda-datapoint"
-version = "0.5.2"
+version = "0.4.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
-    { name = "cfapyx", version = "2025.11.18", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "cfapyx", version = "2025.12.9", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "cfapyx" },
     { name = "fsspec" },
     { name = "kerchunk", version = "0.2.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "kerchunk", version = "0.2.9", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "kerchunk", version = "0.2.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "matplotlib" },
     { name = "pystac-client" },
     { name = "requests" },
-    { name = "rioxarray", version = "0.19.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "rioxarray", version = "0.21.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "xarray", version = "2025.1.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "xarray", version = "2025.11.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "rioxarray" },
+    { name = "xarray" },
     { name = "xdoctest" },
     { name = "zarr", version = "2.18.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "zarr", version = "3.0.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4d/58/c2a0badb983760c546a26772bb6d6a06a3ff0ec9cd2fd9b66e294619a447/ceda_datapoint-0.5.2.tar.gz", hash = "sha256:aaa624d78bdd1c68f545a2b2da00912f1b69982ffe2867eb821b9383c9ad8384", size = 19508, upload-time = "2025-06-24T11:01:06.353Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/61/79/25dd2a8c4fb6ab44e19dd8e02f00207de4fd10f89eeeb1d73eddf33463e8/ceda_datapoint-0.4.12.tar.gz", hash = "sha256:d74b23006e686ba114fb645ee5b95eca2f913c58cd607a25e1e3e92daa2b1372", size = 16038, upload-time = "2025-05-30T09:32:16.66Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/db/47/ad669b6326262a7f0c35f60bf324a45231143938f8b499f41199cd8fbf13/ceda_datapoint-0.5.2-py3-none-any.whl", hash = "sha256:3fddae9d7fed536c31bd2b429be20eb1e64baed7f32e0d0fb6a4f86c0d35b7dc", size = 27013, upload-time = "2025-06-24T11:01:04.797Z" },
+    { url = "https://files.pythonhosted.org/packages/a2/20/ade37dc0dfb4f30ed69df212574db79d0c572cdd1310af2c2bf415a40e20/ceda_datapoint-0.4.12-py3-none-any.whl", hash = "sha256:9df6b991c52985321b6e39b4cfc689d1847818c573f6be929c5f4d3c49098b40", size = 22911, upload-time = "2025-05-30T09:32:15.292Z" },
 ]
 
 [[package]]
@@ -327,51 +325,19 @@ wheels = [
 name = "cfapyx"
 version = "2025.11.18"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.11' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "(python_full_version < '3.11' and platform_machine != 'ARM64') or (python_full_version < '3.11' and sys_platform != 'win32')",
-]
 dependencies = [
     { name = "arraypartition", version = "1.1.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "dask", marker = "python_full_version < '3.11'" },
+    { name = "arraypartition", version = "1.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "dask" },
     { name = "netcdf4", version = "1.7.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11' and platform_machine == 'ARM64' and sys_platform == 'win32'" },
-    { name = "netcdf4", version = "1.7.4", source = { registry = "https://pypi.org/simple" }, marker = "(python_full_version < '3.11' and platform_machine != 'ARM64') or (python_full_version < '3.11' and sys_platform != 'win32')" },
+    { name = "netcdf4", version = "1.7.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11' or platform_machine != 'ARM64' or sys_platform != 'win32'" },
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "xarray", version = "2025.1.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "xarray" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/72/7e/b9bd9e9d1d84ed36e44ee0cc1c3db2136fe34052e8604ea67cac00b4bdb0/cfapyx-2025.11.18.tar.gz", hash = "sha256:0ac9305b7a8260e73a76f99fcc72d1958032a54453ae0ffd63526267e44887ad", size = 9832121, upload-time = "2025-11-18T14:45:10.048Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/0f/13/d33ae92c3a0dbf876b1678dfb45c27317673aad374d09bbb5060d58629c3/cfapyx-2025.11.18-py3-none-any.whl", hash = "sha256:3219c48d310dda3923d3ea1fc63c461fa3b986dedcdbd6468a887ecd7bddb470", size = 9839739, upload-time = "2025-11-18T14:45:07.963Z" },
-]
-
-[[package]]
-name = "cfapyx"
-version = "2025.12.9"
-source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version >= '3.14' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.14' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.14' and sys_platform == 'emscripten'",
-    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and sys_platform == 'emscripten'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-    "python_full_version == '3.11.*' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version == '3.11.*' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version == '3.11.*' and sys_platform == 'emscripten'",
-    "python_full_version == '3.11.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-]
-dependencies = [
-    { name = "arraypartition", version = "1.2.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "dask", marker = "python_full_version >= '3.11'" },
-    { name = "netcdf4", version = "1.7.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "xarray", version = "2025.11.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/08/ab/46e86a03225dd3fb0a73536990d93c7fb3932aa88a8c00c2296c5f530d46/cfapyx-2025.12.9.tar.gz", hash = "sha256:59309f94ac99c6d85a6e2d65ced01fb0540e25f068e29ab0dfcca7f46a0ad877", size = 9834831, upload-time = "2025-12-09T11:17:39.176Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/a9/0a/1a410be991bcc10903ba34ddb8c04abf2330489f954b2f6c4f8011d21677/cfapyx-2025.12.9-py3-none-any.whl", hash = "sha256:6948f9d9988410994747879e7f19ef2c5885c5a5738b6fd6c177371d89b5b077", size = 9842455, upload-time = "2025-12-09T11:17:35.848Z" },
 ]
 
 [[package]]
@@ -1393,11 +1359,11 @@ wheels = [
 
 [[package]]
 name = "fsspec"
-version = "2026.1.0"
+version = "2024.12.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d5/7d/5df2650c57d47c57232af5ef4b4fdbff182070421e405e0d62c6cdbfaa87/fsspec-2026.1.0.tar.gz", hash = "sha256:e987cb0496a0d81bba3a9d1cee62922fb395e7d4c3b575e57f547953334fe07b", size = 310496, upload-time = "2026-01-09T15:21:35.562Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ee/11/de70dee31455c546fbc88301971ec03c328f3d1138cfba14263f651e9551/fsspec-2024.12.0.tar.gz", hash = "sha256:670700c977ed2fb51e0d9f9253177ed20cbde4a3e5c0283cc5385b5870c8533f", size = 291600, upload-time = "2024-12-19T19:57:30.333Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/01/c9/97cc5aae1648dcb851958a3ddf73ccd7dbe5650d95203ecb4d7720b4cdbf/fsspec-2026.1.0-py3-none-any.whl", hash = "sha256:cb76aa913c2285a3b49bdd5fc55b1d7c708d7208126b60f2eb8194fe1b4cbdcc", size = 201838, upload-time = "2026-01-09T15:21:34.041Z" },
+    { url = "https://files.pythonhosted.org/packages/de/86/5486b0188d08aa643e127774a99bac51ffa6cf343e3deb0583956dca5b22/fsspec-2024.12.0-py3-none-any.whl", hash = "sha256:b520aed47ad9804237ff878b504267a3b0b441e97508bd6d2d8774e3db85cee2", size = 183862, upload-time = "2024-12-19T19:57:28.258Z" },
 ]
 
 [[package]]
@@ -1649,7 +1615,7 @@ wheels = [
 
 [[package]]
 name = "kerchunk"
-version = "0.2.9"
+version = "0.2.8"
 source = { registry = "https://pypi.org/simple" }
 resolution-markers = [
     "python_full_version >= '3.14' and platform_machine == 'ARM64' and sys_platform == 'win32'",
@@ -1672,9 +1638,9 @@ dependencies = [
     { name = "ujson", marker = "python_full_version >= '3.11'" },
     { name = "zarr", version = "3.0.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/01/4d/4e8a1d7780eebe3d869887835eaa63ccc0b5bd316a4c0ba793e0e73c848d/kerchunk-0.2.9.tar.gz", hash = "sha256:86a54da9a57a94fd6fb97be786e2d83182d3d8e4fd7c0ea2b67cde3d0641df7d", size = 712534, upload-time = "2025-07-31T14:36:17.699Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/0f/36/53f64c984f75a544c3a98179a65f714ae4584af9e1adb070eb749ee5cbe2/kerchunk-0.2.8.tar.gz", hash = "sha256:85a932ffb6a26a38bebc45d5f978c962263704e34dd99f66008b402cded316af", size = 711488, upload-time = "2025-02-01T18:46:33.404Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e0/96/355144a51c7dd7444e7550b26addfce45f31bc59c4a258d6efc84f585af4/kerchunk-0.2.9-py3-none-any.whl", hash = "sha256:5f7ff385ace07c62bd0ae5db639cac8b441169fea2389bb006fd209549f699c2", size = 66440, upload-time = "2025-07-31T14:36:16.628Z" },
+    { url = "https://files.pythonhosted.org/packages/bb/cf/cfc47e6ed7be147ca60f416624a55e0c66466b9a41175d3a9641047550f5/kerchunk-0.2.8-py3-none-any.whl", hash = "sha256:9174d4febcb53521849f3d00193e76d51470c706f622a202aa427cdff7efacdd", size = 65510, upload-time = "2025-02-01T18:46:18.904Z" },
 ]
 
 [[package]]
@@ -3112,14 +3078,13 @@ notebooks = [
     { name = "fsspec" },
     { name = "matplotlib" },
     { name = "pillow" },
-    { name = "rioxarray", version = "0.19.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "rioxarray", version = "0.21.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "rioxarray" },
     { name = "shapely" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "ceda-datapoint", specifier = ">=0.5.2" },
+    { name = "ceda-datapoint", specifier = "==0.4.12" },
     { name = "lxml", specifier = ">=6.0.2" },
     { name = "numcodecs", marker = "python_full_version >= '3.11'", specifier = ">=0.16" },
     { name = "owslib", specifier = ">=0.35.0" },
@@ -3334,16 +3299,16 @@ validation = [
 
 [[package]]
 name = "pystac-client"
-version = "0.9.0"
+version = "0.7.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pystac", extra = ["validation"] },
     { name = "python-dateutil" },
     { name = "requests" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c5/8d/b98aeffd325fc208e1624cf586d0c4dfb927bc7a2bce20d3b58ee80d2483/pystac_client-0.9.0.tar.gz", hash = "sha256:3908951583bcc6a3aaaf2828024a8e03764e6ca9d9f9f1d8149df587e14dd744", size = 52339, upload-time = "2025-07-18T15:44:41.1Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/86/aa/a8d04b0ec8127ff299241ec688b6b7513a8d25d932a46cbb04b9e3fedfa6/pystac_client-0.7.7.tar.gz", hash = "sha256:04650785244fcebd3f776f552c70f5dc2bd469ca1e9ba058f6721ed693d00cd5", size = 41691, upload-time = "2024-04-19T13:07:50.89Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/5d/d2/5f6367b14c9f250d1a6725d18bd1e9584f5ab1587e292f3a847e59189598/pystac_client-0.9.0-py3-none-any.whl", hash = "sha256:eed146b5980f93646aaa3a59080f11f1dcab6000b0bfbc28b1d0c6fd0a61eda1", size = 41826, upload-time = "2025-07-18T15:44:40.197Z" },
+    { url = "https://files.pythonhosted.org/packages/f7/72/1fa9ffef8f83d68aff9046c4d8bcac3611d50fd46c264aa4e82468d25358/pystac_client-0.7.7-py3-none-any.whl", hash = "sha256:372230689a75f851f5b1d135a1feb62171850951ed9170f535956ead62eaad2e", size = 33666, upload-time = "2024-04-19T13:07:48.952Z" },
 ]
 
 [[package]]
@@ -3765,55 +3730,21 @@ wheels = [
 
 [[package]]
 name = "rioxarray"
-version = "0.19.0"
+version = "0.15.7"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version == '3.11.*' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version == '3.11.*' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version == '3.11.*' and sys_platform == 'emscripten'",
-    "python_full_version == '3.11.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-    "python_full_version < '3.11' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "(python_full_version < '3.11' and platform_machine != 'ARM64') or (python_full_version < '3.11' and sys_platform != 'win32')",
-]
 dependencies = [
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-    { name = "packaging", marker = "python_full_version < '3.12'" },
+    { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+    { name = "packaging" },
     { name = "pyproj", version = "3.7.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "pyproj", version = "3.7.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
+    { name = "pyproj", version = "3.7.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "rasterio", version = "1.4.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "xarray", version = "2025.1.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "xarray", version = "2025.11.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.11.*'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/3d/8e/fe4e87460f8c62d8d5c683e09f19fbde5d9cfcfd0342d02df1f452999b5d/rioxarray-0.19.0.tar.gz", hash = "sha256:7819a0036fd874c8c8e280447cbbe43d8dc72fc4a14ac7852a665b1bdb7d4b04", size = 54600, upload-time = "2025-04-21T17:46:54.183Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/2a/2f/63d2cacc0e525f8e3398bcf32bd3620385f22cd1600834ec49d7f3597a7b/rioxarray-0.19.0-py3-none-any.whl", hash = "sha256:494ee4fff1781072d55ee5276f5d07b63d93b05093cb33b926a12186ba5bb8ef", size = 62151, upload-time = "2025-04-21T17:46:52.801Z" },
-]
-
-[[package]]
-name = "rioxarray"
-version = "0.21.0"
-source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version >= '3.14' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.14' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.14' and sys_platform == 'emscripten'",
-    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and sys_platform == 'emscripten'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-]
-dependencies = [
-    { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "packaging", marker = "python_full_version >= '3.12'" },
-    { name = "pyproj", version = "3.7.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
     { name = "rasterio", version = "1.5.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-    { name = "xarray", version = "2025.11.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
+    { name = "xarray" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/68/ba/9b70c0e33159244b264aed7b331ff349bc0a3a4ac50e8bea08729bf6ae53/rioxarray-0.21.0.tar.gz", hash = "sha256:a292d96f4d6412c05ff09629b72523ae2e9c42598183f5e9c555fc368f867c0f", size = 56555, upload-time = "2026-01-26T17:15:46.783Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/27/2e/601525fadc8cc69e6b6707e041b6d6dd48a20ac4df46a64df1410056350b/rioxarray-0.15.7.tar.gz", hash = "sha256:a09cda8d87aae0e2be6eca0d08ae39b4f3717892e184330cd62958a8726a187d", size = 52823, upload-time = "2024-06-25T13:19:27.548Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/62/aa/4ba81b24acf2b05cb00fd7603f84e5088af72596839f85c23c6ff5d249d7/rioxarray-0.21.0-py3-none-any.whl", hash = "sha256:f8793822f09ab7de3a82ffe711beff4cdf313a860ff86df0942f3385374ac562", size = 64940, upload-time = "2026-01-26T17:15:45.648Z" },
+    { url = "https://files.pythonhosted.org/packages/ec/df/111c323a931ab13aba08f89f4916c1e39e05510fd039d7d20f7d6e4e7abf/rioxarray-0.15.7-py3-none-any.whl", hash = "sha256:c36b4014193637d2f3b9af556eba9a86cc7d5d524a8af3c79208544b71af00fe", size = 60589, upload-time = "2024-06-25T13:19:25.204Z" },
 ]
 
 [[package]]
@@ -4614,48 +4545,18 @@ wheels = [
 
 [[package]]
 name = "xarray"
-version = "2025.1.2"
+version = "2024.11.0"
 source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version < '3.11' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "(python_full_version < '3.11' and platform_machine != 'ARM64') or (python_full_version < '3.11' and sys_platform != 'win32')",
-]
 dependencies = [
     { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-    { name = "packaging", marker = "python_full_version < '3.11'" },
-    { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/89/c0/edb2f6cfafa5369106f927409f6211141c3296c14877cc634d8ee4c970a4/xarray-2025.1.2.tar.gz", hash = "sha256:e7675c79ac69d274dd3b3c5450ce57176928d2792947576251ed1c7df1783224", size = 3271214, upload-time = "2025-01-31T07:37:12.385Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/05/79/4e19100342fe13d69fd6e77b343e2269924fec681258e2ea21b55576aad2/xarray-2025.1.2-py3-none-any.whl", hash = "sha256:a7ad6a36c6e0becd67f8aff6a7808d20e4bdcd344debb5205f0a34b1a4a7f8d6", size = 1247773, upload-time = "2025-01-31T07:37:09.811Z" },
-]
-
-[[package]]
-name = "xarray"
-version = "2025.11.0"
-source = { registry = "https://pypi.org/simple" }
-resolution-markers = [
-    "python_full_version >= '3.14' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.14' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.14' and sys_platform == 'emscripten'",
-    "python_full_version >= '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and sys_platform == 'emscripten'",
-    "python_full_version >= '3.12' and python_full_version < '3.14' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-    "python_full_version == '3.11.*' and platform_machine == 'ARM64' and sys_platform == 'win32'",
-    "python_full_version == '3.11.*' and platform_machine != 'ARM64' and sys_platform == 'win32'",
-    "python_full_version == '3.11.*' and sys_platform == 'emscripten'",
-    "python_full_version == '3.11.*' and sys_platform != 'emscripten' and sys_platform != 'win32'",
-]
-dependencies = [
     { name = "numpy", version = "2.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "packaging", marker = "python_full_version >= '3.11'" },
+    { name = "packaging" },
+    { name = "pandas", version = "2.3.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "pandas", version = "3.0.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/39/ad/b072c970cfb2e2724509bf1e8d7fb4084cc186a90d486c9ac4a48ff83186/xarray-2025.11.0.tar.gz", hash = "sha256:d7a4aa4500edbfd60676b1613db97da309ab144cac0bcff0cbf483c61c662af1", size = 3072276, upload-time = "2025-11-17T16:12:09.167Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3f/d6/5ae0a721bd6cac85b30cff6b119dc6b5e73b735aacbfb43d3ed2680504d7/xarray-2024.11.0.tar.gz", hash = "sha256:1ccace44573ddb862e210ad3ec204210654d2c750bec11bbe7d842dfc298591f", size = 3247277, upload-time = "2024-11-22T21:18:51.173Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/86/b4/cfa7aa56807dd2d9db0576c3440b3acd51bae6207338ec5610d4878e5c9b/xarray-2025.11.0-py3-none-any.whl", hash = "sha256:986893b995de4a948429356a3897d78e634243c1cac242bd59d03832b9d72dd1", size = 1375447, upload-time = "2025-11-17T16:12:07.123Z" },
+    { url = "https://files.pythonhosted.org/packages/40/ed/1c4631ad5909487ea8907cd326d9855c2207d790e3936e77bda48173b8be/xarray-2024.11.0-py3-none-any.whl", hash = "sha256:6ee94f63ddcbdd0cf3909d1177f78cdac756640279c0e32ae36819a89cdaba37", size = 1231951, upload-time = "2024-11-22T21:18:49.331Z" },
 ]
 
 [[package]]
