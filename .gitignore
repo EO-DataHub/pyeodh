@@ -13,3 +13,6 @@ playground/
 coverage.xml
 .cursorrules
 .python-version
+.pre-commit-config.yaml
+.venv/
+.ruff_cache/

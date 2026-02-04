@@ -131,9 +131,7 @@ def test_get_limited_custom_limit(mock_client):
 def test_get_limited_cached_results(paginated_list, mock_client):
     """Test get_limited() when results are already cached."""
     # Populate the _elements list
-    paginated_list._elements = [
-        DummyItem(mock_client, {}, {"id": i}) for i in range(10)
-    ]
+    paginated_list._elements = [DummyItem(mock_client, {}, {"id": i}) for i in range(10)]
 
     result = paginated_list.get_limited()
 
@@ -173,9 +171,7 @@ def test_iter_method(mock_client):
         },
     ]
 
-    mock_client._request_json.side_effect = [
-        ({}, response) for response in mock_responses
-    ]
+    mock_client._request_json.side_effect = [({}, response) for response in mock_responses]
 
     # Use the iterator to fetch all items
     items = list(paginated_list)

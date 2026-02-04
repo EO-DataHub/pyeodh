@@ -2,7 +2,8 @@ import json
 import logging
 import os
 import urllib.parse
-from typing import Any, Callable, Optional
+from collections.abc import Callable
+from typing import Any
 
 import requests
 
@@ -23,9 +24,9 @@ def _encode_json(data: dict) -> tuple[str, str]:
 class Client:
     def __init__(
         self,
-        base_url: Optional[str] = None,
-        username: Optional[str] = None,
-        token: Optional[str] = None,
+        base_url: str | None = None,
+        username: str | None = None,
+        token: str | None = None,
     ) -> None:
         """Initialize the client.
 
@@ -39,10 +40,7 @@ class Client:
         self.url_base = base_url or os.getenv("EODH_BASE_URL", consts.API_BASE_URL)
 
         if not is_absolute_url(self.url_base):
-            raise ValueError(
-                "base_url parameter or EODH_BASE_URL environment variable must be an "
-                "absolute URL"
-            )
+            raise ValueError("base_url parameter or EODH_BASE_URL environment variable must be an absolute URL")
 
         self.username = username
         self.token = token
@@ -75,9 +73,9 @@ class Client:
         self,
         method: RequestMethod,
         url: str,
-        headers: Optional[Headers] = None,
-        params: Optional[Params] = None,
-        data: Optional[Any] = None,
+        headers: Headers | None = None,
+        params: Params | None = None,
+        data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> requests.Response:
         """Make a raw request.
@@ -111,10 +109,7 @@ class Client:
         encoded_data = None
         if data is not None:
             headers["Content-Type"], encoded_data = encode(data)
-        logger.debug(
-            f"Making request: {method} {url}\nheaders: {headers}\nparams: {params}"
-            f"\nbody: {encoded_data}"
-        )
+        logger.debug(f"Making request: {method} {url}\nheaders: {headers}\nparams: {params}\nbody: {encoded_data}")
         response = self._session.request(
             method,
             url,
@@ -123,8 +118,7 @@ class Client:
             data=encoded_data,
         )
         logger.debug(
-            f"Received response {response.status_code}\nheaders: {response.headers}"
-            f"\ncontent: {response.text}"
+            f"Received response {response.status_code}\nheaders: {response.headers}\ncontent: {response.text}"
         )
         # TODO consider moving this to _requst_json() and raise own exceptions
         # so that we can user _raw in e.g. delete methods where we expect a 409 and
@@ -137,9 +131,9 @@ class Client:
         self,
         method: RequestMethod,
         url: str,
-        headers: Optional[Headers] = None,
-        params: Optional[Params] = None,
-        data: Optional[Any] = None,
+        headers: Headers | None = None,
+        params: Params | None = None,
+        data: Any | None = None,
         encode: Callable[[Any], tuple[str, Any]] = _encode_json,
     ) -> tuple[Headers, Any]:
         """Make a request and return the headers and deserialized JSON data. Input data
@@ -164,7 +158,7 @@ class Client:
         """
         response = self._request_raw(method, url, headers, params, data, encode)
 
-        if not len(response.text):
+        if not response.text:
             return response.headers, None
 
         return response.headers, json.loads(response.text)
@@ -189,18 +183,12 @@ class Client:
             Ades: Object representing the ADES.
         """
         if self.username is None or self.token is None:
-            raise ValueError(
-                "Valid username and token required for accessing protected API "
-                "endpoints."
-            )
+            raise ValueError("Valid username and token required for accessing protected API endpoints.")
         data = {
             "links": [
                 {
                     "rel": "self",
-                    "href": (
-                        f"{self.url_base}/api/catalogue/stac/catalogs/user/catalogs/"
-                        f"{self.username}"
-                    ),
+                    "href": (f"{self.url_base}/api/catalogue/stac/catalogs/user/catalogs/{self.username}"),
                 }
             ]
         }

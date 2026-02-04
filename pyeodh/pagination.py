@@ -1,7 +1,8 @@
 from __future__ import annotations
 
 import logging
-from typing import TYPE_CHECKING, Any, Generic, Iterator, Type, TypeVar
+from collections.abc import Iterator
+from typing import TYPE_CHECKING, Any, Generic, TypeVar
 
 from pyeodh import consts
 from pyeodh.eodh_object import EodhObject
@@ -17,10 +18,9 @@ logger = logging.getLogger(__name__)
 
 
 class PaginatedList(Generic[T]):
-
     def __init__(
         self,
-        cls: Type[T],
+        cls: type[T],
         client: Client,
         method: RequestMethod,
         first_url: str,
@@ -43,12 +43,10 @@ class PaginatedList(Generic[T]):
         self._parent = parent
 
     @property
-    def total_count(self):
+    def total_count(self) -> int | None:
         if not self._total_count:
             data: dict | None = self._data.copy() if self._data is not None else None
-            params: Params | None = (
-                self._params.copy() if self._params is not None else None
-            )
+            params: Params | None = self._params.copy() if self._params is not None else None
             if data and "limit" in data:
                 data["limit"] = 1
             else:
@@ -108,9 +106,7 @@ class PaginatedList(Generic[T]):
             params=self._params,
             data=self._data,
         )
-        next_link = next(
-            filter(lambda ln: ln.get("rel") == "next", resp_data.get("links", {})), {}
-        )
+        next_link = next(filter(lambda ln: ln.get("rel") == "next", resp_data.get("links", {})), {})
         self._next_url = next_link.get("href")
 
         self._data = next_link.get("body")
@@ -147,7 +143,7 @@ class PaginatedList(Generic[T]):
         return self._elements[:limit]
 
     class PagedSlice:
-        def __init__(self, _list: PaginatedList[T], _slice: slice):
+        def __init__(self, _list: PaginatedList[T], _slice: slice) -> None:
             self._list = _list
             self._start = _slice.start or 0
             self._stop = _slice.stop

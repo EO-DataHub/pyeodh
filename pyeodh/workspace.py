@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 class Workspace:
     """Contains methods for interacting with EODH workspaces."""
 
-    def __init__(self, client: Client):
+    def __init__(self, client: Client) -> None:
         self._client = client
 
     def upload_file(
@@ -30,9 +30,7 @@ class Workspace:
         """
 
         if self._client.token is None:
-            raise ValueError(
-                "Valid token is required for accessing protected API endpoints."
-            )
+            raise ValueError("Valid token is required for accessing protected API endpoints.")
 
         if workspace_name is None:
             workspace_name = self._client.username

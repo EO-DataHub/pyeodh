@@ -30,7 +30,7 @@ def remove_null_items(d: dict[str, Any]) -> dict[str, Any]:
 class ConformanceError(Exception):
     """Raise when the API does not coform to requested functionality."""
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"API does not conform to {', '.join(self.args)}"
 
 
@@ -49,7 +49,5 @@ def s3_url(workspace_name: str, environment: str, path_to_file: str) -> str:
         logger.warning(f"Leading '/' in path_to_file: {path_to_file}")
         logger.debug("Stripping leading '/'")
     path_stripped = path_to_file.lstrip("/")
-    base = S3_BASE_URL_TEMPLATE.format(
-        workspace_name=workspace_name, environment=environment
-    )
+    base = S3_BASE_URL_TEMPLATE.format(workspace_name=workspace_name, environment=environment)
     return posixpath.join(base, path_stripped)

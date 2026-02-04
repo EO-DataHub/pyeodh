@@ -1,5 +1,3 @@
-from typing import Union
-
 import pytest
 from pytest_mock import MockerFixture
 
@@ -17,9 +15,7 @@ def vcr_config():
 
 @pytest.fixture
 def workspace(api_token: str, username: str) -> Workspace:
-    return pyeodh.Client(
-        username=username, token=api_token, base_url="https://staging.eodatahub.org.uk"
-    ).workspace
+    return pyeodh.Client(username=username, token=api_token, base_url="https://staging.eodatahub.org.uk").workspace
 
 
 @pytest.mark.vcr
@@ -30,9 +26,7 @@ def workspace(api_token: str, username: str) -> Workspace:
         ("tests/data/test.txt", "test.txt"),
     ],
 )
-def test_upload_file(
-    workspace: Workspace, file: Union[str, bytes], ws_file_path: str
-) -> None:
+def test_upload_file(workspace: Workspace, file: str | bytes, ws_file_path: str) -> None:
     workspace.upload_file(file=file, ws_file_path=ws_file_path)
 
 
@@ -54,13 +48,10 @@ def test_upload_file_mocked(mocker: MockerFixture, workspace: Workspace) -> None
     mocker.patch.object(workspace._client, "_request_raw")
     spy = mocker.spy(workspace._client, "_request_raw")
 
-    workspace.upload_file(
-        file=test_content, ws_file_path=ws_file_path, workspace_name=workspace_name
-    )
+    workspace.upload_file(file=test_content, ws_file_path=ws_file_path, workspace_name=workspace_name)
     assert spy.call_args.args[0] == "PUT"
     assert (
-        spy.call_args.args[1]
-        == f"https://{workspace_name}.staging.eodatahub-workspaces.org.uk/files/"
+        spy.call_args.args[1] == f"https://{workspace_name}.staging.eodatahub-workspaces.org.uk/files/"
         f"workspaces-eodhp-staging/{ws_file_path}"
     )
     assert spy.call_args.kwargs["data"] == test_content

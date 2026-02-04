@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 import typing
-from typing import TYPE_CHECKING, Any, Literal, Type, TypeVar
+from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 from pystac import STACObject
 
@@ -17,7 +17,7 @@ T = TypeVar("T")
 T_base = TypeVar("T_base", bound="EodhObject")
 
 
-def is_optional(value: Any, type_: Type | tuple[Type, ...]) -> bool:
+def is_optional(value: Any, type_: type | tuple[type, ...]) -> bool:
     types = ()
     if isinstance(type_, tuple):
         types = (*type_, type(None))
@@ -33,10 +33,10 @@ class EodhObject:
         self,
         client: Client,
         headers: Headers,
-        data: Any,
-        pystac_cls: Type[STACObject] | None = None,
-        **kwargs,
-    ):
+        data: dict,
+        pystac_cls: type[STACObject] | None = None,
+        **kwargs: Any,
+    ) -> None:
         self._client = client
         self._headers = headers
         self._raw_data = data
@@ -48,15 +48,11 @@ class EodhObject:
         else:
             self._set_props(data)
 
-    def _set_props(self, obj) -> None:
-        raise NotImplementedError(
-            f"Method _set_props not implemented in {self.__class__.__name__}."
-        )
+    def _set_props(self, obj: Any) -> None:
+        raise NotImplementedError(f"Method _set_props not implemented in {self.__class__.__name__}.")
 
-    def check_conforms_to(self, conformance_uri):
-        raise NotImplementedError(
-            f"Method check_conforms_to not implemented in {self.__class__.__name__}."
-        )
+    def check_conforms_to(self, conformance_uri: str) -> bool:
+        raise NotImplementedError(f"Method check_conforms_to not implemented in {self.__class__.__name__}.")
 
     def get_root(self) -> EodhObject:
         current = self
@@ -71,7 +67,7 @@ class EodhObject:
             return self.__dict__
 
     @staticmethod
-    def _make_prop(value: T, t: Type[T]) -> T:
+    def _make_prop(value: T, t: type[T]) -> T:
         if value is None:
             return value
         if typing.get_origin(t) is Literal and value in typing.get_args(t):
@@ -82,16 +78,11 @@ class EodhObject:
             raise TypeError(f"Expected {t}, received {value.__class__}.")
 
     @staticmethod
-    def _make_list_of_type_prop(value: list[T], t: Type[T]) -> list[T]:
+    def _make_list_of_type_prop(value: list[T], t: type[T]) -> list[T]:
         if not isinstance(value, list):
             raise TypeError(f"Expected list of {t}, received {value.__class__}.")
         if not all(isinstance(x, t) for x in value):
-            raise TypeError(
-                (
-                    f"Expected list of {t}, received list of "
-                    f"{next(iter(value), None).__class__}."
-                )
-            )
+            raise TypeError(f"Expected list of {t}, received list of {next(iter(value), None).__class__}.")
         else:
             return value
 
@@ -123,7 +114,7 @@ class EodhObject:
     def _make_list_of_floats_prop(value: list[float]) -> list[float]:
         return EodhObject._make_list_of_type_prop(value, float)
 
-    def _make_class_prop(self, cls: Type[T_base], data: dict) -> T_base | None:
+    def _make_class_prop(self, cls: type[T_base], data: dict) -> T_base | None:
         if data is None:
             return None
         if isinstance(data, dict):
@@ -131,18 +122,11 @@ class EodhObject:
         else:
             raise TypeError(f"Expected {type({})}, received {data.__class__}.")
 
-    def _make_list_of_classes_prop(
-        self, cls: Type[T_base], value: list[dict]
-    ) -> list[T_base]:
+    def _make_list_of_classes_prop(self, cls: type[T_base], value: list[dict]) -> list[T_base]:
         if not isinstance(value, list):
             raise TypeError(f"Expected list of dicts, received {value.__class__}.")
         if not all(isinstance(x, dict) for x in value):
-            raise TypeError(
-                (
-                    f"Expected list of dicts, received list of "
-                    f"{next(iter(value), None).__class__}."
-                )
-            )
+            raise TypeError(f"Expected list of dicts, received list of {next(iter(value), None).__class__}.")
         else:
             return [cls(self._client, self._headers, item) for item in value]
 
@@ -186,9 +170,9 @@ class EodhObject:
         return query
 
     @staticmethod
-    def _format_intersects(value):
+    def _format_intersects(value: Any) -> Any:
         if hasattr(value, "__geo_interface__"):
-            return getattr(value, "__geo_interface__")
+            return value.__geo_interface__
         return value
 
     @classmethod

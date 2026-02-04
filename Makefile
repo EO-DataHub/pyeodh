@@ -1,31 +1,46 @@
 record := none
-
-.PHONY: install
-install:
-	ln -sf $(PWD)/.pre-commit .git/hooks/pre-commit
-	poetry install --all-extras
-
-.PHONY: sync
-sync:
-	poetry sync
-
-.PHONY: check
-check:
-	poetry run black --preview --check pyeodh tests
-	poetry run flake8 pyeodh tests
-	poetry run isort --check --diff pyeodh tests
-	poetry run pyright
+uv-run ?= uv run --no-sync
 
 .PHONY: test
 test:
-	poetry run pytest -v --cov=./ --cov-report=xml --record-mode=$(record)
+	${uv-run} pytest -v --cov=./ --cov-report=xml --record-mode=$(record)
 
 .PHONY: html
 html:
 	cd docs && \
-	poetry run make html SPHINXOPTS="-W"
+	${uv-run} make html SPHINXOPTS="-W"
+
+.git/hooks/pre-commit:
+	${uv-run} pre-commit install
+	curl -o .pre-commit-config.yaml https://raw.githubusercontent.com/EO-DataHub/github-actions/main/.pre-commit-config-python.yaml
+
+.PHONY: setup
+setup: update .git/hooks/pre-commit
+
+.PHONY: pre-commit
+pre-commit:
+	${uv-run} pre-commit
+
+.PHONY: pre-commit-all
+pre-commit-all:
+	${uv-run} pre-commit run --all-files
+
+.PHONY: check
+check:
+	${uv-run} ruff check
+	${uv-run} ruff format --check --diff
+	${uv-run} pyright
+	${uv-run} validate-pyproject pyproject.toml
 
 .PHONY: format
 format:
-	poetry run black pyeodh tests
-	poetry run isort pyeodh tests
+	${uv-run} ruff check --fix
+	${uv-run} ruff format
+
+.PHONY: install
+install:
+	uv sync --frozen --all-groups
+
+.PHONY: update
+update:
+	uv sync --all-groups

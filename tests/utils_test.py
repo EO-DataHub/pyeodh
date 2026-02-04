@@ -1,4 +1,4 @@
-from typing import Any, Type, Union
+from typing import Any
 
 import pytest
 
@@ -41,9 +41,7 @@ def test_is_absolute_url(url: str, expected: bool) -> None:
         (("/path", "to", "resource"), "/path/to/resource"),
     ],
 )
-def test_join_url(
-    args: tuple[str, ...], expected: Union[str, type[ValueError]]
-) -> None:
+def test_join_url(args: tuple[str, ...], expected: str | type[ValueError]) -> None:
     if expected is ValueError:
         with pytest.raises(ValueError):
             join_url(*args)
@@ -61,9 +59,7 @@ def test_join_url(
         ({}, {}),
     ],
 )
-def test_remove_null_items(
-    input_dict: dict[str, Any], expected_dict: dict[str, Any]
-) -> None:
+def test_remove_null_items(input_dict: dict[str, Any], expected_dict: dict[str, Any]) -> None:
     assert remove_null_items(input_dict) == expected_dict
 
 
@@ -75,38 +71,32 @@ def test_remove_null_items(
             "test-workspace",
             "staging",
             "data/file.txt",
-            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
-            "workspaces-eodhp-staging/data/file.txt",
+            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/workspaces-eodhp-staging/data/file.txt",
         ),
         # Path with leading slash
         (
             "test-workspace",
             "staging",
             "/data/file.txt",
-            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
-            "workspaces-eodhp-staging/data/file.txt",
+            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/workspaces-eodhp-staging/data/file.txt",
         ),
         # Path with multiple leading slashes
         (
             "test-workspace",
             "staging",
             "///data/file.txt",
-            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/"
-            "workspaces-eodhp-staging/data/file.txt",
+            "https://test-workspace.staging.eodatahub-workspaces.org.uk/files/workspaces-eodhp-staging/data/file.txt",
         ),
         # Test with test environment
         (
             "test-workspace",
             "test",
             "data/file.txt",
-            "https://test-workspace.test.eodatahub-workspaces.org.uk/files/"
-            "workspaces-eodhp-test/data/file.txt",
+            "https://test-workspace.test.eodatahub-workspaces.org.uk/files/workspaces-eodhp-test/data/file.txt",
         ),
     ],
 )
-def test_s3_url(
-    workspace_name: str, environment: str, path_to_file: str, expected: str
-) -> None:
+def test_s3_url(workspace_name: str, environment: str, path_to_file: str, expected: str) -> None:
     """Test s3_url function with various input combinations.
 
     Args:
@@ -140,9 +130,7 @@ def test_s3_url(
         ({}, list, False),
     ],
 )
-def test_is_optional(
-    value: Any, type_: Union[Type, tuple[Type, ...]], expected: bool
-) -> None:
+def test_is_optional(value: Any, type_: type | tuple[type, ...], expected: bool) -> None:
     """Test is_optional function with various input combinations.
 
     Args:
