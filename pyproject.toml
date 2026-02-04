@@ -17,12 +17,14 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "ceda-datapoint>=0.5.2",
+    "lxml>=6.0.2",
+    "owslib>=0.35.0",
+    "pystac>=1.14.3",
     "requests-oauthlib>=2.0.0",
-    "pystac>=1.10.0",
-    "owslib>=0.31.0",
-    "zarr>=2,<3",
-    "lxml>=5.3.0",
-    "ceda-datapoint>=0.4.12",
+    "zarr>=2.18.3,<3; python_version == '3.10'",
+    "zarr>=3; python_version >= '3.11'",
+    "numcodecs>=0.16; python_version >= '3.11'"
 ]
 
 [dependency-groups]
