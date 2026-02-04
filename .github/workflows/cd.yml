@@ -18,7 +18,7 @@ jobs:
       - name: Check version
         run: |
           release=${{ github.ref_name }}
-          version=$(uv version --short")
+          version=$(uv version --short)
           if [ "$release" != "$version" ]; then
             echo "::error::Git tag and package version don't match!"
             exit 1
