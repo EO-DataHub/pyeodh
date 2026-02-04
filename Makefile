@@ -39,8 +39,8 @@ format:
 
 .PHONY: install
 install:
-	uv sync --frozen
+	uv sync --frozen --all-groups
 
 .PHONY: update
 update:
-	uv sync
+	uv sync --all-groups
