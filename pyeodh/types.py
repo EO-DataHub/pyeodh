@@ -1,10 +1,12 @@
+from __future__ import annotations
+
 from dataclasses import dataclass
-from typing import Literal, TypedDict, TypeVar
+from typing import Literal, TypedDict, TypeVar, Union
 
 from requests.structures import CaseInsensitiveDict
 
 Headers = CaseInsensitiveDict
-Params = dict[str, str | int]
+Params = dict[str, Union[str, int]]
 RequestMethod = Literal["GET", "POST", "DELETE", "PUT"]
 
 
