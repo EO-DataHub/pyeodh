@@ -4576,23 +4576,25 @@ wheels = [
 
 [[package]]
 name = "pyeodh"
-version = "0.1.9"
+version = "0.1.10"
 source = { editable = "." }
 dependencies = [
-    { name = "ceda-datapoint" },
     { name = "lxml" },
-    { name = "numcodecs", version = "0.16.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "owslib", version = "0.31.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "owslib", version = "0.35.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "pystac", version = "1.10.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "pystac", version = "1.14.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "requests-oauthlib" },
+]
+
+[package.dev-dependencies]
+datapoint = [
+    { name = "ceda-datapoint" },
+    { name = "numcodecs", version = "0.16.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "zarr", version = "2.18.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "zarr", version = "2.18.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*'" },
     { name = "zarr", version = "3.0.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
 ]
-
-[package.dev-dependencies]
 dev = [
     { name = "ipykernel", version = "6.31.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
     { name = "ipykernel", version = "7.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
@@ -4634,20 +4636,22 @@ notebooks = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ceda-datapoint", specifier = "==0.4.12" },
     { name = "lxml", specifier = ">=6.0.2" },
-    { name = "numcodecs", marker = "python_full_version >= '3.11'", specifier = ">=0.16" },
     { name = "owslib", marker = "python_full_version < '3.10'", specifier = ">=0.31.0,<0.32" },
     { name = "owslib", marker = "python_full_version >= '3.10'", specifier = ">=0.35.0" },
     { name = "pystac", marker = "python_full_version < '3.10'", specifier = ">=1.10.0,<1.11" },
     { name = "pystac", marker = "python_full_version >= '3.10'", specifier = ">=1.14.3" },
     { name = "requests-oauthlib", specifier = ">=2.0.0" },
+]
+
+[package.metadata.requires-dev]
+datapoint = [
+    { name = "ceda-datapoint", specifier = "==0.4.12" },
+    { name = "numcodecs", marker = "python_full_version >= '3.11'", specifier = ">=0.16" },
     { name = "zarr", marker = "python_full_version < '3.10'", specifier = ">=2.18.0,<2.18.3" },
     { name = "zarr", marker = "python_full_version == '3.10.*'", specifier = ">=2.18.3,<3" },
     { name = "zarr", marker = "python_full_version >= '3.11'", specifier = ">=3" },
 ]
-
-[package.metadata.requires-dev]
 dev = [
     { name = "ipykernel" },
     { name = "pre-commit" },

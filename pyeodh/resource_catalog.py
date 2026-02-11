@@ -7,8 +7,6 @@ from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 import pystac
 import pystac.catalog
-from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
-from ceda_datapoint.core.item import identify_cloud_type
 from owslib.wmts import WebMapTileService
 from pystac import Extent, RelType, STACObject, STACTypeError, Summaries
 from pystac.asset import Asset
@@ -19,6 +17,18 @@ from pyeodh.eodh_object import EodhObject, is_optional
 from pyeodh.pagination import PaginatedList
 from pyeodh.types import Headers, SearchFields, SearchSortField
 from pyeodh.utils import ConformanceError, join_url, remove_null_items
+
+try:
+    from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+    from ceda_datapoint.core.item import identify_cloud_type
+
+    DATAPOINT_AVAILABLE = True
+except ImportError:
+    DATAPOINT_AVAILABLE = False
+
+    if TYPE_CHECKING:
+        from ceda_datapoint.core.cloud import DataPointCloudProduct, DataPointCluster
+        from ceda_datapoint.core.item import identify_cloud_type
 
 if TYPE_CHECKING:
     # avoids conflicts since there are also kwargs and attrs called `datetime`
@@ -136,6 +146,10 @@ class Item(EodhObject):
             ds = product.open_dataset()
             # Continue with the `ds` xarray.Dataset
         """
+        if not DATAPOINT_AVAILABLE:
+            raise ImportError(
+                "ceda-datapoint is not installed. Please install it with `pip install pyeodh[datapoint]`."
+            )
 
         products = []
         # Iterate over assets in this item
