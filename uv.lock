@@ -343,7 +343,7 @@ wheels = [
 
 [[package]]
 name = "ceda-datapoint"
-version = "0.4.12"
+version = "0.5.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
@@ -351,8 +351,6 @@ dependencies = [
     { name = "fsspec" },
     { name = "kerchunk", version = "0.2.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "kerchunk", version = "0.2.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
-    { name = "matplotlib", version = "3.9.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
-    { name = "matplotlib", version = "3.10.8", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.10'" },
     { name = "pystac-client" },
     { name = "requests" },
     { name = "rioxarray", version = "0.15.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.10'" },
@@ -364,9 +362,9 @@ dependencies = [
     { name = "zarr", version = "2.18.3", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version == '3.10.*'" },
     { name = "zarr", version = "3.0.10", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/61/79/25dd2a8c4fb6ab44e19dd8e02f00207de4fd10f89eeeb1d73eddf33463e8/ceda_datapoint-0.4.12.tar.gz", hash = "sha256:d74b23006e686ba114fb645ee5b95eca2f913c58cd607a25e1e3e92daa2b1372", size = 16038, upload-time = "2025-05-30T09:32:16.66Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/4d/58/c2a0badb983760c546a26772bb6d6a06a3ff0ec9cd2fd9b66e294619a447/ceda_datapoint-0.5.2.tar.gz", hash = "sha256:aaa624d78bdd1c68f545a2b2da00912f1b69982ffe2867eb821b9383c9ad8384", size = 19508, upload-time = "2025-06-24T11:01:06.353Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a2/20/ade37dc0dfb4f30ed69df212574db79d0c572cdd1310af2c2bf415a40e20/ceda_datapoint-0.4.12-py3-none-any.whl", hash = "sha256:9df6b991c52985321b6e39b4cfc689d1847818c573f6be929c5f4d3c49098b40", size = 22911, upload-time = "2025-05-30T09:32:15.292Z" },
+    { url = "https://files.pythonhosted.org/packages/db/47/ad669b6326262a7f0c35f60bf324a45231143938f8b499f41199cd8fbf13/ceda_datapoint-0.5.2-py3-none-any.whl", hash = "sha256:3fddae9d7fed536c31bd2b429be20eb1e64baed7f32e0d0fb6a4f86c0d35b7dc", size = 27013, upload-time = "2025-06-24T11:01:04.797Z" },
 ]
 
 [[package]]
@@ -4576,7 +4574,7 @@ wheels = [
 
 [[package]]
 name = "pyeodh"
-version = "0.1.10"
+version = "0.1.11"
 source = { editable = "." }
 dependencies = [
     { name = "lxml" },
@@ -4646,7 +4644,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 datapoint = [
-    { name = "ceda-datapoint", specifier = "==0.4.12" },
+    { name = "ceda-datapoint", specifier = "==0.5.2" },
     { name = "numcodecs", marker = "python_full_version >= '3.11'", specifier = ">=0.16" },
     { name = "zarr", marker = "python_full_version < '3.10'", specifier = ">=2.18.0,<2.18.3" },
     { name = "zarr", marker = "python_full_version == '3.10.*'", specifier = ">=2.18.3,<3" },

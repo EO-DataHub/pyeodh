@@ -1,6 +1,6 @@
 [project]
 name = "pyeodh"
-version = "0.1.10"
+version = "0.1.11"
 description = "A lightweight Python client for EODH APIs."
 authors = [{ name = "Dusan Figala", email = "dusan@oxidian.com" }]
 license = { text = "BSD-3-Clause" }
@@ -55,7 +55,7 @@ notebooks = [
     "folium>=0.17.0",
 ]
 datapoint = [
-    "ceda-datapoint==0.4.12",
+    "ceda-datapoint==0.5.2",
     "zarr>=2.18.0,<2.18.3; python_version < '3.10'",
     "zarr>=2.18.3,<3; python_version == '3.10'",
     "zarr>=3; python_version >= '3.11'",
