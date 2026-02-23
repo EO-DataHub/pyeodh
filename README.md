@@ -13,6 +13,12 @@ A lightweight Python client for easy access to EODH APIs.
 pip install pyeodh
 ```
 
+Or install with optional dependencies for ceda-datapoint: 
+
+```sh
+pip install pyeodh[datapoint]
+```
+
 ## Usage
 
 See [example notebooks](notebooks/).
