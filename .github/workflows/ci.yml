@@ -25,7 +25,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install project
-        run: make install
+        run: make install-datapoint
 
       - name: Run QA
         run: make check
