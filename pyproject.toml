@@ -1,6 +1,6 @@
 [project]
 name = "pyeodh"
-version = "0.1.12"
+version = "0.1.13"
 description = "A lightweight Python client for EODH APIs."
 authors = [{ name = "Dusan Figala", email = "dusan@oxidian.com" }]
 license = { text = "BSD-3-Clause" }
@@ -22,13 +22,15 @@ dependencies = [
     "owslib>=0.31.0,<0.32; python_version < '3.10'",
     "owslib>=0.35.0; python_version >= '3.10'",
     "pystac>=1.10.0,<1.11; python_version < '3.10'",
-    "pystac>=1.14.3; python_version >= '3.10'",
+    "pystac-core>=1.15.2,<2; python_version >= '3.10'",
     "requests-oauthlib>=2.0.0",
 ]
 
 [project.optional-dependencies]
 datapoint = [
     "ceda-datapoint==0.5.2",
+    "pystac>=1.10.0,<1.11; python_version < '3.10'",
+    "pystac>=1.15.2,<2; python_version >= '3.10'",
     "zarr>=2.18.0,<2.18.3; python_version < '3.10'",
     "zarr>=2.18.3,<3; python_version == '3.10'",
     "zarr>=3; python_version >= '3.11'",

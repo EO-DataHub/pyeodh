@@ -41,6 +41,10 @@ format:
 install:
 	uv sync --frozen --all-groups
 
+.PHONY: install-datapoint
+install-datapoint:
+	uv sync --frozen --all-groups --extra datapoint
+
 .PHONY: update
 update:
 	uv sync --all-groups
