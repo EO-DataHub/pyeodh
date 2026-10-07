@@ -137,6 +137,10 @@ def test_list_and_get_pin_set(workspace: Workspace, stac_items: list[Item]):
     assert fetched.name == PIN_SET_NAME
     assert [ref.id for ref in fetched.items] == [ref.id for ref in created.items]
 
+    exported = fetched.to_dict()
+    assert exported["name"] == PIN_SET_NAME
+    assert [ref["selfHref"] for ref in exported["items"]] == [item.self_href for item in stac_items[:2]]
+
 
 @pytest.mark.vcr
 def test_get_non_existent_pin_set(workspace: Workspace):

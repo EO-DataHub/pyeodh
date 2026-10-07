@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import copy
 import logging
 from collections.abc import Iterable
 from pathlib import Path
@@ -44,6 +45,10 @@ class PinSetItem(EodhObject):
         self.position = self._make_int_prop(obj.get("position"))
         self.added_at = self._make_datetime_prop(obj.get("addedAt"))
 
+    def to_dict(self) -> dict[str, Any]:
+        """Return this item reference as received from the API."""
+        return copy.deepcopy(self._raw_data)
+
     def load(self) -> Item:
         """Fetch the referenced STAC item from its selfHref. The resource catalog checks
         your own access to the item.
@@ -82,6 +87,10 @@ class PinSetSummary(EodhObject):
         self.created_at = self._make_datetime_prop(obj.get("createdAt"))
         self.updated_at = self._make_datetime_prop(obj.get("updatedAt"))
         self.item_count = self._make_int_prop(obj.get("itemCount"))
+
+    def to_dict(self) -> dict[str, Any]:
+        """Return this pin set as received from the API."""
+        return copy.deepcopy(self._raw_data)
 
 
 class PinSet(PinSetSummary):
