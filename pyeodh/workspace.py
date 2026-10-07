@@ -15,6 +15,19 @@ class Workspace:
     def __init__(self, client: Client) -> None:
         self._client = client
 
+    def _resolve_workspace_name(self, workspace_name: str | None) -> str:
+        """Check the client has a token and return the workspace name, defaulting to the
+        client's username."""
+
+        if self._client.token is None:
+            raise ValueError("Valid token is required for accessing protected API endpoints.")
+
+        if workspace_name is None:
+            workspace_name = self._client.username
+        if workspace_name is None:
+            raise ValueError("Workspace name is required")
+        return workspace_name
+
     def upload_file(
         self,
         file: str | bytes,
@@ -29,14 +42,7 @@ class Workspace:
             ws_file_path (str): Path to the file within the workspace
         """
 
-        if self._client.token is None:
-            raise ValueError("Valid token is required for accessing protected API endpoints.")
-
-        if workspace_name is None:
-            workspace_name = self._client.username
-        if workspace_name is None:
-            raise ValueError("Workspace name is required")
-
+        workspace_name = self._resolve_workspace_name(workspace_name)
         url = s3_url(workspace_name, self._client.environment, ws_file_path)
 
         if isinstance(file, str):
