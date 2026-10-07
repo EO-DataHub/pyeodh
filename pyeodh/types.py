@@ -7,7 +7,7 @@ from requests.structures import CaseInsensitiveDict
 
 Headers = CaseInsensitiveDict
 Params = dict[str, Union[str, int]]
-RequestMethod = Literal["GET", "POST", "DELETE", "PUT"]
+RequestMethod = Literal["GET", "POST", "DELETE", "PUT", "PATCH"]
 
 
 class SearchSortField(TypedDict):
