@@ -27,6 +27,8 @@ def vcr_config():
     return {
         "filter_headers": ["Authorization"],
         "decode_compressed_response": True,
+        # Match bodies too, so replays catch wrong write payloads
+        "match_on": ["method", "scheme", "host", "port", "path", "query", "body"],
     }
 
 
