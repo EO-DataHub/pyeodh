@@ -23,3 +23,9 @@ API
    :members:
    :undoc-members:
    :show-inheritance:
+
+
+.. automodule:: pyeodh.workspace
+   :members:
+   :undoc-members:
+   :show-inheritance:

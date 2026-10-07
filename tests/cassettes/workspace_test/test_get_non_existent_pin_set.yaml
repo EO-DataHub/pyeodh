@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets/00000000-0000-0000-0000-000000000000
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:53 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 3d03a2dd672010a0266799c803ab015c.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - yl5k3reQ8juccKWA_Ygxi01YtKVrOHvb1OlT69bf2AP-2H3O2R_y-A==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Error from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 404
+      message: Not Found
+version: 1
