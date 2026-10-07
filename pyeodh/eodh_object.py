@@ -5,9 +5,12 @@ import typing
 from typing import TYPE_CHECKING, Any, Literal, TypeVar
 
 from pystac import STACObject
+from pystac.utils import str_to_datetime
 
 # Avoid circular imports only for type checking
 if TYPE_CHECKING:
+    from datetime import datetime as Datetime
+
     from pyeodh.client import Client
     from pyeodh.types import Headers
 
@@ -97,6 +100,12 @@ class EodhObject:
     @staticmethod
     def _make_float_prop(value: float | None) -> float | None:
         return EodhObject._make_prop(value, float)
+
+    @staticmethod
+    def _make_datetime_prop(value: str | None) -> Datetime | None:
+        if value is None:
+            return None
+        return str_to_datetime(EodhObject._make_prop(value, str))
 
     @staticmethod
     def _make_dict_prop(value: dict[str, Any]) -> dict[str, Any]:
