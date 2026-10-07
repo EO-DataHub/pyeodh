@@ -110,7 +110,8 @@ class PinSet(PinSetSummary):
     def load_items(self) -> list[Item]:
         """Fetch the STAC items in this pin set from their selfHrefs, in set order. The
         resource catalog checks your own access to each item, so items you can't read are
-        skipped with a warning.
+        skipped with a warning. Use `pystac.Item.from_dict(item.to_dict())` if you need
+        pystac Items.
 
         Returns:
             list[Item]: The STAC items you can read.
