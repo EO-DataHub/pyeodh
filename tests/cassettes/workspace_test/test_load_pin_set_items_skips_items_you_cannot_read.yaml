@@ -1,0 +1,559 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets
+  response:
+    body:
+      string: '[]
+
+        '
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 f2dc575b7d45f41bcc2ed296a06701ea.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - JCkcP05DnmFHZk36ujZTjQkeD7twdQ6wKnx4iDQws0sXyEe_sm0J-Q==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac
+  response:
+    body:
+      string: '{"type":"Catalog","id":"stac-fastapi","title":"EO DataHub Catalogue","description":"The
+        Earth Observation Data Hub STAC Catalogue","stac_version":"1.0.0","conformsTo":["https://api.stacspec.org/v1.0.0/item-search","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text"],"links":[{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"data","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"GET"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/search","method":"POST"},{"rel":"queryables","type":"application/schema+json","title":"Queryables","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/queryables"},{"rel":"aggregate","type":"application/json","title":"Aggregate","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregate"},{"rel":"aggregations","type":"application/json","title":"Aggregations","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/aggregations"},{"rel":"child","type":"application/json","title":"Commercial
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/commercial"},{"rel":"child","type":"application/json","title":"Public
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"child","type":"application/json","title":"User
+        Datasets","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/user"},{"rel":"service-desc","type":"application/vnd.oai.openapi+json;version=3.0","title":"OpenAPI
+        service description","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/api"},{"rel":"service-doc","type":"text/html","title":"OpenAPI
+        service documentation","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/api.html"}],"stac_extensions":[]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 84eac509a679113585a379ef452c7948.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - -b8EKxyDq7nnNcTnrzMb6zreoh5rElJDLDOqe4z9SbeYrT_OTEW17A==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '3536'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue
+  response:
+    body:
+      string: '{"id":"ceda-stac-catalogue","description":"This is an experimental
+        STAC API server.\nThe content is subject to change the and there is no guarantee
+        surrounding its uptime.\n","stac_version":"1.0.0","links":[{"rel":"aggregate","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregate"},{"rel":"aggregations","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/aggregations"},{"rel":"catalogs","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/catalogs"},{"rel":"collections","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"conformance","type":"application/json","title":"STAC/WFS3
+        conformance classes implemented by this server","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/conformance"},{"rel":"data","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"GET"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public"},{"rel":"search","type":"application/geo+json","title":"STAC
+        search","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search","method":"POST"},{"rel":"queryables","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/queryables"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/clms-lcm-global-10m-yearly-v1-cog","title":"Copernicus
+        Land Monitoring Service (CLMS) Land Cover Map (LCM) global 10m 2020"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6","title":"CMIP6"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3a","title":"EOCIS
+        AEROSOL from Sentinel 3A daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-daily-s3b","title":"EOCIS
+        AEROSOL from Sentinel 3B daily"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3a","title":"EOCIS
+        AEROSOL from Sentinel 3A monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-aerosol-slstr-monthly-s3b","title":"EOCIS
+        AEROSOL from Sentinel 3B monthly"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-arctic-sea-ice-thickness-monthly","title":"EOCIS
+        Arctic Monthly Gridded Sea Ice Thickness Product from CryoSat-2"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-builtarea","title":"EOCIS
+        CHUK Geospatial Information - Built Area"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-elevation","title":"EOCIS
+        CHUK Geospatial Information - Elevation"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-landclass","title":"EOCIS
+        CHUK Geospatial Information - Land Class"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-geospatial-landcover","title":"EOCIS
+        CHUK Geospatial Information - Land Cover"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-fapar","title":"EOCIS
+        CHUK Fraction of Absorbed Photosynthetically Active Radiation"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-land-vegetation-lai","title":"EOCIS
+        CHUK Leaf Area Index (LAI)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-chuk-lst","title":"EOCIS
+        CHUK Land Surface Temperature"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-day","title":"EOCIS
+        Land Surface Temperature from Sentinel 3A daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3a-night","title":"EOCIS
+        Land Surface Temperature from Sentinel 3A daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-day","title":"EOCIS
+        Land Surface Temperature from Sentinel 3B daily (day)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-lst-s3b-night","title":"EOCIS
+        Land Surface Temperature from Sentinel 3B daily (night)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-soil-moisture-africa","title":"EOCIS
+        Soil Moisture Africa v2.3.1"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/eocis-sst-cdrv3","title":"EOCIS
+        Sea-Surface Temperatures V3"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/land_cover","title":"ESA
+        Land Cover Climate Change Initiative (CCI): Global Land Cover Maps"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1","title":"Sentinel-1
+        Single Look Complex (SLC)"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel1_ard","title":"Sentinel
+        1 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/sentinel2_ard","title":"Sentinel
+        2 ARD"},{"rel":"child","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/ukcp","title":"UK
+        Climate Projections (UKCP18)"}],"stac_extensions":[],"title":"CEDA STAC API","type":"Catalog","conformsTo":["https://api.stacspec.org/v1.0.0/item-search","https://api.stacspec.org/v0.3.0/aggregation","https://api.stacspec.org/v1.0.0-rc.1/collection-search#free-text","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/filter","http://www.opengis.net/spec/cql2/1.0/conf/advanced-comparison-operators","https://api.stacspec.org/v1.0.0-rc.2/item-search#filter","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core","https://api.stacspec.org/v1.0.0-rc.1/ogcapi-features#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson","http://www.opengis.net/spec/ogcapi-common-2/1.0/conf/simple-query","https://api.stacspec.org/v1.0.0/core","https://api.stacspec.org/v1.0.0/item-search#query","https://api.stacspec.org/v1.0.0/item-search#fields","https://api.stacspec.org/v1.0.0/ogcapi-features","https://api.stacspec.org/v1.0.0-rc.1/collection-search","https://api.stacspec.org/v1.0.0-rc.1/item-search#free-text","http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/oas30","http://www.opengis.net/spec/ogcapi-features-3/1.0/conf/features-filter","http://www.opengis.net/spec/cql2/1.0/conf/cql2-json","https://api.stacspec.org/v1.0.0/item-search#sort","https://api.stacspec.org/v1.0.0/collections","http://www.opengis.net/spec/cql2/1.0/conf/basic-cql2","http://www.opengis.net/spec/cql2/1.0/conf/cql2-text"]}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 f42466f626dc7c2dcac3561341c3b932.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 9H_I128oRZH0S2vqJK5sHbsW4j7Z0N8t7zs6m3gG888U_jZ7Pqbj8w==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '9498'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"limit": 10, "collections": ["cmip6"], "ids": ["CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806",
+      "CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rlus.gr.v20200806", "CMIP6.ScenarioMIP.CSIRO.ACCESS-ESM1-5.ssp126.r1i1p1f1.day.uas.gn.v20210318"]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '266'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search
+  response:
+    body:
+      string: '{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-180.0,-90.0],[178.75,-90.0],[178.75,90.0],[-180.0,90.0],[-180.0,-90.0]]]},"bbox":[-180.0,-90.0,178.75,90.0],"links":[{"rel":"self","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"collection","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"}],"id":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","stac_version":"1.0.0","collection":"cmip6","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/item_thumbnails/ScenarioMIP/THU/CIESM/thumb_CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806.jpg","type":"image/jpeg","roles":["thumbnail"]},"reference_file":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/kerchunk/pipeline1/ScenarioMIP/THU/CIESM/kr1.0/CMIP6_ScenarioMIP_THU_CIESM_ssp585_r1i1p1f1_Amon_rsus_gr_v20200806_kr1.0.json","type":"application/zstd","roles":["reference","data"],"open_zarr_kwargs":{"decode_times":true}},"data0001":{"href":"https://dap.ceda.ac.uk/badc/cmip6/data/CMIP6/ScenarioMIP/THU/CIESM/ssp585/r1i1p1f1/Amon/rsus/gr/v20200806/rsus_Amon_CIESM_ssp585_r1i1p1f1_gr_402901-411412.nc","type":"application/netcdf","roles":["data"]}},"properties":{"datetime":"4072-01-01T00:00:00Z"}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-180.0,-90.0],[178.75,-90.0],[178.75,90.0],[-180.0,90.0],[-180.0,-90.0]]]},"bbox":[-180.0,-90.0,178.75,90.0],"links":[{"rel":"self","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rlus.gr.v20200806"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"collection","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"}],"id":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rlus.gr.v20200806","stac_version":"1.0.0","collection":"cmip6","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/item_thumbnails/ScenarioMIP/THU/CIESM/thumb_CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rlus.gr.v20200806.jpg","type":"image/jpeg","roles":["thumbnail"]},"reference_file":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/kerchunk/pipeline1/ScenarioMIP/THU/CIESM/kr1.0/CMIP6_ScenarioMIP_THU_CIESM_ssp585_r1i1p1f1_Amon_rlus_gr_v20200806_kr1.0.json","type":"application/zstd","roles":["reference","data"],"open_zarr_kwargs":{"decode_times":true}},"data0001":{"href":"https://dap.ceda.ac.uk/badc/cmip6/data/CMIP6/ScenarioMIP/THU/CIESM/ssp585/r1i1p1f1/Amon/rlus/gr/v20200806/rlus_Amon_CIESM_ssp585_r1i1p1f1_gr_402901-411412.nc","type":"application/netcdf","roles":["data"]}},"properties":{"datetime":"4072-01-01T00:00:00Z"}},{"type":"Feature","geometry":{"type":"Polygon","coordinates":[[[-179.0625,-90.0],[179.0625,-90.0],[179.0625,90.0],[-179.0625,90.0],[-179.0625,-90.0]]]},"bbox":[-179.0625,-90.0,179.0625,90.0],"links":[{"rel":"self","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.CSIRO.ACCESS-ESM1-5.ssp126.r1i1p1f1.day.uas.gn.v20210318"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"collection","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"}],"id":"CMIP6.ScenarioMIP.CSIRO.ACCESS-ESM1-5.ssp126.r1i1p1f1.day.uas.gn.v20210318","stac_version":"1.0.0","collection":"cmip6","assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/item_thumbnails/ScenarioMIP/CSIRO/ACCESS-ESM1-5/thumb_CMIP6.ScenarioMIP.CSIRO.ACCESS-ESM1-5.ssp126.r1i1p1f1.day.uas.gn.v20210318.jpg","type":"image/jpeg","roles":["thumbnail"]},"reference_file":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/kerchunk/pipeline1/ScenarioMIP/CSIRO/ACCESS-ESM1-5/kr1.0/CMIP6_ScenarioMIP_CSIRO_ACCESS-ESM1-5_ssp126_r1i1p1f1_day_uas_gn_v20210318_kr1.0.json","type":"application/zstd","roles":["reference","data"],"open_zarr_kwargs":{"decode_times":true}},"data0001":{"href":"https://dap.ceda.ac.uk/badc/cmip6/data/CMIP6/ScenarioMIP/CSIRO/ACCESS-ESM1-5/ssp126/r1i1p1f1/day/uas/gn/v20210318/uas_day_ACCESS-ESM1-5_ssp126_r1i1p1f1_gn_22510101-23001231.nc","type":"application/netcdf","roles":["data"]}},"properties":{"datetime":"2276-01-01T00:00:00Z"}}],"links":[{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue"},{"rel":"self","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/search"}],"numReturned":3,"numMatched":3}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 a2d72ddfd9da662f275486a2b5c71bbc.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - h4oSv8wNf-XvbmG1i5oMJ_l9KkxIrQ-nqVS3E4h2spEXCFRGyIRclA==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+      content-length:
+      - '5946'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"name": "pyeodh-test-pin-set", "description": "", "visibility": "workspace",
+      "items": [{"collectionId": "cmip6", "itemId": "pyeodh-test-missing-item", "selfHref":
+      "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/pyeodh-test-missing-item"},
+      {"collectionId": "cmip6", "itemId": "CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806",
+      "selfHref": "https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806"}]}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '624'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets
+  response:
+    body:
+      string: '{"id":"ddf2fa02-e3ce-43d4-ac41-5f0dd76ff369","workspace":"oxidian-test","name":"pyeodh-test-pin-set","description":"","visibility":"workspace","createdBy":"oxidian-test","createdAt":"2026-10-07T15:43:55.553703Z","updatedAt":"2026-10-07T15:43:55.553703Z","itemCount":2,"items":[{"id":"9735f8f2-e6ec-47b8-ae7b-155ca07ab89f","collectionId":"cmip6","itemId":"pyeodh-test-missing-item","selfHref":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/pyeodh-test-missing-item","position":0,"addedAt":"2026-10-07T15:43:55.553703Z"},{"id":"679aa397-7116-4951-831a-0c6d679bcadf","collectionId":"cmip6","itemId":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","selfHref":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","position":1,"addedAt":"2026-10-07T15:43:55.553703Z"}]}
+
+        '
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '997'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 b36267b88dbdb809a67168951d32ad08.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - G7Mf0ThDZvhj6SOFH9ZxnvyRSppcVtfHsyE768Nv6A9n8fLKqp79cQ==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+      location:
+      - /api/workspaces/oxidian-test/pin-sets/ddf2fa02-e3ce-43d4-ac41-5f0dd76ff369
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/pyeodh-test-missing-item
+  response:
+    body:
+      string: '{"code":"NotFoundError","description":"Item pyeodh-test-missing-item
+        does not exist in Collection cmip6"}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '105'
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 f2dc575b7d45f41bcc2ed296a06701ea.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - JudrEqBSiKVVMl6ZrbM7JatCBZlK7-K2NzvpP-Srg9Fnji5nazxvbw==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Error from cloudfront
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806
+  response:
+    body:
+      string: '{"type":"Feature","stac_version":"1.0.0","stac_extensions":["https://stac-extensions.github.io/cmip6/v1.0.0/schema.json"],"id":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","collection":"cmip6","geometry":{"type":"Polygon","coordinates":[[[-180.0,-90.0],[178.75,-90.0],[178.75,90.0],[-180.0,90.0],[-180.0,-90.0]]]},"bbox":[-180.0,-90.0,178.75,90.0],"properties":{"title":"CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806","datetime":"4072-01-01T00:00:00Z","created":"2025-01-24T14:29:23.741213Z","updated":"2026-09-02T04:05:19.056286Z","start_datetime":"4029-01-16T12:00:00Z","end_datetime":"4114-12-16T12:00:00Z","cmip6:further_info_url":"https://furtherinfo.es-doc.org/CMIP6.THU.CIESM.ssp585.none.r1i1p1f1","cmip6:source_type":"AOGCM","cmip6:institution_id":"THU","cmip6:variable_long_name":"Surface
+        Upwelling Shortwave Radiation","cmip6:mip_era":"CMIP6","project":"CMIP6","cmip6:access":["HTTPServer"],"cmip6:nominal_resolution":"100
+        km","cmip6:sub_experiment_id":"none","cmip6:frequency":"mon","cmip6:experiment_id":"ssp585","aggregation_status":"OK","cmip6:table_id":"Amon","cmip6:activity_id":"ScenarioMIP","product":"model-output","model_cohort":"Registered","cmip6:grid_label":"gr","cmip6:cf_standard_name":"surface_upwelling_shortwave_flux_in_air","cmip6:data_specs_version":"01.00.29","cmip6:variable_id":"rsus","cmip6:variable_units":"W
+        m-2","cmip6:source_id":"CIESM","cmip6:experiment_title":"update of RCP8.5
+        based on SSP5","cmip6:citation_url":"http://cera-www.dkrz.de/WDCC/meta/CMIP6/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806.json","cmip6:variant_label":"r1i1p1f1","realm":["atmos"],"cmip6:retracted":false,"cmip6:grid":"gs1x1"},"links":[{"rel":"self","type":"application/geo+json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6/items/CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806"},{"rel":"parent","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"collection","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/catalogs/public/catalogs/ceda-stac-catalogue/collections/cmip6"},{"rel":"root","type":"application/json","href":"https://staging.eodatahub.org.uk/api/catalogue/stac/"}],"assets":{"thumbnail":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/STAC/item_thumbnails/ScenarioMIP/THU/CIESM/thumb_CMIP6.ScenarioMIP.THU.CIESM.ssp585.r1i1p1f1.Amon.rsus.gr.v20200806.jpg","type":"image/jpeg","roles":["thumbnail"]},"reference_file":{"href":"https://dap.ceda.ac.uk/badc/cmip6/metadata/kerchunk/pipeline1/ScenarioMIP/THU/CIESM/kr1.0/CMIP6_ScenarioMIP_THU_CIESM_ssp585_r1i1p1f1_Amon_rsus_gr_v20200806_kr1.0.json","type":"application/zstd","roles":["reference","data"],"open_zarr_kwargs":{"decode_times":true}},"data0001":{"href":"https://dap.ceda.ac.uk/badc/cmip6/data/CMIP6/ScenarioMIP/THU/CIESM/ssp585/r1i1p1f1/Amon/rsus/gr/v20200806/rsus_Amon_CIESM_ssp585_r1i1p1f1_gr_402901-411412.nc","type":"application/netcdf","roles":["data"]}}}'
+    headers:
+      Access-Control-Allow-Headers:
+      - Accept,Authorization,Content-Type
+      Access-Control-Allow-Methods:
+      - '*'
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self' https://cdn.jsdelivr.net 'sha256-JbfEJfBuTp8XdeUtSsIYcWZeHT4vU4fVftDVzeKORyw=';
+        frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 77e0dde38106d1eedc09cef35476f854.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - nTFbDzyDMXblKlXhHeHsNERDl-9Qdf8dxrRBoCncWg3khDIHylCSnQ==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=300, stale-while-revalidate=300
+      content-length:
+      - '3159'
+      vary:
+      - Accept-Encoding
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets
+  response:
+    body:
+      string: '[{"id":"ddf2fa02-e3ce-43d4-ac41-5f0dd76ff369","workspace":"oxidian-test","name":"pyeodh-test-pin-set","description":"","visibility":"workspace","createdBy":"oxidian-test","createdAt":"2026-10-07T15:43:55.553703Z","updatedAt":"2026-10-07T15:43:55.553703Z","itemCount":2}]
+
+        '
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '271'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 00308c7b765bbcb410122c7887d055da.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - aATAgozi_fmglN5KaPuEfJQ7bVy3prEweYSivEsvGFWv5-DqeS2dYw==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.32.5
+    method: DELETE
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets/ddf2fa02-e3ce-43d4-ac41-5f0dd76ff369
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:43:55 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 5d1fa985bc0f71542b20316391cdb282.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - PX0tNYIxtBNKsMGFcrXHFSpSPcQzHBOp3idKEEimRjZO74LeG9tXog==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 204
+      message: No Content
+version: 1

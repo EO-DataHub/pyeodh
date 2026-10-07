@@ -1,0 +1,281 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets
+  response:
+    body:
+      string: '[]
+
+        '
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:44:00 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 863f299c43a66807876c634af3e49612.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - IPlug-Rz_VwS_GKqOXoE4_BP4ZD0trg0hDKUFCcxy5QhNwxkuyVFgg==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 200
+      message: OK
+- request:
+    body: '{"name": "pyeodh-test-pin-set", "description": "", "visibility": "workspace",
+      "items": []}'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '90'
+      Content-Type:
+      - application/json
+      User-Agent:
+      - python-requests/2.32.5
+    method: POST
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets
+  response:
+    body:
+      string: '{"id":"cf78d817-d7fc-4705-b267-90933474c232","workspace":"oxidian-test","name":"pyeodh-test-pin-set","description":"","visibility":"workspace","createdBy":"oxidian-test","createdAt":"2026-10-07T15:44:00.396587Z","updatedAt":"2026-10-07T15:44:00.396587Z","itemCount":0,"items":[]}
+
+        '
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '280'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:44:00 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 888de1b5ef00615a29430ec5b60c057a.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - hi3ebu63jzJ2CopJxlOh2GVxzi1SNMiQyoJLeOXq2pbnesp__iwWUw==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+      location:
+      - /api/workspaces/oxidian-test/pin-sets/cf78d817-d7fc-4705-b267-90933474c232
+    status:
+      code: 201
+      message: Created
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      User-Agent:
+      - python-requests/2.32.5
+    method: DELETE
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets/cf78d817-d7fc-4705-b267-90933474c232
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:44:00 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 84eac509a679113585a379ef452c7948.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - Cx7Zl6cPbIgKgHwyTytf7mReh5IalZmWFi9Q8aRNmkqphVF1K-KfjA==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 204
+      message: No Content
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets/cf78d817-d7fc-4705-b267-90933474c232
+  response:
+    body:
+      string: ''
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Origin:
+      - '*'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '0'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:44:00 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 6bcaea2248adb65f8da44951a28a4b24.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - 1vF22ZIqIsvM5UpBe6yp-s68JVPUoyhdIKVYI1zm0Mw4TNnff1B_Ng==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Error from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 404
+      message: Not Found
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.5
+    method: GET
+    uri: https://staging.eodatahub.org.uk/api/workspaces/oxidian-test/pin-sets
+  response:
+    body:
+      string: '[]
+
+        '
+    headers:
+      Access-Control-Allow-Headers:
+      - Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, PUT, DELETE, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      Alt-Svc:
+      - h3=":443"; ma=86400
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3'
+      Content-Security-Policy:
+      - script-src 'self'; frame-ancestors 'self'; form-action 'self';
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 07 Oct 2026 15:44:00 GMT
+      Server:
+      - nginx
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Via:
+      - 1.1 8621a5525ef9ecb517ca041938c20904.cloudfront.net (CloudFront)
+      X-Amz-Cf-Id:
+      - GWSl4z969zpintmGhTrYCgi4t2c0Pe0L7YhH-7t9BkGTc4y6OjzudQ==
+      X-Amz-Cf-Pop:
+      - FRA56-P17
+      X-Cache:
+      - Miss from cloudfront
+      cache-control:
+      - max-age=0
+    status:
+      code: 200
+      message: OK
+version: 1
