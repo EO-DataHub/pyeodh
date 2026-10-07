@@ -1,20 +1,24 @@
 from __future__ import annotations
 
 import logging
+from collections.abc import Iterable
 from pathlib import Path
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, Any, Literal, Union
 
+import pystac
 import requests
 
 from pyeodh.eodh_object import EodhObject
 from pyeodh.resource_catalog import Item
-from pyeodh.utils import join_url, s3_url
+from pyeodh.utils import join_url, remove_null_items, s3_url
 
 if TYPE_CHECKING:
     from pyeodh.client import Client
     from pyeodh.types import Headers
 
 logger = logging.getLogger(__name__)
+
+PinSetVisibility = Literal["workspace", "private"]
 
 
 class PinSetItem(EodhObject):
@@ -113,6 +117,31 @@ class PinSet(PinSetSummary):
         return items
 
 
+PinSetItemLike = Union[Item, pystac.Item, PinSetItem, dict[str, Any]]
+"""A STAC item, an existing pin set item, or a reference dict with `collectionId`,
+`itemId` and `selfHref` keys."""
+
+
+def _to_item_ref(item: PinSetItemLike) -> dict[str, Any]:
+    if isinstance(item, dict):
+        return item
+    if isinstance(item, PinSetItem):
+        return remove_null_items(
+            {
+                "collectionId": item.collection_id,
+                "itemId": item.item_id,
+                "selfHref": item.self_href,
+                "display": item.display,
+            }
+        )
+    if isinstance(item, Item):
+        item = item._pystac_object
+    self_href = item.get_self_href()
+    if item.collection_id is None or self_href is None:
+        raise ValueError(f"Item {item.id} needs a collection and a self link to be pinned")
+    return {"collectionId": item.collection_id, "itemId": item.id, "selfHref": self_href}
+
+
 class Workspace:
     """Contains methods for interacting with EODH workspaces."""
 
@@ -167,6 +196,154 @@ class Workspace:
         """
         headers, response = self._client._request_json("GET", self._pin_sets_url(workspace_name, set_id))
         return PinSet(self._client, headers, response)
+
+    def create_pin_set(
+        self,
+        name: str,
+        description: str = "",
+        visibility: PinSetVisibility = "workspace",
+        items: Iterable[PinSetItemLike] | None = None,
+        workspace_name: str | None = None,
+    ) -> PinSet:
+        """Create a pin set. Any workspace member can create one. Items repeated in `items`
+        (same selfHref) are kept once.
+
+        Calls: POST /api/workspaces/{workspace_name}/pin-sets
+
+        Args:
+            name (str): Name of the pin set, unique within the workspace
+            description (str, optional): Description of the pin set. Defaults to "".
+            visibility (PinSetVisibility, optional): "workspace" to share the set with
+                every workspace member, or "private" to keep it to yourself and workspace
+                admins. Defaults to "workspace".
+            items (Iterable[PinSetItemLike] | None, optional): Items to pin. Each selfHref
+                must be on the platform resource catalog. Defaults to None.
+            workspace_name (str, optional): Name of the workspace. Defaults to the username
+                pyeodh client was initialized with.
+
+        Returns:
+            PinSet: The created pin set.
+        """
+        url = self._pin_sets_url(workspace_name)
+        data = {
+            "name": name,
+            "description": description,
+            "visibility": visibility,
+            "items": [_to_item_ref(i) for i in items or []],
+        }
+        headers, response = self._client._request_json("POST", url, data=data)
+        return PinSet(self._client, headers, response)
+
+    def update_pin_set(
+        self,
+        set_id: str,
+        name: str | None = None,
+        description: str | None = None,
+        visibility: PinSetVisibility | None = None,
+        workspace_name: str | None = None,
+    ) -> PinSet:
+        """Change a pin set's name, description or visibility. Only provide the values you
+        want to change. Only the set's creator or a workspace admin can do this.
+
+        Calls: PATCH /api/workspaces/{workspace_name}/pin-sets/{set_id}
+
+        Args:
+            set_id (str): Pin set ID
+            name (str | None, optional): New name. Defaults to None.
+            description (str | None, optional): New description. Defaults to None.
+            visibility (PinSetVisibility | None, optional): New visibility. Defaults to
+                None.
+            workspace_name (str, optional): Name of the workspace. Defaults to the username
+                pyeodh client was initialized with.
+
+        Returns:
+            PinSet: The updated pin set.
+        """
+        data = remove_null_items({"name": name, "description": description, "visibility": visibility})
+        if not data:
+            raise ValueError("Provide at least one of name, description or visibility.")
+        url = self._pin_sets_url(workspace_name, set_id)
+        headers, response = self._client._request_json("PATCH", url, data=data)
+        return PinSet(self._client, headers, response)
+
+    def delete_pin_set(self, set_id: str, workspace_name: str | None = None) -> None:
+        """Delete a pin set and its items. Only the set's creator or a workspace admin can
+        do this.
+
+        Calls: DELETE /api/workspaces/{workspace_name}/pin-sets/{set_id}
+
+        Args:
+            set_id (str): Pin set ID
+            workspace_name (str, optional): Name of the workspace. Defaults to the username
+                pyeodh client was initialized with.
+        """
+        self._client._request_raw("DELETE", self._pin_sets_url(workspace_name, set_id))
+
+    def replace_pin_set_items(
+        self,
+        set_id: str,
+        items: Iterable[PinSetItemLike],
+        workspace_name: str | None = None,
+    ) -> PinSet:
+        """Replace every item in a pin set. Pass an empty list to clear it. Only the set's
+        creator or a workspace admin can do this.
+
+        Calls: PUT /api/workspaces/{workspace_name}/pin-sets/{set_id}/items
+
+        Args:
+            set_id (str): Pin set ID
+            items (Iterable[PinSetItemLike]): Items to pin. Each selfHref must be on the
+                platform resource catalog.
+            workspace_name (str, optional): Name of the workspace. Defaults to the username
+                pyeodh client was initialized with.
+
+        Returns:
+            PinSet: The updated pin set.
+        """
+        url = self._pin_sets_url(workspace_name, set_id, "items")
+        data = {"items": [_to_item_ref(i) for i in items]}
+        headers, response = self._client._request_json("PUT", url, data=data)
+        return PinSet(self._client, headers, response)
+
+    def add_pin_set_items(
+        self,
+        set_id: str,
+        items: Iterable[PinSetItemLike],
+        workspace_name: str | None = None,
+    ) -> PinSet:
+        """Add items to the end of a pin set. Items already in the set (same selfHref) are
+        skipped. Only the set's creator or a workspace admin can do this.
+
+        Calls: POST /api/workspaces/{workspace_name}/pin-sets/{set_id}/items
+
+        Args:
+            set_id (str): Pin set ID
+            items (Iterable[PinSetItemLike]): Items to pin. Each selfHref must be on the
+                platform resource catalog.
+            workspace_name (str, optional): Name of the workspace. Defaults to the username
+                pyeodh client was initialized with.
+
+        Returns:
+            PinSet: The updated pin set.
+        """
+        url = self._pin_sets_url(workspace_name, set_id, "items")
+        data = {"items": [_to_item_ref(i) for i in items]}
+        headers, response = self._client._request_json("POST", url, data=data)
+        return PinSet(self._client, headers, response)
+
+    def remove_pin_set_item(self, set_id: str, entry_id: str, workspace_name: str | None = None) -> None:
+        """Remove one item from a pin set. Only the set's creator or a workspace admin can
+        do this.
+
+        Calls: DELETE /api/workspaces/{workspace_name}/pin-sets/{set_id}/items/{entry_id}
+
+        Args:
+            set_id (str): Pin set ID
+            entry_id (str): ID of the item's entry in the set, `PinSetItem.id`
+            workspace_name (str, optional): Name of the workspace. Defaults to the username
+                pyeodh client was initialized with.
+        """
+        self._client._request_raw("DELETE", self._pin_sets_url(workspace_name, set_id, "items", entry_id))
 
     def upload_file(
         self,
