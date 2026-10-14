@@ -2,9 +2,6 @@
 
 [![codecov](https://codecov.io/github/EO-DataHub/pyeodh/graph/badge.svg?token=C6RZQAUJ6I)](https://codecov.io/github/EO-DataHub/pyeodh)
 
-> [!WARNING]
-> This project is in early development and should not be used in production.
-
 A lightweight Python client for easy access to EODH APIs.
 
 ## Installation
