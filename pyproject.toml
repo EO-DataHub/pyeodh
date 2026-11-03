@@ -19,9 +19,9 @@ classifiers = [
 ]
 dependencies = [
     "lxml>=6.0.2",
-    "owslib>=0.31.0,<0.32; python_version < '3.10'",
+    "owslib>=0.36,<0.37; python_version < '3.10'",
     "owslib>=0.35.0; python_version >= '3.10'",
-    "pystac>=1.10.0,<1.11; python_version < '3.10'",
+    "pystac>=1.15.2,<1.16; python_version < '3.10'",
     "pystac-core>=1.15.2,<2; python_version >= '3.10'",
     "requests-oauthlib>=2.0.0",
 ]
@@ -29,7 +29,7 @@ dependencies = [
 [project.optional-dependencies]
 datapoint = [
     "ceda-datapoint==0.5.2",
-    "pystac>=1.10.0,<1.11; python_version < '3.10'",
+    "pystac>=1.15.2,<1.16; python_version < '3.10'",
     "pystac>=1.15.2,<2; python_version >= '3.10'",
     "zarr>=2.18.0,<2.18.3; python_version < '3.10'",
     "zarr>=2.18.3,<3; python_version == '3.10'",
@@ -54,16 +54,16 @@ dev = [
     "ipykernel",
 ]
 docs = [
-    "sphinx>=7.2.6",
-    "sphinx-rtd-theme>=2.0.0",
+    "sphinx==7.4.7",
+    "sphinx-rtd-theme==3.1.0",
 ]
 notebooks = [
-    "shapely>=2.0.4",
-    "matplotlib>=3.9.0",
+    "shapely==2.0.7",
+    "matplotlib==3.9.4",
     "pillow>=10.3.0",
-    "rioxarray>=0.15.0",
+    "rioxarray==0.15.0",
     "fsspec>=2024.6.1",
-    "folium>=0.17.0",
+    "folium==0.20.0",
 ]
 
 [build-system]
