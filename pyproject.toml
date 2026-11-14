@@ -31,7 +31,7 @@ datapoint = [
     "ceda-datapoint==0.5.2",
     "pystac>=1.10.0,<1.11; python_version < '3.10'",
     "pystac>=1.15.2,<2; python_version >= '3.10'",
-    "zarr>=2.18.0,<2.18.3; python_version < '3.10'",
+    "zarr>=2.18.7,<2.18.8; python_version < '3.10'",
     "zarr>=2.18.3,<3; python_version == '3.10'",
     "zarr>=3; python_version >= '3.11'",
     "numcodecs>=0.16; python_version >= '3.11'"
